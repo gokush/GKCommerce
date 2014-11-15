@@ -11,5 +11,5 @@
 
 @interface AreaJSONAssembler : NSObject
 
-- (NSArray *)fromJSON:(NSArray *)areaJSON;
+- (NSArray *)fromJSON:(NSArray *)areaJSON parent:(Area *)aParent;
 @end

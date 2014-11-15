@@ -8,9 +8,15 @@
 
 #import "ConsigneeEditController.h"
 #import "ConsigneeEditInputTableViewCell.h"
+#import "UIBindableTableViewCell.h"
+#import "MBProgressHUD.h"
 
 typedef enum {
-    ConsigneeAreaCell
+    ConsigneeNameCell,
+    ConsigneeCellPhoneCell,
+    ConsigneePostcodeCell,
+    ConsigneeAreaCell,
+    ConsigneeAddressCell
 } ConsigneeCell;
 
 @interface ConsigneeEditController ()
@@ -32,6 +38,18 @@ typedef enum {
     return self;
 }
 
+- (id)initWithConsignee:(Consignee *)consignee
+{
+    self = [self init];
+    if (self) {
+        if (!consignee)
+            self.consignee = [[Consignee alloc] init];
+        else
+            self.consignee = consignee;
+    }
+    return self;
+}
+
 - (void)consigneeBackend:(ConsigneeBackend *)aConsigneeBackend
          didReceiveAreas:(NSArray *)areas
 {
@@ -47,6 +65,17 @@ typedef enum {
                                 bundle:nil];
     [self.tableView registerNib:nib
          forCellReuseIdentifier:@"ConsigneeEditInputTableViewCell"];
+    
+    if (self.consignee.consigneeID > 0)
+        self.title = @"修改收货地址";
+    else
+        self.title = @"新增收货地址";
+    
+    UIBarButtonItem *save = [[UIBarButtonItem alloc]
+                             initWithTitle:@"保存"
+                             style:UIBarButtonItemStylePlain target:self
+                             action:@selector(didTapSave:)];
+    self.navigationItem.rightBarButtonItem = save;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,8 +89,9 @@ typedef enum {
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -71,11 +101,32 @@ typedef enum {
     cell = [tableView
             dequeueReusableCellWithIdentifier:@"ConsigneeEditInputTableViewCell"
             forIndexPath:indexPath];
-    
+    cell.inputTextField.tag = indexPath.row;
+    cell.inputTextField.delegate = self;
+    [cell.inputTextField addTarget:self action:@selector(textFieldDidChange:)
+                  forControlEvents:UIControlEventEditingChanged];
     switch (indexPath.row) {
+        case ConsigneeNameCell: {
+            cell.inputTextField.placeholder = @"收货人姓名";
+            break;
+        }
+        case ConsigneeCellPhoneCell: {
+            cell.inputTextField.placeholder = @"手机号码";
+            break;
+        }
+        case ConsigneePostcodeCell: {
+            cell.inputTextField.placeholder = @"邮政编码";
+            break;
+        }
         case ConsigneeAreaCell: {
             cell.inputTextField.placeholder = @"省、市、区";
             cell.inputTextField.enabled = NO;
+            cell.consignee = self.consignee;
+            [cell bind];
+            break;
+        }
+        case ConsigneeAddressCell: {
+            cell.inputTextField.placeholder = @"详细地址";
             break;
         }
         default:
@@ -83,6 +134,21 @@ typedef enum {
     }
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView
+didEndDisplayingCell:(UITableViewCell *)cell
+forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.section) {
+        case ConsigneeAreaCell:
+            if ([cell respondsToSelector:@selector(unbind)])
+                [cell performSelector:@selector(unbind)];
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView
@@ -104,7 +170,83 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)areaPickerViewController:(AreaPickerViewController *)picker
                    didSelectArea:(Area *)anArea
 {
+    switch (anArea.type) {
+        case AreaTypeDistrict: {
+            [self areaPickerViewController:picker didSelectArea:anArea.parent];
+            self.consignee.district = anArea;
+            break;
+        }
+        case AreaTypeCity: {
+            [self areaPickerViewController:picker didSelectArea:anArea.parent];
+            self.consignee.city = anArea;
+            break;
+        }
+        case AreaTypeProvince: {
+            self.consignee.province = anArea;
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
     
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    
+}
+- (void)textFieldDidChange:(id)sender
+{
+    UITextField *textField = sender;
+    switch (textField.tag) {
+        case ConsigneeNameCell: {
+            self.consignee.name = textField.text;
+            break;
+        }
+        case ConsigneeCellPhoneCell: {
+            self.consignee.cellPhone = textField.text;
+            break;
+        }
+        case ConsigneePostcodeCell: {
+            self.consignee.postcode = textField.text;
+            break;
+        }
+        case ConsigneeAddressCell: {
+            self.consignee.address = textField.text;
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+- (void)didTapSave:(id)sender
+{
+    NSString *message;
+    if (0 == self.consignee.name.length)
+        message = @"收货人姓名不能是空";
+    else if (0 == self.consignee.cellPhone.length)
+        message = @"收货人手机号码不能是空";
+    else if (!(self.consignee.province && self.consignee.city &&
+               self.consignee.district))
+        message = @"请选择地区";
+    else if (0 == self.consignee.address.length)
+        message = @"地址不能是空";
+    
+    if (message) {
+        MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view];
+        hud.labelText = message;
+        hud.mode = MBProgressHUDModeCustomView;
+        [self.view addSubview:hud];
+        [hud show:YES];
+        
+        [hud hide:YES afterDelay:2];
+        return;
+    }
 }
 
 /*

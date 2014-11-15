@@ -20,5 +20,5 @@ typedef enum {
 @property (strong, nonatomic) NSString *name;
 @property (weak,   nonatomic) Area *parent;
 @property (strong, nonatomic) NSArray *children;
-@property (assign, nonatomic) AreaType *type;
+@property (assign, nonatomic) AreaType type;
 @end

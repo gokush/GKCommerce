@@ -42,7 +42,8 @@
 
 - (void)requestAreasDidResponse:(id)responseObject
 {
-    NSArray *areas = [self.areaJSONAssembler fromJSON:responseObject];
+    NSArray *areas = [self.areaJSONAssembler fromJSON:responseObject
+                                               parent:nil];
     if ([self.delegate respondsToSelector:
          @selector(consigneeBackend:didReceiveAreas:)]) {
         [self.delegate consigneeBackend:self didReceiveAreas:areas];

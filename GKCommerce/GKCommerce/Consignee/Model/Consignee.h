@@ -11,6 +11,11 @@
 
 @interface Consignee : NSObject
 
+@property (assign, nonatomic) NSInteger *consigneeID;
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *cellPhone;
+@property (strong, nonatomic) NSString *postcode;
+@property (strong, nonatomic) NSString *address;
 @property (strong, nonatomic) Area *province;
 @property (strong, nonatomic) Area *city;
 @property (strong, nonatomic) Area *district;

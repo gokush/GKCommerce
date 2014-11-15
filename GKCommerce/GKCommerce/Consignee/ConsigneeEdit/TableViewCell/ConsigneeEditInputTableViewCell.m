@@ -20,4 +20,26 @@
     // Configure the view for the selected state
 }
 
+- (void)bind
+{
+    [self.consignee addObserver:self forKeyPath:@"district"
+                        options:NSKeyValueObservingOptionInitial context:nil];
+}
+
+- (void)unbind
+{
+    [self.consignee removeObserver:self forKeyPath:@"district"];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
+                        change:(NSDictionary *)change context:(void *)context
+{
+    if (self.consignee.province && self.consignee.city &&
+        self.consignee.district)
+    self.inputTextField.text = [NSString stringWithFormat:@"%@%@%@",
+                                self.consignee.province.name,
+                                self.consignee.city.name,
+                                self.consignee.district.name];
+}
+
 @end

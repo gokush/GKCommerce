@@ -12,10 +12,13 @@
 
 @interface ConsigneeEditController : UIViewController
 <UITableViewDataSource, UITableViewDelegate, ConsigneeBackendDelegate,
-AreaPickerViewControllerDelegate>
+AreaPickerViewControllerDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) ConsigneeBackend *backend;
 @property (strong, nonatomic) NSArray *areas;
 @property (strong, nonatomic) AreaPickerViewController *areaPicker;
+@property (strong, nonatomic) Consignee *consignee;
+
+- (id)initWithConsignee:(Consignee *)consignee;
 @end

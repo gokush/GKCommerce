@@ -9,6 +9,14 @@
 #import "MineViewController.h"
 #import "ConsigneeEditController.h"
 
+typedef enum {
+    OrderSection
+} MineSection;
+
+typedef enum {
+    ConsigneeOrderSectionCell
+} OrderSectionCell;
+
 @interface MineViewController ()
 
 @end
@@ -19,7 +27,7 @@
     [super viewDidLoad];
     
     ConsigneeEditController *controller;
-    controller = [[ConsigneeEditController alloc] init];
+    controller = [[ConsigneeEditController alloc] initWithConsignee:nil];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
@@ -30,23 +38,26 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 0;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
+{
     return 0;
 }
 
 /*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell;
+    cell = [tableView dequeueReusableCellWithIdentifier:@""
+                                           forIndexPath:indexPath];
     
-    // Configure the cell...
+    
     
     return cell;
 }

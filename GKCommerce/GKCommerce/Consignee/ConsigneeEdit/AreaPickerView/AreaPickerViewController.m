@@ -102,9 +102,9 @@ numberOfRowsInComponent:(NSInteger)component
     
     NSInteger selectedIndex;
     Area *selected;
-    if (2 == component)
+    if (2 == component) {
         selectedIndex = row;
-    else
+    } else
         selectedIndex = 0;
     selected = [self.areas3 objectAtIndex:selectedIndex];
     

@@ -81,6 +81,7 @@
 		C1C8545461A39C251C511C1B /* libPods-GKCommerce.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GKCommerce.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D30F04DAA95470FEC1F317A5 /* Pods-GKCommerce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKCommerce.release.xcconfig"; path = "Pods/Target Support Files/Pods-GKCommerce/Pods-GKCommerce.release.xcconfig"; sourceTree = "<group>"; };
 		E3E132E5579A8A196FC0461A /* libPods-GKCommerceTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GKCommerceTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E566A0F91A1650FD008CF286 /* UIBindableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBindableTableViewCell.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +136,7 @@
 		9035D0101A0CB3E100C6E53C /* GKCommerce */ = {
 			isa = PBXGroup;
 			children = (
+				E566A0F81A1650FD008CF286 /* Protocol */,
 				9035D04E1A0CC2D200C6E53C /* Consignee */,
 				9035D0431A0CC00C00C6E53C /* Mine */,
 				9035D03D1A0CBF5900C6E53C /* App */,
@@ -300,6 +302,15 @@
 				2DDB3FAE6F1F7518FFB3443A /* Pods-GKCommerceTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E566A0F81A1650FD008CF286 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E566A0F91A1650FD008CF286 /* UIBindableTableViewCell.h */,
+			);
+			name = Protocol;
+			path = GKCommerce/Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
