@@ -19,4 +19,5 @@
 @property (strong, nonatomic) Area *province;
 @property (strong, nonatomic) Area *city;
 @property (strong, nonatomic) Area *district;
+@property (assign, nonatomic) BOOL defaultConsignee;
 @end

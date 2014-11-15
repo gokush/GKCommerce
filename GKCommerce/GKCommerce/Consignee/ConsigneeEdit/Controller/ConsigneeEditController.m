@@ -7,17 +7,11 @@
 //
 
 #import "ConsigneeEditController.h"
+#import "ConsigneeDefines.h"
 #import "ConsigneeEditInputTableViewCell.h"
 #import "UIBindableTableViewCell.h"
 #import "MBProgressHUD.h"
 
-typedef enum {
-    ConsigneeNameCell,
-    ConsigneeCellPhoneCell,
-    ConsigneePostcodeCell,
-    ConsigneeAreaCell,
-    ConsigneeAddressCell
-} ConsigneeCell;
 
 @interface ConsigneeEditController ()
 @end
@@ -85,12 +79,14 @@ typedef enum {
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section {
+ numberOfRowsInSection:(NSInteger)section
+{
     return 5;
 }
 
@@ -199,6 +195,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
 }
+
 - (void)textFieldDidChange:(id)sender
 {
     UITextField *textField = sender;

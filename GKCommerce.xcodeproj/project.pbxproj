@@ -28,6 +28,11 @@
 		9035D0641A0CC85000C6E53C /* ConsigneeEditInputTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9035D0621A0CC85000C6E53C /* ConsigneeEditInputTableViewCell.xib */; };
 		9035D0681A0CCAF300C6E53C /* AreaPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9035D0671A0CCAF300C6E53C /* AreaPickerViewController.m */; };
 		9035D06B1A0CCF9600C6E53C /* ConsigneeEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9035D06A1A0CCF9600C6E53C /* ConsigneeEditView.xib */; };
+		E51E22861A17916D0005F39B /* ConsigneeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E51E22851A17916D0005F39B /* ConsigneeView.xib */; };
+		E51E22891A17918A0005F39B /* ConsigneeController.m in Sources */ = {isa = PBXBuildFile; fileRef = E51E22881A17918A0005F39B /* ConsigneeController.m */; };
+		E51E228B1A1793940005F39B /* ConsigneeDefines.h in Sources */ = {isa = PBXBuildFile; fileRef = E51E228A1A1793940005F39B /* ConsigneeDefines.h */; };
+		E51E22941A1795F70005F39B /* ConsigneeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E51E22921A1795F70005F39B /* ConsigneeTableViewCell.m */; };
+		E51E22951A1795F70005F39B /* ConsigneeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E51E22931A1795F70005F39B /* ConsigneeTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +86,13 @@
 		C1C8545461A39C251C511C1B /* libPods-GKCommerce.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GKCommerce.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D30F04DAA95470FEC1F317A5 /* Pods-GKCommerce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKCommerce.release.xcconfig"; path = "Pods/Target Support Files/Pods-GKCommerce/Pods-GKCommerce.release.xcconfig"; sourceTree = "<group>"; };
 		E3E132E5579A8A196FC0461A /* libPods-GKCommerceTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GKCommerceTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E51E22851A17916D0005F39B /* ConsigneeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ConsigneeView.xib; path = GKCommerce/Consignee/Consignee/View/ConsigneeView.xib; sourceTree = "<group>"; };
+		E51E22871A17918A0005F39B /* ConsigneeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsigneeController.h; path = GKCommerce/Consignee/Consignee/Controller/ConsigneeController.h; sourceTree = "<group>"; };
+		E51E22881A17918A0005F39B /* ConsigneeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsigneeController.m; path = GKCommerce/Consignee/Consignee/Controller/ConsigneeController.m; sourceTree = "<group>"; };
+		E51E228A1A1793940005F39B /* ConsigneeDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsigneeDefines.h; path = GKCommerce/Consignee/ConsigneeDefines.h; sourceTree = "<group>"; };
+		E51E22911A1795F70005F39B /* ConsigneeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsigneeTableViewCell.h; path = GKCommerce/Consignee/Consignee/TableViewCell/ConsigneeTableViewCell.h; sourceTree = "<group>"; };
+		E51E22921A1795F70005F39B /* ConsigneeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsigneeTableViewCell.m; path = GKCommerce/Consignee/Consignee/TableViewCell/ConsigneeTableViewCell.m; sourceTree = "<group>"; };
+		E51E22931A1795F70005F39B /* ConsigneeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ConsigneeTableViewCell.xib; path = GKCommerce/Consignee/Consignee/TableViewCell/ConsigneeTableViewCell.xib; sourceTree = "<group>"; };
 		E566A0F91A1650FD008CF286 /* UIBindableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBindableTableViewCell.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,9 +227,11 @@
 		9035D04E1A0CC2D200C6E53C /* Consignee */ = {
 			isa = PBXGroup;
 			children = (
+				E51E227C1A1790DE0005F39B /* Consignee */,
 				9035D05B1A0CC55100C6E53C /* Infrastructure */,
 				9035D0541A0CC45000C6E53C /* Model */,
 				9035D04F1A0CC31100C6E53C /* ConsigneeEdit */,
+				E51E228A1A1793940005F39B /* ConsigneeDefines.h */,
 			);
 			name = Consignee;
 			sourceTree = "<group>";
@@ -302,6 +316,43 @@
 				2DDB3FAE6F1F7518FFB3443A /* Pods-GKCommerceTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E51E227C1A1790DE0005F39B /* Consignee */ = {
+			isa = PBXGroup;
+			children = (
+				E51E22821A1791330005F39B /* TableViewCell */,
+				E51E227E1A1790F60005F39B /* Controller */,
+				E51E227D1A1790F10005F39B /* View */,
+			);
+			name = Consignee;
+			sourceTree = "<group>";
+		};
+		E51E227D1A1790F10005F39B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E51E22851A17916D0005F39B /* ConsigneeView.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E51E227E1A1790F60005F39B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E51E22871A17918A0005F39B /* ConsigneeController.h */,
+				E51E22881A17918A0005F39B /* ConsigneeController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E51E22821A1791330005F39B /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E51E22911A1795F70005F39B /* ConsigneeTableViewCell.h */,
+				E51E22921A1795F70005F39B /* ConsigneeTableViewCell.m */,
+				E51E22931A1795F70005F39B /* ConsigneeTableViewCell.xib */,
+			);
+			name = TableViewCell;
 			sourceTree = "<group>";
 		};
 		E566A0F81A1650FD008CF286 /* Protocol */ = {
@@ -399,9 +450,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9035D0641A0CC85000C6E53C /* ConsigneeEditInputTableViewCell.xib in Resources */,
+				E51E22951A1795F70005F39B /* ConsigneeTableViewCell.xib in Resources */,
 				9035D06B1A0CCF9600C6E53C /* ConsigneeEditView.xib in Resources */,
 				9035D0421A0CBF5900C6E53C /* AppView.xib in Resources */,
 				9035D0251A0CB3E100C6E53C /* LaunchScreen.xib in Resources */,
+				E51E22861A17916D0005F39B /* ConsigneeView.xib in Resources */,
 				9035D0221A0CB3E100C6E53C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +537,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9035D0411A0CBF5900C6E53C /* AppDelegate.m in Sources */,
+				E51E22941A1795F70005F39B /* ConsigneeTableViewCell.m in Sources */,
 				9035D01A1A0CB3E100C6E53C /* GKCommerce.xcdatamodeld in Sources */,
 				9006D6581A1541D000511D28 /* ConsigneeJSONAssembler.m in Sources */,
 				9035D05A1A0CC4A500C6E53C /* Area.m in Sources */,
@@ -492,6 +546,8 @@
 				9035D01D1A0CB3E100C6E53C /* ViewController.m in Sources */,
 				9035D05E1A0CC58100C6E53C /* ConsigneeBackend.m in Sources */,
 				9035D0681A0CCAF300C6E53C /* AreaPickerViewController.m in Sources */,
+				E51E228B1A1793940005F39B /* ConsigneeDefines.h in Sources */,
+				E51E22891A17918A0005F39B /* ConsigneeController.m in Sources */,
 				9035D0141A0CB3E100C6E53C /* main.m in Sources */,
 				9035D0571A0CC46B00C6E53C /* Consignee.m in Sources */,
 				9035D0631A0CC85000C6E53C /* ConsigneeEditInputTableViewCell.m in Sources */,

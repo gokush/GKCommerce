@@ -10,4 +10,18 @@
 
 @implementation Area
 
+- (NSString *)description
+{
+    NSMutableString *description;
+    if (self.parent)
+        description = [[NSMutableString alloc]
+                       initWithString:[self.parent description]];
+    else
+        description = [[NSMutableString alloc] init];
+
+    [description appendString:self.name];
+    
+    return description;
+}
+
 @end
