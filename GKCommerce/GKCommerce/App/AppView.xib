@@ -19,21 +19,16 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </tabBar>
             <viewControllers>
-                <navigationController id="GaH-zL-uii">
+                <navigationController nibName="" id="GaH-zL-uii">
                     <tabBarItem key="tabBarItem" title="我的" id="JWU-La-ZbT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7GH-jM-spd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <viewControllers>
-                        <tableViewController id="NbB-RN-Ncq" customClass="MineViewController">
-                            <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qCu-Nj-6Yk">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                            <navigationItem key="navigationItem" title="我的" id="8Aa-EO-Tfo"/>
-                        </tableViewController>
+                        <viewController nibName="MineDefaultView" id="qHI-EM-stk" customClass="MineDefaultViewController">
+                            <navigationItem key="navigationItem" title="我的" id="0bv-59-qSm"/>
+                        </viewController>
                     </viewControllers>
                 </navigationController>
             </viewControllers>

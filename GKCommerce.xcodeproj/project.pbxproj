@@ -14,12 +14,10 @@
 		9035D0141A0CB3E100C6E53C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9035D0131A0CB3E100C6E53C /* main.m */; };
 		9035D01A1A0CB3E100C6E53C /* GKCommerce.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9035D0181A0CB3E100C6E53C /* GKCommerce.xcdatamodeld */; };
 		9035D01D1A0CB3E100C6E53C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9035D01C1A0CB3E100C6E53C /* ViewController.m */; };
-		9035D0221A0CB3E100C6E53C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9035D0211A0CB3E100C6E53C /* Images.xcassets */; };
 		9035D0251A0CB3E100C6E53C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9035D0231A0CB3E100C6E53C /* LaunchScreen.xib */; };
 		9035D0311A0CB3E100C6E53C /* GKCommerceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9035D0301A0CB3E100C6E53C /* GKCommerceTests.m */; };
 		9035D0411A0CBF5900C6E53C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9035D03F1A0CBF5900C6E53C /* AppDelegate.m */; };
 		9035D0421A0CBF5900C6E53C /* AppView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9035D0401A0CBF5900C6E53C /* AppView.xib */; };
-		9035D04B1A0CC06A00C6E53C /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9035D04A1A0CC06A00C6E53C /* MineViewController.m */; };
 		9035D0531A0CC44400C6E53C /* ConsigneeEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9035D0521A0CC44400C6E53C /* ConsigneeEditController.m */; };
 		9035D0571A0CC46B00C6E53C /* Consignee.m in Sources */ = {isa = PBXBuildFile; fileRef = 9035D0561A0CC46B00C6E53C /* Consignee.m */; };
 		9035D05A1A0CC4A500C6E53C /* Area.m in Sources */ = {isa = PBXBuildFile; fileRef = 9035D0591A0CC4A500C6E53C /* Area.m */; };
@@ -38,6 +36,14 @@
 		E51E22A21A17A2930005F39B /* ConsigneeListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E51E22A01A17A2930005F39B /* ConsigneeListTableViewCell.m */; };
 		E51E22A31A17A2930005F39B /* ConsigneeListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E51E22A11A17A2930005F39B /* ConsigneeListTableViewCell.xib */; };
 		E51E22A61A17A3420005F39B /* ConsigneeListTableViewCellSelected.m in Sources */ = {isa = PBXBuildFile; fileRef = E51E22A51A17A3420005F39B /* ConsigneeListTableViewCellSelected.m */; };
+		E5C8061B1A1A081E00880B20 /* MineDefaultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C8061A1A1A081E00880B20 /* MineDefaultTableViewCell.xib */; };
+		E5C8061F1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C8061D1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.m */; };
+		E5C806201A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C8061E1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib */; };
+		E5C806241A1A467900880B20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C806231A1A467900880B20 /* Images.xcassets */; };
+		E5C806261A1A469700880B20 /* Mine.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C806251A1A469700880B20 /* Mine.xcassets */; };
+		E5E2D3A01A18AE9000338CF0 /* MineDefaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E2D3991A18AE9000338CF0 /* MineDefaultViewController.m */; };
+		E5E2D3A11A18AE9000338CF0 /* MineDefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E2D39C1A18AE9000338CF0 /* MineDefaultTableViewCell.m */; };
+		E5E2D3A31A18AE9000338CF0 /* MineDefaultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5E2D39F1A18AE9000338CF0 /* MineDefaultView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +69,6 @@
 		9035D0191A0CB3E100C6E53C /* GKCommerce.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GKCommerce.xcdatamodel; sourceTree = "<group>"; };
 		9035D01B1A0CB3E100C6E53C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9035D01C1A0CB3E100C6E53C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		9035D0211A0CB3E100C6E53C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9035D0241A0CB3E100C6E53C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9035D02A1A0CB3E100C6E53C /* GKCommerceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GKCommerceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9035D02F1A0CB3E100C6E53C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,8 +76,6 @@
 		9035D03E1A0CBF5900C6E53C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9035D03F1A0CBF5900C6E53C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9035D0401A0CBF5900C6E53C /* AppView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppView.xib; sourceTree = "<group>"; };
-		9035D0491A0CC06A00C6E53C /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineViewController.h; path = GKCommerce/Mine/Controller/MineViewController.h; sourceTree = "<group>"; };
-		9035D04A1A0CC06A00C6E53C /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineViewController.m; path = GKCommerce/Mine/Controller/MineViewController.m; sourceTree = "<group>"; };
 		9035D0511A0CC44400C6E53C /* ConsigneeEditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsigneeEditController.h; path = GKCommerce/Consignee/ConsigneeEdit/Controller/ConsigneeEditController.h; sourceTree = "<group>"; };
 		9035D0521A0CC44400C6E53C /* ConsigneeEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsigneeEditController.m; path = GKCommerce/Consignee/ConsigneeEdit/Controller/ConsigneeEditController.m; sourceTree = "<group>"; };
 		9035D0551A0CC46B00C6E53C /* Consignee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Consignee.h; path = GKCommerce/Consignee/Model/Consignee.h; sourceTree = "<group>"; };
@@ -107,6 +110,17 @@
 		E51E22A41A17A3420005F39B /* ConsigneeListTableViewCellSelected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsigneeListTableViewCellSelected.h; path = GKCommerce/Consignee/ConsigneeList/TableView/ConsigneeListTableViewCellSelected.h; sourceTree = "<group>"; };
 		E51E22A51A17A3420005F39B /* ConsigneeListTableViewCellSelected.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsigneeListTableViewCellSelected.m; path = GKCommerce/Consignee/ConsigneeList/TableView/ConsigneeListTableViewCellSelected.m; sourceTree = "<group>"; };
 		E566A0F91A1650FD008CF286 /* UIBindableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBindableTableViewCell.h; sourceTree = "<group>"; };
+		E5C8061A1A1A081E00880B20 /* MineDefaultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineDefaultTableViewCell.xib; sourceTree = "<group>"; };
+		E5C8061C1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineHeaderPhotoTableViewCell.h; sourceTree = "<group>"; };
+		E5C8061D1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineHeaderPhotoTableViewCell.m; sourceTree = "<group>"; };
+		E5C8061E1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineHeaderPhotoTableViewCell.xib; sourceTree = "<group>"; };
+		E5C806231A1A467900880B20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = GKCommerce/AssetCatalog/Images.xcassets; sourceTree = "<group>"; };
+		E5C806251A1A469700880B20 /* Mine.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Mine.xcassets; path = GKCommerce/AssetCatalog/Mine.xcassets; sourceTree = "<group>"; };
+		E5E2D3981A18AE9000338CF0 /* MineDefaultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineDefaultViewController.h; sourceTree = "<group>"; };
+		E5E2D3991A18AE9000338CF0 /* MineDefaultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineDefaultViewController.m; sourceTree = "<group>"; };
+		E5E2D39B1A18AE9000338CF0 /* MineDefaultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineDefaultTableViewCell.h; sourceTree = "<group>"; };
+		E5E2D39C1A18AE9000338CF0 /* MineDefaultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineDefaultTableViewCell.m; sourceTree = "<group>"; };
+		E5E2D39F1A18AE9000338CF0 /* MineDefaultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineDefaultView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +155,7 @@
 		9035D0051A0CB3E100C6E53C = {
 			isa = PBXGroup;
 			children = (
+				E5C806221A1A465E00880B20 /* AssetCatalog */,
 				9035D0101A0CB3E100C6E53C /* GKCommerce */,
 				9035D02D1A0CB3E100C6E53C /* GKCommerceTests */,
 				9035D00F1A0CB3E100C6E53C /* Products */,
@@ -167,7 +182,6 @@
 				9035D03D1A0CBF5900C6E53C /* App */,
 				9035D01B1A0CB3E100C6E53C /* ViewController.h */,
 				9035D01C1A0CB3E100C6E53C /* ViewController.m */,
-				9035D0211A0CB3E100C6E53C /* Images.xcassets */,
 				9035D0231A0CB3E100C6E53C /* LaunchScreen.xib */,
 				9035D0181A0CB3E100C6E53C /* GKCommerce.xcdatamodeld */,
 				9035D0111A0CB3E100C6E53C /* Supporting Files */,
@@ -215,26 +229,9 @@
 		9035D0431A0CC00C00C6E53C /* Mine */ = {
 			isa = PBXGroup;
 			children = (
-				9035D0481A0CC03E00C6E53C /* View */,
-				9035D0441A0CC01400C6E53C /* Controller */,
+				E5E2D3961A18AE9000338CF0 /* MineDefault */,
 			);
 			name = Mine;
-			sourceTree = "<group>";
-		};
-		9035D0441A0CC01400C6E53C /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				9035D0491A0CC06A00C6E53C /* MineViewController.h */,
-				9035D04A1A0CC06A00C6E53C /* MineViewController.m */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
-		9035D0481A0CC03E00C6E53C /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = View;
 			sourceTree = "<group>";
 		};
 		9035D04E1A0CC2D200C6E53C /* Consignee */ = {
@@ -417,6 +414,56 @@
 			path = GKCommerce/Protocol;
 			sourceTree = "<group>";
 		};
+		E5C806221A1A465E00880B20 /* AssetCatalog */ = {
+			isa = PBXGroup;
+			children = (
+				E5C806231A1A467900880B20 /* Images.xcassets */,
+				E5C806251A1A469700880B20 /* Mine.xcassets */,
+			);
+			name = AssetCatalog;
+			sourceTree = "<group>";
+		};
+		E5E2D3961A18AE9000338CF0 /* MineDefault */ = {
+			isa = PBXGroup;
+			children = (
+				E5E2D3971A18AE9000338CF0 /* Controller */,
+				E5E2D39A1A18AE9000338CF0 /* TableViewCell */,
+				E5E2D39D1A18AE9000338CF0 /* View */,
+			);
+			name = MineDefault;
+			path = GKCommerce/Mine/MineDefault;
+			sourceTree = "<group>";
+		};
+		E5E2D3971A18AE9000338CF0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E5E2D3981A18AE9000338CF0 /* MineDefaultViewController.h */,
+				E5E2D3991A18AE9000338CF0 /* MineDefaultViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E5E2D39A1A18AE9000338CF0 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E5E2D39B1A18AE9000338CF0 /* MineDefaultTableViewCell.h */,
+				E5E2D39C1A18AE9000338CF0 /* MineDefaultTableViewCell.m */,
+				E5C8061A1A1A081E00880B20 /* MineDefaultTableViewCell.xib */,
+				E5C8061C1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.h */,
+				E5C8061D1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.m */,
+				E5C8061E1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		E5E2D39D1A18AE9000338CF0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E5E2D39F1A18AE9000338CF0 /* MineDefaultView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -506,11 +553,15 @@
 				E51E22A31A17A2930005F39B /* ConsigneeListTableViewCell.xib in Resources */,
 				E51E22951A1795F70005F39B /* ConsigneeTableViewCell.xib in Resources */,
 				9035D06B1A0CCF9600C6E53C /* ConsigneeEditView.xib in Resources */,
+				E5C806201A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib in Resources */,
 				9035D0421A0CBF5900C6E53C /* AppView.xib in Resources */,
+				E5C8061B1A1A081E00880B20 /* MineDefaultTableViewCell.xib in Resources */,
+				E5C806261A1A469700880B20 /* Mine.xcassets in Resources */,
 				E51E229D1A17A2660005F39B /* ConsigneeListView.xib in Resources */,
+				E5E2D3A31A18AE9000338CF0 /* MineDefaultView.xib in Resources */,
+				E5C806241A1A467900880B20 /* Images.xcassets in Resources */,
 				9035D0251A0CB3E100C6E53C /* LaunchScreen.xib in Resources */,
 				E51E22861A17916D0005F39B /* ConsigneeView.xib in Resources */,
-				9035D0221A0CB3E100C6E53C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,16 +648,18 @@
 				9006D6581A1541D000511D28 /* ConsigneeJSONAssembler.m in Sources */,
 				9035D05A1A0CC4A500C6E53C /* Area.m in Sources */,
 				E51E229A1A17A2470005F39B /* ConsigneeListController.m in Sources */,
+				E5E2D3A01A18AE9000338CF0 /* MineDefaultViewController.m in Sources */,
 				9006D65B1A15424800511D28 /* AreaJSONAssembler.m in Sources */,
-				9035D04B1A0CC06A00C6E53C /* MineViewController.m in Sources */,
 				9035D01D1A0CB3E100C6E53C /* ViewController.m in Sources */,
 				E51E22A21A17A2930005F39B /* ConsigneeListTableViewCell.m in Sources */,
 				9035D05E1A0CC58100C6E53C /* ConsigneeBackend.m in Sources */,
 				E51E22A61A17A3420005F39B /* ConsigneeListTableViewCellSelected.m in Sources */,
 				9035D0681A0CCAF300C6E53C /* AreaPickerViewController.m in Sources */,
 				E51E228B1A1793940005F39B /* ConsigneeDefines.h in Sources */,
+				E5E2D3A11A18AE9000338CF0 /* MineDefaultTableViewCell.m in Sources */,
 				E51E22891A17918A0005F39B /* ConsigneeController.m in Sources */,
 				9035D0141A0CB3E100C6E53C /* main.m in Sources */,
+				E5C8061F1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.m in Sources */,
 				9035D0571A0CC46B00C6E53C /* Consignee.m in Sources */,
 				9035D0631A0CC85000C6E53C /* ConsigneeEditInputTableViewCell.m in Sources */,
 				9035D0531A0CC44400C6E53C /* ConsigneeEditController.m in Sources */,
