@@ -12,11 +12,13 @@
 
 - (void)awakeFromNib
 {
-    // Initialization code
+    self.buttonContainer.layer.cornerRadius = 5.0f;
+    self.buttonContainer.userInteractionEnabled = NO;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
+    
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state

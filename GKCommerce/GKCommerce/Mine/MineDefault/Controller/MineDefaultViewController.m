@@ -9,6 +9,7 @@
 #import "MineDefaultViewController.h"
 #import "MineDefaultTableViewCell.h"
 #import "MineHeaderPhotoTableViewCell.h"
+#import "UserAuthenticationViewController.h";
 #import "ConsigneeEditController.h"
 #import "ConsigneeController.h"
 #import "ConsigneeListController.h"
@@ -49,6 +50,9 @@ typedef enum {
 //    ConsigneeListController *controller;
 //    controller = [ConsigneeListController consigneeListControllerWithMock];
 //    [self.navigationController pushViewController:controller animated:YES];
+    UserAuthenticationViewController *controller;
+    controller = [[UserAuthenticationViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
     
     for (NSString *identifer in @[@"MineDefaultTableViewCell",
                                   @"MineHeaderPhotoTableViewCell"]) {
@@ -194,6 +198,19 @@ heightForHeaderInSection:(NSInteger)section
             break;
     }
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.section) {
+        case HeaderPhotoSection:
+            [tableView deselectRowAtIndexPath:indexPath animated:NO];
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (void)headerPhoto:(MineHeaderPhotoTableViewCell *)headerPhoto

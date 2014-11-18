@@ -29,6 +29,7 @@
                     <constraint firstAttribute="centerY" secondItem="tTl-tI-z71" secondAttribute="centerY" id="Ydb-VT-E0L"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="tintColor" red="0.015686274509803921" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="iconImageView" destination="Od7-qW-6SS" id="oG4-hI-EON"/>
                 <outlet property="titleLabel" destination="tTl-tI-z71" id="eNi-ZT-ZcD"/>

@@ -22,6 +22,7 @@
 @interface MineHeaderPhotoTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *headerPhotoImageView;
+@property (strong, nonatomic) IBOutlet UIView *buttonContainer;
 @property (strong, nonatomic) id<MineHeaderPhotoTableViewCellDelegate> delegate;
 - (IBAction)didTapSignup:(id)sender;
 - (IBAction)didTapAuthenticate:(id)sender;

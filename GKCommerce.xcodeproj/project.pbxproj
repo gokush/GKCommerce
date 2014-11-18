@@ -36,6 +36,10 @@
 		E51E22A21A17A2930005F39B /* ConsigneeListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E51E22A01A17A2930005F39B /* ConsigneeListTableViewCell.m */; };
 		E51E22A31A17A2930005F39B /* ConsigneeListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E51E22A11A17A2930005F39B /* ConsigneeListTableViewCell.xib */; };
 		E51E22A61A17A3420005F39B /* ConsigneeListTableViewCellSelected.m in Sources */ = {isa = PBXBuildFile; fileRef = E51E22A51A17A3420005F39B /* ConsigneeListTableViewCellSelected.m */; };
+		E549C18C1A1B8EED0014656D /* UserAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E549C18B1A1B8EED0014656D /* UserAuthenticationViewController.m */; };
+		E549C1941A1B8FBA0014656D /* UserAuthenticationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E549C1921A1B8FBA0014656D /* UserAuthenticationTableViewCell.m */; };
+		E549C1951A1B8FBA0014656D /* UserAuthenticationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E549C1931A1B8FBA0014656D /* UserAuthenticationTableViewCell.xib */; };
+		E549C1971A1B8FDA0014656D /* UserAuthenticationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E549C1961A1B8FDA0014656D /* UserAuthenticationView.xib */; };
 		E5C8061B1A1A081E00880B20 /* MineDefaultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C8061A1A1A081E00880B20 /* MineDefaultTableViewCell.xib */; };
 		E5C8061F1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C8061D1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.m */; };
 		E5C806201A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C8061E1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib */; };
@@ -109,6 +113,12 @@
 		E51E22A11A17A2930005F39B /* ConsigneeListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ConsigneeListTableViewCell.xib; path = GKCommerce/Consignee/ConsigneeList/TableView/ConsigneeListTableViewCell.xib; sourceTree = "<group>"; };
 		E51E22A41A17A3420005F39B /* ConsigneeListTableViewCellSelected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsigneeListTableViewCellSelected.h; path = GKCommerce/Consignee/ConsigneeList/TableView/ConsigneeListTableViewCellSelected.h; sourceTree = "<group>"; };
 		E51E22A51A17A3420005F39B /* ConsigneeListTableViewCellSelected.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsigneeListTableViewCellSelected.m; path = GKCommerce/Consignee/ConsigneeList/TableView/ConsigneeListTableViewCellSelected.m; sourceTree = "<group>"; };
+		E549C18A1A1B8EED0014656D /* UserAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserAuthenticationViewController.h; path = GKCommerce/User/UserAuthentication/Controller/UserAuthenticationViewController.h; sourceTree = "<group>"; };
+		E549C18B1A1B8EED0014656D /* UserAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserAuthenticationViewController.m; path = GKCommerce/User/UserAuthentication/Controller/UserAuthenticationViewController.m; sourceTree = "<group>"; };
+		E549C1911A1B8FBA0014656D /* UserAuthenticationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserAuthenticationTableViewCell.h; path = GKCommerce/User/UserAuthentication/TableVIewCell/UserAuthenticationTableViewCell.h; sourceTree = "<group>"; };
+		E549C1921A1B8FBA0014656D /* UserAuthenticationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserAuthenticationTableViewCell.m; path = GKCommerce/User/UserAuthentication/TableVIewCell/UserAuthenticationTableViewCell.m; sourceTree = "<group>"; };
+		E549C1931A1B8FBA0014656D /* UserAuthenticationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserAuthenticationTableViewCell.xib; path = GKCommerce/User/UserAuthentication/TableVIewCell/UserAuthenticationTableViewCell.xib; sourceTree = "<group>"; };
+		E549C1961A1B8FDA0014656D /* UserAuthenticationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserAuthenticationView.xib; path = GKCommerce/User/UserAuthentication/View/UserAuthenticationView.xib; sourceTree = "<group>"; };
 		E566A0F91A1650FD008CF286 /* UIBindableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBindableTableViewCell.h; sourceTree = "<group>"; };
 		E5C8061A1A1A081E00880B20 /* MineDefaultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineDefaultTableViewCell.xib; sourceTree = "<group>"; };
 		E5C8061C1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineHeaderPhotoTableViewCell.h; sourceTree = "<group>"; };
@@ -409,16 +419,46 @@
 		E549C1871A1B8E850014656D /* User */ = {
 			isa = PBXGroup;
 			children = (
-				E549C1881A1B8E8A0014656D /* Authentication */,
+				E549C1881A1B8E8A0014656D /* UserAuthentication */,
 			);
 			name = User;
 			sourceTree = "<group>";
 		};
-		E549C1881A1B8E8A0014656D /* Authentication */ = {
+		E549C1881A1B8E8A0014656D /* UserAuthentication */ = {
 			isa = PBXGroup;
 			children = (
+				E549C1901A1B8F8E0014656D /* TableViewCell */,
+				E549C18D1A1B8EF60014656D /* View */,
+				E549C1891A1B8EAB0014656D /* Controller */,
 			);
-			name = Authentication;
+			name = UserAuthentication;
+			sourceTree = "<group>";
+		};
+		E549C1891A1B8EAB0014656D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E549C18A1A1B8EED0014656D /* UserAuthenticationViewController.h */,
+				E549C18B1A1B8EED0014656D /* UserAuthenticationViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E549C18D1A1B8EF60014656D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E549C1961A1B8FDA0014656D /* UserAuthenticationView.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E549C1901A1B8F8E0014656D /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E549C1911A1B8FBA0014656D /* UserAuthenticationTableViewCell.h */,
+				E549C1921A1B8FBA0014656D /* UserAuthenticationTableViewCell.m */,
+				E549C1931A1B8FBA0014656D /* UserAuthenticationTableViewCell.xib */,
+			);
+			name = TableViewCell;
 			sourceTree = "<group>";
 		};
 		E566A0F81A1650FD008CF286 /* Protocol */ = {
@@ -565,6 +605,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E549C1951A1B8FBA0014656D /* UserAuthenticationTableViewCell.xib in Resources */,
 				9035D0641A0CC85000C6E53C /* ConsigneeEditInputTableViewCell.xib in Resources */,
 				E51E22A31A17A2930005F39B /* ConsigneeListTableViewCell.xib in Resources */,
 				E51E22951A1795F70005F39B /* ConsigneeTableViewCell.xib in Resources */,
@@ -574,6 +615,7 @@
 				E5C8061B1A1A081E00880B20 /* MineDefaultTableViewCell.xib in Resources */,
 				E5C806261A1A469700880B20 /* Mine.xcassets in Resources */,
 				E51E229D1A17A2660005F39B /* ConsigneeListView.xib in Resources */,
+				E549C1971A1B8FDA0014656D /* UserAuthenticationView.xib in Resources */,
 				E5E2D3A31A18AE9000338CF0 /* MineDefaultView.xib in Resources */,
 				E5C806241A1A467900880B20 /* Images.xcassets in Resources */,
 				9035D0251A0CB3E100C6E53C /* LaunchScreen.xib in Resources */,
@@ -664,11 +706,13 @@
 				9006D6581A1541D000511D28 /* ConsigneeJSONAssembler.m in Sources */,
 				9035D05A1A0CC4A500C6E53C /* Area.m in Sources */,
 				E51E229A1A17A2470005F39B /* ConsigneeListController.m in Sources */,
+				E549C1941A1B8FBA0014656D /* UserAuthenticationTableViewCell.m in Sources */,
 				E5E2D3A01A18AE9000338CF0 /* MineDefaultViewController.m in Sources */,
 				9006D65B1A15424800511D28 /* AreaJSONAssembler.m in Sources */,
 				9035D01D1A0CB3E100C6E53C /* ViewController.m in Sources */,
 				E51E22A21A17A2930005F39B /* ConsigneeListTableViewCell.m in Sources */,
 				9035D05E1A0CC58100C6E53C /* ConsigneeBackend.m in Sources */,
+				E549C18C1A1B8EED0014656D /* UserAuthenticationViewController.m in Sources */,
 				E51E22A61A17A3420005F39B /* ConsigneeListTableViewCellSelected.m in Sources */,
 				9035D0681A0CCAF300C6E53C /* AreaPickerViewController.m in Sources */,
 				E51E228B1A1793940005F39B /* ConsigneeDefines.h in Sources */,
