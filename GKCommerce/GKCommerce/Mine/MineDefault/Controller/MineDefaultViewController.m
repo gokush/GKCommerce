@@ -84,6 +84,21 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
     return height;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView
+heightForHeaderInSection:(NSInteger)section
+{
+    switch (section) {
+        case HeaderPhotoSection:
+            return 0.0f;
+            break;
+            
+        default:
+            break;
+    }
+    
+    return 20.0f;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 2;
@@ -137,6 +152,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
     MineHeaderPhotoTableViewCell *cell;
     cell = [self.tableView dequeueReusableCellWithIdentifier:cellName
                                            forIndexPath:indexPath];
+    cell.delegate = self;
     return cell;
 }
 
@@ -178,6 +194,18 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
             break;
     }
     return cell;
+}
+
+- (void)headerPhoto:(MineHeaderPhotoTableViewCell *)headerPhoto
+       didTapSignup:(id)signupButton
+{
+    
+}
+
+- (void)headerPhoto:(MineHeaderPhotoTableViewCell *)headerPhoto
+ didTapAuthenticate:(id)authenticateButton
+{
+    
 }
 
 /*

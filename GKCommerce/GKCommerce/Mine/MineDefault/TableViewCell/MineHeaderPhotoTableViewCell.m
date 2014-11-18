@@ -10,14 +10,30 @@
 
 @implementation MineHeaderPhotoTableViewCell
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     // Initialization code
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated
+{
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (IBAction)didTapSignup:(id)sender
+{
+    SEL selector = @selector(headerPhoto:didTapSignup:);
+    if ([self.delegate respondsToSelector:selector])
+        [self.delegate headerPhoto:self didTapSignup:sender];
+}
+
+- (IBAction)didTapAuthenticate:(id)sender
+{
+    SEL selector = @selector(headerPhoto:didTapAuthenticate:);
+    if ([self.delegate respondsToSelector:selector])
+        [self.delegate headerPhoto:self didTapAuthenticate:sender];
 }
 
 @end

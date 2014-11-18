@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MineHeaderPhotoTableViewCell.h"
 
 @interface MineDefaultViewController : UIViewController
-<UITableViewDataSource, UITableViewDelegate>
+<UITableViewDataSource, UITableViewDelegate,
+MineHeaderPhotoTableViewCellDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @end

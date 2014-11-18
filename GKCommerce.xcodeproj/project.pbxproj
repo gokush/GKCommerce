@@ -176,6 +176,7 @@
 		9035D0101A0CB3E100C6E53C /* GKCommerce */ = {
 			isa = PBXGroup;
 			children = (
+				E549C1871A1B8E850014656D /* User */,
 				E566A0F81A1650FD008CF286 /* Protocol */,
 				9035D04E1A0CC2D200C6E53C /* Consignee */,
 				9035D0431A0CC00C00C6E53C /* Mine */,
@@ -403,6 +404,21 @@
 				E51E22A51A17A3420005F39B /* ConsigneeListTableViewCellSelected.m */,
 			);
 			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		E549C1871A1B8E850014656D /* User */ = {
+			isa = PBXGroup;
+			children = (
+				E549C1881A1B8E8A0014656D /* Authentication */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		E549C1881A1B8E8A0014656D /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Authentication;
 			sourceTree = "<group>";
 		};
 		E566A0F81A1650FD008CF286 /* Protocol */ = {
