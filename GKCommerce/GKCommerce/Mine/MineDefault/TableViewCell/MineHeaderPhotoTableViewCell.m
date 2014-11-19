@@ -13,7 +13,6 @@
 - (void)awakeFromNib
 {
     self.buttonContainer.layer.cornerRadius = 5.0f;
-    self.buttonContainer.userInteractionEnabled = NO;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

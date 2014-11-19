@@ -55,7 +55,7 @@
 - (void)setSeparatorWithOption:(SeparatorOption *)option
 {
     static int directions[4] = { SeparatorDirectionTop, SeparatorDirectionRight,
-        SeparatorDirectionDown, SeparatorDirectionLeft };
+        SeparatorDirectionBottom, SeparatorDirectionLeft };
     
     CGRect rectangle;
     for (int i = 0; i < 4; i++) {

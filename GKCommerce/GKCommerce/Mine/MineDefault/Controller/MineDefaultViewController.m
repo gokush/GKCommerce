@@ -50,9 +50,6 @@ typedef enum {
 //    ConsigneeListController *controller;
 //    controller = [ConsigneeListController consigneeListControllerWithMock];
 //    [self.navigationController pushViewController:controller animated:YES];
-    UserAuthenticationViewController *controller;
-    controller = [[UserAuthenticationViewController alloc] init];
-    [self.navigationController pushViewController:controller animated:YES];
     
     for (NSString *identifer in @[@"MineDefaultTableViewCell",
                                   @"MineHeaderPhotoTableViewCell"]) {
@@ -222,7 +219,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)headerPhoto:(MineHeaderPhotoTableViewCell *)headerPhoto
  didTapAuthenticate:(id)authenticateButton
 {
-    
+    UserAuthenticationViewController *controller;
+    controller = [[UserAuthenticationViewController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 /*
