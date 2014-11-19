@@ -95,6 +95,7 @@ heightForHeaderInSection:(NSInteger)section
         default:
             break;
     }
+    [tableView tableViewCell:cell setSeparatorForRowAtIndexPath:indexPath];
     return cell;
 }
 

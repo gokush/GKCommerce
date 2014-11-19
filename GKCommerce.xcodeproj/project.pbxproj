@@ -13,7 +13,6 @@
 		9006D65B1A15424800511D28 /* AreaJSONAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9006D65A1A15424800511D28 /* AreaJSONAssembler.m */; };
 		9035D0141A0CB3E100C6E53C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9035D0131A0CB3E100C6E53C /* main.m */; };
 		9035D01A1A0CB3E100C6E53C /* GKCommerce.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9035D0181A0CB3E100C6E53C /* GKCommerce.xcdatamodeld */; };
-		9035D01D1A0CB3E100C6E53C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9035D01C1A0CB3E100C6E53C /* ViewController.m */; };
 		9035D0251A0CB3E100C6E53C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9035D0231A0CB3E100C6E53C /* LaunchScreen.xib */; };
 		9035D0311A0CB3E100C6E53C /* GKCommerceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9035D0301A0CB3E100C6E53C /* GKCommerceTests.m */; };
 		9035D0411A0CBF5900C6E53C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9035D03F1A0CBF5900C6E53C /* AppDelegate.m */; };
@@ -28,7 +27,6 @@
 		9035D06B1A0CCF9600C6E53C /* ConsigneeEditView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9035D06A1A0CCF9600C6E53C /* ConsigneeEditView.xib */; };
 		E51E22861A17916D0005F39B /* ConsigneeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E51E22851A17916D0005F39B /* ConsigneeView.xib */; };
 		E51E22891A17918A0005F39B /* ConsigneeController.m in Sources */ = {isa = PBXBuildFile; fileRef = E51E22881A17918A0005F39B /* ConsigneeController.m */; };
-		E51E228B1A1793940005F39B /* ConsigneeDefines.h in Sources */ = {isa = PBXBuildFile; fileRef = E51E228A1A1793940005F39B /* ConsigneeDefines.h */; };
 		E51E22941A1795F70005F39B /* ConsigneeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E51E22921A1795F70005F39B /* ConsigneeTableViewCell.m */; };
 		E51E22951A1795F70005F39B /* ConsigneeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E51E22931A1795F70005F39B /* ConsigneeTableViewCell.xib */; };
 		E51E229A1A17A2470005F39B /* ConsigneeListController.m in Sources */ = {isa = PBXBuildFile; fileRef = E51E22991A17A2470005F39B /* ConsigneeListController.m */; };
@@ -48,6 +46,9 @@
 		E5E2D3A01A18AE9000338CF0 /* MineDefaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E2D3991A18AE9000338CF0 /* MineDefaultViewController.m */; };
 		E5E2D3A11A18AE9000338CF0 /* MineDefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E2D39C1A18AE9000338CF0 /* MineDefaultTableViewCell.m */; };
 		E5E2D3A31A18AE9000338CF0 /* MineDefaultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5E2D39F1A18AE9000338CF0 /* MineDefaultView.xib */; };
+		E5F196B41A1CBBF900B97AE3 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F196B31A1CBBF900B97AE3 /* UIView+Extension.m */; };
+		E5F196B81A1CC04D00B97AE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F196B71A1CC04D00B97AE3 /* ViewController.m */; };
+		E5F196BE1A1CC31D00B97AE3 /* UITableView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F196BD1A1CC31D00B97AE3 /* UITableView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +72,6 @@
 		9035D0121A0CB3E100C6E53C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9035D0131A0CB3E100C6E53C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9035D0191A0CB3E100C6E53C /* GKCommerce.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GKCommerce.xcdatamodel; sourceTree = "<group>"; };
-		9035D01B1A0CB3E100C6E53C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9035D01C1A0CB3E100C6E53C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9035D0241A0CB3E100C6E53C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9035D02A1A0CB3E100C6E53C /* GKCommerceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GKCommerceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9035D02F1A0CB3E100C6E53C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -131,6 +130,14 @@
 		E5E2D39B1A18AE9000338CF0 /* MineDefaultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineDefaultTableViewCell.h; sourceTree = "<group>"; };
 		E5E2D39C1A18AE9000338CF0 /* MineDefaultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineDefaultTableViewCell.m; sourceTree = "<group>"; };
 		E5E2D39F1A18AE9000338CF0 /* MineDefaultView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineDefaultView.xib; sourceTree = "<group>"; };
+		E5F196B01A1CBBAB00B97AE3 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Extension.h"; path = "GKCommerce/Utility/UIView+Extension.h"; sourceTree = "<group>"; };
+		E5F196B31A1CBBF900B97AE3 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Extension.m"; path = "GKCommerce/Utility/UIView+Extension.m"; sourceTree = "<group>"; };
+		E5F196B51A1CBCE900B97AE3 /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Utility.h; path = GKCommerce/Utility/Utility.h; sourceTree = "<group>"; };
+		E5F196B61A1CC04D00B97AE3 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E5F196B71A1CC04D00B97AE3 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E5F196B91A1CC06A00B97AE3 /* GKCommerce-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GKCommerce-Prefix.pch"; sourceTree = "<group>"; };
+		E5F196BA1A1CC0DA00B97AE3 /* UITableView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITableView+Extension.h"; path = "GKCommerce/Utility/UITableView+Extension.h"; sourceTree = "<group>"; };
+		E5F196BD1A1CC31D00B97AE3 /* UITableView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+Extension.m"; path = "GKCommerce/Utility/UITableView+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,16 +193,16 @@
 		9035D0101A0CB3E100C6E53C /* GKCommerce */ = {
 			isa = PBXGroup;
 			children = (
+				E5F196AF1A1CBB7C00B97AE3 /* Utility */,
 				E549C1871A1B8E850014656D /* User */,
 				E566A0F81A1650FD008CF286 /* Protocol */,
 				9035D04E1A0CC2D200C6E53C /* Consignee */,
 				9035D0431A0CC00C00C6E53C /* Mine */,
 				9035D03D1A0CBF5900C6E53C /* App */,
-				9035D01B1A0CB3E100C6E53C /* ViewController.h */,
-				9035D01C1A0CB3E100C6E53C /* ViewController.m */,
 				9035D0231A0CB3E100C6E53C /* LaunchScreen.xib */,
 				9035D0181A0CB3E100C6E53C /* GKCommerce.xcdatamodeld */,
 				9035D0111A0CB3E100C6E53C /* Supporting Files */,
+				E5F196B91A1CC06A00B97AE3 /* GKCommerce-Prefix.pch */,
 			);
 			path = GKCommerce;
 			sourceTree = "<group>";
@@ -229,6 +236,8 @@
 		9035D03D1A0CBF5900C6E53C /* App */ = {
 			isa = PBXGroup;
 			children = (
+				E5F196B61A1CC04D00B97AE3 /* ViewController.h */,
+				E5F196B71A1CC04D00B97AE3 /* ViewController.m */,
 				9035D03E1A0CBF5900C6E53C /* AppDelegate.h */,
 				9035D03F1A0CBF5900C6E53C /* AppDelegate.m */,
 				9035D0401A0CBF5900C6E53C /* AppView.xib */,
@@ -520,6 +529,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		E5F196AF1A1CBB7C00B97AE3 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				E5F196B01A1CBBAB00B97AE3 /* UIView+Extension.h */,
+				E5F196B31A1CBBF900B97AE3 /* UIView+Extension.m */,
+				E5F196B51A1CBCE900B97AE3 /* Utility.h */,
+				E5F196BA1A1CC0DA00B97AE3 /* UITableView+Extension.h */,
+				E5F196BD1A1CC31D00B97AE3 /* UITableView+Extension.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -706,18 +727,19 @@
 				9006D6581A1541D000511D28 /* ConsigneeJSONAssembler.m in Sources */,
 				9035D05A1A0CC4A500C6E53C /* Area.m in Sources */,
 				E51E229A1A17A2470005F39B /* ConsigneeListController.m in Sources */,
+				E5F196B41A1CBBF900B97AE3 /* UIView+Extension.m in Sources */,
 				E549C1941A1B8FBA0014656D /* UserAuthenticationTableViewCell.m in Sources */,
 				E5E2D3A01A18AE9000338CF0 /* MineDefaultViewController.m in Sources */,
 				9006D65B1A15424800511D28 /* AreaJSONAssembler.m in Sources */,
-				9035D01D1A0CB3E100C6E53C /* ViewController.m in Sources */,
 				E51E22A21A17A2930005F39B /* ConsigneeListTableViewCell.m in Sources */,
+				E5F196BE1A1CC31D00B97AE3 /* UITableView+Extension.m in Sources */,
 				9035D05E1A0CC58100C6E53C /* ConsigneeBackend.m in Sources */,
 				E549C18C1A1B8EED0014656D /* UserAuthenticationViewController.m in Sources */,
 				E51E22A61A17A3420005F39B /* ConsigneeListTableViewCellSelected.m in Sources */,
 				9035D0681A0CCAF300C6E53C /* AreaPickerViewController.m in Sources */,
-				E51E228B1A1793940005F39B /* ConsigneeDefines.h in Sources */,
 				E5E2D3A11A18AE9000338CF0 /* MineDefaultTableViewCell.m in Sources */,
 				E51E22891A17918A0005F39B /* ConsigneeController.m in Sources */,
+				E5F196B81A1CC04D00B97AE3 /* ViewController.m in Sources */,
 				9035D0141A0CB3E100C6E53C /* main.m in Sources */,
 				E5C8061F1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.m in Sources */,
 				9035D0571A0CC46B00C6E53C /* Consignee.m in Sources */,
@@ -840,6 +862,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREFIX_HEADER = "GKCommerce/GKCommerce-Prefix.pch";
 				INFOPLIST_FILE = GKCommerce/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -856,6 +879,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREFIX_HEADER = "GKCommerce/GKCommerce-Prefix.pch";
 				INFOPLIST_FILE = GKCommerce/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
