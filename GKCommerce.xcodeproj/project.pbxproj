@@ -48,6 +48,9 @@
 		E5D9D53F1A1E287700875264 /* ECUserBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D53E1A1E287700875264 /* ECUserBackend.m */; };
 		E5D9D5421A1E28E400875264 /* ECUserBackendAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5411A1E28E400875264 /* ECUserBackendAssembler.m */; };
 		E5D9D5461A1E2A8300875264 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5451A1E2A8300875264 /* User.m */; };
+		E5D9D54A1A1E393100875264 /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5491A1E393100875264 /* UserService.m */; };
+		E5D9D54D1A1E3A6100875264 /* UserRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D54C1A1E3A6100875264 /* UserRepository.m */; };
+		E5D9D5511A1E3AD900875264 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5501A1E3AD900875264 /* App.m */; };
 		E5E2D3A01A18AE9000338CF0 /* MineDefaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E2D3991A18AE9000338CF0 /* MineDefaultViewController.m */; };
 		E5E2D3A11A18AE9000338CF0 /* MineDefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E2D39C1A18AE9000338CF0 /* MineDefaultTableViewCell.m */; };
 		E5E2D3A31A18AE9000338CF0 /* MineDefaultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5E2D39F1A18AE9000338CF0 /* MineDefaultView.xib */; };
@@ -141,6 +144,13 @@
 		E5D9D5441A1E2A8300875264 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = GKCommerce/User/Model/User.h; sourceTree = "<group>"; };
 		E5D9D5451A1E2A8300875264 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = GKCommerce/User/Model/User.m; sourceTree = "<group>"; };
 		E5D9D5471A1E2B2A00875264 /* UserBackendDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserBackendDelegate.h; path = GKCommerce/User/Backend/UserBackendDelegate.h; sourceTree = "<group>"; };
+		E5D9D5481A1E393100875264 /* UserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserService.h; path = GKCommerce/User/UserService.h; sourceTree = "<group>"; };
+		E5D9D5491A1E393100875264 /* UserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserService.m; path = GKCommerce/User/UserService.m; sourceTree = "<group>"; };
+		E5D9D54B1A1E3A6100875264 /* UserRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserRepository.h; path = GKCommerce/User/UserRepository.h; sourceTree = "<group>"; };
+		E5D9D54C1A1E3A6100875264 /* UserRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserRepository.m; path = GKCommerce/User/UserRepository.m; sourceTree = "<group>"; };
+		E5D9D54F1A1E3AD900875264 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = App.h; path = Model/App.h; sourceTree = "<group>"; };
+		E5D9D5501A1E3AD900875264 /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = App.m; path = Model/App.m; sourceTree = "<group>"; };
+		E5D9D5521A1E3B5A00875264 /* UserServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserServiceDelegate.h; path = GKCommerce/User/UserServiceDelegate.h; sourceTree = "<group>"; };
 		E5E2D3981A18AE9000338CF0 /* MineDefaultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineDefaultViewController.h; sourceTree = "<group>"; };
 		E5E2D3991A18AE9000338CF0 /* MineDefaultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineDefaultViewController.m; sourceTree = "<group>"; };
 		E5E2D39B1A18AE9000338CF0 /* MineDefaultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineDefaultTableViewCell.h; sourceTree = "<group>"; };
@@ -252,11 +262,14 @@
 		9035D03D1A0CBF5900C6E53C /* App */ = {
 			isa = PBXGroup;
 			children = (
+				E5D9D54E1A1E3ACB00875264 /* Model */,
 				E5F196B61A1CC04D00B97AE3 /* ViewController.h */,
 				E5F196B71A1CC04D00B97AE3 /* ViewController.m */,
 				9035D03E1A0CBF5900C6E53C /* AppDelegate.h */,
 				9035D03F1A0CBF5900C6E53C /* AppDelegate.m */,
 				9035D0401A0CBF5900C6E53C /* AppView.xib */,
+				E5D9D54F1A1E3AD900875264 /* App.h */,
+				E5D9D5501A1E3AD900875264 /* App.m */,
 			);
 			name = App;
 			path = GKCommerce/App;
@@ -447,6 +460,11 @@
 				E5D9D5431A1E2A6B00875264 /* Model */,
 				E5D9D5351A1E26B700875264 /* Backend */,
 				E549C1881A1B8E8A0014656D /* UserAuthentication */,
+				E5D9D5481A1E393100875264 /* UserService.h */,
+				E5D9D5491A1E393100875264 /* UserService.m */,
+				E5D9D5521A1E3B5A00875264 /* UserServiceDelegate.h */,
+				E5D9D54B1A1E3A6100875264 /* UserRepository.h */,
+				E5D9D54C1A1E3A6100875264 /* UserRepository.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -535,6 +553,13 @@
 			children = (
 				E5D9D5441A1E2A8300875264 /* User.h */,
 				E5D9D5451A1E2A8300875264 /* User.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E5D9D54E1A1E3ACB00875264 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -773,6 +798,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9035D0411A0CBF5900C6E53C /* AppDelegate.m in Sources */,
+				E5D9D5511A1E3AD900875264 /* App.m in Sources */,
 				E51E22941A1795F70005F39B /* ConsigneeTableViewCell.m in Sources */,
 				9035D01A1A0CB3E100C6E53C /* GKCommerce.xcdatamodeld in Sources */,
 				9006D6581A1541D000511D28 /* ConsigneeJSONAssembler.m in Sources */,
@@ -782,6 +808,7 @@
 				E5F196B41A1CBBF900B97AE3 /* UIView+Extension.m in Sources */,
 				E549C1941A1B8FBA0014656D /* UserAuthenticationTableViewCell.m in Sources */,
 				E5E2D3A01A18AE9000338CF0 /* MineDefaultViewController.m in Sources */,
+				E5D9D54D1A1E3A6100875264 /* UserRepository.m in Sources */,
 				9006D65B1A15424800511D28 /* AreaJSONAssembler.m in Sources */,
 				E5D9D53C1A1E27D900875264 /* UserAuthenticationModel.m in Sources */,
 				E5D9D5421A1E28E400875264 /* ECUserBackendAssembler.m in Sources */,
@@ -800,6 +827,7 @@
 				E5C8061F1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.m in Sources */,
 				9035D0571A0CC46B00C6E53C /* Consignee.m in Sources */,
 				9035D0631A0CC85000C6E53C /* ConsigneeEditInputTableViewCell.m in Sources */,
+				E5D9D54A1A1E393100875264 /* UserService.m in Sources */,
 				9035D0531A0CC44400C6E53C /* ConsigneeEditController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
