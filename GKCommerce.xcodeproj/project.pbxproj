@@ -43,6 +43,11 @@
 		E5C806201A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C8061E1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib */; };
 		E5C806241A1A467900880B20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C806231A1A467900880B20 /* Images.xcassets */; };
 		E5C806261A1A469700880B20 /* Mine.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C806251A1A469700880B20 /* Mine.xcassets */; };
+		E5D9D5381A1E26EA00875264 /* UserBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5371A1E26EA00875264 /* UserBackend.m */; };
+		E5D9D53C1A1E27D900875264 /* UserAuthenticationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D53B1A1E27D900875264 /* UserAuthenticationModel.m */; };
+		E5D9D53F1A1E287700875264 /* ECUserBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D53E1A1E287700875264 /* ECUserBackend.m */; };
+		E5D9D5421A1E28E400875264 /* ECUserBackendAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5411A1E28E400875264 /* ECUserBackendAssembler.m */; };
+		E5D9D5461A1E2A8300875264 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5451A1E2A8300875264 /* User.m */; };
 		E5E2D3A01A18AE9000338CF0 /* MineDefaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E2D3991A18AE9000338CF0 /* MineDefaultViewController.m */; };
 		E5E2D3A11A18AE9000338CF0 /* MineDefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E2D39C1A18AE9000338CF0 /* MineDefaultTableViewCell.m */; };
 		E5E2D3A31A18AE9000338CF0 /* MineDefaultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5E2D39F1A18AE9000338CF0 /* MineDefaultView.xib */; };
@@ -125,6 +130,17 @@
 		E5C8061E1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineHeaderPhotoTableViewCell.xib; sourceTree = "<group>"; };
 		E5C806231A1A467900880B20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = GKCommerce/AssetCatalog/Images.xcassets; sourceTree = "<group>"; };
 		E5C806251A1A469700880B20 /* Mine.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Mine.xcassets; path = GKCommerce/AssetCatalog/Mine.xcassets; sourceTree = "<group>"; };
+		E5D9D5361A1E26EA00875264 /* UserBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserBackend.h; path = GKCommerce/User/Backend/UserBackend.h; sourceTree = "<group>"; };
+		E5D9D5371A1E26EA00875264 /* UserBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserBackend.m; path = GKCommerce/User/Backend/UserBackend.m; sourceTree = "<group>"; };
+		E5D9D53A1A1E27D900875264 /* UserAuthenticationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserAuthenticationModel.h; path = GKCommerce/User/Backend/Model/UserAuthenticationModel.h; sourceTree = "<group>"; };
+		E5D9D53B1A1E27D900875264 /* UserAuthenticationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserAuthenticationModel.m; path = GKCommerce/User/Backend/Model/UserAuthenticationModel.m; sourceTree = "<group>"; };
+		E5D9D53D1A1E287700875264 /* ECUserBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECUserBackend.h; path = GKCommerce/User/Backend/ECUserBackend.h; sourceTree = "<group>"; };
+		E5D9D53E1A1E287700875264 /* ECUserBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECUserBackend.m; path = GKCommerce/User/Backend/ECUserBackend.m; sourceTree = "<group>"; };
+		E5D9D5401A1E28E400875264 /* ECUserBackendAssembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECUserBackendAssembler.h; path = GKCommerce/User/Backend/ECUserBackendAssembler.h; sourceTree = "<group>"; };
+		E5D9D5411A1E28E400875264 /* ECUserBackendAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECUserBackendAssembler.m; path = GKCommerce/User/Backend/ECUserBackendAssembler.m; sourceTree = "<group>"; };
+		E5D9D5441A1E2A8300875264 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = GKCommerce/User/Model/User.h; sourceTree = "<group>"; };
+		E5D9D5451A1E2A8300875264 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = GKCommerce/User/Model/User.m; sourceTree = "<group>"; };
+		E5D9D5471A1E2B2A00875264 /* UserBackendDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserBackendDelegate.h; path = GKCommerce/User/Backend/UserBackendDelegate.h; sourceTree = "<group>"; };
 		E5E2D3981A18AE9000338CF0 /* MineDefaultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineDefaultViewController.h; sourceTree = "<group>"; };
 		E5E2D3991A18AE9000338CF0 /* MineDefaultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineDefaultViewController.m; sourceTree = "<group>"; };
 		E5E2D39B1A18AE9000338CF0 /* MineDefaultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineDefaultTableViewCell.h; sourceTree = "<group>"; };
@@ -428,6 +444,8 @@
 		E549C1871A1B8E850014656D /* User */ = {
 			isa = PBXGroup;
 			children = (
+				E5D9D5431A1E2A6B00875264 /* Model */,
+				E5D9D5351A1E26B700875264 /* Backend */,
 				E549C1881A1B8E8A0014656D /* UserAuthentication */,
 			);
 			name = User;
@@ -486,6 +504,39 @@
 				E5C806251A1A469700880B20 /* Mine.xcassets */,
 			);
 			name = AssetCatalog;
+			sourceTree = "<group>";
+		};
+		E5D9D5351A1E26B700875264 /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				E5D9D5391A1E27B300875264 /* Model */,
+				E5D9D5361A1E26EA00875264 /* UserBackend.h */,
+				E5D9D5371A1E26EA00875264 /* UserBackend.m */,
+				E5D9D53D1A1E287700875264 /* ECUserBackend.h */,
+				E5D9D53E1A1E287700875264 /* ECUserBackend.m */,
+				E5D9D5401A1E28E400875264 /* ECUserBackendAssembler.h */,
+				E5D9D5411A1E28E400875264 /* ECUserBackendAssembler.m */,
+				E5D9D5471A1E2B2A00875264 /* UserBackendDelegate.h */,
+			);
+			name = Backend;
+			sourceTree = "<group>";
+		};
+		E5D9D5391A1E27B300875264 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E5D9D53A1A1E27D900875264 /* UserAuthenticationModel.h */,
+				E5D9D53B1A1E27D900875264 /* UserAuthenticationModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E5D9D5431A1E2A6B00875264 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E5D9D5441A1E2A8300875264 /* User.h */,
+				E5D9D5451A1E2A8300875264 /* User.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		E5E2D3961A18AE9000338CF0 /* MineDefault */ = {
@@ -726,11 +777,14 @@
 				9035D01A1A0CB3E100C6E53C /* GKCommerce.xcdatamodeld in Sources */,
 				9006D6581A1541D000511D28 /* ConsigneeJSONAssembler.m in Sources */,
 				9035D05A1A0CC4A500C6E53C /* Area.m in Sources */,
+				E5D9D53F1A1E287700875264 /* ECUserBackend.m in Sources */,
 				E51E229A1A17A2470005F39B /* ConsigneeListController.m in Sources */,
 				E5F196B41A1CBBF900B97AE3 /* UIView+Extension.m in Sources */,
 				E549C1941A1B8FBA0014656D /* UserAuthenticationTableViewCell.m in Sources */,
 				E5E2D3A01A18AE9000338CF0 /* MineDefaultViewController.m in Sources */,
 				9006D65B1A15424800511D28 /* AreaJSONAssembler.m in Sources */,
+				E5D9D53C1A1E27D900875264 /* UserAuthenticationModel.m in Sources */,
+				E5D9D5421A1E28E400875264 /* ECUserBackendAssembler.m in Sources */,
 				E51E22A21A17A2930005F39B /* ConsigneeListTableViewCell.m in Sources */,
 				E5F196BE1A1CC31D00B97AE3 /* UITableView+Extension.m in Sources */,
 				9035D05E1A0CC58100C6E53C /* ConsigneeBackend.m in Sources */,
@@ -739,8 +793,10 @@
 				9035D0681A0CCAF300C6E53C /* AreaPickerViewController.m in Sources */,
 				E5E2D3A11A18AE9000338CF0 /* MineDefaultTableViewCell.m in Sources */,
 				E51E22891A17918A0005F39B /* ConsigneeController.m in Sources */,
+				E5D9D5381A1E26EA00875264 /* UserBackend.m in Sources */,
 				E5F196B81A1CC04D00B97AE3 /* ViewController.m in Sources */,
 				9035D0141A0CB3E100C6E53C /* main.m in Sources */,
+				E5D9D5461A1E2A8300875264 /* User.m in Sources */,
 				E5C8061F1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.m in Sources */,
 				9035D0571A0CC46B00C6E53C /* Consignee.m in Sources */,
 				9035D0631A0CC85000C6E53C /* ConsigneeEditInputTableViewCell.m in Sources */,
