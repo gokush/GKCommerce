@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ECUserBackend.h"
 
 @interface AppDelegate ()
 
@@ -15,13 +16,29 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application
+didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     [[NSBundle mainBundle] loadNibNamed:@"AppView" owner:self options:nil];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
+    
+    ECUserBackend *backend = [ECUserBackend shared];
+    backend.host = @"http://192.168.4.111/ECMobile/index.php?url=";
+    backend.delegate = self;
+    UserAuthenticationModel *authentication;
+    authentication = [[UserAuthenticationModel alloc]
+                      initWithUsername:@"gokucommerce" password:@"123123123"];
+    [backend requestAuthenticate:authentication];
     return YES;
+}
+
+- (void)userBackend:(UserBackend *)anUserBackend
+didCompleteAuthenticate:(User *)anUser error:(NSError *)anError
+{
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
