@@ -14,4 +14,6 @@
 @property (strong, nonatomic) NSString *password;
 
 - (id)initWithUsername:(NSString *)username password:(NSString *)aPassword;
+
+- (NSError *)valid;
 @end

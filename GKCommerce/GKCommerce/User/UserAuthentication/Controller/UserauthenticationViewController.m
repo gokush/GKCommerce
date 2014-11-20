@@ -7,6 +7,7 @@
 //
 
 #import "UserAuthenticationViewController.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 typedef enum {
     InputSectionUsernameCell,
@@ -31,6 +32,11 @@ typedef enum {
 - (id)init
 {
     self = [self initWithNibName:@"UserAuthenticationView" bundle:nil];
+    if (self) {
+        self.service = [UserService shared];
+        self.service.delegate = self;
+        self.user = [[UserAuthenticationModel alloc] init];
+    }
     return self;
 }
 
@@ -45,7 +51,8 @@ typedef enum {
     }
     
     self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
-    self.tableView.backgroundColor = [UIColor colorWithRed:0.96f green:0.96f blue:0.96f alpha:1.0f];
+    self.tableView.backgroundColor = [UIColor colorWithRed:0.96f green:0.96f
+                                                      blue:0.96f alpha:1.0f];
 }
 
 - (void)didReceiveMemoryWarning
@@ -119,6 +126,10 @@ heightForHeaderInSection:(NSInteger)section
         default:
             break;
     }
+    [cell.inputTextField addTarget:self
+                            action:@selector(textFieldDidChange:)
+                  forControlEvents:UIControlEventEditingChanged];
+    cell.inputTextField.tag = indexPath.row;
     
     return cell;
 }
@@ -139,6 +150,58 @@ heightForHeaderInSection:(NSInteger)section
     }
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.section) {
+        case ConfirmUserAuthenticationSection: {
+            NSError *error = [self.user valid];
+            if (nil == error) {
+                [self.service authenticate:self.user];
+                break;
+            }
+            
+            MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view];
+            hud.labelText = [error localizedDescription];
+            hud.mode = MBProgressHUDModeCustomView;
+            [self.view addSubview:hud];
+            [hud show:YES];
+            [hud hide:YES afterDelay:2];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+- (void)textFieldDidChange:(id)sender
+{
+    UITextField *textField = (UITextField *)sender;
+    switch (textField.tag) {
+        case InputSectionUsernameCell:
+            self.user.username = textField.text;
+            break;
+        case InputSectionPasswordCell:
+            self.user.password = textField.text;
+        default:
+            break;
+    }
+}
+
+- (void)userService:(UserService *)anUserService didAuthencate:(User *)user
+              error:(NSError *)anError
+{
+    
+    MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view];
+    hud.labelText = @"成功登录";
+    hud.mode = MBProgressHUDModeCustomView;
+    [self.view addSubview:hud];
+    [hud show:YES];
+    [hud hide:YES afterDelay:2];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 /*
