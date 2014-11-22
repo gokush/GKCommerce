@@ -1,13 +1,13 @@
 //
-//  GKButton.m
+//  ProductRepository.h
 //  GKCommerce
 //
 //  Created by 小悟空 on 11/21/14.
 //  Copyright (c) 2014 GKCommerce. All rights reserved.
 //
 
-#import "GKButton.h"
+#import <Foundation/Foundation.h>
 
-@implementation GKButton
+@interface ProductRepository : NSObject
 
 @end

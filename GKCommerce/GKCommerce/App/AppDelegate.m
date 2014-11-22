@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Config.h"
 #import "UserService.h"
 #import "UserBackend.h"
 
@@ -20,14 +21,14 @@
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    Config *config = [Config shared];
+    config.backendURL = @"http://192.168.4.111/ECMobile/index.php?url=";
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     [[NSBundle mainBundle] loadNibNamed:@"AppView" owner:self options:nil];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
-    
-    ECUserBackend *backend = [ECUserBackend shared];
-    backend.host = @"http://192.168.4.111/ECMobile/index.php?url=";
 
     UserAuthenticationModel *authentication;
     authentication = [[UserAuthenticationModel alloc]
