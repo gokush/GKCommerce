@@ -133,6 +133,37 @@
 
 - (void)requestRemoveItem:(CartItem *)item
 {
+    NSString *userID, *itemID;
+    NSDictionary *parameters;
     
+    userID = [NSString stringWithFormat:@"%d", item.cart.user.userID];
+    itemID = [NSString stringWithFormat:@"%d", item.itemID];
+    parameters = @{ @"session[uid]": userID,
+                    @"session[sid]": item.cart.user.sessionID,
+                    @"rec_id": itemID };
+    [self.manager
+     POST:[NSString stringWithFormat:@"%@/cart/delete", self.config.backendURL]
+     parameters:parameters
+     success:^(AFHTTPRequestOperation *operation, id responseObject) {
+         [self requestRemoveItem:item didResponse:responseObject error:nil];
+     }
+     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         [self requestRemoveItem:item didResponse:nil error:error];
+     }];
+}
+
+- (void)requestRemoveItem:(CartItem *)item didResponse:(id)responseObject
+                    error:(NSError *)anError
+{
+    NSError *error;
+    if (nil == anError)
+        error = [self.assembler error:responseObject];
+    
+    [self.assembler updateCart:item.cart
+                         total:[responseObject objectForKey:@"data"]];
+    
+    SEL selector = @selector(cartBackend:didRemoveItem:error:);
+    if ([self.delegate respondsToSelector:selector])
+        [self.delegate cartBackend:self didRemoveItem:item error:error];
 }
 @end

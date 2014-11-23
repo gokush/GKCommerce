@@ -47,12 +47,13 @@
 
 - (void)removeItem:(CartItem *)item
 {
-    
+    [self.backend requestRemoveItem:item];
 }
 
 - (void)removeItems:(NSArray *)items
 {
-    
+    for (CartItem *item in items)
+        [self removeItem:item];
 }
 
 #pragma mark - CartBackendDelegate
@@ -80,6 +81,9 @@
 - (void)cartBackend:(id<CartBackend>)aCartBackend didRemoveItem:(CartItem *)item
               error:(NSError *)anError
 {
+    if (anError)
+        return;
     
+    [item.cart removeItem:item];
 }
 @end
