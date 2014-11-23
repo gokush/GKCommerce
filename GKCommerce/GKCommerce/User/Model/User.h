@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Cart.h"
 
+@class Cart;
 @interface User : NSObject <NSCoding>
 
 @property (assign, nonatomic) NSInteger userID;
 @property (strong, nonatomic) NSString *sessionID;
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *email;
+@property (strong, nonatomic) Cart *cart;
+
+- (BOOL)authorized;
 @end

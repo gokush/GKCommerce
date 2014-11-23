@@ -21,23 +21,4 @@
     
     return user;
 }
-
-- (NSError *)error:(NSDictionary *)JSON
-{
-    NSError *error;
-    
-    if ([[JSON valueForKeyPath:@"status.succeed"] integerValue] == 0) {
-        NSInteger errorCode;
-        NSDictionary *errorDescription;
-        errorCode = [[JSON valueForKeyPath:@"status.error_code"] integerValue];
-        errorDescription = @{
-            NSLocalizedDescriptionKey:
-                [JSON valueForKeyPath:@"status.error_desc"]
-        };
-        error = [NSError errorWithDomain:@"ECMobile" code:errorCode
-                                userInfo:errorDescription];
-    }
-    
-    return error;
-}
 @end

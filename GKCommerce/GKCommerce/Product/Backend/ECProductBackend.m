@@ -28,7 +28,7 @@
     if (anUser) {
         [parameters setObject:[NSString stringWithFormat:@"%d",
                                anUser.userID] forKey:@"session[uid]"];
-        [parameters setObject:anUser.sessionID forKey:@"session[sid"];
+        [parameters setObject:anUser.sessionID forKey:@"session[sid]"];
     }
     [self.manager
      POST:[NSString stringWithFormat:@"%@/goods", self.config.backendURL]

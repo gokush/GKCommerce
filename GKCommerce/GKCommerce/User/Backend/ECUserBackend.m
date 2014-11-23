@@ -15,9 +15,6 @@
     self = [super init];
     if (self) {
         self.assembler = [[ECUserBackendAssembler alloc] init];
-        self.manager = [AFHTTPRequestOperationManager manager];
-        self.manager.responseSerializer.acceptableContentTypes =
-            [NSSet setWithObject:@"text/html"];
     }
     return self;
 }
@@ -27,7 +24,8 @@
     NSDictionary *parameters = @{ @"name": user.username,
                                   @"password": user.password };
     [self.manager
-     POST:[NSString stringWithFormat:@"%@/user/signin", self.host]
+     POST:[NSString stringWithFormat:@"%@/user/signin",
+           [Config shared].backendURL]
      parameters:parameters
      success:^(AFHTTPRequestOperation *operation, id responseObject) {
          [self requestAuthenticate:user didReceiveResponse:responseObject];

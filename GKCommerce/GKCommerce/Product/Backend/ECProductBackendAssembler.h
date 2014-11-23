@@ -14,4 +14,6 @@
 @interface ECProductBackendAssembler : ECBackendAssembler
 
 - (Product *)product:(NSDictionary *)JSON;
+- (ProductImageURL *)productImageURL:(NSDictionary *)productImageURLJSON;
+- (NSArray *)productImageURLs:(NSArray *)productImageURLJSON;
 @end

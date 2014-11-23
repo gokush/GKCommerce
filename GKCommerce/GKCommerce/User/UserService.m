@@ -28,6 +28,8 @@
         [[App shared] setCurrentUser:user];
     }
     
+    DDLogVerbose(@"从磁盘用户恢复 %@ %d %@", user.username, user.userID,
+                 user.sessionID);
     SEL selector = @selector(userService:didRestore:error:);
     if ([self.delegate respondsToSelector:selector])
         [self.delegate userService:self didRestore:user error:nil];
@@ -46,7 +48,9 @@ didCompleteAuthenticate:(User *)anUser error:(NSError *)anError
     if (nil == anError) {
         [self.repository storage:anUser];
         [[App shared] setCurrentUser:anUser];
-    }
+        DDLogVerbose(@"登录成功 %@", anUser.username);
+    } else
+        DDLogVerbose(@"登录失败 %@", anUser.username);
     
     SEL selector = @selector(userService:didAuthencate:error:);
     if ([self.delegate respondsToSelector:selector])

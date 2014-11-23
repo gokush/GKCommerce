@@ -24,7 +24,6 @@
     NSData *raw = [NSKeyedArchiver archivedDataWithRootObject:user];
     [[NSUserDefaults standardUserDefaults] setObject:raw forKey:@"user"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
 }
 
 + (instancetype)shared

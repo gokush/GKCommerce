@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "User.h"
+#import "ECBackendAssembler.h"
 
-@interface ECUserBackendAssembler : NSObject
+@interface ECUserBackendAssembler : ECBackendAssembler
 
 - (User *)user:(NSDictionary *)JSON;
-- (NSError *)error:(NSDictionary *)JSON;
 @end

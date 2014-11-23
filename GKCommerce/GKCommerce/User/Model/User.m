@@ -18,6 +18,7 @@
         self.sessionID = [aDecoder decodeObjectForKey:@"sessionID"];
         self.username = [aDecoder decodeObjectForKey:@"username"];
         self.email = [aDecoder decodeObjectForKey:@"email"];
+        self.cart = [[Cart alloc] initWithUser:self];
     }
     
     return self;
@@ -30,5 +31,14 @@
     [aCoder encodeObject:self.sessionID forKey:@"sessionID"];
     [aCoder encodeObject:self.username forKey:@"username"];
     [aCoder encodeObject:self.email forKey:@"email"];
+}
+
+- (BOOL)authorized
+{
+    if (0 >= self.userID || nil == self.sessionID ||
+        [@"" isEqualToString:self.sessionID]) {
+        return NO;
+    }
+    return YES;
 }
 @end
