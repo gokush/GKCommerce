@@ -56,11 +56,9 @@
     if ([@"on" isEqualToString:keyPath]) {
         if (self.on) {
             [_offImageView removeFromSuperview];
-            self.alpha = 0.0f;
             [self addSubview:_onImageView];
         } else {
             [_onImageView removeFromSuperview];
-            self.alpha = 0.0f;
             [self addSubview:_offImageView];
         }
     } else if ([@"onImage" isEqualToString:keyPath]) {
