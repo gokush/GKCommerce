@@ -19,7 +19,8 @@
     [self.item addObserver:self forKeyPath:@"quantity" options:0 context:nil];
     [self.item addObserver:self forKeyPath:@"selected" options:0 context:nil];
     [self.item addObserver:self forKeyPath:@"totalPrice" options:0 context:nil];
-    [self addObserver:self forKeyPath:@"item" options:0 context:nil];
+    [self addObserver:self forKeyPath:@"item"
+              options:NSKeyValueObservingOptionInitial context:nil];
 }
 
 - (void)unbind
