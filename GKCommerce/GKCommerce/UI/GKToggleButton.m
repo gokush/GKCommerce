@@ -48,6 +48,9 @@
 - (void)didTapSelf:(id)sender
 {
     self.on = !self.on;
+    
+    if ([self.delegate respondsToSelector:@selector(toggleButton:didSwitch:)])
+        [self.delegate toggleButton:self didSwitch:self.on];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
