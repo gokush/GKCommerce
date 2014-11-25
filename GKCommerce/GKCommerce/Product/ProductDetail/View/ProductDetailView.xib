@@ -18,7 +18,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aHc-lH-ngO">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aHc-lH-ngO">
                     <rect key="frame" x="0.0" y="513" width="320" height="55"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBv-xy-cHa" customClass="GKButton">
@@ -56,6 +56,9 @@
                                     <real key="value" value="5"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="didTapAddProductToCart:" destination="-1" eventType="touchUpInside" id="EqD-zP-2pl"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8m-cl-CWD" customClass="GKButton">
                             <rect key="frame" x="68" y="8" width="116" height="40"/>
@@ -74,13 +77,16 @@
                     </subviews>
                     <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstAttribute="centerY" secondItem="b8m-cl-CWD" secondAttribute="centerY" id="5li-dp-wVG"/>
                         <constraint firstAttribute="width" constant="320" id="6iV-qE-8Fl"/>
                         <constraint firstItem="b8m-cl-CWD" firstAttribute="leading" secondItem="QBv-xy-cHa" secondAttribute="trailing" constant="12" id="Zno-pw-j4M"/>
                         <constraint firstItem="dll-iH-2w3" firstAttribute="leading" secondItem="b8m-cl-CWD" secondAttribute="trailing" constant="12" id="awl-Yu-Csz"/>
                         <constraint firstAttribute="height" constant="55" id="bbl-qE-2zF"/>
+                        <constraint firstAttribute="centerY" secondItem="dll-iH-2w3" secondAttribute="centerY" id="dE4-QF-rEY"/>
+                        <constraint firstAttribute="centerY" secondItem="QBv-xy-cHa" secondAttribute="centerY" id="vGR-EJ-B9b"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BHr-tq-CeP">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BHr-tq-CeP">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="513"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -94,7 +100,10 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="aHc-lH-ngO" secondAttribute="bottom" id="33U-OX-JsY"/>
                 <constraint firstItem="BHr-tq-CeP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="55e-nB-PUQ"/>
+                <constraint firstItem="BHr-tq-CeP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aAP-Dc-47B"/>
                 <constraint firstItem="aHc-lH-ngO" firstAttribute="top" secondItem="BHr-tq-CeP" secondAttribute="bottom" id="bXA-gc-XrT"/>
+                <constraint firstItem="BHr-tq-CeP" firstAttribute="leading" secondItem="aHc-lH-ngO" secondAttribute="leading" id="h0O-VZ-zjK"/>
+                <constraint firstItem="BHr-tq-CeP" firstAttribute="trailing" secondItem="aHc-lH-ngO" secondAttribute="trailing" id="kmx-Rw-u73"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
         </view>

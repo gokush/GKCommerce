@@ -10,6 +10,8 @@
 #import "ProductDetailMoreViewController.h"
 #import "ProductDetailCarouselTableViewCell.h"
 #import "ProductDetailTitleTableViewCell.h"
+#import <MBProgressHUD/MBProgressHUD.h>
+
 @interface ProductDetailViewController ()
 {
     NSArray *identifiersOfSection;
@@ -35,6 +37,8 @@
         self.user = user;
         self.service = [[ProductService alloc] init];
         self.service.delegate = self;
+        self.cartService = [[ECCartService alloc] initWithCart:self.user.cart];
+        self.cartService.delegate = self;
         [self setup];
     }
     return self;
@@ -51,18 +55,13 @@
         @"ProductDetailTitleTableViewCell",
         @"ProductDetailInfomationTableViewCell"
     ];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    
+    self.cart = self.user.cart;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     for (NSString *identifier in identifiersOfSection)
         [self.tableView registerNib:[UINib nibWithNibName:identifier
@@ -181,7 +180,33 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
                product:(Product *)aProduct error:(NSError *)anError
 {
     self.product = aProduct;
-    [self.tableView reloadData];
+    
+    if (anError) {
+        MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view];
+        hud.labelText = [anError localizedDescription];
+        hud.mode = MBProgressHUDModeCustomView;
+        [self.view addSubview:hud];
+        [hud show:YES];
+        [hud hide:YES afterDelay:2];
+    } else
+        [self.tableView reloadData];
+}
+
+#pragma mark - CartServiceDelegate
+
+- (void)cartService:(ECCartService *)aCartService cart:(Cart *)aCart
+              error:(NSError *)anError
+{
+    
+}
+
+- (void)cartService:(ECCartService *)aCartService didAddItem:(CartItem *)item
+              error:(NSError *)anError
+{
+    if (anError)
+        return;
+    
+    [aCartService fetchCart];
 }
 
 #pragma mark - BackendDelegate
@@ -190,7 +215,21 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 }
 
-- (IBAction)didProductInfomationTap:(id)sender
+- (IBAction)didTapAddProductToCart:(id)sender
+{
+    
+    CartItem *item = [CartItem itemWithCart:self.cart
+                                    product:self.product quantity:1];
+    
+    [self.cartService addItem:item];
+}
+
+- (IBAction)didTapBuy:(id)sender
+{
+    
+}
+
+- (IBAction)didTapProductInfomation:(id)sender
 {
     ProductDetailMoreViewController *controller;
     controller = [[ProductDetailMoreViewController alloc]
@@ -198,7 +237,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-- (IBAction)didNavigationBackTap:(id)sender
+- (IBAction)didTapNavigationBack:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
