@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 GKCommerce. All rights reserved.
 //
 
-#import "UserService.h"
+#import "ECUserService.h"
 
-@implementation UserService
+@implementation ECUserService
 
 - (id)init
 {
@@ -59,7 +59,7 @@ didCompleteAuthenticate:(User *)anUser error:(NSError *)anError
 
 + (instancetype)shared
 {
-    static UserService *_shared = nil;
+    static ECUserService *_shared = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _shared = [[self alloc] init];

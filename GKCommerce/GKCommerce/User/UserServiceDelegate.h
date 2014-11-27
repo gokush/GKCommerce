@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 
-@class UserService;
+@protocol UserService;
 @protocol UserServiceDelegate <NSObject>
 
 @optional
-- (void)userService:(UserService *)anUserService didAuthencate:(User *)user
+- (void)userService:(id<UserService>)anUserService didAuthencate:(User *)user
               error:(NSError *)anError;
-- (void)userService:(UserService *)anUserService didRestore:(User *)user
+- (void)userService:(id<UserService>)anUserService didRestore:(User *)user
               error:(NSError *)anError;
 @end

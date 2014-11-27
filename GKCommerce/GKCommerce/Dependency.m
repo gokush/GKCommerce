@@ -22,6 +22,16 @@
     return [[self factory] cartService];
 }
 
+- (id<UserBackend>)userBackend
+{
+    return [[self factory] userBackend];
+}
+
+- (id<UserService>)userService
+{
+    return [[self factory] userService];
+}
+
 + (instancetype)shared
 {
     static Dependency *_shared = nil;

@@ -49,4 +49,14 @@
         [self.delegate userBackend:self didCompleteAuthenticate:anUser
                              error:error];
 }
+
++ (instancetype)shared
+{
+    static UserBackend *_shared = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _shared = [[self alloc] init];
+    });
+    return _shared;
+}
 @end

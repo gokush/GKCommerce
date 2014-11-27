@@ -13,4 +13,6 @@
 
 - (id<CartBackend>)cartBackend;
 - (id<CartService>)cartService;
+- (id<UserBackend>)userBackend;
+- (id<UserService>)userService;
 @end

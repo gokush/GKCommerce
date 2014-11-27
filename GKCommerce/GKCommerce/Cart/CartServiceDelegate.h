@@ -9,9 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "Cart.h"
 
-@class CartService;
+@protocol CartService;
 @protocol CartServiceDelegate <NSObject>
 
-- (void)cartService:(CartService *)aCartService cart:(Cart *)aCart
+@optional
+- (void)cartService:(id<CartService>)aCartService cart:(Cart *)aCart
               error:(NSError *)anError;
+- (void)cartService:(id<CartService>)aCartService didAddItem:(CartItem *)item
+              error:(NSError *)anError;
+- (void)cartService:(id<CartService>)aCartService didUpdateItem:(CartItem *)item
+        oldQuantity:(NSInteger)anOldQuantity error:(NSError *)anError;
+- (void)cartService:(id<CartService>)aCartService didRemoveItem:(CartItem *)item
+        error:(NSError *)anError;
 @end

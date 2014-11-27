@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 GKCommerce. All rights reserved.
 //
 
-#import "CartService.h"
-#import "ECCartBackend.h"
+#import "ECCartService.h"
+#import "Dependency.h"
 
-@implementation CartService
+@implementation ECCartService
 
 - (id)initWithCart:(Cart *)aCart
 {
@@ -24,15 +24,15 @@
 {
     self = [super init];
     if (self) {
-        self.backend = [[ECCartBackend alloc] init];
+        self.backend = [[Dependency shared] cartBackend];
         self.backend.delegate = self;
     }
     return self;
 }
 
-- (void)items
+- (void)fetchCart
 {
-    
+    [self.backend requestCart:self.cart];
 }
 
 - (void)addItem:(CartItem *)item
@@ -61,7 +61,9 @@
 - (void)cartBackend:(id<CartBackend>)aCartBackend didAddItem:(CartItem *)item
               error:(NSError *)anError
 {
-    
+    SEL selector = @selector(cartService:didAddItem:error:);
+    if ([self.delegate respondsToSelector:selector])
+        [self.delegate cartService:self didAddItem:item error:anError];
 }
 
 - (void)cartBackend:(id<CartBackend>)aCartBackend didReceiveCart:(Cart *)cart
@@ -75,7 +77,10 @@
 - (void)cartBackend:(id<CartBackend>)aCartBackend didUpdateItem:(CartItem *)item
         oldQuantity:(NSInteger)anOldQuantity error:(NSError *)anError
 {
-    
+    SEL selector = @selector(cartService:didUpdateItem:oldQuantity:error:);
+    if ([self.delegate respondsToSelector:selector])
+        [self.delegate cartService:self didUpdateItem:item
+                       oldQuantity:anOldQuantity error:anError];
 }
 
 - (void)cartBackend:(id<CartBackend>)aCartBackend didRemoveItem:(CartItem *)item
@@ -85,5 +90,9 @@
         return;
     
     [item.cart removeItem:item];
+    
+    SEL selector = @selector(cartService:didRemoveItem:error:);
+    if ([self.delegate respondsToSelector:selector])
+        [self.delegate cartService:self didRemoveItem:item error:anError];
 }
 @end

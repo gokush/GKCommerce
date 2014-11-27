@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "UserBackend.h"
 #import "UserRepository.h"
-#import "UserService.h"
+#import "ECUserService.h"
 #import "CartBackend.h"
 #import "CartRepository.h"
 #import "CartService.h"
@@ -18,4 +18,6 @@
 
 - (id<CartBackend>)cartBackend;
 - (id<CartService>)cartService;
+- (id<UserBackend>)userBackend;
+- (id<UserService>)userService;
 @end
