@@ -8,6 +8,7 @@
 
 #import "UserAuthenticationViewController.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "Dependency.h"
 
 typedef enum {
     InputSectionUsernameCell,
@@ -33,7 +34,7 @@ typedef enum {
 {
     self = [self initWithNibName:@"UserAuthenticationView" bundle:nil];
     if (self) {
-        self.service = [UserService shared];
+        self.service = [[Dependency shared] userService];
         self.service.delegate = self;
         self.user = [[UserAuthenticationModel alloc] init];
     }
@@ -190,7 +191,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     }
 }
 
-- (void)userService:(UserService *)anUserService didAuthencate:(User *)user
+- (void)userService:(ECUserService *)anUserService didAuthencate:(User *)user
               error:(NSError *)anError
 {
     
