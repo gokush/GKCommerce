@@ -46,7 +46,7 @@
 - (void)requestProductWithID:(NSInteger)productID user:(User *)anUser
           didReceiveResponse:(id)responseObject error:(NSError *)anError
 {
-    NSError *error;
+    NSError *error = anError;
     Product *product;
     
     if (nil == anError) {

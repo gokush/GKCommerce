@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "UIView+Extension.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @implementation SeparatorOption
 
@@ -94,6 +95,16 @@
             [self.layer addSublayer:layer];
         }
     }
+}
+
+- (void)showHUD:(NSString *)message afterDelay:(NSTimeInterval)delay
+{
+    MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self];
+    hud.labelText = message;
+    hud.mode = MBProgressHUDModeCustomView;
+    [self addSubview:hud];
+    [hud show:YES];
+    [hud hide:YES afterDelay:2];
 }
 
 @end

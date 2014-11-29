@@ -194,15 +194,11 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)userService:(ECUserService *)anUserService didAuthencate:(User *)user
               error:(NSError *)anError
 {
-    
-    MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view];
-    hud.labelText = @"成功登录";
-    hud.mode = MBProgressHUDModeCustomView;
-    [self.view addSubview:hud];
-    [hud show:YES];
-    [hud hide:YES afterDelay:2];
-    
-    [self.navigationController popViewControllerAnimated:YES];
+    if (nil == anError) {
+        [self.view showHUD:@"成功登录" afterDelay:2];
+        [self.navigationController popViewControllerAnimated:YES];
+    } else
+        [self.view showHUD:anError.localizedDescription afterDelay:2];
 }
 
 /*

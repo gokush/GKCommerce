@@ -36,4 +36,5 @@ typedef enum {
 
 - (void)setSeparatorOnDirection:(SeparatorDirection)direction;
 - (void)setSeparatorWithOption:(SeparatorOption *)option;
+- (void)showHUD:(NSString *)message afterDelay:(NSTimeInterval)delay;
 @end
