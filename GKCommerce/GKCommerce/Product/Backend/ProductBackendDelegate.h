@@ -15,4 +15,8 @@
 
 - (void)productBackend:(id<ProductBackend>)aProductBackend
      didReceiveProduct:(Product *)aProduct error:(NSError *)anError;
+
+- (void)productBackend:(id<ProductBackend>)aProductBackend
+     didReceiveProduct:(Product *)product description:(NSString *)aDescription
+                 error:(NSError *)anError;
 @end

@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Shop.h"
-#import "ProductService.h"
-#import "ECCartService.h"
+#import "Dependency.h"
 
 typedef enum {
     ProductDetailCarouselSection,
@@ -25,8 +24,8 @@ CartServiceDelegate>
 @property (nonatomic, assign) NSInteger productID;
 @property (nonatomic, strong) Product *product;
 @property (nonatomic, strong) User *user;
-@property (nonatomic, retain) ProductService *service;
-@property (strong, nonatomic) ECCartService *cartService;
+@property (nonatomic, retain) id<ProductService> service;
+@property (strong, nonatomic) id<CartService> cartService;
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) IBOutlet UIButton *buy;

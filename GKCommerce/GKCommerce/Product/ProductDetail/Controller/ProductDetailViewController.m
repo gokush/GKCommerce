@@ -35,9 +35,9 @@
     if (self) {
         self.productID = productID;
         self.user = user;
-        self.service = [[ProductService alloc] init];
+        self.service = [[Dependency shared] productService];
         self.service.delegate = self;
-        self.cartService = [[ECCartService alloc] initWithCart:self.user.cart];
+        self.cartService = [[Dependency shared] cartService];
         self.cartService.delegate = self;
         [self setup];
     }
@@ -176,7 +176,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 }
 
 #pragma mark - ProductServiceDelegate
-- (void)productService:(ProductService *)aProductService
+- (void)productService:(id<ProductService>)aProductService
                product:(Product *)aProduct error:(NSError *)anError
 {
     self.product = aProduct;
@@ -194,19 +194,19 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 
 #pragma mark - CartServiceDelegate
 
-- (void)cartService:(ECCartService *)aCartService cart:(Cart *)aCart
+- (void)cartService:(id<CartService>)aCartService cart:(Cart *)aCart
               error:(NSError *)anError
 {
     
 }
 
-- (void)cartService:(ECCartService *)aCartService didAddItem:(CartItem *)item
+- (void)cartService:(id<CartService>)aCartService didAddItem:(CartItem *)item
               error:(NSError *)anError
 {
     if (anError)
         return;
     
-    [aCartService fetchCart];
+    [aCartService fetch:self.user.cart];
 }
 
 #pragma mark - BackendDelegate

@@ -13,7 +13,7 @@
 
 @protocol ProductBackend <NSObject>
 
-@required
 @property (strong, nonatomic) id<ProductBackendDelegate> delegate;
 - (void)requestProductWithID:(NSInteger)productID user:(User *)anUser;
+- (void)requestProductDescription:(Product *)product;
 @end

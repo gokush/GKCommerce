@@ -14,4 +14,8 @@
 
 - (void)productService:(id<ProductService>)aProductService
                product:(Product *)aProduct error:(NSError *)anError;
+
+- (void)productService:(id<ProductService>)aProductService
+               product:(Product *)aProduct description:(NSString *)aDescription
+                 error:(NSError *)anError;
 @end

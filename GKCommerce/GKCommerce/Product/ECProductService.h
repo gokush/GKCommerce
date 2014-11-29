@@ -21,5 +21,6 @@
 @property (retain, nonatomic) id<ProductBackend> backend;
 @property (strong, nonatomic) id<ProductServiceDelegate> delegate;
 - (void)productWithID:(NSInteger)productID user:(User *)anUser;
+- (void)productDescription:(Product *)product;
 + (instancetype)shared;
 @end

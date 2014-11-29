@@ -61,4 +61,43 @@
                     didReceiveProduct:product error:error];
 }
 
+- (void)requestProductDescription:(Product *)product
+{
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    [parameters setObject:[NSString stringWithFormat:@"%d", product.productID]
+                   forKey:@"goods_id"];
+    
+    [self.manager
+     POST:[NSString stringWithFormat:@"%@/goods/desc", self.config.backendURL]
+     parameters:parameters
+     success:^(AFHTTPRequestOperation *operation, id responseObject) {
+         [self requestProductDescription:product
+                      didReceiveResponse:responseObject error:nil];
+     }
+     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         [self requestProductDescription:product
+                            didReceiveResponse:nil error:error];
+     }];
+}
+
+- (void)requestProductDescription:(Product *)product
+               didReceiveResponse:(id)responseObject error:(NSError *)anError
+{
+    NSError *error = anError;
+    
+    if (nil == anError) {
+        error = [self.assembler error:responseObject];
+    }
+    
+    NSString *productDescription;
+    productDescription = [responseObject objectForKey:@"data"];
+    
+    static SEL selector;
+    selector = @selector(productBackend:didReceiveProduct:description:error:);
+    if ([self.delegate respondsToSelector:selector])
+        [self.delegate productBackend:(id<ProductBackend>)self
+                    didReceiveProduct:product description:productDescription
+                                error:error];
+}
+
 @end

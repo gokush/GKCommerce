@@ -27,12 +27,34 @@
     [self.backend requestProductWithID:productID user:anUser];
 }
 
+- (void)productDescription:(Product *)product
+{
+    if (nil == product.productDescription ||
+        0 == product.productDescription.length) {
+        [self.backend requestProductDescription:product];
+    } else
+        [self productBackend:self.backend didReceiveProduct:product
+                 description:product.productDescription error:nil];
+}
+
+#pragma mark - ProductBackendDelegate
+
 - (void)productBackend:(id<ProductBackend>)aProductBackend
      didReceiveProduct:(Product *)aProduct error:(NSError *)anError
 {
     SEL selector = @selector(productService:product:error:);
     if ([self.delegate respondsToSelector:selector])
         [self.delegate productService:self product:aProduct error:anError];
+}
+
+- (void)productBackend:(id<ProductBackend>)aProductBackend
+didReceiveProduct:(Product *)product description:(NSString *)aDescription
+                 error:(NSError *)anError
+{
+    SEL selector = @selector(productService:product:description:error:);
+    if ([self.delegate respondsToSelector:selector])
+        [self.delegate productService:self product:product
+                          description:aDescription error:anError];
 }
 
 + (instancetype)shared
