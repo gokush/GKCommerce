@@ -11,15 +11,6 @@
 
 @implementation ECCartService
 
-- (id)initWithCart:(Cart *)aCart
-{
-    self = [self init];
-    if (self) {
-        self.cart = aCart;
-    }
-    return self;
-}
-
 - (id)init
 {
     self = [super init];
@@ -30,9 +21,9 @@
     return self;
 }
 
-- (void)fetchCart
+- (void)fetch:(Cart *)cart
 {
-    [self.backend requestCart:self.cart];
+    [self.backend requestCart:cart];
 }
 
 - (void)addItem:(CartItem *)item

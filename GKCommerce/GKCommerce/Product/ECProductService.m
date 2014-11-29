@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 GKCommerce. All rights reserved.
 //
 
-#import "ProductService.h"
+#import "ECProductService.h"
 #import "ECProductBackend.h"
 
-@implementation ProductService
+@implementation ECProductService
 
 - (id)init
 {
@@ -37,7 +37,7 @@
 
 + (instancetype)shared
 {
-    static ProductService *_shared = nil;
+    static ECProductService *_shared = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _shared = [[self alloc] init];

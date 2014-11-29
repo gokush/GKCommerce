@@ -11,6 +11,8 @@
 #import "ECCartService.h"
 #import "ECUserBackend.h"
 #import "ECUserService.h"
+#import "ECProductBackend.h"
+#import "ECProductService.h"
 
 @implementation GKECFactory
 
@@ -32,5 +34,15 @@
 - (id<UserService>)userService
 {
     return [[ECUserService alloc] init];
+}
+
+- (id<ProductBackend>)productBackend
+{
+    return [[ECProductBackend alloc] init];
+}
+
+- (id<ProductService>)productService
+{
+    return [[ECProductService alloc] init];
 }
 @end

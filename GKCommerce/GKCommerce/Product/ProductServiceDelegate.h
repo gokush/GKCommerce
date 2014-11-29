@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "Product.h"
 
-@class ProductService;
+@protocol ProductService;
 @protocol ProductServiceDelegate <NSObject>
 
-- (void)productService:(ProductService *)aProductService
+- (void)productService:(id<ProductService>)aProductService
                product:(Product *)aProduct error:(NSError *)anError;
 @end

@@ -14,6 +14,8 @@
 @property (strong, nonatomic) id<GKFactory> factory;
 - (id<CartBackend>)cartBackend;
 - (id<CartService>)cartService;
+- (id<ProductBackend>)productBackend;
+- (id<ProductService>)productService;
 - (id<UserBackend>)userBackend;
 - (id<UserService>)userService;
 + (instancetype)shared;

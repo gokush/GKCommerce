@@ -12,7 +12,7 @@
 #import "UserServiceDelegate.h"
 #import "UserBackend.h"
 
-@protocol UserService <NSObject, UserBackendDelegate>
+@protocol UserService <NSObject>
 
 @property (strong, nonatomic) id<UserBackend> backend;
 @property (strong, nonatomic) id<UserServiceDelegate> delegate;
