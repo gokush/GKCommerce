@@ -5,6 +5,8 @@ target "GKCommerce" do
     pod 'SDWebImage'
     pod 'AFNetworking'
     pod 'MBProgressHUD'
+    pod 'ASImageResize'
+    pod 'CocoaLumberjack'
 end
 
 target "GKCommerceTests" do

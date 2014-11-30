@@ -39,7 +39,8 @@
                               self.item.quantity];
     }
     if ([@"selected" isEqual:keyPath]) {
-        self.select.on = self.item.selected;
+        if (self.select.on != self.item.selected)
+            self.select.on = self.item.selected;
     } else if ([@"totalPrice" isEqualToString:keyPath])
         self.totalLabel.text = [NSString stringWithFormat:@"%.2f",
                                 self.item.totalPrice.floatValue];

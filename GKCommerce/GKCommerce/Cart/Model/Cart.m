@@ -55,6 +55,8 @@
     [item addObserver:self forKeyPath:@"quantity"
               options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
                  context:nil];
+    [item addObserver:self forKeyPath:@"selected"
+              options:NSKeyValueObservingOptionInitial context:nil];
     
     [self.items addObject:item];
     
@@ -73,6 +75,7 @@
 - (void)removeItem:(CartItem *)item
 {
     [item removeObserver:self forKeyPath:@"quantity"];
+    [item removeObserver:self forKeyPath:@"selected"];
     [self willChangeValueForKey:@"items"];
     [self.items removeObject:item];
     [self didChangeValueForKey:@"items"];
@@ -130,6 +133,9 @@
         [object isKindOfClass: [CartItem class]] &&
         0 == ((CartItem *)object).quantity) {
         [self removeItem:object];
+    } else if ([@"selected" isEqualToString:keyPath]) {
+        [self willChangeValueForKey:@"selectAll"];
+        [self didChangeValueForKey:@"selectAll"];
     }
 }
 
@@ -176,14 +182,14 @@
     self.items = [NSMutableArray array];
 }
 
-- (void)setAllSelected:(BOOL)selected
+- (void)setSelectAll:(BOOL)selected
 {
     for (CartItem *item in self.items)
         item.selected = selected;
 }
 
 
-- (BOOL)allSelected
+- (BOOL)selectAll
 {
     for (CartItem *item in self.items)
         if (!item.selected)

@@ -38,19 +38,73 @@
 		E549C1941A1B8FBA0014656D /* UserAuthenticationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E549C1921A1B8FBA0014656D /* UserAuthenticationTableViewCell.m */; };
 		E549C1951A1B8FBA0014656D /* UserAuthenticationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E549C1931A1B8FBA0014656D /* UserAuthenticationTableViewCell.xib */; };
 		E549C1971A1B8FDA0014656D /* UserAuthenticationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E549C1961A1B8FDA0014656D /* UserAuthenticationView.xib */; };
+		E56135841A24EC5C00ED7511 /* GKECFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E56135831A24EC5C00ED7511 /* GKECFactory.m */; };
+		E5748F3C1A20E5F700306ADC /* GKLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5748F3B1A20E5F700306ADC /* GKLabel.m */; };
+		E5748F3F1A20EC0F00306ADC /* ECCartService.m in Sources */ = {isa = PBXBuildFile; fileRef = E5748F3E1A20EC0F00306ADC /* ECCartService.m */; };
+		E5748F431A20EC5D00306ADC /* CartRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = E5748F421A20EC5D00306ADC /* CartRepository.m */; };
+		E5748F471A20EC7A00306ADC /* ECCartBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = E5748F461A20EC7A00306ADC /* ECCartBackend.m */; };
+		E5748F4C1A20ED0200306ADC /* ECCartBackendAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5748F4B1A20ED0200306ADC /* ECCartBackendAssembler.m */; };
+		E5748F511A21F65A00306ADC /* Cart.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5748F501A21F65A00306ADC /* Cart.xcassets */; };
+		E57D3FED1A2378F300AC0FF9 /* CartItemOverviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E57D3FE81A2378F300AC0FF9 /* CartItemOverviewTableViewCell.m */; };
+		E57D3FEE1A2378F300AC0FF9 /* CartItemOverviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E57D3FE91A2378F300AC0FF9 /* CartItemOverviewTableViewCell.xib */; };
+		E57D3FEF1A2378F300AC0FF9 /* CartItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E57D3FEB1A2378F300AC0FF9 /* CartItemTableViewCell.m */; };
+		E57D3FF01A2378F300AC0FF9 /* CartItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E57D3FEC1A2378F300AC0FF9 /* CartItemTableViewCell.xib */; };
+		E57D3FF31A237BEC00AC0FF9 /* GKToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E57D3FF21A237BEC00AC0FF9 /* GKToggleButton.m */; };
+		E57D3FF71A23999800AC0FF9 /* Dependency.m in Sources */ = {isa = PBXBuildFile; fileRef = E57D3FF61A23999700AC0FF9 /* Dependency.m */; };
+		E59180C01A1F8BB10021F855 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = E59180BF1A1F8BB10021F855 /* Config.m */; };
+		E59180C71A1F8F500021F855 /* ECBackendAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = E59180C61A1F8F500021F855 /* ECBackendAssembler.m */; };
+		E59180CA1A1F8FCE0021F855 /* Backend.m in Sources */ = {isa = PBXBuildFile; fileRef = E59180C91A1F8FCE0021F855 /* Backend.m */; };
+		E59180CD1A1FB0F90021F855 /* Product.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E59180CC1A1FB0F90021F855 /* Product.xcassets */; };
+		E59180E51A20BA270021F855 /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E59180D11A20BA270021F855 /* CartViewController.m */; };
+		E59180E81A20BA270021F855 /* CartEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = E59180D81A20BA270021F855 /* CartEmptyView.m */; };
+		E59180E91A20BA270021F855 /* CartEmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E59180D91A20BA270021F855 /* CartEmptyView.xib */; };
+		E59180EF1A20BA270021F855 /* CartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E59180E21A20BA270021F855 /* CartView.xib */; };
+		E59180FA1A20CD770021F855 /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = E59180F31A20CD770021F855 /* Cart.m */; };
+		E59180FB1A20CD770021F855 /* CartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E59180F51A20CD770021F855 /* CartItem.m */; };
+		E59180FC1A20CD770021F855 /* Invoice.m in Sources */ = {isa = PBXBuildFile; fileRef = E59180F71A20CD770021F855 /* Invoice.m */; };
+		E59180FD1A20CD770021F855 /* InvoiceContent.m in Sources */ = {isa = PBXBuildFile; fileRef = E59180F91A20CD770021F855 /* InvoiceContent.m */; };
+		E59181041A20CD860021F855 /* Payment.m in Sources */ = {isa = PBXBuildFile; fileRef = E59181011A20CD860021F855 /* Payment.m */; };
+		E59181051A20CD860021F855 /* PaymentBalance.m in Sources */ = {isa = PBXBuildFile; fileRef = E59181031A20CD860021F855 /* PaymentBalance.m */; };
 		E5C8061B1A1A081E00880B20 /* MineDefaultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C8061A1A1A081E00880B20 /* MineDefaultTableViewCell.xib */; };
 		E5C8061F1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C8061D1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.m */; };
 		E5C806201A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C8061E1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib */; };
 		E5C806241A1A467900880B20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C806231A1A467900880B20 /* Images.xcassets */; };
 		E5C806261A1A469700880B20 /* Mine.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C806251A1A469700880B20 /* Mine.xcassets */; };
-		E5D9D5381A1E26EA00875264 /* UserBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5371A1E26EA00875264 /* UserBackend.m */; };
 		E5D9D53C1A1E27D900875264 /* UserAuthenticationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D53B1A1E27D900875264 /* UserAuthenticationModel.m */; };
 		E5D9D53F1A1E287700875264 /* ECUserBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D53E1A1E287700875264 /* ECUserBackend.m */; };
 		E5D9D5421A1E28E400875264 /* ECUserBackendAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5411A1E28E400875264 /* ECUserBackendAssembler.m */; };
 		E5D9D5461A1E2A8300875264 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5451A1E2A8300875264 /* User.m */; };
-		E5D9D54A1A1E393100875264 /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5491A1E393100875264 /* UserService.m */; };
+		E5D9D54A1A1E393100875264 /* ECUserService.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5491A1E393100875264 /* ECUserService.m */; };
 		E5D9D54D1A1E3A6100875264 /* UserRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D54C1A1E3A6100875264 /* UserRepository.m */; };
 		E5D9D5511A1E3AD900875264 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5501A1E3AD900875264 /* App.m */; };
+		E5D9D5781A1E50FE00875264 /* ProductDetailMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5571A1E50FE00875264 /* ProductDetailMoreViewController.m */; };
+		E5D9D5791A1E50FE00875264 /* ProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5591A1E50FE00875264 /* ProductDetailViewController.m */; };
+		E5D9D57C1A1E50FE00875264 /* ProductDetailCarouselTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D55F1A1E50FE00875264 /* ProductDetailCarouselTableViewCell.m */; };
+		E5D9D57D1A1E50FE00875264 /* ProductDetailCarouselTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5D9D5601A1E50FE00875264 /* ProductDetailCarouselTableViewCell.xib */; };
+		E5D9D57E1A1E50FE00875264 /* ProductDetailInfomationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5621A1E50FE00875264 /* ProductDetailInfomationTableViewCell.m */; };
+		E5D9D57F1A1E50FE00875264 /* ProductDetailInfomationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5D9D5631A1E50FE00875264 /* ProductDetailInfomationTableViewCell.xib */; };
+		E5D9D5801A1E50FE00875264 /* ProductDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5651A1E50FE00875264 /* ProductDetailTableViewCell.m */; };
+		E5D9D5811A1E50FE00875264 /* ProductDetailTitleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5671A1E50FE00875264 /* ProductDetailTitleTableViewCell.m */; };
+		E5D9D5821A1E50FE00875264 /* ProductDetailTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5D9D5681A1E50FE00875264 /* ProductDetailTitleTableViewCell.xib */; };
+		E5D9D5841A1E50FE00875264 /* ProductDetailMoreTab.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D56D1A1E50FE00875264 /* ProductDetailMoreTab.m */; };
+		E5D9D5851A1E50FE00875264 /* ProductDetailMoreTabButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D56F1A1E50FE00875264 /* ProductDetailMoreTabButton.m */; };
+		E5D9D5861A1E50FE00875264 /* ProductDetailMoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5D9D5711A1E50FE00875264 /* ProductDetailMoreView.xib */; };
+		E5D9D5871A1E50FE00875264 /* ProductDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5D9D5721A1E50FE00875264 /* ProductDetailView.xib */; };
+		E5D9D5891A1E50FE00875264 /* ProductMoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5761A1E50FE00875264 /* ProductMoreTableViewCell.m */; };
+		E5D9D58A1A1E50FE00875264 /* ProductMoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5D9D5771A1E50FE00875264 /* ProductMoreTableViewCell.xib */; };
+		E5D9D5991A1E560F00875264 /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5921A1E560F00875264 /* Product.m */; };
+		E5D9D59A1A1E560F00875264 /* ProductImageURL.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5941A1E560F00875264 /* ProductImageURL.m */; };
+		E5D9D59B1A1E560F00875264 /* ProductSpecification.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5961A1E560F00875264 /* ProductSpecification.m */; };
+		E5D9D59C1A1E560F00875264 /* ProductSpecificationValue.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5981A1E560F00875264 /* ProductSpecificationValue.m */; };
+		E5D9D5A01A1E56E200875264 /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D59F1A1E56E200875264 /* Shop.m */; };
+		E5D9D5A31A1E574100875264 /* ShippingMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5A21A1E574100875264 /* ShippingMethod.m */; };
+		E5D9D5A61A1E57B000875264 /* GKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5A51A1E57B000875264 /* GKButton.m */; };
+		E5D9D5AD1A1E57FB00875264 /* GKCarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5A91A1E57FB00875264 /* GKCarouselView.m */; };
+		E5D9D5AE1A1E57FB00875264 /* GKCarouselViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5AB1A1E57FB00875264 /* GKCarouselViewCell.m */; };
+		E5D9D5B11A1E582600875264 /* ECProductService.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5B01A1E582600875264 /* ECProductService.m */; };
+		E5D9D5B51A1E585200875264 /* ProductRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5B41A1E585200875264 /* ProductRepository.m */; };
+		E5D9D5BC1A1E588400875264 /* ECProductBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5BB1A1E588400875264 /* ECProductBackend.m */; };
+		E5D9D5BF1A1E589900875264 /* ECProductBackendAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5BE1A1E589900875264 /* ECProductBackendAssembler.m */; };
 		E5E2D3A01A18AE9000338CF0 /* MineDefaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E2D3991A18AE9000338CF0 /* MineDefaultViewController.m */; };
 		E5E2D3A11A18AE9000338CF0 /* MineDefaultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E2D39C1A18AE9000338CF0 /* MineDefaultTableViewCell.m */; };
 		E5E2D3A31A18AE9000338CF0 /* MineDefaultView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5E2D39F1A18AE9000338CF0 /* MineDefaultView.xib */; };
@@ -126,7 +180,63 @@
 		E549C1921A1B8FBA0014656D /* UserAuthenticationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserAuthenticationTableViewCell.m; path = GKCommerce/User/UserAuthentication/TableVIewCell/UserAuthenticationTableViewCell.m; sourceTree = "<group>"; };
 		E549C1931A1B8FBA0014656D /* UserAuthenticationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserAuthenticationTableViewCell.xib; path = GKCommerce/User/UserAuthentication/TableVIewCell/UserAuthenticationTableViewCell.xib; sourceTree = "<group>"; };
 		E549C1961A1B8FDA0014656D /* UserAuthenticationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserAuthenticationView.xib; path = GKCommerce/User/UserAuthentication/View/UserAuthenticationView.xib; sourceTree = "<group>"; };
+		E56135811A24EBB500ED7511 /* GKFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKFactory.h; path = GKCommerce/GKFactory.h; sourceTree = "<group>"; };
+		E56135821A24EC5C00ED7511 /* GKECFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKECFactory.h; path = GKCommerce/GKECFactory.h; sourceTree = "<group>"; };
+		E56135831A24EC5C00ED7511 /* GKECFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKECFactory.m; path = GKCommerce/GKECFactory.m; sourceTree = "<group>"; };
 		E566A0F91A1650FD008CF286 /* UIBindableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBindableTableViewCell.h; sourceTree = "<group>"; };
+		E57298AA1A29B7EF00F9F456 /* ProductService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductService.h; sourceTree = "<group>"; };
+		E5748F3A1A20E5F700306ADC /* GKLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKLabel.h; path = GKCommerce/UI/GKLabel.h; sourceTree = "<group>"; };
+		E5748F3B1A20E5F700306ADC /* GKLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKLabel.m; path = GKCommerce/UI/GKLabel.m; sourceTree = "<group>"; };
+		E5748F3D1A20EC0F00306ADC /* ECCartService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCartService.h; sourceTree = "<group>"; };
+		E5748F3E1A20EC0F00306ADC /* ECCartService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECCartService.m; sourceTree = "<group>"; };
+		E5748F401A20EC1C00306ADC /* CartServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartServiceDelegate.h; sourceTree = "<group>"; };
+		E5748F411A20EC5D00306ADC /* CartRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartRepository.h; sourceTree = "<group>"; };
+		E5748F421A20EC5D00306ADC /* CartRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartRepository.m; sourceTree = "<group>"; };
+		E5748F451A20EC7A00306ADC /* ECCartBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECCartBackend.h; path = Backend/ECCartBackend.h; sourceTree = "<group>"; };
+		E5748F461A20EC7A00306ADC /* ECCartBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECCartBackend.m; path = Backend/ECCartBackend.m; sourceTree = "<group>"; };
+		E5748F481A20EC9700306ADC /* CartBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartBackend.h; path = Backend/CartBackend.h; sourceTree = "<group>"; };
+		E5748F4A1A20ED0200306ADC /* ECCartBackendAssembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECCartBackendAssembler.h; path = Backend/ECCartBackendAssembler.h; sourceTree = "<group>"; };
+		E5748F4B1A20ED0200306ADC /* ECCartBackendAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECCartBackendAssembler.m; path = Backend/ECCartBackendAssembler.m; sourceTree = "<group>"; };
+		E5748F4D1A20ED6F00306ADC /* CartBackendDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CartBackendDelegate.h; path = Backend/CartBackendDelegate.h; sourceTree = "<group>"; };
+		E5748F501A21F65A00306ADC /* Cart.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Cart.xcassets; path = GKCommerce/AssetCatalog/Cart.xcassets; sourceTree = "<group>"; };
+		E57D3FE71A2378F300AC0FF9 /* CartItemOverviewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartItemOverviewTableViewCell.h; sourceTree = "<group>"; };
+		E57D3FE81A2378F300AC0FF9 /* CartItemOverviewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartItemOverviewTableViewCell.m; sourceTree = "<group>"; };
+		E57D3FE91A2378F300AC0FF9 /* CartItemOverviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartItemOverviewTableViewCell.xib; sourceTree = "<group>"; };
+		E57D3FEA1A2378F300AC0FF9 /* CartItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartItemTableViewCell.h; sourceTree = "<group>"; };
+		E57D3FEB1A2378F300AC0FF9 /* CartItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartItemTableViewCell.m; sourceTree = "<group>"; };
+		E57D3FEC1A2378F300AC0FF9 /* CartItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartItemTableViewCell.xib; sourceTree = "<group>"; };
+		E57D3FF11A237BEC00AC0FF9 /* GKToggleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKToggleButton.h; path = GKCommerce/UI/GKToggleButton.h; sourceTree = "<group>"; };
+		E57D3FF21A237BEC00AC0FF9 /* GKToggleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKToggleButton.m; path = GKCommerce/UI/GKToggleButton.m; sourceTree = "<group>"; };
+		E57D3FF41A238F7400AC0FF9 /* CartService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartService.h; sourceTree = "<group>"; };
+		E57D3FF51A23999700AC0FF9 /* Dependency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dependency.h; path = GKCommerce/Dependency.h; sourceTree = "<group>"; };
+		E57D3FF61A23999700AC0FF9 /* Dependency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dependency.m; path = GKCommerce/Dependency.m; sourceTree = "<group>"; };
+		E59180BE1A1F8BB10021F855 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Config.h; path = Model/Config.h; sourceTree = "<group>"; };
+		E59180BF1A1F8BB10021F855 /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Config.m; path = Model/Config.m; sourceTree = "<group>"; };
+		E59180C51A1F8F500021F855 /* ECBackendAssembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECBackendAssembler.h; path = GKCommerce/Backend/ECBackendAssembler.h; sourceTree = "<group>"; };
+		E59180C61A1F8F500021F855 /* ECBackendAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECBackendAssembler.m; path = GKCommerce/Backend/ECBackendAssembler.m; sourceTree = "<group>"; };
+		E59180C81A1F8FCE0021F855 /* Backend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Backend.h; path = GKCommerce/Backend/Backend.h; sourceTree = "<group>"; };
+		E59180C91A1F8FCE0021F855 /* Backend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Backend.m; path = GKCommerce/Backend/Backend.m; sourceTree = "<group>"; };
+		E59180CB1A1F9FD40021F855 /* ProductBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductBackend.h; path = Backend/ProductBackend.h; sourceTree = "<group>"; };
+		E59180CC1A1FB0F90021F855 /* Product.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Product.xcassets; path = GKCommerce/AssetCatalog/Product.xcassets; sourceTree = "<group>"; };
+		E59180D01A20BA270021F855 /* CartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
+		E59180D11A20BA270021F855 /* CartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
+		E59180D71A20BA270021F855 /* CartEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartEmptyView.h; sourceTree = "<group>"; };
+		E59180D81A20BA270021F855 /* CartEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartEmptyView.m; sourceTree = "<group>"; };
+		E59180D91A20BA270021F855 /* CartEmptyView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartEmptyView.xib; sourceTree = "<group>"; };
+		E59180E21A20BA270021F855 /* CartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartView.xib; sourceTree = "<group>"; };
+		E59180F21A20CD770021F855 /* Cart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cart.h; sourceTree = "<group>"; };
+		E59180F31A20CD770021F855 /* Cart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cart.m; sourceTree = "<group>"; };
+		E59180F41A20CD770021F855 /* CartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartItem.h; sourceTree = "<group>"; };
+		E59180F51A20CD770021F855 /* CartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartItem.m; sourceTree = "<group>"; };
+		E59180F61A20CD770021F855 /* Invoice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Invoice.h; sourceTree = "<group>"; };
+		E59180F71A20CD770021F855 /* Invoice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Invoice.m; sourceTree = "<group>"; };
+		E59180F81A20CD770021F855 /* InvoiceContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceContent.h; sourceTree = "<group>"; };
+		E59180F91A20CD770021F855 /* InvoiceContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceContent.m; sourceTree = "<group>"; };
+		E59181001A20CD860021F855 /* Payment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Payment.h; sourceTree = "<group>"; };
+		E59181011A20CD860021F855 /* Payment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Payment.m; sourceTree = "<group>"; };
+		E59181021A20CD860021F855 /* PaymentBalance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentBalance.h; sourceTree = "<group>"; };
+		E59181031A20CD860021F855 /* PaymentBalance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentBalance.m; sourceTree = "<group>"; };
+		E5A862221A27522C00FD5412 /* UserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserService.h; path = GKCommerce/User/UserService.h; sourceTree = "<group>"; };
 		E5C8061A1A1A081E00880B20 /* MineDefaultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineDefaultTableViewCell.xib; sourceTree = "<group>"; };
 		E5C8061C1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineHeaderPhotoTableViewCell.h; sourceTree = "<group>"; };
 		E5C8061D1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineHeaderPhotoTableViewCell.m; sourceTree = "<group>"; };
@@ -134,7 +244,6 @@
 		E5C806231A1A467900880B20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = GKCommerce/AssetCatalog/Images.xcassets; sourceTree = "<group>"; };
 		E5C806251A1A469700880B20 /* Mine.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Mine.xcassets; path = GKCommerce/AssetCatalog/Mine.xcassets; sourceTree = "<group>"; };
 		E5D9D5361A1E26EA00875264 /* UserBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserBackend.h; path = GKCommerce/User/Backend/UserBackend.h; sourceTree = "<group>"; };
-		E5D9D5371A1E26EA00875264 /* UserBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserBackend.m; path = GKCommerce/User/Backend/UserBackend.m; sourceTree = "<group>"; };
 		E5D9D53A1A1E27D900875264 /* UserAuthenticationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserAuthenticationModel.h; path = GKCommerce/User/Backend/Model/UserAuthenticationModel.h; sourceTree = "<group>"; };
 		E5D9D53B1A1E27D900875264 /* UserAuthenticationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserAuthenticationModel.m; path = GKCommerce/User/Backend/Model/UserAuthenticationModel.m; sourceTree = "<group>"; };
 		E5D9D53D1A1E287700875264 /* ECUserBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECUserBackend.h; path = GKCommerce/User/Backend/ECUserBackend.h; sourceTree = "<group>"; };
@@ -144,13 +253,67 @@
 		E5D9D5441A1E2A8300875264 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = GKCommerce/User/Model/User.h; sourceTree = "<group>"; };
 		E5D9D5451A1E2A8300875264 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = GKCommerce/User/Model/User.m; sourceTree = "<group>"; };
 		E5D9D5471A1E2B2A00875264 /* UserBackendDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserBackendDelegate.h; path = GKCommerce/User/Backend/UserBackendDelegate.h; sourceTree = "<group>"; };
-		E5D9D5481A1E393100875264 /* UserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserService.h; path = GKCommerce/User/UserService.h; sourceTree = "<group>"; };
-		E5D9D5491A1E393100875264 /* UserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserService.m; path = GKCommerce/User/UserService.m; sourceTree = "<group>"; };
+		E5D9D5481A1E393100875264 /* ECUserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECUserService.h; path = GKCommerce/User/ECUserService.h; sourceTree = "<group>"; };
+		E5D9D5491A1E393100875264 /* ECUserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECUserService.m; path = GKCommerce/User/ECUserService.m; sourceTree = "<group>"; };
 		E5D9D54B1A1E3A6100875264 /* UserRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserRepository.h; path = GKCommerce/User/UserRepository.h; sourceTree = "<group>"; };
 		E5D9D54C1A1E3A6100875264 /* UserRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserRepository.m; path = GKCommerce/User/UserRepository.m; sourceTree = "<group>"; };
 		E5D9D54F1A1E3AD900875264 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = App.h; path = Model/App.h; sourceTree = "<group>"; };
 		E5D9D5501A1E3AD900875264 /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = App.m; path = Model/App.m; sourceTree = "<group>"; };
 		E5D9D5521A1E3B5A00875264 /* UserServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserServiceDelegate.h; path = GKCommerce/User/UserServiceDelegate.h; sourceTree = "<group>"; };
+		E5D9D5561A1E50FE00875264 /* ProductDetailMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailMoreViewController.h; sourceTree = "<group>"; };
+		E5D9D5571A1E50FE00875264 /* ProductDetailMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailMoreViewController.m; sourceTree = "<group>"; };
+		E5D9D5581A1E50FE00875264 /* ProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailViewController.h; sourceTree = "<group>"; };
+		E5D9D5591A1E50FE00875264 /* ProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailViewController.m; sourceTree = "<group>"; };
+		E5D9D55E1A1E50FE00875264 /* ProductDetailCarouselTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailCarouselTableViewCell.h; sourceTree = "<group>"; };
+		E5D9D55F1A1E50FE00875264 /* ProductDetailCarouselTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailCarouselTableViewCell.m; sourceTree = "<group>"; };
+		E5D9D5601A1E50FE00875264 /* ProductDetailCarouselTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailCarouselTableViewCell.xib; sourceTree = "<group>"; };
+		E5D9D5611A1E50FE00875264 /* ProductDetailInfomationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailInfomationTableViewCell.h; sourceTree = "<group>"; };
+		E5D9D5621A1E50FE00875264 /* ProductDetailInfomationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailInfomationTableViewCell.m; sourceTree = "<group>"; };
+		E5D9D5631A1E50FE00875264 /* ProductDetailInfomationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailInfomationTableViewCell.xib; sourceTree = "<group>"; };
+		E5D9D5641A1E50FE00875264 /* ProductDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailTableViewCell.h; sourceTree = "<group>"; };
+		E5D9D5651A1E50FE00875264 /* ProductDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailTableViewCell.m; sourceTree = "<group>"; };
+		E5D9D5661A1E50FE00875264 /* ProductDetailTitleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailTitleTableViewCell.h; sourceTree = "<group>"; };
+		E5D9D5671A1E50FE00875264 /* ProductDetailTitleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailTitleTableViewCell.m; sourceTree = "<group>"; };
+		E5D9D5681A1E50FE00875264 /* ProductDetailTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailTitleTableViewCell.xib; sourceTree = "<group>"; };
+		E5D9D56C1A1E50FE00875264 /* ProductDetailMoreTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailMoreTab.h; sourceTree = "<group>"; };
+		E5D9D56D1A1E50FE00875264 /* ProductDetailMoreTab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailMoreTab.m; sourceTree = "<group>"; };
+		E5D9D56E1A1E50FE00875264 /* ProductDetailMoreTabButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailMoreTabButton.h; sourceTree = "<group>"; };
+		E5D9D56F1A1E50FE00875264 /* ProductDetailMoreTabButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductDetailMoreTabButton.m; sourceTree = "<group>"; };
+		E5D9D5701A1E50FE00875264 /* ProductDetailMoreTabButtonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductDetailMoreTabButtonDelegate.h; sourceTree = "<group>"; };
+		E5D9D5711A1E50FE00875264 /* ProductDetailMoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailMoreView.xib; sourceTree = "<group>"; };
+		E5D9D5721A1E50FE00875264 /* ProductDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductDetailView.xib; sourceTree = "<group>"; };
+		E5D9D5751A1E50FE00875264 /* ProductMoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductMoreTableViewCell.h; sourceTree = "<group>"; };
+		E5D9D5761A1E50FE00875264 /* ProductMoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductMoreTableViewCell.m; sourceTree = "<group>"; };
+		E5D9D5771A1E50FE00875264 /* ProductMoreTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductMoreTableViewCell.xib; sourceTree = "<group>"; };
+		E5D9D5911A1E560F00875264 /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
+		E5D9D5921A1E560F00875264 /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		E5D9D5931A1E560F00875264 /* ProductImageURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductImageURL.h; sourceTree = "<group>"; };
+		E5D9D5941A1E560F00875264 /* ProductImageURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductImageURL.m; sourceTree = "<group>"; };
+		E5D9D5951A1E560F00875264 /* ProductSpecification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSpecification.h; sourceTree = "<group>"; };
+		E5D9D5961A1E560F00875264 /* ProductSpecification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSpecification.m; sourceTree = "<group>"; };
+		E5D9D5971A1E560F00875264 /* ProductSpecificationValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductSpecificationValue.h; sourceTree = "<group>"; };
+		E5D9D5981A1E560F00875264 /* ProductSpecificationValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductSpecificationValue.m; sourceTree = "<group>"; };
+		E5D9D59E1A1E56E200875264 /* Shop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
+		E5D9D59F1A1E56E200875264 /* Shop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shop.m; sourceTree = "<group>"; };
+		E5D9D5A11A1E574100875264 /* ShippingMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShippingMethod.h; sourceTree = "<group>"; };
+		E5D9D5A21A1E574100875264 /* ShippingMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShippingMethod.m; sourceTree = "<group>"; };
+		E5D9D5A41A1E57B000875264 /* GKButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKButton.h; path = GKCommerce/UI/GKButton.h; sourceTree = "<group>"; };
+		E5D9D5A51A1E57B000875264 /* GKButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKButton.m; path = GKCommerce/UI/GKButton.m; sourceTree = "<group>"; };
+		E5D9D5A81A1E57FB00875264 /* GKCarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCarouselView.h; sourceTree = "<group>"; };
+		E5D9D5A91A1E57FB00875264 /* GKCarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKCarouselView.m; sourceTree = "<group>"; };
+		E5D9D5AA1A1E57FB00875264 /* GKCarouselViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCarouselViewCell.h; sourceTree = "<group>"; };
+		E5D9D5AB1A1E57FB00875264 /* GKCarouselViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKCarouselViewCell.m; sourceTree = "<group>"; };
+		E5D9D5AC1A1E57FB00875264 /* GKCarouselViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCarouselViewDelegate.h; sourceTree = "<group>"; };
+		E5D9D5AF1A1E582600875264 /* ECProductService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECProductService.h; sourceTree = "<group>"; };
+		E5D9D5B01A1E582600875264 /* ECProductService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECProductService.m; sourceTree = "<group>"; };
+		E5D9D5B21A1E583D00875264 /* ProductServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductServiceDelegate.h; sourceTree = "<group>"; };
+		E5D9D5B31A1E585200875264 /* ProductRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductRepository.h; sourceTree = "<group>"; };
+		E5D9D5B41A1E585200875264 /* ProductRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductRepository.m; sourceTree = "<group>"; };
+		E5D9D5BA1A1E588400875264 /* ECProductBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECProductBackend.h; path = Backend/ECProductBackend.h; sourceTree = "<group>"; };
+		E5D9D5BB1A1E588400875264 /* ECProductBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECProductBackend.m; path = Backend/ECProductBackend.m; sourceTree = "<group>"; };
+		E5D9D5BD1A1E589900875264 /* ECProductBackendAssembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECProductBackendAssembler.h; path = Backend/ECProductBackendAssembler.h; sourceTree = "<group>"; };
+		E5D9D5BE1A1E589900875264 /* ECProductBackendAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECProductBackendAssembler.m; path = Backend/ECProductBackendAssembler.m; sourceTree = "<group>"; };
+		E5D9D5C01A1E58AC00875264 /* ProductBackendDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProductBackendDelegate.h; path = Backend/ProductBackendDelegate.h; sourceTree = "<group>"; };
 		E5E2D3981A18AE9000338CF0 /* MineDefaultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineDefaultViewController.h; sourceTree = "<group>"; };
 		E5E2D3991A18AE9000338CF0 /* MineDefaultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineDefaultViewController.m; sourceTree = "<group>"; };
 		E5E2D39B1A18AE9000338CF0 /* MineDefaultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineDefaultTableViewCell.h; sourceTree = "<group>"; };
@@ -219,6 +382,12 @@
 		9035D0101A0CB3E100C6E53C /* GKCommerce */ = {
 			isa = PBXGroup;
 			children = (
+				E59180FE1A20CD860021F855 /* Payment */,
+				E59180CE1A20BA270021F855 /* Cart */,
+				E59180C11A1F8F020021F855 /* Backend */,
+				E5D9D58C1A1E51A200875264 /* UI */,
+				E5D9D58B1A1E512300875264 /* Shop */,
+				E5D9D5531A1E50FE00875264 /* Product */,
 				E5F196AF1A1CBB7C00B97AE3 /* Utility */,
 				E549C1871A1B8E850014656D /* User */,
 				E566A0F81A1650FD008CF286 /* Protocol */,
@@ -229,6 +398,11 @@
 				9035D0181A0CB3E100C6E53C /* GKCommerce.xcdatamodeld */,
 				9035D0111A0CB3E100C6E53C /* Supporting Files */,
 				E5F196B91A1CC06A00B97AE3 /* GKCommerce-Prefix.pch */,
+				E57D3FF51A23999700AC0FF9 /* Dependency.h */,
+				E57D3FF61A23999700AC0FF9 /* Dependency.m */,
+				E56135811A24EBB500ED7511 /* GKFactory.h */,
+				E56135821A24EC5C00ED7511 /* GKECFactory.h */,
+				E56135831A24EC5C00ED7511 /* GKECFactory.m */,
 			);
 			path = GKCommerce;
 			sourceTree = "<group>";
@@ -268,8 +442,6 @@
 				9035D03E1A0CBF5900C6E53C /* AppDelegate.h */,
 				9035D03F1A0CBF5900C6E53C /* AppDelegate.m */,
 				9035D0401A0CBF5900C6E53C /* AppView.xib */,
-				E5D9D54F1A1E3AD900875264 /* App.h */,
-				E5D9D5501A1E3AD900875264 /* App.m */,
 			);
 			name = App;
 			path = GKCommerce/App;
@@ -460,8 +632,9 @@
 				E5D9D5431A1E2A6B00875264 /* Model */,
 				E5D9D5351A1E26B700875264 /* Backend */,
 				E549C1881A1B8E8A0014656D /* UserAuthentication */,
-				E5D9D5481A1E393100875264 /* UserService.h */,
-				E5D9D5491A1E393100875264 /* UserService.m */,
+				E5D9D5481A1E393100875264 /* ECUserService.h */,
+				E5D9D5491A1E393100875264 /* ECUserService.m */,
+				E5A862221A27522C00FD5412 /* UserService.h */,
 				E5D9D5521A1E3B5A00875264 /* UserServiceDelegate.h */,
 				E5D9D54B1A1E3A6100875264 /* UserRepository.h */,
 				E5D9D54C1A1E3A6100875264 /* UserRepository.m */,
@@ -515,11 +688,124 @@
 			path = GKCommerce/Protocol;
 			sourceTree = "<group>";
 		};
+		E5748F441A20EC6000306ADC /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				E5748F481A20EC9700306ADC /* CartBackend.h */,
+				E5748F4D1A20ED6F00306ADC /* CartBackendDelegate.h */,
+				E5748F451A20EC7A00306ADC /* ECCartBackend.h */,
+				E5748F461A20EC7A00306ADC /* ECCartBackend.m */,
+				E5748F4A1A20ED0200306ADC /* ECCartBackendAssembler.h */,
+				E5748F4B1A20ED0200306ADC /* ECCartBackendAssembler.m */,
+			);
+			name = Backend;
+			sourceTree = "<group>";
+		};
+		E57D3FE61A2378F300AC0FF9 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E57D3FE71A2378F300AC0FF9 /* CartItemOverviewTableViewCell.h */,
+				E57D3FE81A2378F300AC0FF9 /* CartItemOverviewTableViewCell.m */,
+				E57D3FE91A2378F300AC0FF9 /* CartItemOverviewTableViewCell.xib */,
+				E57D3FEA1A2378F300AC0FF9 /* CartItemTableViewCell.h */,
+				E57D3FEB1A2378F300AC0FF9 /* CartItemTableViewCell.m */,
+				E57D3FEC1A2378F300AC0FF9 /* CartItemTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		E59180C11A1F8F020021F855 /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				E59180C81A1F8FCE0021F855 /* Backend.h */,
+				E59180C91A1F8FCE0021F855 /* Backend.m */,
+				E59180C51A1F8F500021F855 /* ECBackendAssembler.h */,
+				E59180C61A1F8F500021F855 /* ECBackendAssembler.m */,
+			);
+			name = Backend;
+			sourceTree = "<group>";
+		};
+		E59180CE1A20BA270021F855 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				E57D3FE61A2378F300AC0FF9 /* TableViewCell */,
+				E5748F441A20EC6000306ADC /* Backend */,
+				E59180F11A20CD770021F855 /* Model */,
+				E59180CF1A20BA270021F855 /* Controller */,
+				E59180D41A20BA270021F855 /* View */,
+				E57D3FF41A238F7400AC0FF9 /* CartService.h */,
+				E5748F401A20EC1C00306ADC /* CartServiceDelegate.h */,
+				E5748F3D1A20EC0F00306ADC /* ECCartService.h */,
+				E5748F3E1A20EC0F00306ADC /* ECCartService.m */,
+				E5748F411A20EC5D00306ADC /* CartRepository.h */,
+				E5748F421A20EC5D00306ADC /* CartRepository.m */,
+			);
+			name = Cart;
+			path = GKCommerce/Cart;
+			sourceTree = "<group>";
+		};
+		E59180CF1A20BA270021F855 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E59180D01A20BA270021F855 /* CartViewController.h */,
+				E59180D11A20BA270021F855 /* CartViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E59180D41A20BA270021F855 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E59180D71A20BA270021F855 /* CartEmptyView.h */,
+				E59180D81A20BA270021F855 /* CartEmptyView.m */,
+				E59180D91A20BA270021F855 /* CartEmptyView.xib */,
+				E59180E21A20BA270021F855 /* CartView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E59180F11A20CD770021F855 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E59180F21A20CD770021F855 /* Cart.h */,
+				E59180F31A20CD770021F855 /* Cart.m */,
+				E59180F41A20CD770021F855 /* CartItem.h */,
+				E59180F51A20CD770021F855 /* CartItem.m */,
+				E59180F61A20CD770021F855 /* Invoice.h */,
+				E59180F71A20CD770021F855 /* Invoice.m */,
+				E59180F81A20CD770021F855 /* InvoiceContent.h */,
+				E59180F91A20CD770021F855 /* InvoiceContent.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E59180FE1A20CD860021F855 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				E59180FF1A20CD860021F855 /* Model */,
+			);
+			name = Payment;
+			path = GKCommerce/Payment;
+			sourceTree = "<group>";
+		};
+		E59180FF1A20CD860021F855 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E59181001A20CD860021F855 /* Payment.h */,
+				E59181011A20CD860021F855 /* Payment.m */,
+				E59181021A20CD860021F855 /* PaymentBalance.h */,
+				E59181031A20CD860021F855 /* PaymentBalance.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E5C806221A1A465E00880B20 /* AssetCatalog */ = {
 			isa = PBXGroup;
 			children = (
 				E5C806231A1A467900880B20 /* Images.xcassets */,
 				E5C806251A1A469700880B20 /* Mine.xcassets */,
+				E59180CC1A1FB0F90021F855 /* Product.xcassets */,
+				E5748F501A21F65A00306ADC /* Cart.xcassets */,
 			);
 			name = AssetCatalog;
 			sourceTree = "<group>";
@@ -529,7 +815,6 @@
 			children = (
 				E5D9D5391A1E27B300875264 /* Model */,
 				E5D9D5361A1E26EA00875264 /* UserBackend.h */,
-				E5D9D5371A1E26EA00875264 /* UserBackend.m */,
 				E5D9D53D1A1E287700875264 /* ECUserBackend.h */,
 				E5D9D53E1A1E287700875264 /* ECUserBackend.m */,
 				E5D9D5401A1E28E400875264 /* ECUserBackendAssembler.h */,
@@ -560,8 +845,168 @@
 		E5D9D54E1A1E3ACB00875264 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E5D9D54F1A1E3AD900875264 /* App.h */,
+				E5D9D5501A1E3AD900875264 /* App.m */,
+				E59180BE1A1F8BB10021F855 /* Config.h */,
+				E59180BF1A1F8BB10021F855 /* Config.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		E5D9D5531A1E50FE00875264 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				E5D9D5B61A1E585B00875264 /* Backend */,
+				E5D9D5901A1E560F00875264 /* Model */,
+				E5D9D5541A1E50FE00875264 /* ProductDetail */,
+				E57298AA1A29B7EF00F9F456 /* ProductService.h */,
+				E5D9D5AF1A1E582600875264 /* ECProductService.h */,
+				E5D9D5B01A1E582600875264 /* ECProductService.m */,
+				E5D9D5B21A1E583D00875264 /* ProductServiceDelegate.h */,
+				E5D9D5B31A1E585200875264 /* ProductRepository.h */,
+				E5D9D5B41A1E585200875264 /* ProductRepository.m */,
+			);
+			name = Product;
+			path = GKCommerce/Product;
+			sourceTree = "<group>";
+		};
+		E5D9D5541A1E50FE00875264 /* ProductDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E5D9D5551A1E50FE00875264 /* Controller */,
+				E5D9D55A1A1E50FE00875264 /* Mock */,
+				E5D9D55D1A1E50FE00875264 /* TableViewCell */,
+				E5D9D5691A1E50FE00875264 /* View */,
+			);
+			path = ProductDetail;
+			sourceTree = "<group>";
+		};
+		E5D9D5551A1E50FE00875264 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E5D9D5561A1E50FE00875264 /* ProductDetailMoreViewController.h */,
+				E5D9D5571A1E50FE00875264 /* ProductDetailMoreViewController.m */,
+				E5D9D5581A1E50FE00875264 /* ProductDetailViewController.h */,
+				E5D9D5591A1E50FE00875264 /* ProductDetailViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E5D9D55A1A1E50FE00875264 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		E5D9D55D1A1E50FE00875264 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E5D9D55E1A1E50FE00875264 /* ProductDetailCarouselTableViewCell.h */,
+				E5D9D55F1A1E50FE00875264 /* ProductDetailCarouselTableViewCell.m */,
+				E5D9D5601A1E50FE00875264 /* ProductDetailCarouselTableViewCell.xib */,
+				E5D9D5611A1E50FE00875264 /* ProductDetailInfomationTableViewCell.h */,
+				E5D9D5621A1E50FE00875264 /* ProductDetailInfomationTableViewCell.m */,
+				E5D9D5631A1E50FE00875264 /* ProductDetailInfomationTableViewCell.xib */,
+				E5D9D5641A1E50FE00875264 /* ProductDetailTableViewCell.h */,
+				E5D9D5651A1E50FE00875264 /* ProductDetailTableViewCell.m */,
+				E5D9D5661A1E50FE00875264 /* ProductDetailTitleTableViewCell.h */,
+				E5D9D5671A1E50FE00875264 /* ProductDetailTitleTableViewCell.m */,
+				E5D9D5681A1E50FE00875264 /* ProductDetailTitleTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		E5D9D5691A1E50FE00875264 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E5D9D56C1A1E50FE00875264 /* ProductDetailMoreTab.h */,
+				E5D9D56D1A1E50FE00875264 /* ProductDetailMoreTab.m */,
+				E5D9D56E1A1E50FE00875264 /* ProductDetailMoreTabButton.h */,
+				E5D9D56F1A1E50FE00875264 /* ProductDetailMoreTabButton.m */,
+				E5D9D5701A1E50FE00875264 /* ProductDetailMoreTabButtonDelegate.h */,
+				E5D9D5711A1E50FE00875264 /* ProductDetailMoreView.xib */,
+				E5D9D5721A1E50FE00875264 /* ProductDetailView.xib */,
+				E5D9D5751A1E50FE00875264 /* ProductMoreTableViewCell.h */,
+				E5D9D5761A1E50FE00875264 /* ProductMoreTableViewCell.m */,
+				E5D9D5771A1E50FE00875264 /* ProductMoreTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E5D9D58B1A1E512300875264 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				E5D9D59D1A1E56E200875264 /* Model */,
+			);
+			name = Shop;
+			sourceTree = "<group>";
+		};
+		E5D9D58C1A1E51A200875264 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E5D9D5A71A1E57FB00875264 /* GKCarousel */,
+				E5D9D5A41A1E57B000875264 /* GKButton.h */,
+				E5D9D5A51A1E57B000875264 /* GKButton.m */,
+				E5748F3A1A20E5F700306ADC /* GKLabel.h */,
+				E5748F3B1A20E5F700306ADC /* GKLabel.m */,
+				E57D3FF11A237BEC00AC0FF9 /* GKToggleButton.h */,
+				E57D3FF21A237BEC00AC0FF9 /* GKToggleButton.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		E5D9D5901A1E560F00875264 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E5D9D5911A1E560F00875264 /* Product.h */,
+				E5D9D5921A1E560F00875264 /* Product.m */,
+				E5D9D5931A1E560F00875264 /* ProductImageURL.h */,
+				E5D9D5941A1E560F00875264 /* ProductImageURL.m */,
+				E5D9D5951A1E560F00875264 /* ProductSpecification.h */,
+				E5D9D5961A1E560F00875264 /* ProductSpecification.m */,
+				E5D9D5971A1E560F00875264 /* ProductSpecificationValue.h */,
+				E5D9D5981A1E560F00875264 /* ProductSpecificationValue.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E5D9D59D1A1E56E200875264 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E5D9D59E1A1E56E200875264 /* Shop.h */,
+				E5D9D59F1A1E56E200875264 /* Shop.m */,
+				E5D9D5A11A1E574100875264 /* ShippingMethod.h */,
+				E5D9D5A21A1E574100875264 /* ShippingMethod.m */,
+			);
+			name = Model;
+			path = GKCommerce/Shop/Model;
+			sourceTree = "<group>";
+		};
+		E5D9D5A71A1E57FB00875264 /* GKCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				E5D9D5A81A1E57FB00875264 /* GKCarouselView.h */,
+				E5D9D5A91A1E57FB00875264 /* GKCarouselView.m */,
+				E5D9D5AA1A1E57FB00875264 /* GKCarouselViewCell.h */,
+				E5D9D5AB1A1E57FB00875264 /* GKCarouselViewCell.m */,
+				E5D9D5AC1A1E57FB00875264 /* GKCarouselViewDelegate.h */,
+			);
+			name = GKCarousel;
+			path = GKCommerce/UI/GKCarousel;
+			sourceTree = "<group>";
+		};
+		E5D9D5B61A1E585B00875264 /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				E59180CB1A1F9FD40021F855 /* ProductBackend.h */,
+				E5D9D5C01A1E58AC00875264 /* ProductBackendDelegate.h */,
+				E5D9D5BA1A1E588400875264 /* ECProductBackend.h */,
+				E5D9D5BB1A1E588400875264 /* ECProductBackend.m */,
+				E5D9D5BD1A1E589900875264 /* ECProductBackendAssembler.h */,
+				E5D9D5BE1A1E589900875264 /* ECProductBackendAssembler.m */,
+			);
+			name = Backend;
 			sourceTree = "<group>";
 		};
 		E5E2D3961A18AE9000338CF0 /* MineDefault */ = {
@@ -703,19 +1148,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				E549C1951A1B8FBA0014656D /* UserAuthenticationTableViewCell.xib in Resources */,
+				E5D9D58A1A1E50FE00875264 /* ProductMoreTableViewCell.xib in Resources */,
 				9035D0641A0CC85000C6E53C /* ConsigneeEditInputTableViewCell.xib in Resources */,
 				E51E22A31A17A2930005F39B /* ConsigneeListTableViewCell.xib in Resources */,
 				E51E22951A1795F70005F39B /* ConsigneeTableViewCell.xib in Resources */,
+				E5D9D5871A1E50FE00875264 /* ProductDetailView.xib in Resources */,
+				E5D9D5821A1E50FE00875264 /* ProductDetailTitleTableViewCell.xib in Resources */,
 				9035D06B1A0CCF9600C6E53C /* ConsigneeEditView.xib in Resources */,
+				E5D9D5861A1E50FE00875264 /* ProductDetailMoreView.xib in Resources */,
 				E5C806201A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib in Resources */,
 				9035D0421A0CBF5900C6E53C /* AppView.xib in Resources */,
+				E59180CD1A1FB0F90021F855 /* Product.xcassets in Resources */,
 				E5C8061B1A1A081E00880B20 /* MineDefaultTableViewCell.xib in Resources */,
 				E5C806261A1A469700880B20 /* Mine.xcassets in Resources */,
+				E5D9D57F1A1E50FE00875264 /* ProductDetailInfomationTableViewCell.xib in Resources */,
 				E51E229D1A17A2660005F39B /* ConsigneeListView.xib in Resources */,
 				E549C1971A1B8FDA0014656D /* UserAuthenticationView.xib in Resources */,
 				E5E2D3A31A18AE9000338CF0 /* MineDefaultView.xib in Resources */,
 				E5C806241A1A467900880B20 /* Images.xcassets in Resources */,
+				E57D3FF01A2378F300AC0FF9 /* CartItemTableViewCell.xib in Resources */,
+				E57D3FEE1A2378F300AC0FF9 /* CartItemOverviewTableViewCell.xib in Resources */,
+				E59180EF1A20BA270021F855 /* CartView.xib in Resources */,
 				9035D0251A0CB3E100C6E53C /* LaunchScreen.xib in Resources */,
+				E5D9D57D1A1E50FE00875264 /* ProductDetailCarouselTableViewCell.xib in Resources */,
+				E59180E91A20BA270021F855 /* CartEmptyView.xib in Resources */,
+				E5748F511A21F65A00306ADC /* Cart.xcassets in Resources */,
 				E51E22861A17916D0005F39B /* ConsigneeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -797,38 +1254,80 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5748F431A20EC5D00306ADC /* CartRepository.m in Sources */,
+				E59180FA1A20CD770021F855 /* Cart.m in Sources */,
 				9035D0411A0CBF5900C6E53C /* AppDelegate.m in Sources */,
+				E5D9D57C1A1E50FE00875264 /* ProductDetailCarouselTableViewCell.m in Sources */,
+				E59181041A20CD860021F855 /* Payment.m in Sources */,
+				E57D3FED1A2378F300AC0FF9 /* CartItemOverviewTableViewCell.m in Sources */,
+				E5D9D5791A1E50FE00875264 /* ProductDetailViewController.m in Sources */,
 				E5D9D5511A1E3AD900875264 /* App.m in Sources */,
 				E51E22941A1795F70005F39B /* ConsigneeTableViewCell.m in Sources */,
+				E5D9D59C1A1E560F00875264 /* ProductSpecificationValue.m in Sources */,
 				9035D01A1A0CB3E100C6E53C /* GKCommerce.xcdatamodeld in Sources */,
 				9006D6581A1541D000511D28 /* ConsigneeJSONAssembler.m in Sources */,
 				9035D05A1A0CC4A500C6E53C /* Area.m in Sources */,
 				E5D9D53F1A1E287700875264 /* ECUserBackend.m in Sources */,
 				E51E229A1A17A2470005F39B /* ConsigneeListController.m in Sources */,
 				E5F196B41A1CBBF900B97AE3 /* UIView+Extension.m in Sources */,
+				E5D9D5BF1A1E589900875264 /* ECProductBackendAssembler.m in Sources */,
+				E59180CA1A1F8FCE0021F855 /* Backend.m in Sources */,
+				E59180C71A1F8F500021F855 /* ECBackendAssembler.m in Sources */,
+				E59180C01A1F8BB10021F855 /* Config.m in Sources */,
+				E59180FD1A20CD770021F855 /* InvoiceContent.m in Sources */,
 				E549C1941A1B8FBA0014656D /* UserAuthenticationTableViewCell.m in Sources */,
+				E59180FC1A20CD770021F855 /* Invoice.m in Sources */,
+				E5D9D5A01A1E56E200875264 /* Shop.m in Sources */,
+				E5D9D57E1A1E50FE00875264 /* ProductDetailInfomationTableViewCell.m in Sources */,
+				E5D9D5811A1E50FE00875264 /* ProductDetailTitleTableViewCell.m in Sources */,
+				E5748F471A20EC7A00306ADC /* ECCartBackend.m in Sources */,
 				E5E2D3A01A18AE9000338CF0 /* MineDefaultViewController.m in Sources */,
+				E5D9D5A31A1E574100875264 /* ShippingMethod.m in Sources */,
+				E59181051A20CD860021F855 /* PaymentBalance.m in Sources */,
 				E5D9D54D1A1E3A6100875264 /* UserRepository.m in Sources */,
 				9006D65B1A15424800511D28 /* AreaJSONAssembler.m in Sources */,
 				E5D9D53C1A1E27D900875264 /* UserAuthenticationModel.m in Sources */,
+				E57D3FF31A237BEC00AC0FF9 /* GKToggleButton.m in Sources */,
+				E56135841A24EC5C00ED7511 /* GKECFactory.m in Sources */,
+				E5D9D5B11A1E582600875264 /* ECProductService.m in Sources */,
 				E5D9D5421A1E28E400875264 /* ECUserBackendAssembler.m in Sources */,
+				E5D9D5991A1E560F00875264 /* Product.m in Sources */,
 				E51E22A21A17A2930005F39B /* ConsigneeListTableViewCell.m in Sources */,
+				E5D9D5781A1E50FE00875264 /* ProductDetailMoreViewController.m in Sources */,
+				E57D3FF71A23999800AC0FF9 /* Dependency.m in Sources */,
 				E5F196BE1A1CC31D00B97AE3 /* UITableView+Extension.m in Sources */,
+				E5D9D5AD1A1E57FB00875264 /* GKCarouselView.m in Sources */,
+				E5D9D5801A1E50FE00875264 /* ProductDetailTableViewCell.m in Sources */,
 				9035D05E1A0CC58100C6E53C /* ConsigneeBackend.m in Sources */,
 				E549C18C1A1B8EED0014656D /* UserAuthenticationViewController.m in Sources */,
+				E5D9D59A1A1E560F00875264 /* ProductImageURL.m in Sources */,
 				E51E22A61A17A3420005F39B /* ConsigneeListTableViewCellSelected.m in Sources */,
 				9035D0681A0CCAF300C6E53C /* AreaPickerViewController.m in Sources */,
 				E5E2D3A11A18AE9000338CF0 /* MineDefaultTableViewCell.m in Sources */,
 				E51E22891A17918A0005F39B /* ConsigneeController.m in Sources */,
-				E5D9D5381A1E26EA00875264 /* UserBackend.m in Sources */,
+				E59180FB1A20CD770021F855 /* CartItem.m in Sources */,
+				E5D9D5B51A1E585200875264 /* ProductRepository.m in Sources */,
+				E5748F4C1A20ED0200306ADC /* ECCartBackendAssembler.m in Sources */,
+				E59180E51A20BA270021F855 /* CartViewController.m in Sources */,
+				E5D9D5AE1A1E57FB00875264 /* GKCarouselViewCell.m in Sources */,
+				E5D9D5841A1E50FE00875264 /* ProductDetailMoreTab.m in Sources */,
 				E5F196B81A1CC04D00B97AE3 /* ViewController.m in Sources */,
+				E5D9D59B1A1E560F00875264 /* ProductSpecification.m in Sources */,
 				9035D0141A0CB3E100C6E53C /* main.m in Sources */,
 				E5D9D5461A1E2A8300875264 /* User.m in Sources */,
+				E5748F3C1A20E5F700306ADC /* GKLabel.m in Sources */,
 				E5C8061F1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.m in Sources */,
+				E5D9D5851A1E50FE00875264 /* ProductDetailMoreTabButton.m in Sources */,
 				9035D0571A0CC46B00C6E53C /* Consignee.m in Sources */,
+				E5D9D5891A1E50FE00875264 /* ProductMoreTableViewCell.m in Sources */,
 				9035D0631A0CC85000C6E53C /* ConsigneeEditInputTableViewCell.m in Sources */,
-				E5D9D54A1A1E393100875264 /* UserService.m in Sources */,
+				E57D3FEF1A2378F300AC0FF9 /* CartItemTableViewCell.m in Sources */,
+				E5D9D54A1A1E393100875264 /* ECUserService.m in Sources */,
+				E5748F3F1A20EC0F00306ADC /* ECCartService.m in Sources */,
 				9035D0531A0CC44400C6E53C /* ConsigneeEditController.m in Sources */,
+				E5D9D5BC1A1E588400875264 /* ECProductBackend.m in Sources */,
+				E59180E81A20BA270021F855 /* CartEmptyView.m in Sources */,
+				E5D9D5A61A1E57B000875264 /* GKButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,69 +10,28 @@
 
 @implementation CartEmptyView
 
-- (id)initWithCoder:(NSCoder *)aDecoder
+- (IBAction)didTapShopping:(id)sender
 {
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        [self setup];
-    }
-    
-    return self;
-}
-
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self setup];
-    }
-    return self;
-}
-
-- (void)setup
-{
-    for (UIView *child in self.subviews) {
-        if ([@"shopping" isEqualToString:child.restorationIdentifier]) {
-            UIButton *shopping = (UIButton *)child;
-            shopping.layer.cornerRadius = 3.0f;
-            [shopping addTarget:self
-                         action:@selector(shoppingDidTap:)
-               forControlEvents:UIControlEventTouchUpInside];
+    if (!self.authenticated) {
+        if ([self.delegate respondsToSelector:@selector(didTapAuthenticate)]) {
+            [self.delegate didTapAuthenticate];
+        }
+    } else{
+        if ([self.delegate respondsToSelector:@selector(didTapShopping)]) {
+            [self.delegate didTapShopping];
         }
     }
 }
 
-- (void)shoppingDidTap:(id)sender
+- (void)setAuthenticated:(BOOL)authenticated
 {
-    if (!self.hasLogin) {
-        if ([self.delegate respondsToSelector:@selector(loginDidTap)]) {
-            [self.delegate loginDidTap];
-        }
-    }
-    else{
-        if ([self.delegate respondsToSelector:@selector(shoppingDidTap)]) {
-            [self.delegate shoppingDidTap];
-        }
-    }
-}
-
-- (void) setHasLogin:(BOOL)hasLogin
-{
-    _hasLogin = hasLogin;
-    UILabel *label = (UILabel*)[self viewWithTag:10];
-    UIButton *button = (UIButton*)[self viewWithTag:20];
-    if (!_hasLogin) {
-        label.text = @"购物车还是空的 快去登录挑几件商品吧";
-        [button setTitle:@"登录" forState:UIControlStateNormal];
-    }
-    else{
-        label.text = @"购物车还是空的 去挑几件商品吧";
-        if (self.buttonString == nil) {
-            [button setTitle:@"开始购物" forState:UIControlStateNormal];
-        }
-        else{
-            [button setTitle:self.buttonString forState:UIControlStateNormal];
-        }
+    _authenticated = authenticated;
+    if (!_authenticated) {
+        self.titleLabel.text = @"购物车还是空的 快去登录挑几件商品吧";
+        [self.actionButton setTitle:@"登录" forState:UIControlStateNormal];
+    } else {
+        self.titleLabel.text = @"购物车还是空的 去挑几件商品吧";
+        [self.actionButton setTitle:@"开始购物" forState:UIControlStateNormal];
     }
 }
 

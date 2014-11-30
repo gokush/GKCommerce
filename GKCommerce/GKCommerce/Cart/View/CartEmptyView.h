@@ -7,18 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GKButton.h"
 
 @protocol CartEmptyViewDelegate <NSObject>
 
-- (void)shoppingDidTap;
-- (void)loginDidTap;
-
+- (void)didTapShopping;
+- (void)didTapAuthenticate;
 @end
 
 @interface CartEmptyView : UIView
 
 @property (strong, nonatomic) id<CartEmptyViewDelegate> delegate;
-@property (assign, nonatomic) BOOL hasLogin;
-@property (strong, nonatomic) NSString *buttonString;
-
+@property (assign, nonatomic) BOOL authenticated;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet GKButton *actionButton;
+- (IBAction)didTapShopping:(id)sender;
 @end

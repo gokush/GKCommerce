@@ -28,7 +28,7 @@
 @property (strong, nonatomic) NSMutableArray *items;
 @property (assign, nonatomic) Payment *payment;
 
-@property (assign, nonatomic) BOOL allSelected;
+@property (assign, nonatomic) BOOL selectAll;
 @property (strong, nonatomic) NSDecimalNumber *selectedPrice;
 @property (strong, nonatomic) NSMutableArray *selected;
 

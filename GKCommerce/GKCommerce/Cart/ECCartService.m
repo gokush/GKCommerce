@@ -68,6 +68,9 @@
 - (void)cartBackend:(id<CartBackend>)aCartBackend didUpdateItem:(CartItem *)item
         oldQuantity:(NSInteger)anOldQuantity error:(NSError *)anError
 {
+    if (anError)
+        item.quantity = anOldQuantity;
+    
     SEL selector = @selector(cartService:didUpdateItem:oldQuantity:error:);
     if ([self.delegate respondsToSelector:selector])
         [self.delegate cartService:self didUpdateItem:item

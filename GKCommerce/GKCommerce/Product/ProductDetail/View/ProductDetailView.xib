@@ -109,7 +109,7 @@
         </view>
     </objects>
     <resources>
-        <image name="product_icon_cart.png" width="30" height="30"/>
+        <image name="product_icon_cart.png" width="20" height="20"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

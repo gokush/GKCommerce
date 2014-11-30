@@ -121,9 +121,9 @@
     NSError *error;
     if (nil == anError)
         error = [self.assembler error:responseObject];
-    
-    [self.assembler updateCart:item.cart
-                         total:[responseObject objectForKey:@"data"]];
+    else
+        [self.assembler updateCart:item.cart
+                             total:[responseObject objectForKey:@"data"]];
     
     SEL selector = @selector(cartBackend:didUpdateItem:oldQuantity:error:);
     if ([self.delegate respondsToSelector:selector])

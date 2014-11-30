@@ -8,11 +8,13 @@
 
 #import "AppDelegate.h"
 #import "Config.h"
-#import "UserService.h"
+#import "ECUserService.h"
 #import "UserBackend.h"
+#import "ECCartBackend.h"
+#import "Dependency.h"
+#import "GKECFactory.h"
 
 @interface AppDelegate ()
-
 @end
 
 @implementation AppDelegate
@@ -21,34 +23,34 @@
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[Dependency shared] setFactory:[[GKECFactory alloc] init]];
+    
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
     Config *config = [Config shared];
-    config.backendURL = @"http://192.168.4.111/ECMobile/index.php?url=";
+    config.backendURL = @"http://192.168.33.10/ECMobile/index.php?url=";
+    
+    ECUserService *service = [ECUserService shared];
+    service.delegate = self;
+    [service restore];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     [[NSBundle mainBundle] loadNibNamed:@"AppView" owner:self options:nil];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
-
-    UserAuthenticationModel *authentication;
-    authentication = [[UserAuthenticationModel alloc]
-                      initWithUsername:@"gokucommerce" password:@"123123123"];
-    
-    UserService *service = [UserService shared];
-    service.delegate = self;
-    
-    User *user = [service restore];
-    if (nil == user) {
-        [service authenticate:authentication];
-    }
-    
     return YES;
 }
 
-- (void)userService:(UserService *)anUserService didAuthencate:(User *)user
+- (void)userService:(ECUserService *)anUserService didAuthencate:(User *)user
               error:(NSError *)anError
 {
-    
+}
+
+- (void)userService:(ECUserService *)anUserService didRestore:(User *)user
+              error:(NSError *)anError
+{
+    id<CartBackend> backend = [[ECCartBackend alloc] init];
+    [backend requestCart:[[App shared] currentUser].cart];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

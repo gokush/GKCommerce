@@ -13,8 +13,16 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>
+#import <CocoaLumberjack/CocoaLumberjack.h>
 #import "Utility.h"
 #import "UIView+Extension.h"
 #import "UITableView+Extension.h"
 
+#import "App.h"
+#import "Product.h"
+#import "Cart.h"
+
+#import "CartViewController.h"
+
+static const int ddLogLevel = DDLogLevelVerbose;
 #endif

@@ -9,10 +9,11 @@
 #import "MineDefaultViewController.h"
 #import "MineDefaultTableViewCell.h"
 #import "MineHeaderPhotoTableViewCell.h"
-#import "UserAuthenticationViewController.h";
+#import "UserAuthenticationViewController.h"
 #import "ConsigneeEditController.h"
 #import "ConsigneeController.h"
 #import "ConsigneeListController.h"
+#import "ProductDetailViewController.h"
 
 typedef enum {
     HeaderPhotoSection,
@@ -57,6 +58,13 @@ typedef enum {
         [self.tableView registerNib:[UINib nibWithNibName:identifer bundle:nil]
              forCellReuseIdentifier:identifer];
     }
+    
+//    ProductDetailViewController *controller;
+//    controller = [[ProductDetailViewController alloc]
+//                  initWithProductID:8 user:[[App shared] currentUser]];
+//    
+//    controller.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
