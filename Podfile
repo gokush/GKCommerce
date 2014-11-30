@@ -7,6 +7,8 @@ target "GKCommerce" do
     pod 'MBProgressHUD'
     pod 'ASImageResize'
     pod 'CocoaLumberjack'
+    pod 'SKSTableView', :git=> 'http://github.com/gokush/SKSTableView.git'
+
 end
 
 target "GKCommerceTests" do

@@ -65,6 +65,8 @@
 		E59180FD1A20CD770021F855 /* InvoiceContent.m in Sources */ = {isa = PBXBuildFile; fileRef = E59180F91A20CD770021F855 /* InvoiceContent.m */; };
 		E59181041A20CD860021F855 /* Payment.m in Sources */ = {isa = PBXBuildFile; fileRef = E59181011A20CD860021F855 /* Payment.m */; };
 		E59181051A20CD860021F855 /* PaymentBalance.m in Sources */ = {isa = PBXBuildFile; fileRef = E59181031A20CD860021F855 /* PaymentBalance.m */; };
+		E59890BF1A2B096C00105F99 /* ThreeStageSegment.xib in Resources */ = {isa = PBXBuildFile; fileRef = E59890BC1A2B096C00105F99 /* ThreeStageSegment.xib */; };
+		E59890C01A2B096C00105F99 /* ThreeStageSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = E59890BE1A2B096C00105F99 /* ThreeStageSegmentView.m */; };
 		E5C8061B1A1A081E00880B20 /* MineDefaultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C8061A1A1A081E00880B20 /* MineDefaultTableViewCell.xib */; };
 		E5C8061F1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C8061D1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.m */; };
 		E5C806201A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C8061E1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib */; };
@@ -236,6 +238,9 @@
 		E59181011A20CD860021F855 /* Payment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Payment.m; sourceTree = "<group>"; };
 		E59181021A20CD860021F855 /* PaymentBalance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentBalance.h; sourceTree = "<group>"; };
 		E59181031A20CD860021F855 /* PaymentBalance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentBalance.m; sourceTree = "<group>"; };
+		E59890BC1A2B096C00105F99 /* ThreeStageSegment.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ThreeStageSegment.xib; path = ProductList/View/ThreeStageSegment.xib; sourceTree = "<group>"; };
+		E59890BD1A2B096C00105F99 /* ThreeStageSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeStageSegmentView.h; path = ProductList/View/ThreeStageSegmentView.h; sourceTree = "<group>"; };
+		E59890BE1A2B096C00105F99 /* ThreeStageSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThreeStageSegmentView.m; path = ProductList/View/ThreeStageSegmentView.m; sourceTree = "<group>"; };
 		E5A862221A27522C00FD5412 /* UserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserService.h; path = GKCommerce/User/UserService.h; sourceTree = "<group>"; };
 		E5C8061A1A1A081E00880B20 /* MineDefaultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineDefaultTableViewCell.xib; sourceTree = "<group>"; };
 		E5C8061C1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineHeaderPhotoTableViewCell.h; sourceTree = "<group>"; };
@@ -799,6 +804,24 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		E59890BA1A2B094B00105F99 /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				E59890BB1A2B096200105F99 /* View */,
+			);
+			name = ProductList;
+			sourceTree = "<group>";
+		};
+		E59890BB1A2B096200105F99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E59890BC1A2B096C00105F99 /* ThreeStageSegment.xib */,
+				E59890BD1A2B096C00105F99 /* ThreeStageSegmentView.h */,
+				E59890BE1A2B096C00105F99 /* ThreeStageSegmentView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		E5C806221A1A465E00880B20 /* AssetCatalog */ = {
 			isa = PBXGroup;
 			children = (
@@ -856,6 +879,7 @@
 		E5D9D5531A1E50FE00875264 /* Product */ = {
 			isa = PBXGroup;
 			children = (
+				E59890BA1A2B094B00105F99 /* ProductList */,
 				E5D9D5B61A1E585B00875264 /* Backend */,
 				E5D9D5901A1E560F00875264 /* Model */,
 				E5D9D5541A1E50FE00875264 /* ProductDetail */,
@@ -1156,6 +1180,7 @@
 				E5D9D5821A1E50FE00875264 /* ProductDetailTitleTableViewCell.xib in Resources */,
 				9035D06B1A0CCF9600C6E53C /* ConsigneeEditView.xib in Resources */,
 				E5D9D5861A1E50FE00875264 /* ProductDetailMoreView.xib in Resources */,
+				E59890BF1A2B096C00105F99 /* ThreeStageSegment.xib in Resources */,
 				E5C806201A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib in Resources */,
 				9035D0421A0CBF5900C6E53C /* AppView.xib in Resources */,
 				E59180CD1A1FB0F90021F855 /* Product.xcassets in Resources */,
@@ -1318,6 +1343,7 @@
 				E5748F3C1A20E5F700306ADC /* GKLabel.m in Sources */,
 				E5C8061F1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.m in Sources */,
 				E5D9D5851A1E50FE00875264 /* ProductDetailMoreTabButton.m in Sources */,
+				E59890C01A2B096C00105F99 /* ThreeStageSegmentView.m in Sources */,
 				9035D0571A0CC46B00C6E53C /* Consignee.m in Sources */,
 				E5D9D5891A1E50FE00875264 /* ProductMoreTableViewCell.m in Sources */,
 				9035D0631A0CC85000C6E53C /* ConsigneeEditInputTableViewCell.m in Sources */,
