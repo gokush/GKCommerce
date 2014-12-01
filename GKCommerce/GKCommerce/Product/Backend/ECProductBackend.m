@@ -100,4 +100,81 @@
                                 error:error];
 }
 
+- (void)requestProductsWithSearchModel:(SearchBackendModel *)searchModel
+{
+    
+    
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *root = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *filter = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *pagination = [[NSMutableDictionary alloc] init];
+    [root setObject:filter forKey:@"filter"];
+    [root setObject:pagination forKey:@"pagination"];
+    
+    if (searchModel.keywords)
+        [filter setValue:searchModel.keywords forKey:@"keywords"];
+    
+    if (searchModel.page)
+        [pagination setValue:[NSNumber numberWithInteger:searchModel.page]
+                      forKey:@"page"];
+    
+    if (searchModel.perPage)
+        [pagination setValue:[NSNumber numberWithInteger:searchModel.perPage]
+                      forKey:@"count"];
+    
+    if (searchModel.catalogID)
+        [filter setValue:[NSNumber numberWithInteger:searchModel.catalogID]
+                      forKey:@"category_id"];
+    
+    if (searchModel.sort)
+        [filter setValue:searchModel.sort forKey:@"sort_by"];
+    
+    NSError *error;
+    NSData *dumps = [NSJSONSerialization dataWithJSONObject:root options:0
+                                                      error:&error];
+    NSString *requestJSON;
+    requestJSON = [[NSString alloc] initWithData:dumps
+                                        encoding:NSUTF8StringEncoding];
+    [parameters setObject:requestJSON forKey:@"json"];
+    
+    [self.manager
+     POST:[NSString stringWithFormat:@"%@%@", self.config.backendURL, @"/search"]
+     parameters:parameters
+     success:^(AFHTTPRequestOperation *operation, id responseObject) {
+         [self requestProductsWithSearchModel:searchModel
+                           didReceiveResponse:responseObject error:nil];
+         
+     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         [self requestProductsWithSearchModel:searchModel
+                           didReceiveResponse:nil error:error];
+     }];
+}
+
+- (void)requestProductsWithSearchModel:(SearchBackendModel *)searchModel
+                    didReceiveResponse:(id)responseObject
+                                 error:(NSError *)anError
+{
+    NSError *error = anError;
+    if (nil == anError)
+        error = [self.assembler error:responseObject];
+    
+    NSArray *products;
+    NSArray *productsJSON;
+    SearchBackendModel *responseSearch;
+    responseSearch = [searchModel clone];
+    responseSearch.total = [[responseObject
+                             valueForKeyPath:@"paginated.total"] integerValue];
+    
+    productsJSON = [responseObject objectForKey:@"data"];
+    if (!error)
+        products = [self.assembler searchProducts:productsJSON];
+    
+    SEL selector = @selector(productBackend:didReceiveProducts:searchModel:
+                             error:);
+    if ([self.delegate respondsToSelector:selector]) {
+        [self.delegate productBackend:self didReceiveProducts:products
+                          searchModel:responseSearch error:error];
+    }
+}
+
 @end

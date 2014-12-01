@@ -14,4 +14,6 @@
 
 @property (strong, nonatomic) ECProductBackendAssembler *assembler;
 @property (strong, nonatomic) id<ProductBackendDelegate> delegate;
+
+- (void)requestProductsWithSearchModel:(SearchBackendModel *)searchModel;
 @end

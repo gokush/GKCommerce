@@ -37,6 +37,11 @@
                  description:product.productDescription error:nil];
 }
 
+- (void)productsWithSearchModel:(SearchBackendModel *)searchModel
+{
+    [self.backend requestProductsWithSearchModel:searchModel];
+}
+
 #pragma mark - ProductBackendDelegate
 
 - (void)productBackend:(id<ProductBackend>)aProductBackend
@@ -55,6 +60,17 @@ didReceiveProduct:(Product *)product description:(NSString *)aDescription
     if ([self.delegate respondsToSelector:selector])
         [self.delegate productService:self product:product
                           description:aDescription error:anError];
+}
+
+- (void)productBackend:(id<ProductBackend>)aProductBackend
+    didReceiveProducts:(NSArray *)products
+           searchModel:(SearchBackendModel *)aSearchModel
+                 error:(NSError *)anError
+{
+    SEL selector = @selector(productService:products:searchModel:error:);
+    if ([self.delegate respondsToSelector:selector])
+        [self.delegate productService:self products:products
+                          searchModel:aSearchModel error:anError];
 }
 
 + (instancetype)shared

@@ -26,14 +26,14 @@
     User *user = [self.repository restore];
     if (user) {
         [[App shared] setCurrentUser:user];
+        
+        DDLogVerbose(@"从磁盘用户恢复 %@ %d %@", user.username, user.userID,
+                     user.sessionID);
+        SEL selector = @selector(userService:didRestore:error:);
+        if ([self.delegate respondsToSelector:selector])
+            [self.delegate userService:self didRestore:user error:nil];
     }
-    
-    DDLogVerbose(@"从磁盘用户恢复 %@ %d %@", user.username, user.userID,
-                 user.sessionID);
-    SEL selector = @selector(userService:didRestore:error:);
-    if ([self.delegate respondsToSelector:selector])
-        [self.delegate userService:self didRestore:user error:nil];
-    
+
     return user;
 }
 

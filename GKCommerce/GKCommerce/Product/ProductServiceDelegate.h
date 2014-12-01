@@ -12,10 +12,16 @@
 @protocol ProductService;
 @protocol ProductServiceDelegate <NSObject>
 
+@optional
 - (void)productService:(id<ProductService>)aProductService
                product:(Product *)aProduct error:(NSError *)anError;
 
 - (void)productService:(id<ProductService>)aProductService
                product:(Product *)aProduct description:(NSString *)aDescription
+                 error:(NSError *)anError;
+
+- (void)productService:(id<ProductService>)aProductService
+              products:(NSArray *)aProducts
+           searchModel:(SearchBackendModel *)aSearchModel
                  error:(NSError *)anError;
 @end

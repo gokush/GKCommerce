@@ -14,8 +14,8 @@
 @protocol ProductService <NSObject>
 
 @property (strong, nonatomic) id<ProductServiceDelegate> delegate;
-
 @optional
 - (void)productWithID:(NSInteger)productID user:(User *)anUser;
 - (void)productDescription:(Product *)product;
+- (void)productsWithSearchModel:(SearchBackendModel *)searchModel;
 @end

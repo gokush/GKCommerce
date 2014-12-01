@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "User.h"
+#import "SearchBackendModel.h"
 #import "Backend.h"
 #import "ProductBackendDelegate.h"
 
@@ -16,4 +17,5 @@
 @property (strong, nonatomic) id<ProductBackendDelegate> delegate;
 - (void)requestProductWithID:(NSInteger)productID user:(User *)anUser;
 - (void)requestProductDescription:(Product *)product;
+- (void)requestProductsWithSearchModel:(SearchBackendModel *)searchModel;
 @end
