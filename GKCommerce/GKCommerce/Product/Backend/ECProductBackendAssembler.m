@@ -73,4 +73,36 @@
     return images;
 }
 
+- (NSArray *)searchProducts:(NSArray *)productsJSON
+{
+    NSMutableArray *products;
+    products = [NSMutableArray arrayWithCapacity:productsJSON.count];
+
+    for (NSDictionary *productJSON in productsJSON)
+        [products addObject:[self searchProduct:productJSON]];
+    
+    return products;
+}
+
+- (Product *)searchProduct:(NSDictionary *)productJSON
+{
+    NSString *price, *marketPrice;
+    Product *product = [[Product alloc] init];
+    
+    price = [self digitalWithString:[productJSON objectForKey:@"shop_price"]];
+    marketPrice = [self digitalWithString:
+                   [productJSON objectForKey:@"market_price"]];
+    
+    product.productID = [[productJSON objectForKey:@"goods_id"] intValue];
+    product.name = [productJSON objectForKey:@"name"];
+    product.price = [NSDecimalNumber decimalNumberWithString:price];
+    product.marketPrice = [NSDecimalNumber decimalNumberWithString:marketPrice];
+    
+    ProductImageURL *productImage;
+    productImage = [self productImageURL:[productJSON objectForKey:@"img"]];
+    product.image = productImage;
+    
+    return product;
+}
+
 @end

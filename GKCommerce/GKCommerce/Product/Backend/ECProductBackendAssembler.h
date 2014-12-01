@@ -16,4 +16,5 @@
 - (Product *)product:(NSDictionary *)JSON;
 - (ProductImageURL *)productImageURL:(NSDictionary *)productImageURLJSON;
 - (NSArray *)productImageURLs:(NSArray *)productImageURLJSON;
+- (NSArray *)searchProducts:(NSArray *)productsJSON;
 @end
