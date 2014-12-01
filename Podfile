@@ -6,7 +6,8 @@ target "GKCommerce" do
     pod 'AFNetworking'
     pod 'MBProgressHUD'
     pod 'ASImageResize'
-    pod 'CocoaLumberjack'
+    pod 'CocoaLumberjack', '~> 2.0.0-beta4'
+    pod 'SVPullToRefresh'
     pod 'SKSTableView', :git=> 'http://github.com/gokush/SKSTableView.git'
 
 end
