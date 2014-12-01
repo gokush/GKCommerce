@@ -14,6 +14,7 @@
 #import "ConsigneeController.h"
 #import "ConsigneeListController.h"
 #import "ProductDetailViewController.h"
+#import "ProductListViewController.h"
 
 typedef enum {
     HeaderPhotoSection,
@@ -42,29 +43,17 @@ typedef enum {
 
 @implementation MineDefaultViewController
 
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-//    ConsigneeEditController *controller;
-//    controller = [[ConsigneeEditController alloc] initWithConsignee:nil];
-//    ConsigneeListController *controller;
-//    controller = [ConsigneeListController consigneeListControllerWithMock];
-//    [self.navigationController pushViewController:controller animated:YES];
-    
     for (NSString *identifer in @[@"MineDefaultTableViewCell",
                                   @"MineHeaderPhotoTableViewCell"]) {
         
         [self.tableView registerNib:[UINib nibWithNibName:identifer bundle:nil]
              forCellReuseIdentifier:identifer];
     }
-    
-//    ProductDetailViewController *controller;
-//    controller = [[ProductDetailViewController alloc]
-//                  initWithProductID:8 user:[[App shared] currentUser]];
-//    
-//    controller.hidesBottomBarWhenPushed = YES;
-//    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

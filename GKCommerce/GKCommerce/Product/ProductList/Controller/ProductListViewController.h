@@ -22,4 +22,5 @@
 @property (strong, nonatomic) User *user;
 @property (strong, nonatomic) id<ProductService> service;
 - (id)initWithProductCategory:(ProductCategory *)category user:(User *)anUser;
+- (id)initWithSearchModel:(SearchBackendModel *)searchModel user:(User *)anUser;
 @end

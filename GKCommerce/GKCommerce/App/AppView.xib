@@ -13,21 +13,21 @@
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tabBarController id="YA9-NO-oNX">
             <nil key="simulatedBottomBarMetrics"/>
-            <tabBar key="tabBar" contentMode="scaleToFill" selectedItem="6FP-0g-k5n" id="nkK-Gl-Dgi">
+            <tabBar key="tabBar" contentMode="scaleToFill" selectedItem="1Wr-jp-IGU" id="nkK-Gl-Dgi">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </tabBar>
             <viewControllers>
-                <navigationController id="jVG-gY-tJt">
-                    <tabBarItem key="tabBarItem" title="Item" id="1Wr-jp-IGU"/>
+                <navigationController title="选购" id="jVG-gY-tJt">
+                    <tabBarItem key="tabBarItem" title="选购" id="1Wr-jp-IGU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FEc-4K-YqR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <viewControllers>
-                        <viewController id="z7g-xC-Pp2">
-                            <navigationItem key="navigationItem" title="Item" id="kCJ-y3-dEO"/>
+                        <viewController title="选购" nibName="ProductCategoryView" id="z7g-xC-Pp2" customClass="ProductCategoryViewController">
+                            <navigationItem key="navigationItem" title="选购" id="kCJ-y3-dEO"/>
                         </viewController>
                     </viewControllers>
                 </navigationController>

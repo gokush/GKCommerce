@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uw6-kV-0Jv" customClass="ThreeStageSegmentView">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uw6-kV-0Jv" customClass="ThreeStageSegmentView">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="41"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xwz-5q-TGl">
@@ -60,6 +60,10 @@
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="320" id="4jh-Hu-Te0"/>
+                        <constraint firstAttribute="height" constant="41" id="WP7-Tb-EUp"/>
+                    </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="bottomBorderColor">
                             <color key="value" red="0.79607843140000001" green="0.79607843140000001" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -72,7 +76,7 @@
                         <outlet property="delegate" destination="-1" id="Bcr-6T-bFg"/>
                     </connections>
                 </view>
-                <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ast-cn-bu1">
+                <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ast-cn-bu1">
                     <rect key="frame" x="0.0" y="41" width="320" height="527"/>
                     <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nJL-9A-Ss5">
@@ -89,6 +93,13 @@
                 </collectionView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Ast-cn-bu1" firstAttribute="top" secondItem="uw6-kV-0Jv" secondAttribute="bottom" id="9Wt-Sc-TG7"/>
+                <constraint firstAttribute="bottom" secondItem="Ast-cn-bu1" secondAttribute="bottom" id="Ac1-x5-Ibf"/>
+                <constraint firstAttribute="trailing" secondItem="Ast-cn-bu1" secondAttribute="trailing" id="Fww-bw-eUS"/>
+                <constraint firstItem="uw6-kV-0Jv" firstAttribute="top" secondItem="tem-ee-9mn" secondAttribute="top" id="cFi-zh-zL0"/>
+                <constraint firstItem="uw6-kV-0Jv" firstAttribute="leading" secondItem="tem-ee-9mn" secondAttribute="leading" id="lVE-gt-JzF"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
         </view>

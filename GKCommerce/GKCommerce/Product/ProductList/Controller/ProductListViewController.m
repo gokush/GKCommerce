@@ -20,14 +20,22 @@
 
 - (id)initWithProductCategory:(ProductCategory *)category user:(User *)anUser
 {
+    SearchBackendModel *search = [[SearchBackendModel alloc] init];
+    search.productCategoryID = category.categoryID;
+    self = [self initWithSearchModel:search user:anUser];
+    if (self) {
+        self.productCategory = category;
+    }
+    return self;
+}
+
+- (id)initWithSearchModel:(SearchBackendModel *)searchModel user:(User *)anUser
+{
     self = [self initWithNibName:@"ProductListView" bundle:nil];
     if (self) {
-        SearchBackendModel *search = [[SearchBackendModel alloc] init];
-        search.productCategoryID = category.categoryID;
-        self.search = search;
-        self.products = [[NSMutableArray alloc] init];
+        self.search = searchModel;
         self.user = anUser;
-        self.productCategory = category;
+        self.products = [[NSMutableArray alloc] init];
     }
     return self;
 }
