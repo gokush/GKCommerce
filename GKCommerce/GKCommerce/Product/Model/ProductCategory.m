@@ -6,15 +6,15 @@
 //  Copyright (c) 2014年 小悟空. All rights reserved.
 //
 
-#import "Catalog.h"
+#import "ProductCategory.h"
 
-@implementation Catalog
+@implementation ProductCategory
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:[NSNumber numberWithInt:self.catalogID]
-                  forKey:@"catalogID"];
+    [aCoder encodeObject:[NSNumber numberWithInt:self.categoryID]
+                  forKey:@"categoryID"];
     [aCoder encodeObject:self.name forKey:@"name"];
-    [aCoder encodeObject:self.catalogDescription forKey:@"catalogDescription"];
+    [aCoder encodeObject:self.categoryDescription forKey:@"categoryDescription"];
     [aCoder encodeObject:self.children forKey:@"children"];
     [aCoder encodeObject:self.cover forKey:@"cover"];
 }
@@ -23,11 +23,11 @@
 {
     self = [self init];
     if (self) {
-        self.catalogID = [[aDecoder decodeObjectForKey:@"catalogID"]
+        self.categoryID = [[aDecoder decodeObjectForKey:@"categoryID"]
                           integerValue];
         self.name = [aDecoder decodeObjectForKey:@"name"];
-        self.catalogDescription = [aDecoder
-                                   decodeObjectForKey:@"catalogDescription"];
+        self.categoryDescription = [aDecoder
+                                   decodeObjectForKey:@"categoryDescription"];
         self.children = [aDecoder decodeObjectForKey:@"children"];
         self.cover = [aDecoder decodeObjectForKey:@"cover"];
     }
@@ -39,7 +39,7 @@
 {
     NSMutableArray *names = [[NSMutableArray alloc] init];
     
-    for (Catalog *child in self.children)
+    for (ProductCategory *child in self.children)
         [names addObject:child.name];
     
     return names;

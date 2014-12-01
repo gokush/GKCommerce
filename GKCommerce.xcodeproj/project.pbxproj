@@ -77,7 +77,7 @@
 		E5C806201A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C8061E1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib */; };
 		E5C806241A1A467900880B20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C806231A1A467900880B20 /* Images.xcassets */; };
 		E5C806261A1A469700880B20 /* Mine.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C806251A1A469700880B20 /* Mine.xcassets */; };
-		E5CD60D01A2BFB6E0036160C /* Catalog.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CD60CF1A2BFB6E0036160C /* Catalog.m */; };
+		E5CD60D01A2BFB6E0036160C /* ProductCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CD60CF1A2BFB6E0036160C /* ProductCategory.m */; };
 		E5CD60D41A2BFBC50036160C /* SearchBackendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CD60D31A2BFBC50036160C /* SearchBackendModel.m */; };
 		E5D9D53C1A1E27D900875264 /* UserAuthenticationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D53B1A1E27D900875264 /* UserAuthenticationModel.m */; };
 		E5D9D53F1A1E287700875264 /* ECUserBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D53E1A1E287700875264 /* ECUserBackend.m */; };
@@ -263,8 +263,8 @@
 		E5C8061E1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineHeaderPhotoTableViewCell.xib; sourceTree = "<group>"; };
 		E5C806231A1A467900880B20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = GKCommerce/AssetCatalog/Images.xcassets; sourceTree = "<group>"; };
 		E5C806251A1A469700880B20 /* Mine.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Mine.xcassets; path = GKCommerce/AssetCatalog/Mine.xcassets; sourceTree = "<group>"; };
-		E5CD60CE1A2BFB6E0036160C /* Catalog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Catalog.h; sourceTree = "<group>"; };
-		E5CD60CF1A2BFB6E0036160C /* Catalog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Catalog.m; sourceTree = "<group>"; };
+		E5CD60CE1A2BFB6E0036160C /* ProductCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCategory.h; sourceTree = "<group>"; };
+		E5CD60CF1A2BFB6E0036160C /* ProductCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCategory.m; sourceTree = "<group>"; };
 		E5CD60D21A2BFBC50036160C /* SearchBackendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchBackendModel.h; path = Backend/Model/SearchBackendModel.h; sourceTree = "<group>"; };
 		E5CD60D31A2BFBC50036160C /* SearchBackendModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchBackendModel.m; path = Backend/Model/SearchBackendModel.m; sourceTree = "<group>"; };
 		E5D9D5361A1E26EA00875264 /* UserBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserBackend.h; path = GKCommerce/User/Backend/UserBackend.h; sourceTree = "<group>"; };
@@ -1028,8 +1028,8 @@
 		E5D9D5901A1E560F00875264 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E5CD60CE1A2BFB6E0036160C /* Catalog.h */,
-				E5CD60CF1A2BFB6E0036160C /* Catalog.m */,
+				E5CD60CE1A2BFB6E0036160C /* ProductCategory.h */,
+				E5CD60CF1A2BFB6E0036160C /* ProductCategory.m */,
 				E5D9D5911A1E560F00875264 /* Product.h */,
 				E5D9D5921A1E560F00875264 /* Product.m */,
 				E5D9D5931A1E560F00875264 /* ProductImageURL.h */,
@@ -1335,7 +1335,7 @@
 				E5D9D57C1A1E50FE00875264 /* ProductDetailCarouselTableViewCell.m in Sources */,
 				E59181041A20CD860021F855 /* Payment.m in Sources */,
 				E57D3FED1A2378F300AC0FF9 /* CartItemOverviewTableViewCell.m in Sources */,
-				E5CD60D01A2BFB6E0036160C /* Catalog.m in Sources */,
+				E5CD60D01A2BFB6E0036160C /* ProductCategory.m in Sources */,
 				E5D9D5791A1E50FE00875264 /* ProductDetailViewController.m in Sources */,
 				E5D9D5511A1E3AD900875264 /* App.m in Sources */,
 				E59890CE1A2B0C7A00105F99 /* GKView.m in Sources */,

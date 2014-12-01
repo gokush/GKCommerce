@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Catalog : NSObject <NSCoding>
+@interface ProductCategory : NSObject <NSCoding>
 
-@property (assign, nonatomic) NSInteger catalogID;
+@property (assign, nonatomic) NSInteger categoryID;
 @property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *catalogDescription;
+@property (strong, nonatomic) NSString *categoryDescription;
 @property (strong, nonatomic) NSMutableArray *children;
 @property (strong, nonatomic) NSURL *cover;
 

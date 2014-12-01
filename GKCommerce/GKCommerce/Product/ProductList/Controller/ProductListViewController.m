@@ -18,16 +18,16 @@
 
 @implementation ProductListViewController
 
-- (id)initWithCatalog:(Catalog *)catalog user:(User *)anUser
+- (id)initWithProductCategory:(ProductCategory *)category user:(User *)anUser
 {
     self = [self initWithNibName:@"ProductListView" bundle:nil];
     if (self) {
         SearchBackendModel *search = [[SearchBackendModel alloc] init];
-        search.catalogID = catalog.catalogID;
+        search.productCategoryID = category.categoryID;
         self.search = search;
         self.products = [[NSMutableArray alloc] init];
         self.user = anUser;
-        self.catalog = catalog;
+        self.productCategory = category;
     }
     return self;
 }
@@ -40,8 +40,8 @@
 {
     [super viewDidLoad];
     
-    if (self.catalog)
-        self.title = self.catalog.name;
+    if (self.productCategory)
+        self.title = self.productCategory.name;
     else
         self.navigationItem.title = @"选购";
     self.edgesForExtendedLayout = UIRectEdgeNone;

@@ -24,7 +24,7 @@
 
 #import "App.h"
 #import "Product.h"
-#import "Catalog.h"
+#import "ProductCategory.h"
 #import "Cart.h"
 #import "CartViewController.h"
 

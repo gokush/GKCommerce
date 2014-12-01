@@ -29,7 +29,7 @@
 {
     SearchBackendModel *search = [[SearchBackendModel alloc] init];
     search.keywords = self.keywords;
-    search.catalogID = self.catalogID;
+    search.productCategoryID = self.productCategoryID;
     search.sort = self.sort;
     search.page = self.page;
     search.perPage = self.perPage;

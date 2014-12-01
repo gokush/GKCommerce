@@ -11,7 +11,7 @@
 @interface SearchBackendModel : NSObject
 
 @property (strong, nonatomic) NSString *keywords;
-@property (assign, nonatomic) NSInteger catalogID;
+@property (assign, nonatomic) NSInteger productCategoryID;
 // TODO 用枚举
 @property (strong, nonatomic) NSString *sort;
 @property (assign, nonatomic) NSInteger page;

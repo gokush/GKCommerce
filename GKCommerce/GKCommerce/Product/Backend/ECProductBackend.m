@@ -122,8 +122,8 @@
         [pagination setValue:[NSNumber numberWithInteger:searchModel.perPage]
                       forKey:@"count"];
     
-    if (searchModel.catalogID)
-        [filter setValue:[NSNumber numberWithInteger:searchModel.catalogID]
+    if (searchModel.productCategoryID)
+        [filter setValue:[NSNumber numberWithInteger:searchModel.productCategoryID]
                       forKey:@"category_id"];
     
     if (searchModel.sort)
