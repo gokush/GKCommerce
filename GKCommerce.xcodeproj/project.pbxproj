@@ -85,6 +85,31 @@
 		E5CD60E61A2C567E0036160C /* ProductCategoryChildTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CD60DE1A2C567E0036160C /* ProductCategoryChildTableViewCell.m */; };
 		E5CD60E71A2C567E0036160C /* ProductCategoryChildTableViewCellGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CD60E01A2C567E0036160C /* ProductCategoryChildTableViewCellGrid.m */; };
 		E5CD60E81A2C567E0036160C /* ProductCategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5CD60E21A2C567E0036160C /* ProductCategoryView.xib */; };
+		E5CD61111A2C72D30036160C /* FeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CD60EC1A2C72D30036160C /* FeatureViewController.m */; };
+		E5CD61121A2C72D30036160C /* FeatureCarouselTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CD60EF1A2C72D30036160C /* FeatureCarouselTableViewCell.m */; };
+		E5CD61131A2C72D30036160C /* FeatureCarouselTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5CD60F01A2C72D30036160C /* FeatureCarouselTableViewCell.xib */; };
+		E5CD61141A2C72D30036160C /* FeatureOneColumnTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CD60F21A2C72D30036160C /* FeatureOneColumnTableViewCell.m */; };
+		E5CD61151A2C72D30036160C /* FeatureOneColumnTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5CD60F31A2C72D30036160C /* FeatureOneColumnTableViewCell.xib */; };
+		E5CD61161A2C72D30036160C /* FeatureTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CD60F51A2C72D30036160C /* FeatureTableViewCell.m */; };
+		E5CD61171A2C72D30036160C /* FeatureTableViewCellColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CD60F71A2C72D30036160C /* FeatureTableViewCellColumn.m */; };
+		E5CD61181A2C72D30036160C /* FeatureThreeColumnTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CD60F91A2C72D30036160C /* FeatureThreeColumnTableViewCell.m */; };
+		E5CD61191A2C72D30036160C /* FeatureThreeColumnTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5CD60FA1A2C72D30036160C /* FeatureThreeColumnTableViewCell.xib */; };
+		E5CD611A1A2C72D30036160C /* Feature.json in Resources */ = {isa = PBXBuildFile; fileRef = E5CD60FC1A2C72D30036160C /* Feature.json */; };
+		E5CD611B1A2C72D30036160C /* feature_iPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = E5CD60FD1A2C72D30036160C /* feature_iPhone.png */; };
+		E5CD611C1A2C72D30036160C /* feature_iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E5CD60FE1A2C72D30036160C /* feature_iPhone@2x.png */; };
+		E5CD611D1A2C72D30036160C /* feature_three_column_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5CD60FF1A2C72D30036160C /* feature_three_column_0.jpg */; };
+		E5CD611E1A2C72D30036160C /* feature_three_column_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5CD61001A2C72D30036160C /* feature_three_column_1.jpg */; };
+		E5CD611F1A2C72D30036160C /* feature_three_column_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5CD61011A2C72D30036160C /* feature_three_column_2.jpg */; };
+		E5CD61201A2C72D30036160C /* FeatureCarouselModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CD61041A2C72D30036160C /* FeatureCarouselModel.m */; };
+		E5CD61211A2C72D30036160C /* FeatureColumnModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CD61061A2C72D30036160C /* FeatureColumnModel.m */; };
+		E5CD61221A2C72D30036160C /* FeatureModelFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CD61081A2C72D30036160C /* FeatureModelFactory.m */; };
+		E5CD61231A2C72D30036160C /* FeatureOneColumnModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CD610A1A2C72D30036160C /* FeatureOneColumnModel.m */; };
+		E5CD61241A2C72D30036160C /* FeatureThreeColumnModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CD610C1A2C72D30036160C /* FeatureThreeColumnModel.m */; };
+		E5CD61251A2C72D30036160C /* FeatureViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CD610E1A2C72D30036160C /* FeatureViewModel.m */; };
+		E5CD61261A2C72D30036160C /* FeatureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5CD61101A2C72D30036160C /* FeatureView.xib */; };
+		E5D381461A2CA72800A7CB2E /* GKFeatureBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D381451A2CA72800A7CB2E /* GKFeatureBackend.m */; };
+		E5D381491A2CA75900A7CB2E /* GKFeatureBackendAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D381481A2CA75800A7CB2E /* GKFeatureBackendAssembler.m */; };
+		E5D3814C1A2CABBB00A7CB2E /* GKFeatureService.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D3814B1A2CABBB00A7CB2E /* GKFeatureService.m */; };
 		E5D9D53C1A1E27D900875264 /* UserAuthenticationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D53B1A1E27D900875264 /* UserAuthenticationModel.m */; };
 		E5D9D53F1A1E287700875264 /* ECUserBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D53E1A1E287700875264 /* ECUserBackend.m */; };
 		E5D9D5421A1E28E400875264 /* ECUserBackendAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D9D5411A1E28E400875264 /* ECUserBackendAssembler.m */; };
@@ -283,6 +308,50 @@
 		E5CD60DF1A2C567E0036160C /* ProductCategoryChildTableViewCellGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCategoryChildTableViewCellGrid.h; sourceTree = "<group>"; };
 		E5CD60E01A2C567E0036160C /* ProductCategoryChildTableViewCellGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCategoryChildTableViewCellGrid.m; sourceTree = "<group>"; };
 		E5CD60E21A2C567E0036160C /* ProductCategoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductCategoryView.xib; sourceTree = "<group>"; };
+		E5CD60EB1A2C72D30036160C /* FeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureViewController.h; sourceTree = "<group>"; };
+		E5CD60EC1A2C72D30036160C /* FeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureViewController.m; sourceTree = "<group>"; };
+		E5CD60EE1A2C72D30036160C /* FeatureCarouselTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureCarouselTableViewCell.h; sourceTree = "<group>"; };
+		E5CD60EF1A2C72D30036160C /* FeatureCarouselTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureCarouselTableViewCell.m; sourceTree = "<group>"; };
+		E5CD60F01A2C72D30036160C /* FeatureCarouselTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeatureCarouselTableViewCell.xib; sourceTree = "<group>"; };
+		E5CD60F11A2C72D30036160C /* FeatureOneColumnTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureOneColumnTableViewCell.h; sourceTree = "<group>"; };
+		E5CD60F21A2C72D30036160C /* FeatureOneColumnTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureOneColumnTableViewCell.m; sourceTree = "<group>"; };
+		E5CD60F31A2C72D30036160C /* FeatureOneColumnTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeatureOneColumnTableViewCell.xib; sourceTree = "<group>"; };
+		E5CD60F41A2C72D30036160C /* FeatureTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureTableViewCell.h; sourceTree = "<group>"; };
+		E5CD60F51A2C72D30036160C /* FeatureTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureTableViewCell.m; sourceTree = "<group>"; };
+		E5CD60F61A2C72D30036160C /* FeatureTableViewCellColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureTableViewCellColumn.h; sourceTree = "<group>"; };
+		E5CD60F71A2C72D30036160C /* FeatureTableViewCellColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureTableViewCellColumn.m; sourceTree = "<group>"; };
+		E5CD60F81A2C72D30036160C /* FeatureThreeColumnTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureThreeColumnTableViewCell.h; sourceTree = "<group>"; };
+		E5CD60F91A2C72D30036160C /* FeatureThreeColumnTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureThreeColumnTableViewCell.m; sourceTree = "<group>"; };
+		E5CD60FA1A2C72D30036160C /* FeatureThreeColumnTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeatureThreeColumnTableViewCell.xib; sourceTree = "<group>"; };
+		E5CD60FC1A2C72D30036160C /* Feature.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Feature.json; sourceTree = "<group>"; };
+		E5CD60FD1A2C72D30036160C /* feature_iPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feature_iPhone.png; sourceTree = "<group>"; };
+		E5CD60FE1A2C72D30036160C /* feature_iPhone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "feature_iPhone@2x.png"; sourceTree = "<group>"; };
+		E5CD60FF1A2C72D30036160C /* feature_three_column_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = feature_three_column_0.jpg; sourceTree = "<group>"; };
+		E5CD61001A2C72D30036160C /* feature_three_column_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = feature_three_column_1.jpg; sourceTree = "<group>"; };
+		E5CD61011A2C72D30036160C /* feature_three_column_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = feature_three_column_2.jpg; sourceTree = "<group>"; };
+		E5CD61031A2C72D30036160C /* FeatureCarouselModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureCarouselModel.h; sourceTree = "<group>"; };
+		E5CD61041A2C72D30036160C /* FeatureCarouselModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureCarouselModel.m; sourceTree = "<group>"; };
+		E5CD61051A2C72D30036160C /* FeatureColumnModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureColumnModel.h; sourceTree = "<group>"; };
+		E5CD61061A2C72D30036160C /* FeatureColumnModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureColumnModel.m; sourceTree = "<group>"; };
+		E5CD61071A2C72D30036160C /* FeatureModelFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureModelFactory.h; sourceTree = "<group>"; };
+		E5CD61081A2C72D30036160C /* FeatureModelFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureModelFactory.m; sourceTree = "<group>"; };
+		E5CD61091A2C72D30036160C /* FeatureOneColumnModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureOneColumnModel.h; sourceTree = "<group>"; };
+		E5CD610A1A2C72D30036160C /* FeatureOneColumnModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureOneColumnModel.m; sourceTree = "<group>"; };
+		E5CD610B1A2C72D30036160C /* FeatureThreeColumnModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureThreeColumnModel.h; sourceTree = "<group>"; };
+		E5CD610C1A2C72D30036160C /* FeatureThreeColumnModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureThreeColumnModel.m; sourceTree = "<group>"; };
+		E5CD610D1A2C72D30036160C /* FeatureViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureViewModel.h; sourceTree = "<group>"; };
+		E5CD610E1A2C72D30036160C /* FeatureViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureViewModel.m; sourceTree = "<group>"; };
+		E5CD61101A2C72D30036160C /* FeatureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FeatureView.xib; sourceTree = "<group>"; };
+		E5CD61271A2C73680036160C /* FeatureService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureService.h; sourceTree = "<group>"; };
+		E5CD61281A2C73780036160C /* FeatureServiceDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureServiceDelegate.h; sourceTree = "<group>"; };
+		E5CD612A1A2C74370036160C /* FeatureBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeatureBackend.h; path = Backend/FeatureBackend.h; sourceTree = "<group>"; };
+		E5CD612B1A2C74440036160C /* FeatureBackendDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeatureBackendDelegate.h; path = Backend/FeatureBackendDelegate.h; sourceTree = "<group>"; };
+		E5D381441A2CA72800A7CB2E /* GKFeatureBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKFeatureBackend.h; path = Backend/GKFeatureBackend.h; sourceTree = "<group>"; };
+		E5D381451A2CA72800A7CB2E /* GKFeatureBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKFeatureBackend.m; path = Backend/GKFeatureBackend.m; sourceTree = "<group>"; };
+		E5D381471A2CA75800A7CB2E /* GKFeatureBackendAssembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKFeatureBackendAssembler.h; path = Backend/GKFeatureBackendAssembler.h; sourceTree = "<group>"; };
+		E5D381481A2CA75800A7CB2E /* GKFeatureBackendAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKFeatureBackendAssembler.m; path = Backend/GKFeatureBackendAssembler.m; sourceTree = "<group>"; };
+		E5D3814A1A2CABBB00A7CB2E /* GKFeatureService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKFeatureService.h; sourceTree = "<group>"; };
+		E5D3814B1A2CABBB00A7CB2E /* GKFeatureService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKFeatureService.m; sourceTree = "<group>"; };
 		E5D9D5361A1E26EA00875264 /* UserBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserBackend.h; path = GKCommerce/User/Backend/UserBackend.h; sourceTree = "<group>"; };
 		E5D9D53A1A1E27D900875264 /* UserAuthenticationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserAuthenticationModel.h; path = GKCommerce/User/Backend/Model/UserAuthenticationModel.h; sourceTree = "<group>"; };
 		E5D9D53B1A1E27D900875264 /* UserAuthenticationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserAuthenticationModel.m; path = GKCommerce/User/Backend/Model/UserAuthenticationModel.m; sourceTree = "<group>"; };
@@ -422,6 +491,7 @@
 		9035D0101A0CB3E100C6E53C /* GKCommerce */ = {
 			isa = PBXGroup;
 			children = (
+				E5CD60E91A2C72D30036160C /* Feature */,
 				E59180FE1A20CD860021F855 /* Payment */,
 				E59180CE1A20BA270021F855 /* Cart */,
 				E59180C11A1F8F020021F855 /* Backend */,
@@ -933,6 +1003,106 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		E5CD60E91A2C72D30036160C /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				E5CD61291A2C74210036160C /* Backend */,
+				E5CD60EA1A2C72D30036160C /* Controller */,
+				E5CD60ED1A2C72D30036160C /* FeatureTableViewCell */,
+				E5CD60FB1A2C72D30036160C /* Mock */,
+				E5CD61021A2C72D30036160C /* Model */,
+				E5CD610F1A2C72D30036160C /* View */,
+				E5CD61271A2C73680036160C /* FeatureService.h */,
+				E5CD61281A2C73780036160C /* FeatureServiceDelegate.h */,
+				E5D3814A1A2CABBB00A7CB2E /* GKFeatureService.h */,
+				E5D3814B1A2CABBB00A7CB2E /* GKFeatureService.m */,
+			);
+			name = Feature;
+			path = GKCommerce/Feature;
+			sourceTree = "<group>";
+		};
+		E5CD60EA1A2C72D30036160C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E5CD60EB1A2C72D30036160C /* FeatureViewController.h */,
+				E5CD60EC1A2C72D30036160C /* FeatureViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E5CD60ED1A2C72D30036160C /* FeatureTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E5CD60EE1A2C72D30036160C /* FeatureCarouselTableViewCell.h */,
+				E5CD60EF1A2C72D30036160C /* FeatureCarouselTableViewCell.m */,
+				E5CD60F01A2C72D30036160C /* FeatureCarouselTableViewCell.xib */,
+				E5CD60F11A2C72D30036160C /* FeatureOneColumnTableViewCell.h */,
+				E5CD60F21A2C72D30036160C /* FeatureOneColumnTableViewCell.m */,
+				E5CD60F31A2C72D30036160C /* FeatureOneColumnTableViewCell.xib */,
+				E5CD60F41A2C72D30036160C /* FeatureTableViewCell.h */,
+				E5CD60F51A2C72D30036160C /* FeatureTableViewCell.m */,
+				E5CD60F61A2C72D30036160C /* FeatureTableViewCellColumn.h */,
+				E5CD60F71A2C72D30036160C /* FeatureTableViewCellColumn.m */,
+				E5CD60F81A2C72D30036160C /* FeatureThreeColumnTableViewCell.h */,
+				E5CD60F91A2C72D30036160C /* FeatureThreeColumnTableViewCell.m */,
+				E5CD60FA1A2C72D30036160C /* FeatureThreeColumnTableViewCell.xib */,
+			);
+			path = FeatureTableViewCell;
+			sourceTree = "<group>";
+		};
+		E5CD60FB1A2C72D30036160C /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				E5CD60FC1A2C72D30036160C /* Feature.json */,
+				E5CD60FD1A2C72D30036160C /* feature_iPhone.png */,
+				E5CD60FE1A2C72D30036160C /* feature_iPhone@2x.png */,
+				E5CD60FF1A2C72D30036160C /* feature_three_column_0.jpg */,
+				E5CD61001A2C72D30036160C /* feature_three_column_1.jpg */,
+				E5CD61011A2C72D30036160C /* feature_three_column_2.jpg */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		E5CD61021A2C72D30036160C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E5CD61031A2C72D30036160C /* FeatureCarouselModel.h */,
+				E5CD61041A2C72D30036160C /* FeatureCarouselModel.m */,
+				E5CD61051A2C72D30036160C /* FeatureColumnModel.h */,
+				E5CD61061A2C72D30036160C /* FeatureColumnModel.m */,
+				E5CD61071A2C72D30036160C /* FeatureModelFactory.h */,
+				E5CD61081A2C72D30036160C /* FeatureModelFactory.m */,
+				E5CD61091A2C72D30036160C /* FeatureOneColumnModel.h */,
+				E5CD610A1A2C72D30036160C /* FeatureOneColumnModel.m */,
+				E5CD610B1A2C72D30036160C /* FeatureThreeColumnModel.h */,
+				E5CD610C1A2C72D30036160C /* FeatureThreeColumnModel.m */,
+				E5CD610D1A2C72D30036160C /* FeatureViewModel.h */,
+				E5CD610E1A2C72D30036160C /* FeatureViewModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E5CD610F1A2C72D30036160C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E5CD61101A2C72D30036160C /* FeatureView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E5CD61291A2C74210036160C /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				E5CD612A1A2C74370036160C /* FeatureBackend.h */,
+				E5CD612B1A2C74440036160C /* FeatureBackendDelegate.h */,
+				E5D381441A2CA72800A7CB2E /* GKFeatureBackend.h */,
+				E5D381451A2CA72800A7CB2E /* GKFeatureBackend.m */,
+				E5D381471A2CA75800A7CB2E /* GKFeatureBackendAssembler.h */,
+				E5D381481A2CA75800A7CB2E /* GKFeatureBackendAssembler.m */,
+			);
+			name = Backend;
+			sourceTree = "<group>";
+		};
 		E5D9D5351A1E26B700875264 /* Backend */ = {
 			isa = PBXGroup;
 			children = (
@@ -1278,7 +1448,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E549C1951A1B8FBA0014656D /* UserAuthenticationTableViewCell.xib in Resources */,
+				E5CD611E1A2C72D30036160C /* feature_three_column_1.jpg in Resources */,
 				E5D9D58A1A1E50FE00875264 /* ProductMoreTableViewCell.xib in Resources */,
+				E5CD611C1A2C72D30036160C /* feature_iPhone@2x.png in Resources */,
 				9035D0641A0CC85000C6E53C /* ConsigneeEditInputTableViewCell.xib in Resources */,
 				E51E22A31A17A2930005F39B /* ConsigneeListTableViewCell.xib in Resources */,
 				E59890CA1A2B0AA500105F99 /* ProductListCollectionViewCell.xib in Resources */,
@@ -1289,6 +1461,9 @@
 				E5D9D5861A1E50FE00875264 /* ProductDetailMoreView.xib in Resources */,
 				E59890BF1A2B096C00105F99 /* ThreeStageSegment.xib in Resources */,
 				E5C806201A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib in Resources */,
+				E5CD611A1A2C72D30036160C /* Feature.json in Resources */,
+				E5CD61261A2C72D30036160C /* FeatureView.xib in Resources */,
+				E5CD61191A2C72D30036160C /* FeatureThreeColumnTableViewCell.xib in Resources */,
 				9035D0421A0CBF5900C6E53C /* AppView.xib in Resources */,
 				E59180CD1A1FB0F90021F855 /* Product.xcassets in Resources */,
 				E5C8061B1A1A081E00880B20 /* MineDefaultTableViewCell.xib in Resources */,
@@ -1296,15 +1471,20 @@
 				E5D9D57F1A1E50FE00875264 /* ProductDetailInfomationTableViewCell.xib in Resources */,
 				E51E229D1A17A2660005F39B /* ConsigneeListView.xib in Resources */,
 				E549C1971A1B8FDA0014656D /* UserAuthenticationView.xib in Resources */,
+				E5CD61151A2C72D30036160C /* FeatureOneColumnTableViewCell.xib in Resources */,
 				E5CD60E51A2C567E0036160C /* ProductCategoryTableViewCell.xib in Resources */,
+				E5CD611F1A2C72D30036160C /* feature_three_column_2.jpg in Resources */,
 				E5E2D3A31A18AE9000338CF0 /* MineDefaultView.xib in Resources */,
 				E5C806241A1A467900880B20 /* Images.xcassets in Resources */,
 				E57D3FF01A2378F300AC0FF9 /* CartItemTableViewCell.xib in Resources */,
 				E57D3FEE1A2378F300AC0FF9 /* CartItemOverviewTableViewCell.xib in Resources */,
 				E59180EF1A20BA270021F855 /* CartView.xib in Resources */,
 				9035D0251A0CB3E100C6E53C /* LaunchScreen.xib in Resources */,
+				E5CD61131A2C72D30036160C /* FeatureCarouselTableViewCell.xib in Resources */,
 				E5D9D57D1A1E50FE00875264 /* ProductDetailCarouselTableViewCell.xib in Resources */,
+				E5CD611D1A2C72D30036160C /* feature_three_column_0.jpg in Resources */,
 				E59180E91A20BA270021F855 /* CartEmptyView.xib in Resources */,
+				E5CD611B1A2C72D30036160C /* feature_iPhone.png in Resources */,
 				E5748F511A21F65A00306ADC /* Cart.xcassets in Resources */,
 				E59890CB1A2B0AA500105F99 /* ProductListView.xib in Resources */,
 				E5CD60E81A2C567E0036160C /* ProductCategoryView.xib in Resources */,
@@ -1389,6 +1569,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5CD61161A2C72D30036160C /* FeatureTableViewCell.m in Sources */,
+				E5CD61201A2C72D30036160C /* FeatureCarouselModel.m in Sources */,
 				E5748F431A20EC5D00306ADC /* CartRepository.m in Sources */,
 				E59180FA1A20CD770021F855 /* Cart.m in Sources */,
 				9035D0411A0CBF5900C6E53C /* AppDelegate.m in Sources */,
@@ -1408,21 +1590,27 @@
 				9035D05A1A0CC4A500C6E53C /* Area.m in Sources */,
 				E5D9D53F1A1E287700875264 /* ECUserBackend.m in Sources */,
 				E51E229A1A17A2470005F39B /* ConsigneeListController.m in Sources */,
+				E5D3814C1A2CABBB00A7CB2E /* GKFeatureService.m in Sources */,
 				E5F196B41A1CBBF900B97AE3 /* UIView+Extension.m in Sources */,
 				E5D9D5BF1A1E589900875264 /* ECProductBackendAssembler.m in Sources */,
 				E59180CA1A1F8FCE0021F855 /* Backend.m in Sources */,
 				E59180C71A1F8F500021F855 /* ECBackendAssembler.m in Sources */,
 				E59180C01A1F8BB10021F855 /* Config.m in Sources */,
 				E5CD60E61A2C567E0036160C /* ProductCategoryChildTableViewCell.m in Sources */,
+				E5CD61221A2C72D30036160C /* FeatureModelFactory.m in Sources */,
 				E59180FD1A20CD770021F855 /* InvoiceContent.m in Sources */,
 				E5CD60E31A2C567E0036160C /* ProductCategoryViewController.m in Sources */,
 				E549C1941A1B8FBA0014656D /* UserAuthenticationTableViewCell.m in Sources */,
 				E59890C41A2B0A8800105F99 /* ProductListViewController.m in Sources */,
+				E5CD61111A2C72D30036160C /* FeatureViewController.m in Sources */,
 				E59180FC1A20CD770021F855 /* Invoice.m in Sources */,
+				E5CD61241A2C72D30036160C /* FeatureThreeColumnModel.m in Sources */,
 				E5D9D5A01A1E56E200875264 /* Shop.m in Sources */,
 				E5D9D57E1A1E50FE00875264 /* ProductDetailInfomationTableViewCell.m in Sources */,
+				E5CD61251A2C72D30036160C /* FeatureViewModel.m in Sources */,
 				E5D9D5811A1E50FE00875264 /* ProductDetailTitleTableViewCell.m in Sources */,
 				E5748F471A20EC7A00306ADC /* ECCartBackend.m in Sources */,
+				E5D381491A2CA75900A7CB2E /* GKFeatureBackendAssembler.m in Sources */,
 				E5E2D3A01A18AE9000338CF0 /* MineDefaultViewController.m in Sources */,
 				E59890C91A2B0AA500105F99 /* ProductListCollectionViewCell.m in Sources */,
 				E5D9D5A31A1E574100875264 /* ShippingMethod.m in Sources */,
@@ -1440,17 +1628,21 @@
 				E57D3FF71A23999800AC0FF9 /* Dependency.m in Sources */,
 				E5F196BE1A1CC31D00B97AE3 /* UITableView+Extension.m in Sources */,
 				E5D9D5AD1A1E57FB00875264 /* GKCarouselView.m in Sources */,
+				E5CD61211A2C72D30036160C /* FeatureColumnModel.m in Sources */,
 				E5D9D5801A1E50FE00875264 /* ProductDetailTableViewCell.m in Sources */,
 				9035D05E1A0CC58100C6E53C /* ConsigneeBackend.m in Sources */,
+				E5CD61181A2C72D30036160C /* FeatureThreeColumnTableViewCell.m in Sources */,
 				E549C18C1A1B8EED0014656D /* UserAuthenticationViewController.m in Sources */,
 				E5D9D59A1A1E560F00875264 /* ProductImageURL.m in Sources */,
 				E5CD60E41A2C567E0036160C /* ProductCategoryTableViewCell.m in Sources */,
 				E51E22A61A17A3420005F39B /* ConsigneeListTableViewCellSelected.m in Sources */,
 				9035D0681A0CCAF300C6E53C /* AreaPickerViewController.m in Sources */,
 				E5E2D3A11A18AE9000338CF0 /* MineDefaultTableViewCell.m in Sources */,
+				E5CD61121A2C72D30036160C /* FeatureCarouselTableViewCell.m in Sources */,
 				E51E22891A17918A0005F39B /* ConsigneeController.m in Sources */,
 				E59180FB1A20CD770021F855 /* CartItem.m in Sources */,
 				E5D9D5B51A1E585200875264 /* ProductRepository.m in Sources */,
+				E5CD61231A2C72D30036160C /* FeatureOneColumnModel.m in Sources */,
 				E5748F4C1A20ED0200306ADC /* ECCartBackendAssembler.m in Sources */,
 				E59180E51A20BA270021F855 /* CartViewController.m in Sources */,
 				E5D9D5AE1A1E57FB00875264 /* GKCarouselViewCell.m in Sources */,
@@ -1465,13 +1657,16 @@
 				E59890C01A2B096C00105F99 /* ThreeStageSegmentView.m in Sources */,
 				9035D0571A0CC46B00C6E53C /* Consignee.m in Sources */,
 				E5D9D5891A1E50FE00875264 /* ProductMoreTableViewCell.m in Sources */,
+				E5CD61141A2C72D30036160C /* FeatureOneColumnTableViewCell.m in Sources */,
 				9035D0631A0CC85000C6E53C /* ConsigneeEditInputTableViewCell.m in Sources */,
 				E57D3FEF1A2378F300AC0FF9 /* CartItemTableViewCell.m in Sources */,
 				E5D9D54A1A1E393100875264 /* ECUserService.m in Sources */,
 				E5748F3F1A20EC0F00306ADC /* ECCartService.m in Sources */,
+				E5CD61171A2C72D30036160C /* FeatureTableViewCellColumn.m in Sources */,
 				9035D0531A0CC44400C6E53C /* ConsigneeEditController.m in Sources */,
 				E5D9D5BC1A1E588400875264 /* ECProductBackend.m in Sources */,
 				E59180E81A20BA270021F855 /* CartEmptyView.m in Sources */,
+				E5D381461A2CA72800A7CB2E /* GKFeatureBackend.m in Sources */,
 				E5D9D5A61A1E57B000875264 /* GKButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

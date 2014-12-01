@@ -52,7 +52,7 @@
 
 + (instancetype)shared
 {
-    static UserBackend *_shared = nil;
+    static ECUserBackend *_shared = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _shared = [[self alloc] init];

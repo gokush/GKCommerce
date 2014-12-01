@@ -13,6 +13,8 @@
 #import "ECUserService.h"
 #import "ECProductBackend.h"
 #import "ECProductService.h"
+#import "GKFeatureBackend.h"
+#import "GKFeatureService.h"
 
 @implementation GKECFactory
 
@@ -44,5 +46,15 @@
 - (id<ProductService>)productService
 {
     return [[ECProductService alloc] init];
+}
+
+- (id<FeatureService>)featureService
+{
+    return [[GKFeatureService alloc] init];
+}
+
+- (id<FeatureBackend>)featureBackend
+{
+    return [[GKFeatureBackend alloc] init];
 }
 @end

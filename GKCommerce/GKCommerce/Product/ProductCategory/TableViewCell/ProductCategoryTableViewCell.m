@@ -3,7 +3,7 @@
 //  goku-commerce.com
 //
 //  Created by wupeng on 8/8/14.
-//  Copyright (c) 2014 魏琮举. All rights reserved.
+//  Copyright (c) 2014 小悟空. All rights reserved.
 //
 
 #import "ProductCategoryTableViewCell.h"

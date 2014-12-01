@@ -1,0 +1,64 @@
+{
+    "carousels": [],
+    "cells": [
+        {
+            "type": "FeatureCarouselTableViewCell",
+            "carousels": [
+                {
+                    "picture": ""
+                },
+                {
+                    "picture": ""
+                }
+            ]
+        },
+        {
+            "type": "FeatureThreeColumn",
+            "title": "掌上秒杀",
+            "columns": [
+                {
+                    "picture": {
+                        "path": "feature_three_column_0.jpg",
+                        "protocol": "file"
+                    },
+                    "price": 129.00,
+                    "highlight": "5.9折"
+                },
+                {
+                    "picture": {
+                        "path": "feature_three_column_1.jpg",
+                        "protocol": "file"
+                    },
+                    "price": 129.00,
+                    "highlight": "5.9折"
+                },
+                {
+                    "picture": {
+                        "path": "feature_three_column_2.jpg",
+                        "protocol": "file"
+                    },
+                    "price": 129.00,
+                    "highlight": "5.9折"
+                }
+            ]
+        },
+        {
+            "type": "FeatureOneColumn",
+            "title": "iPhone 6 火爆开抢",
+            "picture": {
+                "path": "feature_iPhone.png",
+                "protocol": "file"
+            },
+            "link": ""
+        },
+        {
+            "type": "FeatureTwoColumn",
+            "title": "超值购",
+            "products": [
+                {
+                    "picture": ""
+                }
+            ]
+        }
+    ]
+}

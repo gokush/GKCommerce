@@ -2,7 +2,7 @@
 //  SearchBackendModel.m
 //  WKCommerce
 //
-//  Created by 魏琮举 on 14/10/26.
+//  Created by 小悟空 on 14/10/26.
 //  Copyright (c) 2014年 WKCommerce. All rights reserved.
 //
 

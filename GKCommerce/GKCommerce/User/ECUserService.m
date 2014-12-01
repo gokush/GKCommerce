@@ -42,7 +42,7 @@
     [self.backend requestAuthenticate:model];
 }
 
-- (void)userBackend:(UserBackend *)anUserBackend
+- (void)userBackend:(id<UserBackend>)anUserBackend
 didCompleteAuthenticate:(User *)anUser error:(NSError *)anError
 {
     if (nil == anError) {

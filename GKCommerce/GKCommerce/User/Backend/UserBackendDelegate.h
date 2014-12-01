@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 
-@class UserBackend;
+@protocol UserBackend;
 @protocol UserBackendDelegate <NSObject>
 
 @optional
-- (void)userBackend:(UserBackend *)anUserBackend
+- (void)userBackend:(id<UserBackend>)anUserBackend
 didCompleteAuthenticate:(User *)anUser error:(NSError *)anError;
 @end

@@ -13,12 +13,24 @@
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tabBarController id="YA9-NO-oNX">
             <nil key="simulatedBottomBarMetrics"/>
-            <tabBar key="tabBar" contentMode="scaleToFill" selectedItem="1Wr-jp-IGU" id="nkK-Gl-Dgi">
+            <tabBar key="tabBar" contentMode="scaleToFill" selectedItem="gHt-He-Xqu" id="nkK-Gl-Dgi">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </tabBar>
             <viewControllers>
+                <navigationController title="精选" id="jDy-eu-Vvn">
+                    <tabBarItem key="tabBarItem" title="精选" id="gHt-He-Xqu"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XBR-e1-WHg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <viewControllers>
+                        <viewController title="精选" nibName="FeatureView" id="FsK-5s-hz4" customClass="FeatureViewController">
+                            <navigationItem key="navigationItem" title="精选" id="tRe-hN-Jmu"/>
+                        </viewController>
+                    </viewControllers>
+                </navigationController>
                 <navigationController title="选购" id="jVG-gY-tJt">
                     <tabBarItem key="tabBarItem" title="选购" id="1Wr-jp-IGU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FEc-4K-YqR">

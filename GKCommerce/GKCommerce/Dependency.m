@@ -42,6 +42,15 @@
     return [[self factory] productService];
 }
 
+- (id<FeatureService>)featureService
+{
+    return [[self factory] featureService];
+}
+- (id<FeatureBackend>)featureBackend
+{
+    return [[self factory] featureBackend];
+}
+
 + (instancetype)shared
 {
     static Dependency *_shared = nil;

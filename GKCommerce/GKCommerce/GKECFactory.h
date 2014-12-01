@@ -17,4 +17,6 @@
 - (id<ProductService>)productService;
 - (id<UserBackend>)userBackend;
 - (id<UserService>)userService;
+- (id<FeatureService>)featureService;
+- (id<FeatureBackend>)featureBackend;
 @end
