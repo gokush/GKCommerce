@@ -24,4 +24,7 @@
     didReceiveProducts:(NSArray *)products
            searchModel:(SearchBackendModel *)aSearchModel
                  error:(NSError *)anError;
+
+- (void)productBackend:(id<ProductBackend>)aProductBackend
+  didReceiveCategories:(NSArray *)categories error:(NSError *)anError;
 @end

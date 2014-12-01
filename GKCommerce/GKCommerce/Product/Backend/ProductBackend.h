@@ -18,4 +18,5 @@
 - (void)requestProductWithID:(NSInteger)productID user:(User *)anUser;
 - (void)requestProductDescription:(Product *)product;
 - (void)requestProductsWithSearchModel:(SearchBackendModel *)searchModel;
+- (void)requestProductCategories;
 @end

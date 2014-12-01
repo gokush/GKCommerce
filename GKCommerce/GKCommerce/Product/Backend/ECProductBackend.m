@@ -177,4 +177,34 @@
     }
 }
 
+- (void)requestProductCategories
+{
+    [self.manager
+     POST:[NSString stringWithFormat:@"%@%@", self.config.backendURL,
+           @"/category"]
+     parameters:nil
+     success:^(AFHTTPRequestOperation *operation, id responseObject) {
+         [self requestProductCategoriesDidResponse:responseObject error:nil];
+      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+          [self requestProductCategoriesDidResponse:nil error:error];
+      }];
+}
+
+- (void)requestProductCategoriesDidResponse:(id)responseObject
+                                      error:(NSError *)anError
+{
+    NSError *error = anError;
+    if (nil == anError)
+        error = [self.assembler error:responseObject];
+    
+    NSArray *categories;
+    if (!error)
+        categories = [self.assembler categories:
+                      [responseObject objectForKey:@"data"]];
+    
+    SEL selector = @selector(productBackend:didReceiveCategories:error:);
+    if ([self.delegate respondsToSelector:selector])
+        [self.delegate productBackend:self didReceiveCategories:categories
+                                error:error];
+}
 @end

@@ -24,4 +24,7 @@
               products:(NSArray *)aProducts
            searchModel:(SearchBackendModel *)aSearchModel
                  error:(NSError *)anError;
+
+- (void)productService:(id<ProductService>)aProductService
+            categories:(NSArray *)aCategories error:(NSError *)anError;
 @end

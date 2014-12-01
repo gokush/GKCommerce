@@ -23,5 +23,6 @@
 - (void)productWithID:(NSInteger)productID user:(User *)anUser;
 - (void)productDescription:(Product *)product;
 - (void)productsWithSearchModel:(SearchBackendModel *)searchModel;
+- (void)productCategories;
 + (instancetype)shared;
 @end

@@ -105,4 +105,33 @@
     return product;
 }
 
+- (ProductCategory *)category:(NSDictionary *)categoryJSON
+{
+    ProductCategory *category = [[ProductCategory alloc] init];
+    NSArray *childrenJSON = [categoryJSON objectForKey:@"children"];
+    NSMutableArray *children;
+    NSString *cover = [categoryJSON objectForKey:@"img_url"];
+    if (childrenJSON && childrenJSON.count > 0) {
+        children = [[NSMutableArray alloc] initWithCapacity:childrenJSON.count];
+        for (NSDictionary *childJSON in childrenJSON)
+            [children addObject:[self category:childJSON]];
+    }
+    category.children = children;
+    category.name = [categoryJSON objectForKey:@"name"];
+    category.categoryID = [[categoryJSON objectForKey:@"id"] integerValue];
+    category.categoryDescription = [categoryJSON objectForKey:@"desc"];
+    if (cover)
+        category.cover = [[NSURL alloc] initWithString:cover];
+    
+    return category;
+}
+
+- (NSArray *)categories:(NSArray *)categoriesJSON
+{
+    NSMutableArray *categories = [[NSMutableArray alloc] init];
+    for (NSDictionary *categoryJSON in categoriesJSON)
+        [categories addObject:[self category:categoryJSON]];
+    return categories;
+}
+
 @end
