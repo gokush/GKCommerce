@@ -15,7 +15,7 @@
              didSelectAtIndex:(NSInteger)index;
 @end
 
-@interface ThreeStageSegmentView : UIView
+@interface ThreeStageSegmentView : GKView
 
 @property (strong, nonatomic) UIView *indicatorView;
 @property (strong, nonatomic) UIColor *normalColor;
@@ -23,7 +23,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *newsButton;
 @property (strong, nonatomic) IBOutlet UIButton *lowButton;
 @property (strong, nonatomic) IBOutlet UIButton *highButton;
-@property (strong, nonatomic) id<ThreeStageSegmentViewDelegate> delegate;
+@property (strong, nonatomic)
+IBOutlet id<ThreeStageSegmentViewDelegate> delegate;
 @property (assign, nonatomic) NSInteger selectedIndex;
 @end
 

@@ -43,12 +43,6 @@
     return  self;
 }
 
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    [self changeSelectedIndex:self.selectedIndex];
-}
-
 - (void)changeSelectedIndex:(NSInteger)index
 {
     for (NSInteger i = 0, size = 3; i < size; i++) {

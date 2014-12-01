@@ -15,13 +15,17 @@
 #import <AFNetworking/AFNetworking.h>
 #import <CocoaLumberjack/CocoaLumberjack.h>
 #import "Utility.h"
+#import "GKView.h"
+#import "GKButton.h"
+#import "GKToggleButton.h"
 #import "UIView+Extension.h"
+#import "GKLabel.h"
 #import "UITableView+Extension.h"
 
 #import "App.h"
 #import "Product.h"
+#import "Catalog.h"
 #import "Cart.h"
-
 #import "CartViewController.h"
 
 static const int ddLogLevel = DDLogLevelVerbose;
