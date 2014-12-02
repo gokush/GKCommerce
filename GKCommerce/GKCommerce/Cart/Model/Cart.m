@@ -35,20 +35,6 @@
     return self;
 }
 
-- (NSDecimalNumber *)shipPrice
-{
-    if (!_shipPrice)
-        _shipPrice = [[NSDecimalNumber alloc] initWithString:@"10"];
-    return _shipPrice;
-}
-
-- (NSDecimalNumber *)totalPrice
-{
-    if (!_totalPrice)
-        return [[NSDecimalNumber alloc] initWithFloat:
-                ([self.price floatValue] + [self.shipPrice floatValue])];
-    return _totalPrice;
-}
 
 - (void)addItem:(CartItem *)item
 {
@@ -142,18 +128,11 @@
 - (void)calculatePrice
 {
     float price = 0.0f;
-    float totalPrice = 0.0f;
     for (CartItem *cartItem in self.selected) {
         price += cartItem.product.price.floatValue * cartItem.quantity;
     }
     if (self.price.floatValue != price)
         self.price = [[NSDecimalNumber alloc] initWithFloat:price];
-    totalPrice = price;
-    float needForFreeShipping = self.freeShipping.floatValue - price;
-    if (needForFreeShipping > 0)
-        totalPrice = price + self.freight.floatValue;
-    
-    self.totalPrice = [[NSDecimalNumber alloc] initWithFloat:totalPrice];
 }
 
 - (BOOL)empty
@@ -166,20 +145,9 @@
 
 - (void)clear
 {
-    
     self.price = [[NSDecimalNumber alloc] initWithString:@"0.00"];
-    self.marketPrice = [[NSDecimalNumber alloc] initWithString:@"0.00"];
-    self.saving = [[NSDecimalNumber alloc] initWithString:@"0.00"];
-    
-    CartItem *item;
-    NSInteger size = self.items.count - 1;
-    while(size > -1) {
-        item = (CartItem *)[self.items objectAtIndex:size];
-        [item clear];
-        size -= 1;
-    }
     self.quantity = 0;
-    self.items = [NSMutableArray array];
+    self.items = [[NSMutableArray alloc] init];
 }
 
 - (void)setSelectAll:(BOOL)selected

@@ -19,12 +19,6 @@
 @property (strong, nonatomic) User *user;
 @property (assign, nonatomic) NSInteger quantity;
 @property (strong, nonatomic) NSDecimalNumber *price;
-@property (strong, nonatomic) NSDecimalNumber *totalPrice;
-@property (strong, nonatomic) NSDecimalNumber *shipPrice;
-@property (strong, nonatomic) NSDecimalNumber *marketPrice;
-@property (strong, nonatomic) NSDecimalNumber *saving;
-@property (strong, nonatomic) NSDecimalNumber *freight;
-@property (strong, nonatomic) NSDecimalNumber *freeShipping;
 @property (strong, nonatomic) NSMutableArray *items;
 @property (assign, nonatomic) Payment *payment;
 
