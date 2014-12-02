@@ -246,7 +246,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
     [bindable unbind];
 }
 
-- (void)cartProductPhotoClicked:(CartItem*)item
+- (void)cartItemPhotoClicked:(CartItem*)item
 {
     ProductDetailViewController *viewController;
     viewController = [[ProductDetailViewController alloc]

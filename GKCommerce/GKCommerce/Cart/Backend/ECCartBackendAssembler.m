@@ -33,7 +33,7 @@
                              initWithFloat:freeShipping];
     [self updateCart:cart total:[JSON objectForKey:@"total"]];
     NSArray *itemsJSON = [JSON objectForKey:@"goods_list"];
-    [self createOrUpdateCartProduct:itemsJSON toCart:cart];
+    [self createOrUpdateCartItem:itemsJSON toCart:cart];
     return cart;
 }
 
@@ -44,14 +44,14 @@
     cart.price = [[NSDecimalNumber alloc] initWithString:price];
 }
 
-- (BOOL)createOrUpdateCartProduct:(NSArray *)itemsJSON
+- (BOOL)createOrUpdateCartItem:(NSArray *)itemsJSON
                            toCart:(Cart *)cart
 {
-    NSMutableArray *cartProducts;
+    NSMutableArray *cartItems;
     CartItem *item;
     NSInteger itemID;
     NSInteger quantity;
-    cartProducts = [[NSMutableArray alloc]
+    cartItems = [[NSMutableArray alloc]
                     initWithCapacity:itemsJSON.count];
     
     int count = 0;

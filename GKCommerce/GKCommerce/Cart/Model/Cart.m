@@ -115,9 +115,9 @@
 - (NSArray *)want
 {
     NSMutableArray *wantBuy = [NSMutableArray array];
-    for (CartItem *cartProduct in self.items) {
-        if(cartProduct.selected) {
-            [wantBuy addObject:cartProduct];
+    for (CartItem *cartItem in self.items) {
+        if(cartItem.selected) {
+            [wantBuy addObject:cartItem];
         }
     }
     
@@ -143,8 +143,8 @@
 {
     float price = 0.0f;
     float totalPrice = 0.0f;
-    for (CartItem *cartProduct in self.selected) {
-        price += cartProduct.product.price.floatValue * cartProduct.quantity;
+    for (CartItem *cartItem in self.selected) {
+        price += cartItem.product.price.floatValue * cartItem.quantity;
     }
     if (self.price.floatValue != price)
         self.price = [[NSDecimalNumber alloc] initWithFloat:price];
