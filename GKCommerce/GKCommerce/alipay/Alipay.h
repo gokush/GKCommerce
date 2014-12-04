@@ -1,8 +1,8 @@
 //
 //  CheckoutUsingAlipay.h
-//  mst
+// GKCommerce
 //
-//  Created by 魏琮举 on 14-9-1.
+//  Created by 小悟空 on 14-9-1.
 //  Copyright (c) 2014年 MST. All rights reserved.
 //
 

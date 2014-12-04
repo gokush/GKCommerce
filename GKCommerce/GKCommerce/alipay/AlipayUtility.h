@@ -1,9 +1,9 @@
 //
 //  AlipayUtility.h
-//  mst
+// GKCommerce
 //
-//  Created by 魏琮举 on 14-8-28.
-//  Copyright (c) 2014年 魏琮举. All rights reserved.
+//  Created by 小悟空 on 14-8-28.
+//  Copyright (c) 2014年 小悟空. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

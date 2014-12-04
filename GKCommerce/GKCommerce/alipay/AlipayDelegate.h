@@ -1,8 +1,8 @@
 //
 //  AlipayDelegate.h
-//  mst
+// GKCommerce
 //
-//  Created by 魏琮举 on 14-9-19.
+//  Created by 小悟空 on 14-9-19.
 //  Copyright (c) 2014年 MST. All rights reserved.
 //
 
