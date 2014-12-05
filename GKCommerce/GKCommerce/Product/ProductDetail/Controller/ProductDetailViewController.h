@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Shop.h"
+#import "Store.h"
 #import "Dependency.h"
 
 typedef enum {

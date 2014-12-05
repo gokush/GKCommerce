@@ -23,6 +23,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.user = [[App shared] currentUser];
+    
     self.service = [[Dependency shared] productService];
     self.service.delegate = self;
     [self.service productCategories];

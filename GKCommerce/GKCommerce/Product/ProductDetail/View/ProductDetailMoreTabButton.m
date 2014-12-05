@@ -19,10 +19,6 @@
         self.textAlignment = NSTextAlignmentCenter;
         self.backgroundColor = [UIColor clearColor];
         
-        if ([self.delegate respondsToSelector:@selector(didTabButtonTap:)]) {
-            [self.delegate didTapTabButton:self];
-        }
-        
         UITapGestureRecognizer *recognizer;
         recognizer = [[UITapGestureRecognizer alloc]
                       initWithTarget:self action:@selector(didTapGesture:)];
@@ -69,7 +65,8 @@
 
 - (void)didTapGesture:(id)sender
 {
-    if ([self.delegate respondsToSelector:@selector(didTabButtonTap:)]) {
+    SEL selector = @selector(didTapTabButton:);
+    if ([self.delegate respondsToSelector:selector]) {
         [self.delegate didTapTabButton:self];
     }
 }

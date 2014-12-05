@@ -206,7 +206,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     if (anError)
         return;
     
-    [aCartService fetch:self.user.cart];
+    [aCartService fetchCartWithUser:self.user];
 }
 
 #pragma mark - BackendDelegate
@@ -217,10 +217,11 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (IBAction)didTapAddProductToCart:(id)sender
 {
-    
-    CartItem *item = [CartItem itemWithCart:self.cart
-                                    product:self.product quantity:1];
-    
+    CartItemList *list = [[CartItemList alloc] init];
+    list.cart = self.user.cart;
+    CartItem *item = [[CartItem alloc] initWithList:list];
+    item.product = self.product;
+    item.quantity = 1;
     [self.cartService addItem:item];
 }
 

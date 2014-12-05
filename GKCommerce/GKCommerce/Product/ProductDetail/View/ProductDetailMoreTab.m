@@ -97,8 +97,10 @@
         indicator.frame = indicatorFrame;
     }];
     
-    if ([self.delegate respondsToSelector:@selector(didTabTap:atIndex:)]) {
-        [self.delegate didSelectTap:button.label.text atIndex:button.index];
+    SEL selector = @selector(productDetailMoreTab:didSelectTap:atIndex:);
+    if ([self.delegate respondsToSelector:selector]) {
+        [self.delegate productDetailMoreTab:self didSelectTap:button.label.text
+                                    atIndex:self.index];
     }
 }
 

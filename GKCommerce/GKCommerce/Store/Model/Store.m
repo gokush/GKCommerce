@@ -6,16 +6,16 @@
 //  Copyright (c) 2014年 小悟空. All rights reserved.
 //
 
-#import "Shop.h"
+#import "Store.h"
 
-@interface Shop()
+@interface Store()
 {
     NSMutableDictionary *productMap;
 }
 
 @end
 
-@implementation Shop
+@implementation Store
 
 - (id)init
 {

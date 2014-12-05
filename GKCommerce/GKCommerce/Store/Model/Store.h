@@ -11,7 +11,7 @@
 #import "Product.h"
 #import "ShippingMethod.h"
 
-@interface Shop : NSObject
+@interface Store : NSObject
 
 @property (strong, nonatomic) NSMutableArray *products;
 @property (strong, nonatomic) NSMutableArray *shippingMethods;

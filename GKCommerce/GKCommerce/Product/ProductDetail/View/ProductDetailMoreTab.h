@@ -10,17 +10,17 @@
 #import "ProductDetailMoreTabButtonDelegate.h"
 #import "ProductDetailMoreTabButton.h"
 
+@class ProductDetailMoreTab;
+
 @protocol ProductDetailMoreTabDelegate <NSObject>
 
 @optional
-- (void)didSelectTap:(NSString *)tabTitle atIndex:(NSInteger)index;
+- (void) productDetailMoreTab:(ProductDetailMoreTab *)tab
+                 didSelectTap:(NSString *)tabTitle atIndex:(NSInteger)index;
 
 @end
 
-@interface ProductDetailMoreTab : UIView
-<ProductDetailMoreTabButtonDelegate>
-{
-}
+@interface ProductDetailMoreTab : UIView <ProductDetailMoreTabButtonDelegate>
 
 @property (nonatomic, strong) id<ProductDetailMoreTabDelegate> delegate;
 @property (nonatomic, assign) NSInteger index;
