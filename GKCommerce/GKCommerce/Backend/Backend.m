@@ -14,7 +14,7 @@
 {
     self = [super init];
     if (self) {
-        self.config = [Config shared];
+        self.config = [GKConfig shared];
         self.manager = [AFHTTPRequestOperationManager manager];
         self.manager.responseSerializer.acceptableContentTypes =
             [NSSet setWithObject:@"text/html"];

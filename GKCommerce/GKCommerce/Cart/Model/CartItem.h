@@ -9,24 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "Product.h"
 
-@class Cart;
+@class CartItemList;
 @interface CartItem : NSObject
 
+@property (weak, nonatomic) CartItemList *list;
 @property (strong, nonatomic) Product *product;
 @property (assign, nonatomic) NSInteger itemID;
 @property (assign, nonatomic) NSInteger quantity;
 @property (strong, nonatomic) NSDecimalNumber *price;
 @property (strong, nonatomic) NSDecimalNumber *totalPrice;
-@property (strong, nonatomic) Cart *cart;
 @property (assign, nonatomic) BOOL selected;
 
-- (id)initWithCart:(Cart *)cart;
-- (void)buy;
-- (void)drop;
-- (void)clear;
+- (id)initWithList:(CartItemList *)list;
+- (void)removeFromList;
 - (CartItem *)clone;
-- (void)updatePrice;
-
-+ (instancetype)itemWithCart:(Cart *)cart product:(Product *)aProduct
-                       quantity:(NSInteger)aQuantity;
 @end

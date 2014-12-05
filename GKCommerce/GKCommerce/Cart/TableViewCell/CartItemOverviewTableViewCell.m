@@ -10,59 +10,16 @@
 
 @implementation CartItemOverviewTableViewCell
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
-        [self setup];
-    }
-    
-    return self;
-}
-
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        [self setup];
-    }
-    
-    return self;
-}
-
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super initWithCoder:aDecoder];
-    if (self) {
-        [self setup];
-    }
-    return self;
-}
-
-- (id)initWithStyle:(UITableViewCellStyle)style
-    reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        [self setup];
-    }
-    return self;
-}
-
-- (void)setup
-{
-}
-
 - (void)render
 {
-    if (!self.cart)
+    if (!self.list)
         return;
     
     NSString *price = [NSString stringWithFormat:@"%.2f",
-                       self.cart.price.floatValue];
+                       self.list.price.floatValue];
     
     NSString *description = [NSString stringWithFormat:@"共%u件商品 实付:",
-                             self.cart.items.count];
+                             self.list.items.count];
     self.price.text = price;
     self.overview.text = description;
 }
@@ -75,14 +32,12 @@
 
 - (void)bind
 {
-    [self addObserver:self forKeyPath:@"cart"
-              options:NSKeyValueObservingOptionInitial context:nil];
-    [self.cart addObserver:self forKeyPath:@"price" options:0 context:nil];
+    [self.list addObserver:self forKeyPath:@"price"
+                   options:NSKeyValueObservingOptionInitial context:nil];
 }
 
 - (void)unbind
 {
-    [self removeObserver:self forKeyPath:@"cart"];
-    [self.cart removeObserver:self forKeyPath:@"price"];
+    [self.list removeObserver:self forKeyPath:@"price"];
 }
 @end

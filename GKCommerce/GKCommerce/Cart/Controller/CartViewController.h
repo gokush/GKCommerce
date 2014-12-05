@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Cart.h"
+#import "CartItemList.h"
 #import "CartItemTableViewCell.h"
 #import "CartItemOverviewTableViewCell.h"
 #import "CartEmptyView.h"
@@ -16,7 +17,8 @@
 
 @interface CartViewController : UIViewController
 <UITableViewDataSource, UITableViewDelegate, CartServiceDelegate,
-CartItemTableViewCellDelegate, CartEmptyViewDelegate>
+CartItemTableViewCellDelegate>
+// TODO: CartEmptyDelegate
 
 @property (nonatomic, strong) id<CartService> service;
 @property (nonatomic, strong) Cart *cart;
@@ -25,6 +27,6 @@ CartItemTableViewCellDelegate, CartEmptyViewDelegate>
 @property (nonatomic, strong) IBOutlet UILabel *totalPrice;
 @property (nonatomic, strong) IBOutlet GKToggleButton *selectAll;
 
-- (IBAction)checkoutDidTap:(id)sender;
+- (IBAction)didTapCheckout:(id)sender;
 - (IBAction)didSelectAll:(id)sender;
 @end

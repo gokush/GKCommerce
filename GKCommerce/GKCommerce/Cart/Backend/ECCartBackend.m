@@ -19,34 +19,35 @@
     return self;
 }
 
-- (void)requestCart:(Cart *)cart
+- (void)requestCartWithUser:(User *)user
 {
+    DDLogVerbose(@"CartBackend 请求购物车数据。");
     NSDictionary *parameters;
     NSString *userID;
     
-    userID = [NSString stringWithFormat:@"%d", cart.user.userID];
+    userID = [NSString stringWithFormat:@"%d", user.userID];
     
     parameters = @{ @"session[uid]": userID,
-                    @"session[sid]": cart.user.sessionID };
+                    @"session[sid]": user.sessionID };
     
     [self.manager
      POST:[NSString stringWithFormat:@"%@/cart/list", self.config.backendURL]
      parameters:parameters
      success:^(AFHTTPRequestOperation *operation, id responseObject) {
-         [self requestCart:cart didResponse:responseObject
-                                 error:nil];
+         [self requestCartWithUser:user didResponse:responseObject error:nil];
      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-         [self requestCart:cart didResponse:nil error:error];
+         [self requestCartWithUser:user didResponse:nil error:error];
      }];
 }
 
-- (void)requestCart:(Cart *)cart didResponse:(id)responseObject
-              error:(NSError *)anError
+- (void)requestCartWithUser:(User *)user didResponse:(id)responseObject
+                      error:(NSError *)anError
 {
     NSError *error;
     if (nil == anError)
         error = [self.assembler error:responseObject];
-    [self.assembler cart:[responseObject objectForKey:@"data"] toCart:cart];
+    
+    Cart *cart = [self.assembler cartWithJSON:responseObject user:user];
     
     SEL selector = @selector(cartBackend:didReceiveCart:error:);
     if ([self.delegate respondsToSelector:selector])
@@ -57,12 +58,12 @@
 {
     NSString *userID, *productID, *quantity;
     NSDictionary *parameters;
-    
-    userID = [NSString stringWithFormat:@"%d", item.cart.user.userID];
-    productID = [NSString stringWithFormat:@"%d", item.product.productID];
-    quantity = [NSString stringWithFormat:@"%d", item.quantity];
+    User *user = item.list.cart.user;
+    userID     = [NSString stringWithFormat:@"%d", user.userID];
+    productID  = [NSString stringWithFormat:@"%d", item.product.productID];
+    quantity   = [NSString stringWithFormat:@"%d", item.quantity];
     parameters = @{ @"session[uid]": userID,
-                    @"session[sid]": item.cart.user.sessionID,
+                    @"session[sid]": user.sessionID,
                     @"goods_id": productID,
                     @"number": quantity,
                     @"spec": @"" };
@@ -84,6 +85,8 @@
     if (nil == anError)
         error = [self.assembler error:responseObject];
     
+    DDLogVerbose(@"商品 %@ 成功加入购物车。", item.product.name);
+    
     SEL selector = @selector(cartBackend:didAddItem:error:);
     if ([self.delegate respondsToSelector:selector])
         [self.delegate cartBackend:(id<CartBackend>)self didAddItem:item
@@ -95,11 +98,12 @@
     NSString *userID, *itemID, *quantity;
     NSDictionary *parameters;
     
-    userID = [NSString stringWithFormat:@"%d", item.cart.user.userID];
+    User *user = item.list.cart.user;
+    userID = [NSString stringWithFormat:@"%d", user.userID];
     itemID = [NSString stringWithFormat:@"%d", item.itemID];
     quantity = [NSString stringWithFormat:@"%d", item.quantity];
     parameters = @{ @"session[uid]": userID,
-                    @"session[sid]": item.cart.user.sessionID,
+                    @"session[sid]": user.sessionID,
                     @"rec_id": itemID,
                     @"new_number": quantity };
     [self.manager
@@ -121,9 +125,8 @@
     NSError *error;
     if (nil == anError)
         error = [self.assembler error:responseObject];
-    else
-        [self.assembler updateCart:item.cart
-                             total:[responseObject objectForKey:@"data"]];
+    
+    // TODO: 没有创建CartItem对象
     
     SEL selector = @selector(cartBackend:didUpdateItem:oldQuantity:error:);
     if ([self.delegate respondsToSelector:selector])
@@ -135,11 +138,11 @@
 {
     NSString *userID, *itemID;
     NSDictionary *parameters;
-    
-    userID = [NSString stringWithFormat:@"%d", item.cart.user.userID];
+    User *user = item.list.cart.user;
+    userID = [NSString stringWithFormat:@"%d", user.userID];
     itemID = [NSString stringWithFormat:@"%d", item.itemID];
     parameters = @{ @"session[uid]": userID,
-                    @"session[sid]": item.cart.user.sessionID,
+                    @"session[sid]": user.sessionID,
                     @"rec_id": itemID };
     [self.manager
      POST:[NSString stringWithFormat:@"%@/cart/delete", self.config.backendURL]
@@ -158,9 +161,6 @@
     NSError *error;
     if (nil == anError)
         error = [self.assembler error:responseObject];
-    
-    [self.assembler updateCart:item.cart
-                         total:[responseObject objectForKey:@"data"]];
     
     SEL selector = @selector(cartBackend:didRemoveItem:error:);
     if ([self.delegate respondsToSelector:selector])

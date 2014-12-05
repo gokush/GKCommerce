@@ -7,6 +7,10 @@
 //
 
 #import "ECCartBackendAssembler.h"
+#import "Store.h"
+#import "Order.h"
+#import "OrderItem.h"
+#import "CartItemList.h"
 
 @implementation ECCartBackendAssembler
 
@@ -19,73 +23,56 @@
     return self;
 }
 
-- (Cart *)cart:(NSDictionary *)JSON toCart:(Cart *)cart
+- (Cart *)cartWithJSON:(NSDictionary *)JSON user:(User *)anUser
 {
-    float freeShipping, freight;
+    Cart *cart;
+    cart = [[Cart alloc] initWithUser:anUser];
+    cart.itemsOfStore = [[NSMutableArray alloc] initWithCapacity:0];
     
-    freeShipping = [[JSON objectForKey:@"free_send"] floatValue];
-    freight = [[JSON objectForKey:@"deliver_cost"] floatValue];
+    CartItemList *list = [[CartItemList alloc] init];
+    [cart.itemsOfStore addObject:list];
+
+    NSArray *itemsJSON = [JSON valueForKeyPath:@"data.goods_list"];
     
-    if (freight > 0)
-        cart.freight = [[NSDecimalNumber alloc] initWithFloat:freight];
-    if (freeShipping > 0)
-        cart.freeShipping = [[NSDecimalNumber alloc]
-                             initWithFloat:freeShipping];
-    [self updateCart:cart total:[JSON objectForKey:@"total"]];
-    NSArray *itemsJSON = [JSON objectForKey:@"goods_list"];
-    [self createOrUpdateCartItem:itemsJSON toCart:cart];
+    list.items = [[NSMutableArray alloc]initWithCapacity:itemsJSON.count];
+    [self cartItems:itemsJSON list:list];
+    list.price = [self totalPrice:[JSON valueForKeyPath:@"data.total"]];
+    
+    Store *store = [[Store alloc] init];
+    list.store = store;
+    
     return cart;
 }
 
-- (void)updateCart:(Cart *)cart total:(NSDictionary *)JSON
+- (NSDecimalNumber *)totalPrice:(NSDictionary *)JSON
 {
     NSString *price;
     price = [self digitalWithString:[JSON objectForKey:@"goods_price"]];
-    cart.price = [[NSDecimalNumber alloc] initWithString:price];
+    return [[NSDecimalNumber alloc] initWithString:price];
 }
 
-- (BOOL)createOrUpdateCartItem:(NSArray *)itemsJSON
-                           toCart:(Cart *)cart
+- (NSArray *)cartItems:(NSArray *)itemsJSON list:(CartItemList *)aList
 {
-    NSMutableArray *cartItems;
+    for (NSDictionary *itemJSON in itemsJSON)
+        [aList addItem:[self cartItem:itemJSON list:aList]];
+    return aList.items;
+}
+
+- (CartItem *)cartItem:(NSDictionary *)itemJSON list:(CartItemList *)aList
+{
     CartItem *item;
-    NSInteger itemID;
     NSInteger quantity;
-    cartItems = [[NSMutableArray alloc]
-                    initWithCapacity:itemsJSON.count];
+
+    quantity = [[itemJSON objectForKey:@"goods_number"] integerValue];
     
-    int count = 0;
-    for (NSDictionary *itemJSON in itemsJSON) {
-        itemID = [[itemJSON objectForKey:@"goods_id"] intValue];
-        item = [self findItemWithProductID:itemID
-                                            fromProducts:cart.items];
-        if (nil == item) {
-            count += 1;
-            
-            if (1 == count)
-                [cart willChangeValueForKey:@"items"];
-            
-            item = [[CartItem alloc] initWithCart:cart];
-            item.itemID = [[itemJSON objectForKey:@"rec_id"] intValue];
-            [cart addItem:item];
-            // TODO refer from exists object
-            item.product = [self
-                                   productWithCartItemJSON:itemJSON];
-            count += 1;
-        }
-        
-        quantity = [[itemJSON objectForKey:@"goods_number"] integerValue];
-        if (quantity != item.quantity)
-            item.quantity = quantity;
-        NSString *totalPrice = [itemJSON objectForKey:@"subtotal"];
-        item.totalPrice = [NSDecimalNumber decimalNumberWithString:
-                           [totalPrice substringFromIndex:1]];
-    }
-    
-    if (count > 0)
-        [cart didChangeValueForKey:@"items"];
-    
-    return count > 0 ? YES : NO;
+    item = [[CartItem alloc] initWithList:aList];
+    item.itemID = [[itemJSON objectForKey:@"rec_id"] intValue];
+    item.product = [self productWithCartItemJSON:itemJSON];
+    item.quantity = quantity;
+    NSString *totalPrice =
+        [self digitalWithString:[itemJSON objectForKey:@"subtotal"]];
+    item.totalPrice = [NSDecimalNumber decimalNumberWithString:totalPrice];
+    return item;
 }
 
 - (Product *)productWithCartItemJSON:(NSDictionary *)productJSON
@@ -109,17 +96,5 @@
     product.image = productImage;
     
     return product;
-}
-
-- (CartItem *)findItemWithProductID:(NSInteger)productID
-                                 fromProducts:(NSArray *)products
-{
-    __block CartItem *found = nil;
-    [products enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        CartItem *item = (CartItem *)obj;
-        if (productID == item.product.productID)
-            found = item;
-    }];
-    return found;
 }
 @end

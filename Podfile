@@ -3,7 +3,7 @@ platform :ios, "8.0"
 
 target "GKCommerce" do
     pod 'SDWebImage'
-    pod 'AFNetworking'
+    pod 'AFNetworking', "~> 2.5.0"
     pod 'MBProgressHUD'
     pod 'ASImageResize'
     pod 'CocoaLumberjack', '~> 2.0.0-beta4'

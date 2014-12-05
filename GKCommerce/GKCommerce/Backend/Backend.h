@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFNetworking.h>
-#import "Config.h"
+#import "GKConfig.h"
 
 @interface Backend : NSObject
 
+@property (strong, nonatomic) GKConfig *config;
 @property (strong, nonatomic) AFHTTPRequestOperationManager *manager;
-@property (strong, nonatomic) Config *config;
 @end

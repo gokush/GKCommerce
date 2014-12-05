@@ -8,6 +8,7 @@
 
 #import "CartItem.h"
 #import "Cart.h"
+#import "CartItemList.h"
 
 @implementation CartItem
 
@@ -20,13 +21,18 @@
     return self;
 }
 
-- (id)initWithCart:(Cart *)cart
+- (id)initWithList:(CartItemList *)list
 {
     self = [self init];
     if (self) {
-        self.cart = cart;
+        self.list = list;
     }
     return self;
+}
+
+- (void)dealloc
+{
+    
 }
 
 - (void)buy
@@ -48,44 +54,9 @@
     self.totalPrice = [[NSDecimalNumber alloc]initWithFloat:totalPrice];
 }
 
-- (void)setQuantity:(NSInteger)quantity
+- (void)removeFromList
 {
-    if (_quantity != quantity) {
-        _quantity = quantity;
-        
-        [self updatePrice];
-        if (self.cart)
-            [self.cart calculatePrice];
-    }
-}
-
-- (void)clear
-{
-    self.quantity = 0;
-}
-
-- (void)setSelected:(BOOL)selected
-{
-    if (_selected != selected) {
-        _selected = selected;
-        
-        [self.cart willChangeValueForKey:@"selected"];
-        
-        BOOL changed = NO;
-        if (self.cart && selected &&
-            [self.cart.selected indexOfObject:self] == NSNotFound) {
-            [self.cart.selected addObject:self];
-            changed = YES;
-        } else if (self.cart && !selected) {
-            [self.cart.selected removeObject:self];
-            changed = YES;
-        }
-        
-        if (changed)
-            [self.cart calculatePrice];
-        
-        [self.cart didChangeValueForKey:@"selected"];
-    }
+    [self.list removeItem:self];
 }
 
 - (CartItem *)clone;
@@ -96,7 +67,7 @@
     cloned.quantity = self.quantity;
     cloned.price = self.price;
     cloned.totalPrice = self.totalPrice;
-    cloned.cart = self.cart;
+    cloned.list = self.list;
     cloned.selected = self.selected;
     
     return cloned;
@@ -106,7 +77,7 @@
                     quantity:(NSInteger)aQuantity
 {
     CartItem *item = [[CartItem alloc] init];
-    item.cart = cart;
+//    item.list = list;
     item.product = aProduct;
     item.quantity = aQuantity;
     

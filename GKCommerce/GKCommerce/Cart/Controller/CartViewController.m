@@ -10,6 +10,13 @@
 #import "ProductDetailViewController.h"
 #import "UIBindableTableViewCell.h"
 #import "Dependency.h"
+#import "CartStoreNameTableViewCell.h"
+
+typedef enum {
+    CartStoreNameCell,
+    CartItemCell,
+    CartOverviewCell
+} CartCell;
 
 @interface CartViewController ()
 {
@@ -25,16 +32,15 @@
 - (void)setup
 {
     didSelecteAllBecauseObserver = NO;
+    self.service = [[Dependency shared] cartService];
+    self.service.delegate = self;
     [self addObserver:self forKeyPath:@"user" options:0 context:nil];
     [self addObserver:self forKeyPath:@"cart"
               options:NSKeyValueObservingOptionPrior context:nil];
     
-    self.user = [[App shared] currentUser];
-    self.service = [[Dependency shared] cartService];
-    self.service.delegate = self;
+    [[App shared] addObserver:self forKeyPath:@"currentUser"
+                      options:NSKeyValueObservingOptionInitial context:nil];
     
-    if ([self.user authorized])
-        [self.service fetch:self.user.cart];
 }
 
 - (void)viewDidLoad
@@ -46,7 +52,8 @@
     
     // setup table view
     for (NSString *identifier in @[@"CartItemOverviewTableViewCell",
-                                   @"CartItemTableViewCell"])
+                                   @"CartItemTableViewCell",
+                                   @"CartStoreNameTableViewCell"])
         [self.tableView registerNib:[UINib nibWithNibName:identifier bundle:nil]
              forCellReuseIdentifier:identifier];
 
@@ -66,13 +73,14 @@
 {
     if ([@"cart" isEqualToString:keyPath]) {
         if (self.cart && change[NSKeyValueChangeNotificationIsPriorKey]) {
-            [self.cart removeObserver:self forKeyPath:@"items"];
+            [self.cart removeObserver:self forKeyPath:@"itemsOfStore"];
             [self.cart removeObserver:self forKeyPath:@"price"];
+            [self.cart removeObserver:self forKeyPath:@"selectAll"];
         } else if (self.cart &&
                    !change[NSKeyValueChangeNotificationIsPriorKey]) {
             [self.cart addObserver:self forKeyPath:@"price" options:0
                            context:nil];
-            [self.cart addObserver:self forKeyPath:@"items" options:0
+            [self.cart addObserver:self forKeyPath:@"itemsOfStore" options:0
                            context:nil];
             [self.cart addObserver:self forKeyPath:@"selectAll"
                            options:NSKeyValueObservingOptionInitial
@@ -93,9 +101,15 @@
         [self.tableView reloadData];
     } else if ([@"user" isEqualToString:keyPath]) {
         self.cart = self.user.cart;
-        
     } else if ([@"selectAll" isEqualToString:keyPath])
         [self renderSelectAll];
+    else if ([@"currentUser" isEqualToString:keyPath]) {
+        User *user = [[App shared] currentUser];
+        if (nil != user && [user authorized]) {
+            self.user = user;
+            [self.service fetchCartWithUser:user];
+        }
+    }
 }
 
 - (void)renderSelectAll
@@ -113,7 +127,8 @@
         cartEmptyView = [[[NSBundle mainBundle]
                           loadNibNamed:@"CartEmptyView" owner:nil options:nil]
                          lastObject];
-        cartEmptyView.delegate = self;
+// TODO: CartEmptyDelegate
+//        cartEmptyView.delegate = self;
     }
     
     if ([self.user authorized]) {
@@ -143,7 +158,7 @@
 - (void)cartService:(id<CartService>)aCartService cart:(Cart *)aCart
               error:(NSError *)anError
 {
-    
+    self.cart = aCart;
 }
 
 - (void)cartService:(id<CartService>)aCartService didUpdateItem:(CartItem *)item
@@ -157,10 +172,6 @@
 - (IBAction)didTapCheckout:(id)sender
 {
     Cart *cart = [[Cart alloc] initWithUser:self.user];
-    cart.freight = self.user.cart.freight;
-    cart.freeShipping = self.user.cart.freeShipping;
-
-    [cart addItems:[self.user.cart want]];
     [cart calculatePrice];
 }
 
@@ -171,13 +182,13 @@
 
 - (void)didNavigationItemRightButtonTap:(id)sender
 {
-    [self.service removeItems:self.cart.items];
+    [self.service removeItems:self.cart.itemsOfStore];
 }
 
 - (void)didCartItemBuy:(CartItem *)item
 {
     NSInteger quantity = item.quantity;
-    [item buy];
+    item.quantity += 1;
     
     [self.service updateItem:item oldQuantity:quantity];
 }
@@ -186,7 +197,7 @@
 {
     NSInteger quantity = item.quantity;
     if (quantity > 1) {
-        [item drop];
+        item.quantity -= 1;
         [self.service updateItem:item oldQuantity:quantity];
     }
 }
@@ -209,10 +220,31 @@
 
 
 #pragma mark - UITableViewDelegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+heightForHeaderInSection:(NSInteger)section
+{
+    return 10.0f;
+}
+
 - (CGFloat)tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 127;
+    CGFloat number = 0.0f;
+    CartItemList *list;
+    list = [self.cart.itemsOfStore objectAtIndex:indexPath.section];
+
+    if (CartStoreNameCell == indexPath.row)
+        number = 45.0f;
+    else if (list.items.count >= indexPath.row) // CartItemCell
+        number = 92.0f;
+    else
+        number = 36.0f;
+    return number;
 }
 
 #pragma mark - UITableViewDataSource
@@ -220,8 +252,12 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    if (nil != self.cart.items && self.cart.items > 0) {
-        return self.cart.items.count;
+    if (0 == self.cart.itemsOfStore.count)
+        return 0;
+    
+    CartItemList *list = [self.cart.itemsOfStore objectAtIndex:section];
+    if (nil != list && list.items.count > 0) {
+        return list.items.count + 2;
     }
     return 0;
 }
@@ -229,12 +265,45 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    CartItemList *list;
+    UITableViewCell *cell;
+    list = [self.cart.itemsOfStore objectAtIndex:indexPath.section];
+    
+    if (CartStoreNameCell == indexPath.row)
+        cell = [self storeNameCell];
+    else if (list.items.count >= indexPath.row)
+        cell = [self itemCellWithItem:[list itemAtIndex:indexPath.row - 1]];
+    else
+        cell = [self overviewCellWithList:list];
+    id<UIBindableTableViewCell> bindable = (id<UIBindableTableViewCell>)cell;
+    [bindable bind];
+    return cell;
+}
+
+- (UITableViewCell *)storeNameCell
+{
+    CartStoreNameTableViewCell *cell;
+    cell = [self.tableView
+            dequeueReusableCellWithIdentifier:@"CartStoreNameTableViewCell"];
+    return cell;
+}
+
+- (UITableViewCell *)itemCellWithItem:(CartItem *)item
+{
     CartItemTableViewCell *cell;
-    cell = [tableView
+    cell = [self.tableView
             dequeueReusableCellWithIdentifier:@"CartItemTableViewCell"];
     cell.delegate = self;
-    cell.item = [self.cart.items objectAtIndex:indexPath.row];
-    [cell bind];
+    cell.item = item;
+    return cell;
+}
+
+- (UITableViewCell *)overviewCellWithList:(CartItemList *)list
+{
+    CartItemOverviewTableViewCell *cell;
+    cell = [self.tableView
+            dequeueReusableCellWithIdentifier:@"CartItemOverviewTableViewCell"];
+    cell.list = list;
     return cell;
 }
 

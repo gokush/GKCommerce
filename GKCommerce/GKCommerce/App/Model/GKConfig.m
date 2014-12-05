@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 GKCommerce. All rights reserved.
 //
 
-#import "Config.h"
+#import "GKConfig.h"
 
-@implementation Config
+@implementation GKConfig
 
 + (instancetype)shared
 {
-    static Config *_shared = nil;
+    static GKConfig *_shared = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _shared = [[self alloc] init];

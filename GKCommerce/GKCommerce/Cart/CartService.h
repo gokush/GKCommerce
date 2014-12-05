@@ -13,7 +13,7 @@
 @protocol CartService <NSObject>
 
 @property (strong, nonatomic) id<CartServiceDelegate> delegate;
-- (void)fetch:(Cart *)cart;
+- (void)fetchCartWithUser:(User *)user;
 - (void)addItem:(CartItem *)item;
 - (void)updateItem:(CartItem *)item oldQuantity:(NSInteger)anOldQuantity;
 - (void)removeItem:(CartItem *)item;

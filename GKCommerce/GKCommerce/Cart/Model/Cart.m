@@ -17,7 +17,7 @@
     
     self = [super init];
     if (self) {
-        self.items = [NSMutableArray array];
+        self.itemsOfStore = [NSMutableArray array];
         
     }
     
@@ -28,67 +28,17 @@
 {
     self = [super init];
     if (self) {
-        self.items = [NSMutableArray array];
+        self.itemsOfStore = [NSMutableArray array];
         self.selected = [[NSMutableArray alloc] init];
         self.user = user;
     }
     return self;
 }
 
-
-- (void)addItem:(CartItem *)item
-{
-    [item addObserver:self forKeyPath:@"quantity"
-              options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
-                 context:nil];
-    [item addObserver:self forKeyPath:@"selected"
-              options:NSKeyValueObservingOptionInitial context:nil];
-    
-    [self.items addObject:item];
-    
-    if (item.selected)
-        [self.selected addObject:item];
-    item.cart = self;
-}
-
-- (void)addItems:(NSArray *)items
-{
-    for (CartItem *item in items) {
-        [self addItem:item];
-    }
-}
-
-- (void)removeItem:(CartItem *)item
-{
-    [item removeObserver:self forKeyPath:@"quantity"];
-    [item removeObserver:self forKeyPath:@"selected"];
-    [self willChangeValueForKey:@"items"];
-    [self.items removeObject:item];
-    [self didChangeValueForKey:@"items"];
-}
-
-- (void)removeItemWithID:(NSInteger)itemID
-{
-    [[self itemWithID:itemID] clear];
-}
-
-- (CartItem *)itemWithID:(NSInteger)itemID
-{
-    __block CartItem *found = nil;
-    [self.items enumerateObjectsUsingBlock:^(id obj, NSUInteger idx,
-                                                BOOL *stop) {
-        CartItem *item = (CartItem *)obj;
-        if (item.itemID == itemID)
-            found = item;
-    }];
-    
-    return found;
-}
-
 - (CartItem *)itemWithProductID:(NSInteger)productID
 {
     __block CartItem *found = nil;
-    [self.items enumerateObjectsUsingBlock:^(id obj, NSUInteger idx,
+    [self.itemsOfStore enumerateObjectsUsingBlock:^(id obj, NSUInteger idx,
                                                 BOOL *stop) {
         CartItem *item = (CartItem *)obj;
         if (item.product.productID == productID)
@@ -101,28 +51,13 @@
 - (NSArray *)want
 {
     NSMutableArray *wantBuy = [NSMutableArray array];
-    for (CartItem *cartItem in self.items) {
+    for (CartItem *cartItem in self.itemsOfStore) {
         if(cartItem.selected) {
             [wantBuy addObject:cartItem];
         }
     }
     
     return wantBuy;
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary *)change
-                       context:(void *)context
-{
-    if ([@"quantity" isEqualToString:keyPath] &&
-        [object isKindOfClass: [CartItem class]] &&
-        0 == ((CartItem *)object).quantity) {
-        [self removeItem:object];
-    } else if ([@"selected" isEqualToString:keyPath]) {
-        [self willChangeValueForKey:@"selectAll"];
-        [self didChangeValueForKey:@"selectAll"];
-    }
 }
 
 - (void)calculatePrice
@@ -137,7 +72,7 @@
 
 - (BOOL)empty
 {
-    if (nil == self.items || self.items.count == 0)
+    if (nil == self.itemsOfStore || self.itemsOfStore.count == 0)
         return YES;
     else
         return NO;
@@ -146,20 +81,18 @@
 - (void)clear
 {
     self.price = [[NSDecimalNumber alloc] initWithString:@"0.00"];
-    self.quantity = 0;
-    self.items = [[NSMutableArray alloc] init];
+    self.itemsOfStore = nil;
 }
 
 - (void)setSelectAll:(BOOL)selected
 {
-    for (CartItem *item in self.items)
+    for (CartItem *item in self.itemsOfStore)
         item.selected = selected;
 }
 
-
 - (BOOL)selectAll
 {
-    for (CartItem *item in self.items)
+    for (CartItem *item in self.itemsOfStore)
         if (!item.selected)
             return NO;
     

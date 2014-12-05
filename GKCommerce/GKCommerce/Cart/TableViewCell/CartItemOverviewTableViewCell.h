@@ -15,7 +15,7 @@
 
 @property (nonatomic, strong) IBOutlet UILabel *overview;
 @property (nonatomic, strong) IBOutlet UILabel *price;
-@property (nonatomic, strong) Cart *cart;
+@property (nonatomic, strong) CartItemList *list;
 - (void)bind;
 - (void)unbind;
 @end

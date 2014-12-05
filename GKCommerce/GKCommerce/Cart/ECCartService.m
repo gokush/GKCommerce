@@ -21,9 +21,10 @@
     return self;
 }
 
-- (void)fetch:(Cart *)cart
+- (void)fetchCartWithUser:(User *)user
 {
-    [self.backend requestCart:cart];
+    DDLogVerbose(@"CartService featch cart with user %@", user.username);
+    [self.backend requestCartWithUser:user];
 }
 
 - (void)addItem:(CartItem *)item
@@ -60,6 +61,7 @@
 - (void)cartBackend:(id<CartBackend>)aCartBackend didReceiveCart:(Cart *)cart
               error:(NSError *)anError
 {
+    [[[App shared] currentUser] setCart:cart];
     SEL selector = @selector(cartService:cart:error:);
     if ([self.delegate respondsToSelector:selector])
         [self.delegate cartService:self cart:cart error:anError];
@@ -83,7 +85,7 @@
     if (anError)
         return;
     
-    [item.cart removeItem:item];
+    [item removeFromList];
     
     SEL selector = @selector(cartService:didRemoveItem:error:);
     if ([self.delegate respondsToSelector:selector])

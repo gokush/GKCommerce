@@ -19,7 +19,7 @@
 @property (strong, nonatomic) id<CartBackend> backend;
 @property (strong, nonatomic) CartRepository *repository;
 
-- (void)fetch:(Cart *)cart;
+- (void)fetchCartWithUser:(User *)user;
 - (void)addItem:(CartItem *)item;
 - (void)updateItem:(CartItem *)item oldQuantity:(NSInteger)anOldQuantity;
 - (void)removeItem:(CartItem *)item;

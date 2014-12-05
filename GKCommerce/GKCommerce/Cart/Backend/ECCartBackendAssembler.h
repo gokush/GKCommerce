@@ -12,6 +12,6 @@
 @interface ECCartBackendAssembler : ECBackendAssembler
 
 @property (strong, nonatomic) ECProductBackendAssembler *productAssembler;
-- (Cart *)cart:(NSDictionary *)JSON toCart:(Cart *)cart;
-- (void)updateCart:(Cart *)cart total:(NSDictionary *)JSON;
+
+- (Cart *)cartWithJSON:(NSDictionary *)JSON user:(User *)anUser;
 @end

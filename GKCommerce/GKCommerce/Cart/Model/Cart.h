@@ -16,10 +16,9 @@
 @class User;
 @interface Cart : NSObject
 
-@property (strong, nonatomic) User *user;
-@property (assign, nonatomic) NSInteger quantity;
+@property (weak, nonatomic) User *user;
 @property (strong, nonatomic) NSDecimalNumber *price;
-@property (strong, nonatomic) NSMutableArray *items;
+@property (strong, nonatomic) NSMutableArray *itemsOfStore;
 @property (assign, nonatomic) Payment *payment;
 
 @property (assign, nonatomic) BOOL selectAll;
@@ -30,13 +29,6 @@
 @property (strong, nonatomic) Invoice *invoice;
 
 - (id)initWithUser:(User *)user;
-
-- (void)addItem:(CartItem *)item;
-- (void)addItems:(NSArray *)items;
-- (void)removeItem:(CartItem *)item;
-- (void)removeItemWithID:(NSInteger)itemID;
-- (CartItem *)itemWithProductID:(NSInteger)productID;
-- (CartItem *)itemWithID:(NSInteger)itemID;
 - (NSArray *)want;
 - (void)calculatePrice;
 - (BOOL)empty;

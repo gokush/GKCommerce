@@ -25,7 +25,7 @@
                                   @"password": user.password };
     [self.manager
      POST:[NSString stringWithFormat:@"%@/user/signin",
-           [Config shared].backendURL]
+           [GKConfig shared].backendURL]
      parameters:parameters
      success:^(AFHTTPRequestOperation *operation, id responseObject) {
          [self requestAuthenticate:user didReceiveResponse:responseObject];
