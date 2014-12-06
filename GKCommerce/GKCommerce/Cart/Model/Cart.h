@@ -32,5 +32,6 @@
 - (NSArray *)want;
 - (void)calculatePrice;
 - (BOOL)empty;
+- (void)removeAllItems;
 - (void)clear;
 @end

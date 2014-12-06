@@ -99,4 +99,10 @@
     return YES;
 }
 
+- (void)removeAllItems
+{
+    [self willChangeValueForKey:@"itemsOfStore"];
+    [self.itemsOfStore removeAllObjects];
+    [self didChangeValueForKey:@"itemsOfStore"];
+}
 @end

@@ -26,8 +26,8 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     [[Dependency shared] setFactory:[[GKECFactory alloc] init]];
     
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
-    Config *config = [Config shared];
-    config.backendURL = @"http://192.168.33.10/ECMobile/index.php?url=";
+    GKConfig *config = [GKConfig shared];
+    config.backendURL = @"http://127.0.0.1:8000/ECMobile/index.php?url=";
     
     ECUserService *service = [ECUserService shared];
     service.delegate = self;
@@ -49,8 +49,6 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 - (void)userService:(ECUserService *)anUserService didRestore:(User *)user
               error:(NSError *)anError
 {
-    id<CartBackend> backend = [[ECCartBackend alloc] init];
-    [backend requestCart:[[App shared] currentUser].cart];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

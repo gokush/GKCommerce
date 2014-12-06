@@ -9,7 +9,7 @@ target "GKCommerce" do
     pod 'CocoaLumberjack', '~> 2.0.0-beta4'
     pod 'SVPullToRefresh'
     pod 'SKSTableView', :git=> 'http://github.com/gokush/SKSTableView.git'
-
+    pod 'ReactiveCocoa'
 end
 
 target "GKCommerceTests" do

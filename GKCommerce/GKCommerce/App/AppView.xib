@@ -13,7 +13,7 @@
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tabBarController id="YA9-NO-oNX">
             <nil key="simulatedBottomBarMetrics"/>
-            <tabBar key="tabBar" contentMode="scaleToFill" selectedItem="gHt-He-Xqu" id="nkK-Gl-Dgi">
+            <tabBar key="tabBar" contentMode="scaleToFill" selectedItem="6FP-0g-k5n" id="nkK-Gl-Dgi">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -50,7 +50,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <viewControllers>
-                        <viewController nibName="CartView" automaticallyAdjustsScrollViewInsets="NO" id="qNL-gI-kEU" customClass="CartViewController">
+                        <viewController title="购物车" nibName="CartView" automaticallyAdjustsScrollViewInsets="NO" id="qNL-gI-kEU" customClass="CartViewController">
                             <navigationItem key="navigationItem" title="购物车" id="fen-hE-q6Z"/>
                         </viewController>
                     </viewControllers>

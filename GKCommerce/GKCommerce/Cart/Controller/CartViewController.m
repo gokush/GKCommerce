@@ -20,7 +20,6 @@ typedef enum {
 
 @interface CartViewController ()
 {
-    CartEmptyView *cartEmptyView;
     UINavigationController *_loginNavigationController;
     BOOL didSelecteAllBecauseObserver;
 }
@@ -34,13 +33,39 @@ typedef enum {
     didSelecteAllBecauseObserver = NO;
     self.service = [[Dependency shared] cartService];
     self.service.delegate = self;
-    [self addObserver:self forKeyPath:@"user" options:0 context:nil];
-    [self addObserver:self forKeyPath:@"cart"
-              options:NSKeyValueObservingOptionPrior context:nil];
     
-    [[App shared] addObserver:self forKeyPath:@"currentUser"
-                      options:NSKeyValueObservingOptionInitial context:nil];
-    
+    App *app = [App shared];
+    @weakify(self)
+    [[RACObserve(app.currentUser, cart)
+     filter:^BOOL(Cart* cart) {
+         return !cart.empty;
+     }]
+     subscribeNext:^(Cart *cart) {
+         @strongify(self)
+         self.cart = cart;
+         [self.tableView reloadData];
+    }];
+    [RACObserve(app.currentUser.cart, itemsOfStore)
+     subscribeNext:^(id x) {
+         if (!app.currentUser.cart.empty)
+             [self.tableView reloadData];
+     }];
+    [RACObserve([[[App shared] currentUser] cart], price)
+     subscribeNext:^(id x) {
+         if (!app.currentUser.cart.empty)
+             [self renderOverview];
+     }];
+    [RACObserve(app, currentUser) subscribeNext:^(User *user) {
+        self.user = user;
+        [self.service fetchCartWithUser:app.currentUser];
+    }];
+    [RACObserve(self.user.cart, empty) subscribeNext:^(id empty) {
+        if ([empty boolValue] && !self.user.authorized) {
+            self.navigationItem.rightBarButtonItem = nil;
+            [self.view addSubview:[[CartEmptyViewController shared] view]];
+        } else
+            [[[CartEmptyViewController shared] view] removeFromSuperview];
+    }];
 }
 
 - (void)viewDidLoad
@@ -71,45 +96,6 @@ typedef enum {
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
                         change:(NSDictionary *)change context:(void *)context
 {
-    if ([@"cart" isEqualToString:keyPath]) {
-        if (self.cart && change[NSKeyValueChangeNotificationIsPriorKey]) {
-            [self.cart removeObserver:self forKeyPath:@"itemsOfStore"];
-            [self.cart removeObserver:self forKeyPath:@"price"];
-            [self.cart removeObserver:self forKeyPath:@"selectAll"];
-        } else if (self.cart &&
-                   !change[NSKeyValueChangeNotificationIsPriorKey]) {
-            [self.cart addObserver:self forKeyPath:@"price" options:0
-                           context:nil];
-            [self.cart addObserver:self forKeyPath:@"itemsOfStore" options:0
-                           context:nil];
-            [self.cart addObserver:self forKeyPath:@"selectAll"
-                           options:NSKeyValueObservingOptionInitial
-                           context:nil];
-        }
-        if (nil == self.cart || [self.cart empty])
-            return;
-        
-        
-        [self emptyCart];
-        [self renderSelectAll];
-        [self.tableView reloadData];
-    } else if ([@"price" isEqualToString:keyPath]) {
-        [self renderOverview];
-    } else if ([@"items" isEqualToString:keyPath]) {
-        [self emptyCart];
-        [self renderSelectAll];
-        [self.tableView reloadData];
-    } else if ([@"user" isEqualToString:keyPath]) {
-        self.cart = self.user.cart;
-    } else if ([@"selectAll" isEqualToString:keyPath])
-        [self renderSelectAll];
-    else if ([@"currentUser" isEqualToString:keyPath]) {
-        User *user = [[App shared] currentUser];
-        if (nil != user && [user authorized]) {
-            self.user = user;
-            [self.service fetchCartWithUser:user];
-        }
-    }
 }
 
 - (void)renderSelectAll
@@ -119,32 +105,6 @@ typedef enum {
         return;
     }
     self.selectAll.on = self.user.cart.selectAll;
-}
-
-- (void)emptyCart
-{
-    if (nil == cartEmptyView) {
-        cartEmptyView = [[[NSBundle mainBundle]
-                          loadNibNamed:@"CartEmptyView" owner:nil options:nil]
-                         lastObject];
-// TODO: CartEmptyDelegate
-//        cartEmptyView.delegate = self;
-    }
-    
-    if ([self.user authorized]) {
-        cartEmptyView.authenticated = YES;
-        
-        if (self.user.cart.empty) {
-            self.navigationItem.rightBarButtonItem = nil;
-            [self.view addSubview:cartEmptyView];
-        } else {
-            [cartEmptyView removeFromSuperview];
-        }
-    } else {
-        cartEmptyView.authenticated = NO;
-        [self.view addSubview:cartEmptyView];
-    }
-    
 }
 
 - (void)renderOverview
@@ -158,7 +118,6 @@ typedef enum {
 - (void)cartService:(id<CartService>)aCartService cart:(Cart *)aCart
               error:(NSError *)anError
 {
-    self.cart = aCart;
 }
 
 - (void)cartService:(id<CartService>)aCartService didUpdateItem:(CartItem *)item
@@ -204,9 +163,7 @@ typedef enum {
 
 - (void)rightBarButtonClick:(id)sender
 {
-    if (self.user.cart.selected.count > 0) {
-        [self.service removeItems:self.cart.selected];
-    }
+    [self.cart removeAllItems];
 }
 
 - (void)didSelectAll:(id)sender
@@ -215,9 +172,6 @@ typedef enum {
     BOOL select = self.selectAll.on;
     self.cart.selectAll = !select;
 }
-
-#pragma mark- CartEmptyViewDelegate
-
 
 #pragma mark - UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
