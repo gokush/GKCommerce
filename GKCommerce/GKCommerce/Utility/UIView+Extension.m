@@ -12,6 +12,27 @@
 
 @implementation SeparatorOption
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.width = 1.0f;
+    }
+    return self;
+}
+
+- (id)initWithColor:(UIColor *)color marginLeftAndRight:(CGFloat)marginWidth
+        onDirection:(SeparatorDirection)direction
+{
+    self = [self init];
+    if (self) {
+        self.color = color;
+        self.marginRight = self.marginLeft = marginWidth;
+        self.direction = SeparatorDirectionBottom;
+    }
+    return self;
+}
+
 + (id)optionWithDirection:(SeparatorDirection)direction
 {
     SeparatorOption *option = [[SeparatorOption alloc] init];
@@ -91,6 +112,11 @@
                 rectangle.origin.x += option.indent;
                 rectangle.size.width -= option.indent;
             }
+
+            rectangle.origin.x += option.marginLeft;
+            rectangle.size.width -= option.marginLeft;
+            rectangle.size.width -= option.marginRight;
+
             layer.frame = rectangle;
             [self.layer addSublayer:layer];
         }

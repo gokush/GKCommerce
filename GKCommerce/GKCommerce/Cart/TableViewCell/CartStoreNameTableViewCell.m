@@ -11,7 +11,14 @@
 @implementation CartStoreNameTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    SeparatorOption *option;
+    option = [SeparatorOption optionWithColor:UIColorFromRGB(0xdfdfdf)
+                                  onDirection:SeparatorDirectionTop];
+    [self setSeparatorWithOption:option];
+    [self setSeparatorWithOption:[[SeparatorOption alloc]
+                                  initWithColor:UIColorFromRGB(0xdfdfdf)
+                                  marginLeftAndRight:12.0f
+                                  onDirection:SeparatorDirectionBottom]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

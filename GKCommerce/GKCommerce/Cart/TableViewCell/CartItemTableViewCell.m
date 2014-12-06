@@ -149,5 +149,10 @@
     parent.layer.masksToBounds = YES;
     
     self.quantity.borderStyle = UITextBorderStyleNone;
+    
+    [self setSeparatorWithOption:[[SeparatorOption alloc]
+                                  initWithColor:UIColorFromRGB(0xdfdfdf)
+                                  marginLeftAndRight:12.0f
+                                  onDirection:SeparatorDirectionBottom]];
 }
 @end

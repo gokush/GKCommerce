@@ -57,7 +57,8 @@ typedef enum {
      }];
     [RACObserve(app, currentUser) subscribeNext:^(User *user) {
         self.user = user;
-        [self.service fetchCartWithUser:app.currentUser];
+        if ([user authorized])
+            [self.service fetchCartWithUser:app.currentUser];
     }];
     [RACObserve(self.user.cart, empty) subscribeNext:^(id empty) {
         if ([empty boolValue] && !self.user.authorized) {
@@ -91,11 +92,6 @@ typedef enum {
              initWithTitle:@"移除" style:UIBarButtonItemStylePlain
              target:self action:@selector(rightBarButtonClick:)];
     self.navigationItem.rightBarButtonItem = right;
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
-                        change:(NSDictionary *)change context:(void *)context
-{
 }
 
 - (void)renderSelectAll

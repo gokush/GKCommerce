@@ -217,6 +217,11 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (IBAction)didTapAddProductToCart:(id)sender
 {
+    if (![[[App shared] currentUser] authorized]) {
+        [self.view showHUD:@"请先登录" afterDelay:3];
+        return;
+    }
+    
     CartItemList *list = [[CartItemList alloc] init];
     list.cart = self.user.cart;
     CartItem *item = [[CartItem alloc] initWithList:list];

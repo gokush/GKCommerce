@@ -23,6 +23,13 @@ typedef enum {
 @property (assign, nonatomic) SeparatorDirection direction;
 @property (assign, nonatomic) float width;
 @property (assign, nonatomic) float indent;
+@property (assign, nonatomic) CGFloat marginTop;
+@property (assign, nonatomic) CGFloat marginRight;
+@property (assign, nonatomic) CGFloat marginBottom;
+@property (assign, nonatomic) CGFloat marginLeft;
+
+- (id)initWithColor:(UIColor *)color marginLeftAndRight:(CGFloat)marginWidth
+        onDirection:(SeparatorDirection)direction;
 
 + (id)optionWithDirection:(SeparatorDirection)direction;
 + (id)optionWithColor:(UIColor *)color
