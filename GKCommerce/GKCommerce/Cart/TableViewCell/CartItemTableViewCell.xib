@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -15,16 +14,16 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view tag="20" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zc3-1p-Vpy">
+                    <view tag="20" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zc3-1p-Vpy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="￥144" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVL-ey-bQ8">
-                                <rect key="frame" x="214" y="31" width="96" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥144" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVL-ey-bQ8">
+                                <rect key="frame" x="214" y="20" width="96" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="商品标题" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="141" translatesAutoresizingMaskIntoConstraints="NO" id="Xa3-us-JF8">
-                                <rect key="frame" x="104" y="17" width="141" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品标题" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="141" translatesAutoresizingMaskIntoConstraints="NO" id="Xa3-us-JF8">
+                                <rect key="frame" x="104" y="20" width="141" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="141" id="chG-Zg-stn"/>
                                 </constraints>
@@ -32,42 +31,7 @@
                                 <color key="textColor" red="0.31764705882352939" green="0.31764705882352939" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="数量：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20T-tK-ouG">
-                                <rect key="frame" x="104" y="42" width="41" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="0.54117647058823526" green="0.54117647058823526" blue="0.54117647058823526" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGp-Op-6U0">
-                                <rect key="frame" x="103" y="33" width="60" height="60"/>
-                                <state key="normal" image="cart_item_decrease">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="decrease:" destination="cXi-Fl-Tgx" eventType="touchUpInside" id="9zR-Jd-FFe"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4P-oa-92t">
-                                <rect key="frame" x="192" y="33" width="60" height="60"/>
-                                <state key="normal" image="cart_item_add">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="increase:" destination="cXi-Fl-Tgx" eventType="touchUpInside" id="zDK-JC-QuH"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kmg-NL-eEI">
-                                <rect key="frame" x="167" y="43" width="20" height="20"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="zMb-cv-Pfy">
-                                        <rect key="frame" x="0.0" y="3" width="20" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c54-lK-CNr" customClass="GKToggleButton">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c54-lK-CNr" customClass="GKToggleButton">
                                 <rect key="frame" x="12" y="32" width="20" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
@@ -79,7 +43,7 @@
                                     <outlet property="delegate" destination="cXi-Fl-Tgx" id="I6K-D2-eB8"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Yj-gU-ktk">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Yj-gU-ktk">
                                 <rect key="frame" x="42" y="17" width="50" height="50"/>
                                 <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -88,15 +52,45 @@
                                     <action selector="didTapPhoto:" destination="cXi-Fl-Tgx" eventType="touchUpInside" id="3nh-xs-UNI"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8L1-k6-nzb" customClass="GKQuantityView">
+                                <rect key="frame" x="100" y="12" width="119" height="32"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oc7-Ft-xeW">
+                                        <rect key="frame" x="0.0" y="1" width="34" height="30"/>
+                                        <state key="normal" image="cart_decrement">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzg-x8-1aL">
+                                        <rect key="frame" x="89" y="1" width="34" height="30"/>
+                                        <state key="normal" image="cart_increment">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9nc-UA-7UT">
+                                        <rect key="frame" x="35" y="1" width="49" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.72156862745098038" green="0.72156862745098038" blue="0.72156862745098038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="quantityTextField" destination="9nc-UA-7UT" id="9AZ-OA-EgC"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="kmg-NL-eEI" firstAttribute="top" secondItem="Xa3-us-JF8" secondAttribute="bottom" constant="5" id="HGj-LU-eUH"/>
-                            <constraint firstItem="y4P-oa-92t" firstAttribute="centerY" secondItem="Xa3-us-JF8" secondAttribute="bottom" constant="15" id="M05-2a-Jfc"/>
-                            <constraint firstItem="20T-tK-ouG" firstAttribute="top" secondItem="Xa3-us-JF8" secondAttribute="bottom" constant="4" id="Vkk-if-kJn"/>
-                            <constraint firstItem="cVL-ey-bQ8" firstAttribute="top" secondItem="Zc3-1p-Vpy" secondAttribute="top" constant="31" id="jOG-6D-KrG"/>
-                            <constraint firstItem="wGp-Op-6U0" firstAttribute="centerY" secondItem="Xa3-us-JF8" secondAttribute="bottom" constant="15" id="kvo-lK-2UX"/>
-                        </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
@@ -109,14 +103,13 @@
                 <outlet property="name" destination="Xa3-us-JF8" id="J5t-pu-hWF"/>
                 <outlet property="photo" destination="7Yj-gU-ktk" id="cZ2-sZ-8IY"/>
                 <outlet property="price" destination="cVL-ey-bQ8" id="qH8-o7-bVr"/>
-                <outlet property="quantity" destination="zMb-cv-Pfy" id="E2y-Kf-ahS"/>
                 <outlet property="select" destination="c54-lK-CNr" id="bNy-tg-eyo"/>
             </connections>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="cart_item_add" width="20" height="20"/>
-        <image name="cart_item_decrease" width="20" height="20"/>
+        <image name="cart_decrement" width="34" height="30"/>
+        <image name="cart_increment" width="34" height="30"/>
         <image name="cart_select" width="20" height="20"/>
         <image name="cart_selected" width="20" height="20"/>
     </resources>

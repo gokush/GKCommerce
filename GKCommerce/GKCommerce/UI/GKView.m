@@ -38,6 +38,30 @@
     [self.layer addSublayer:leftLayer];
 }
 
+- (void)setBorderColor:(UIColor *)borderColor
+{
+    if (_borderColor != borderColor) {
+        _borderColor = borderColor;
+        self.layer.borderColor = borderColor.CGColor;
+    }
+}
+
+- (void)setBorderWidth:(CGFloat)borderWidth
+{
+    if (_borderWidth != borderWidth) {
+        _borderWidth = borderWidth;
+        self.layer.borderWidth = borderWidth;
+    }
+}
+
+- (void)setCornerRadius:(CGFloat)cornerRadius
+{
+    if (_cornerRadius != cornerRadius) {
+        _cornerRadius = cornerRadius;
+        self.layer.cornerRadius = cornerRadius;
+    }
+}
+
 - (void)setTopBorderColor:(UIColor *)topBorderColor
 {
     if (_topBorderColor != topBorderColor) {

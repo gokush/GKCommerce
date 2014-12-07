@@ -33,6 +33,17 @@
     return self;
 }
 
++ (id)optionWithColor:(UIColor *)color marginLeftAndRight:(CGFloat)marginWidth
+        onDirection:(SeparatorDirection)direction
+{
+    SeparatorOption *option;
+    option = [[SeparatorOption alloc] initWithColor:color
+                                 marginLeftAndRight:marginWidth
+                                        onDirection:direction];
+    
+    return option;
+}
+
 + (id)optionWithDirection:(SeparatorDirection)direction
 {
     SeparatorOption *option = [[SeparatorOption alloc] init];
@@ -132,5 +143,4 @@
     [hud show:YES];
     [hud hide:YES afterDelay:2];
 }
-
 @end

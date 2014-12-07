@@ -8,6 +8,11 @@
 
 #import "CartStoreNameTableViewCell.h"
 
+@interface CartStoreNameTableViewCell()
+
+@property (strong, nonatomic) SeparatorOption *bottomBorder;
+@end
+
 @implementation CartStoreNameTableViewCell
 
 - (void)awakeFromNib {
@@ -15,10 +20,9 @@
     option = [SeparatorOption optionWithColor:UIColorFromRGB(0xdfdfdf)
                                   onDirection:SeparatorDirectionTop];
     [self setSeparatorWithOption:option];
-    [self setSeparatorWithOption:[[SeparatorOption alloc]
-                                  initWithColor:UIColorFromRGB(0xdfdfdf)
-                                  marginLeftAndRight:12.0f
-                                  onDirection:SeparatorDirectionBottom]];
+    
+    option.direction = SeparatorDirectionBottom;
+    [self setSeparatorWithOption:option];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

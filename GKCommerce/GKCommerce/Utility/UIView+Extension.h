@@ -31,6 +31,8 @@ typedef enum {
 - (id)initWithColor:(UIColor *)color marginLeftAndRight:(CGFloat)marginWidth
         onDirection:(SeparatorDirection)direction;
 
++ (id)optionWithColor:(UIColor *)color marginLeftAndRight:(CGFloat)marginWidth
+          onDirection:(SeparatorDirection)direction;
 + (id)optionWithDirection:(SeparatorDirection)direction;
 + (id)optionWithColor:(UIColor *)color
           onDirection:(SeparatorDirection)direction;

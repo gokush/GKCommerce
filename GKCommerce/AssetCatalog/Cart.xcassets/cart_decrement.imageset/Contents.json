@@ -3,12 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "cart_item_decrease.png"
+      "filename" : "cart_decrement.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "cart_item_decrease@2x.png"
+      "filename" : "cart_decrement@2x.png"
     },
     {
       "idiom" : "universal",
