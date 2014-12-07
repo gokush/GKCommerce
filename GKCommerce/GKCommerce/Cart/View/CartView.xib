@@ -64,6 +64,7 @@
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="image" keyPath="onImage" value="cart_selected"/>
                                 <userDefinedRuntimeAttribute type="image" keyPath="offImage" value="cart_select"/>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="on" value="NO"/>
                             </userDefinedRuntimeAttributes>
                             <connections>
                                 <outletCollection property="gestureRecognizers" destination="6wC-J9-dBz" appends="YES" id="Bua-0V-sEP"/>

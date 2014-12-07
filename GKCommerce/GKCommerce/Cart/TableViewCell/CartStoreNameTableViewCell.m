@@ -14,8 +14,12 @@
 @end
 
 @implementation CartStoreNameTableViewCell
+{
+    BOOL skipUpdateSelect;
+}
 
 - (void)awakeFromNib {
+    skipUpdateSelect = NO;
     SeparatorOption *option;
     option = [SeparatorOption optionWithColor:UIColorFromRGB(0xdfdfdf)
                                   onDirection:SeparatorDirectionTop];
@@ -36,6 +40,9 @@
     @weakify(self)
     [RACObserve(self, list.selected) subscribeNext:^(NSMutableArray *selected) {
         @strongify(self)
+        if (skipUpdateSelect)
+            return;
+        
         BOOL didSelectAllItems = selected.count == self.list.items.count;
         if (self.select.on != didSelectAllItems)
             self.select.on = didSelectAllItems;
@@ -49,7 +56,10 @@
 
 - (void)toggleButton:(GKToggleButton *)aToggleButton didSwitch:(BOOL)onOrOff
 {
-    
+    skipUpdateSelect = YES;
+    CartItemList *list = self.list;
+    [list selectAllItems:onOrOff];
+    skipUpdateSelect = NO;
 }
 
 @end

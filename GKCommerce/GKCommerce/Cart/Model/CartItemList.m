@@ -9,12 +9,16 @@
 #import "CartItemList.h"
 
 @implementation CartItemList
+{
+    BOOL isBatchOperation;
+}
 
 - (id)init
 {
     self = [super init];
     if (self) {
         self.selected = [[NSMutableArray alloc] init];
+        isBatchOperation = NO;
     }
     return self;
 }
@@ -37,8 +41,10 @@
             [self.selected addObject:item];
         else
             [self.selected removeObject:item];
-        [self willChangeValueForKey:@"selected"];
-        [self didChangeValueForKey:@"selected"];
+        if (!isBatchOperation) {
+            [self willChangeValueForKey:@"selected"];
+            [self didChangeValueForKey:@"selected"];
+        }
     }];
     item.list = self;
 }
@@ -89,5 +95,17 @@
         0 == ((CartItem *)object).quantity) {
         [self removeItem:object];
     }
+}
+
+- (void)selectAllItems:(BOOL)select
+{
+    isBatchOperation = YES;
+    for (CartItem *item in self.items) {
+        if (item.selected != select)
+            item.selected = select;
+    }
+    [self willChangeValueForKey:@"selected"];
+    [self didChangeValueForKey:@"selected"];
+    isBatchOperation = NO;
 }
 @end

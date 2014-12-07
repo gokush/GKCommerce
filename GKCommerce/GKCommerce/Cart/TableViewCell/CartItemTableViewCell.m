@@ -120,6 +120,7 @@
 - (void)toggleButton:(GKToggleButton *)aToggleButton didSwitch:(BOOL)onOrOff
 {
     self.item.selected = self.select.on;
+
     SEL selector = @selector(cartItemTableViewCell:didSelect:);
     if ([self.delegate respondsToSelector:selector]) {
         [self.delegate cartItemTableViewCell:self didSelect:self.item.selected];

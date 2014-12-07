@@ -29,7 +29,7 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="on" value="NO"/>
                         </userDefinedRuntimeAttributes>
                         <connections>
-                            <outlet property="delegate" destination="-1" id="c7V-rI-OgD"/>
+                            <outlet property="delegate" destination="KGk-i7-Jjw" id="D4s-i4-mzS"/>
                         </connections>
                     </view>
                 </subviews>

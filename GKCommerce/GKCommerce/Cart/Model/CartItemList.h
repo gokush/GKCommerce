@@ -14,7 +14,6 @@
 
 @property (weak, nonatomic) Store *store;
 @property (weak, nonatomic) Cart *cart;
-@property (assign, nonatomic) BOOL *allSelected;
 @property (strong, nonatomic) NSMutableArray * selected;
 @property (strong, nonatomic) NSMutableArray *items;
 @property (strong, nonatomic) NSDecimalNumber *price;
@@ -24,4 +23,5 @@
 - (void)addItems:(NSArray *)items;
 - (void)removeItem:(CartItem *)item;
 - (void)removeItemWithID:(NSInteger)itemID;
+- (void)selectAllItems:(BOOL)select;
 @end
