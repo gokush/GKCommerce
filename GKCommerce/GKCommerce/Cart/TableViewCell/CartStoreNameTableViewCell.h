@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface CartStoreNameTableViewCell : UITableViewCell
-<UIBindableTableViewCell>
+<UIBindableTableViewCell, GKToggleButtonDelegate>
 
+@property (strong, nonatomic) CartItemList *list;
+@property (strong, nonatomic) IBOutlet GKToggleButton *select;
 @end

@@ -20,11 +20,30 @@
                         <color key="textColor" red="0.23921568627450981" green="0.23921568627450981" blue="0.23921568627450981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nXM-5V-Ouf" customClass="GKToggleButton">
+                        <rect key="frame" x="12" y="12" width="20" height="20"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="onImage" value="cart_selected"/>
+                            <userDefinedRuntimeAttribute type="image" keyPath="offImage" value="cart_select"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="on" value="NO"/>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="delegate" destination="-1" id="c7V-rI-OgD"/>
+                        </connections>
+                    </view>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="select" destination="nXM-5V-Ouf" id="lNh-Pt-DST"/>
+            </connections>
             <point key="canvasLocation" x="337" y="272.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="cart_select" width="20" height="20"/>
+        <image name="cart_selected" width="20" height="20"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

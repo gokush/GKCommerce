@@ -33,10 +33,21 @@
 
 - (void)bind
 {
-    
+    @weakify(self)
+    [RACObserve(self, list.selected) subscribeNext:^(NSMutableArray *selected) {
+        @strongify(self)
+        BOOL didSelectAllItems = selected.count == self.list.items.count;
+        if (self.select.on != didSelectAllItems)
+            self.select.on = didSelectAllItems;
+    }];
 }
 
 - (void)unbind
+{
+    
+}
+
+- (void)toggleButton:(GKToggleButton *)aToggleButton didSwitch:(BOOL)onOrOff
 {
     
 }

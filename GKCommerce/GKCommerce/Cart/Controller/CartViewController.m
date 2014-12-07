@@ -220,7 +220,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
     list = [self.cart.itemsOfStore objectAtIndex:indexPath.section];
     
     if (CartStoreNameCell == indexPath.row)
-        cell = [self storeNameCell];
+        cell = [self storeNameCell:list];
     else if (list.items.count >= indexPath.row)
         cell = [self itemCellWithItem:[list itemAtIndex:indexPath.row - 1]];
     else
@@ -230,11 +230,12 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
     return cell;
 }
 
-- (UITableViewCell *)storeNameCell
+- (UITableViewCell *)storeNameCell:(CartItemList *)list
 {
     CartStoreNameTableViewCell *cell;
     cell = [self.tableView
             dequeueReusableCellWithIdentifier:@"CartStoreNameTableViewCell"];
+    cell.list = list;
     return cell;
 }
 

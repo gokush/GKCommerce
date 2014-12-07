@@ -10,6 +10,15 @@
 
 @implementation CartItemList
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.selected = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 - (CartItem *)itemAtIndex:(NSInteger)index
 {
     return [self.items objectAtIndex:index];
@@ -20,13 +29,17 @@
     [item addObserver:self forKeyPath:@"quantity"
               options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
               context:nil];
-    [item addObserver:self forKeyPath:@"selected"
-              options:NSKeyValueObservingOptionInitial context:nil];
-    
     [self.items addObject:item];
     
-    if (item.selected)
-        [self.selected addObject:item];
+    [RACObserve(item, selected) subscribeNext:^(id x) {
+        BOOL selected = [x boolValue];
+        if (selected)
+            [self.selected addObject:item];
+        else
+            [self.selected removeObject:item];
+        [self willChangeValueForKey:@"selected"];
+        [self didChangeValueForKey:@"selected"];
+    }];
     item.list = self;
 }
 
@@ -75,9 +88,6 @@
         [object isKindOfClass: [CartItem class]] &&
         0 == ((CartItem *)object).quantity) {
         [self removeItem:object];
-    } else if ([@"selected" isEqualToString:keyPath]) {
-        [self willChangeValueForKey:@"selectAll"];
-        [self didChangeValueForKey:@"selectAll"];
     }
 }
 @end
