@@ -17,6 +17,7 @@
 {
     self = [super init];
     if (self) {
+        self.items = [[NSMutableArray alloc] init];
         self.selected = [[NSMutableArray alloc] init];
         isBatchOperation = NO;
     }
@@ -51,9 +52,13 @@
 
 - (void)addItems:(NSArray *)items
 {
+    isBatchOperation = YES;
     for (CartItem *item in items) {
         [self addItem:item];
     }
+    isBatchOperation = NO;
+    [self willChangeValueForKey:@"selected"];
+    [self didChangeValueForKey:@"selected"];
 }
 
 - (void)removeItem:(CartItem *)item
@@ -95,6 +100,11 @@
         0 == ((CartItem *)object).quantity) {
         [self removeItem:object];
     }
+}
+
+- (BOOL)isAllSelected
+{
+    return self.items.count == self.selected.count;
 }
 
 - (void)selectAllItems:(BOOL)select

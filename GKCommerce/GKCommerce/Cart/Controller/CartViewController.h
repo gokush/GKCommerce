@@ -17,7 +17,7 @@
 
 @interface CartViewController : UIViewController
 <UITableViewDataSource, UITableViewDelegate, CartServiceDelegate,
-CartItemTableViewCellDelegate>
+CartItemTableViewCellDelegate, GKToggleButtonDelegate>
 
 @property (nonatomic, strong) id<CartService> service;
 @property (nonatomic, weak) Cart *cart;
@@ -27,5 +27,4 @@ CartItemTableViewCellDelegate>
 @property (nonatomic, strong) IBOutlet GKToggleButton *selectAll;
 
 - (IBAction)didTapCheckout:(id)sender;
-- (IBAction)didSelectAll:(id)sender;
 @end

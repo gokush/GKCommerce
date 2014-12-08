@@ -8,6 +8,13 @@
 
 #import "Cart.h"
 
+@interface Cart ()
+{
+    BOOL isBatchOperation;
+}
+//@property (strong, nonatomic) NSMutableArray itemsOfStore;
+@end
+
 @implementation Cart
 
 - (id)init
@@ -18,7 +25,8 @@
     self = [super init];
     if (self) {
         self.itemsOfStore = [NSMutableArray array];
-        
+        self.selected = [[NSMutableArray alloc] init];
+        isBatchOperation = NO;
     }
     
     return self;
@@ -31,8 +39,32 @@
         self.itemsOfStore = [NSMutableArray array];
         self.selected = [[NSMutableArray alloc] init];
         self.user = user;
+        isBatchOperation = NO;
     }
     return self;
+}
+
+- (void)addList:(CartItemList *)list
+{
+    [self.itemsOfStore addObject:list];
+    
+    [RACObserve(list, selected) subscribeNext:^(NSMutableArray *listSelected) {
+        NSUInteger index = [self.selected indexOfObject:list];
+        if ([list isAllSelected] && NSNotFound == index) {
+            [self.selected addObject:list];
+        } else if (![list isAllSelected]) {
+            [self.selected removeObject:list];
+        }
+        if (!isBatchOperation) {
+            [self willChangeValueForKey:@"selected"];
+            [self didChangeValueForKey:@"selected"];
+        }
+    }];
+}
+
+- (void)removeList:(CartItemList *)list
+{
+    [self.itemsOfStore removeObject:list];
 }
 
 - (CartItem *)itemWithProductID:(NSInteger)productID
@@ -84,19 +116,19 @@
     self.itemsOfStore = nil;
 }
 
-- (void)setSelectAll:(BOOL)selected
+- (BOOL)isAllSelected
 {
-    for (CartItem *item in self.itemsOfStore)
-        item.selected = selected;
+    return self.selected.count == self.itemsOfStore.count;
 }
 
-- (BOOL)selectAll
+- (void)selectAllItems:(BOOL)select
 {
-    for (CartItem *item in self.itemsOfStore)
-        if (!item.selected)
-            return NO;
-    
-    return YES;
+    isBatchOperation = YES;
+    for (CartItemList *list in self.itemsOfStore)
+        [list selectAllItems:select];
+    isBatchOperation = NO;
+    [self willChangeValueForKey:@"selected"];
+    [self didChangeValueForKey:@"selected"];
 }
 
 - (void)removeAllItems

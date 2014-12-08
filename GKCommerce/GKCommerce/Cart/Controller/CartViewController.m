@@ -21,7 +21,7 @@ typedef enum {
 @interface CartViewController ()
 {
     UINavigationController *_loginNavigationController;
-    BOOL didSelecteAllBecauseObserver;
+    BOOL skipUpdateSelect;
 }
 
 @end
@@ -30,7 +30,7 @@ typedef enum {
 
 - (void)setup
 {
-    didSelecteAllBecauseObserver = NO;
+    skipUpdateSelect = NO;
     self.service = [[Dependency shared] cartService];
     self.service.delegate = self;
     
@@ -43,6 +43,10 @@ typedef enum {
      subscribeNext:^(Cart *cart) {
          @strongify(self)
          self.cart = cart;
+         [RACObserve(app.currentUser.cart, selected)
+          subscribeNext:^(NSMutableArray *selected) {
+              [self renderSelectAll];
+          }];
          [self.tableView reloadData];
     }];
     [RACObserve(app.currentUser.cart, itemsOfStore)
@@ -96,11 +100,13 @@ typedef enum {
 
 - (void)renderSelectAll
 {
-    if (didSelecteAllBecauseObserver) {
-        didSelecteAllBecauseObserver = NO;
+    if (skipUpdateSelect) {
+        skipUpdateSelect = NO;
         return;
     }
-    self.selectAll.on = self.user.cart.selectAll;
+    BOOL isAllSelected = [[[[App shared] currentUser] cart] isAllSelected];
+    self.selectAll.on = isAllSelected;
+    
 }
 
 - (void)renderOverview
@@ -162,11 +168,11 @@ typedef enum {
     [self.cart removeAllItems];
 }
 
-- (void)didSelectAll:(id)sender
+- (void)toggleButton:(GKToggleButton *)aToggleButton didSwitch:(BOOL)onOrOff
 {
-    didSelecteAllBecauseObserver = YES;
+    skipUpdateSelect = YES;
     BOOL select = self.selectAll.on;
-    self.cart.selectAll = !select;
+    [self.cart selectAllItems:select];
 }
 
 #pragma mark - UITableViewDelegate

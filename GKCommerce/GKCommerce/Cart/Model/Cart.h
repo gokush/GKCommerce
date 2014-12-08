@@ -19,18 +19,19 @@
 @property (weak, nonatomic) User *user;
 @property (strong, nonatomic) NSDecimalNumber *price;
 @property (strong, nonatomic) NSMutableArray *itemsOfStore;
-@property (assign, nonatomic) Payment *payment;
-
-@property (assign, nonatomic) BOOL selectAll;
-@property (strong, nonatomic) NSDecimalNumber *selectedPrice;
 @property (strong, nonatomic) NSMutableArray *selected;
-
+@property (assign, nonatomic) Payment *payment;
+@property (strong, nonatomic) NSDecimalNumber *selectedPrice;
 @property (strong, nonatomic) ShippingMethod *shipping;
 @property (strong, nonatomic) Invoice *invoice;
 
 - (id)initWithUser:(User *)user;
 - (NSArray *)want;
 - (void)calculatePrice;
+- (void)addList:(CartItemList *)list;
+- (void)removeList:(CartItemList *)list;
+- (BOOL)isAllSelected;
+- (void)selectAllItems:(BOOL)select;
 - (BOOL)empty;
 - (void)removeAllItems;
 - (void)clear;

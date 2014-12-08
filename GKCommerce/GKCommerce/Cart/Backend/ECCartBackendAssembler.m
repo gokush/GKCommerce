@@ -30,12 +30,11 @@
     cart.itemsOfStore = [[NSMutableArray alloc] initWithCapacity:0];
     
     CartItemList *list = [[CartItemList alloc] init];
-    [cart.itemsOfStore addObject:list];
+    [cart addList:list];
 
     NSArray *itemsJSON = [JSON valueForKeyPath:@"data.goods_list"];
     
-    list.items = [[NSMutableArray alloc]initWithCapacity:itemsJSON.count];
-    [self cartItems:itemsJSON list:list];
+    [list addItems:[self cartItems:itemsJSON]];
     list.price = [self totalPrice:[JSON valueForKeyPath:@"data.total"]];
     
     Store *store = [[Store alloc] init];
@@ -51,21 +50,22 @@
     return [[NSDecimalNumber alloc] initWithString:price];
 }
 
-- (NSArray *)cartItems:(NSArray *)itemsJSON list:(CartItemList *)aList
+- (NSArray *)cartItems:(NSArray *)itemsJSON
 {
+    NSMutableArray *items = [NSMutableArray array];
     for (NSDictionary *itemJSON in itemsJSON)
-        [aList addItem:[self cartItem:itemJSON list:aList]];
-    return aList.items;
+        [items addObject:[self cartItem:itemJSON]];
+    return items;
 }
 
-- (CartItem *)cartItem:(NSDictionary *)itemJSON list:(CartItemList *)aList
+- (CartItem *)cartItem:(NSDictionary *)itemJSON
 {
     CartItem *item;
     NSInteger quantity;
 
     quantity = [[itemJSON objectForKey:@"goods_number"] integerValue];
     
-    item = [[CartItem alloc] initWithList:aList];
+    item = [[CartItem alloc] init];
     item.itemID = [[itemJSON objectForKey:@"rec_id"] intValue];
     item.product = [self productWithCartItemJSON:itemJSON];
     item.quantity = quantity;
