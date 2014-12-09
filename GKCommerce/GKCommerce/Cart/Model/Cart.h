@@ -33,6 +33,7 @@
 - (BOOL)isAllSelected;
 - (void)selectAllItems:(BOOL)select;
 - (BOOL)empty;
+- (float)wantTotalPrice;
 - (void)removeAllItems;
 - (void)clear;
 @end

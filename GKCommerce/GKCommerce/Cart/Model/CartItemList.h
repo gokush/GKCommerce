@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSDecimalNumber *price;
 
 - (CartItem *)itemAtIndex:(NSInteger)index;
+- (float)wantTotalPrice;
 - (void)addItem:(CartItem *)item;
 - (void)addItems:(NSArray *)items;
 - (void)removeItem:(CartItem *)item;

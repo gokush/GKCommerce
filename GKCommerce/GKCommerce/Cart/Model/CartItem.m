@@ -35,6 +35,15 @@
     
 }
 
+- (void)setProduct:(Product *)product
+{
+    if (_product != product) {
+        _product = product;
+        
+        self.price = product.price;
+    }
+}
+
 - (void)buy
 {
     self.quantity += 1;

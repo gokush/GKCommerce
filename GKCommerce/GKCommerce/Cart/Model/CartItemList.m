@@ -118,4 +118,12 @@
     [self didChangeValueForKey:@"selected"];
     isBatchOperation = NO;
 }
+
+- (float)wantTotalPrice
+{
+    float total = 0;
+    for (CartItem *item in self.selected)
+        total += item.price.floatValue;
+    return total;
+}
 @end

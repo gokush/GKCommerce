@@ -41,36 +41,42 @@ typedef enum {
          return !cart.empty;
      }]
      subscribeNext:^(Cart *cart) {
-         @strongify(self)
+         @strongify(self);
          self.cart = cart;
-         [RACObserve(app.currentUser.cart, selected)
-          subscribeNext:^(NSMutableArray *selected) {
-              [self renderSelectAll];
-          }];
+         [self renderOverview];
          [self.tableView reloadData];
     }];
     [RACObserve(app.currentUser.cart, itemsOfStore)
      subscribeNext:^(id x) {
+         @strongify(self);
          if (!app.currentUser.cart.empty)
              [self.tableView reloadData];
      }];
     [RACObserve([[[App shared] currentUser] cart], price)
      subscribeNext:^(id x) {
+         @strongify(self);
          if (!app.currentUser.cart.empty)
              [self renderOverview];
      }];
     [RACObserve(app, currentUser) subscribeNext:^(User *user) {
+        @strongify(self);
         self.user = user;
         if ([user authorized])
             [self.service fetchCartWithUser:app.currentUser];
     }];
     [RACObserve(self.user.cart, empty) subscribeNext:^(id empty) {
+        @strongify(self);
         if ([empty boolValue] && !self.user.authorized) {
             self.navigationItem.rightBarButtonItem = nil;
             [self.view addSubview:[[CartEmptyViewController shared] view]];
         } else
             [[[CartEmptyViewController shared] view] removeFromSuperview];
     }];
+    [RACObserve(app, currentUser.cart.selected)
+     subscribeNext:^(NSMutableArray *selected) {
+         [self renderOverview];
+         [self renderSelectAll];
+     }];
 }
 
 - (void)viewDidLoad
@@ -112,7 +118,7 @@ typedef enum {
 - (void)renderOverview
 {
     self.totalPrice.text = [NSString stringWithFormat:@"合计:￥%.2f",
-            self.cart.price.floatValue];
+            [self.cart wantTotalPrice]];
 }
 
 #pragma mark - CartServiceDelegate

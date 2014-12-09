@@ -47,8 +47,9 @@
 - (void)addList:(CartItemList *)list
 {
     [self.itemsOfStore addObject:list];
-    
+    @weakify(self);
     [RACObserve(list, selected) subscribeNext:^(NSMutableArray *listSelected) {
+        @strongify(self);
         NSUInteger index = [self.selected indexOfObject:list];
         if ([list isAllSelected] && NSNotFound == index) {
             [self.selected addObject:list];
@@ -136,5 +137,14 @@
     [self willChangeValueForKey:@"itemsOfStore"];
     [self.itemsOfStore removeAllObjects];
     [self didChangeValueForKey:@"itemsOfStore"];
+}
+
+- (float)wantTotalPrice
+{
+    float total = 0;
+    for (CartItemList *list in self.itemsOfStore)
+        total += [list wantTotalPrice];
+    
+    return total;
 }
 @end
