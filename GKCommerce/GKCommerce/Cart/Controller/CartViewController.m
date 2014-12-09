@@ -11,6 +11,7 @@
 #import "UIBindableTableViewCell.h"
 #import "Dependency.h"
 #import "CartStoreNameTableViewCell.h"
+#import "CartViewModel.h"
 
 typedef enum {
     CartStoreNameCell,
@@ -24,6 +25,7 @@ typedef enum {
     BOOL skipUpdateSelect;
 }
 
+@property (strong, nonatomic) CartViewModel *model;
 @end
 
 @implementation CartViewController
@@ -43,6 +45,7 @@ typedef enum {
      subscribeNext:^(Cart *cart) {
          @strongify(self);
          self.cart = cart;
+         self.model = [[CartViewModel alloc] initWithCart:cart];
          [self renderOverview];
          [self.tableView reloadData];
     }];
@@ -228,13 +231,16 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CartItemList *list;
+    CartItemListViewModel *viewModel;
     UITableViewCell *cell;
     list = [self.cart.itemsOfStore objectAtIndex:indexPath.section];
+    viewModel = [self.model.list objectAtIndex:indexPath.section];
     
     if (CartStoreNameCell == indexPath.row)
-        cell = [self storeNameCell:list];
+        cell = [self storeNameCell:list viewModel:viewModel];
     else if (list.items.count >= indexPath.row)
-        cell = [self itemCellWithItem:[list itemAtIndex:indexPath.row - 1]];
+        cell = [self itemCellWithItem:[list itemAtIndex:indexPath.row - 1]
+                            viewModel:viewModel];
     else
         cell = [self overviewCellWithList:list];
     id<UIBindableTableViewCell> bindable = (id<UIBindableTableViewCell>)cell;
@@ -243,21 +249,26 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 }
 
 - (UITableViewCell *)storeNameCell:(CartItemList *)list
+                         viewModel:(CartItemListViewModel *)viewModel
 {
     CartStoreNameTableViewCell *cell;
     cell = [self.tableView
             dequeueReusableCellWithIdentifier:@"CartStoreNameTableViewCell"];
     cell.list = list;
+    cell.model = viewModel;
+    cell.delegate = self;
     return cell;
 }
 
 - (UITableViewCell *)itemCellWithItem:(CartItem *)item
+                            viewModel:(CartItemListViewModel *)viewModel
 {
     CartItemTableViewCell *cell;
     cell = [self.tableView
             dequeueReusableCellWithIdentifier:@"CartItemTableViewCell"];
     cell.delegate = self;
     cell.item = item;
+    cell.model = viewModel;
     return cell;
 }
 
@@ -286,5 +297,10 @@ forRowAtIndexPath:(NSIndexPath *)indexPath
                       user:self.user];
     [self.navigationController setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:viewController animated:YES];
+}
+
+- (void)cartStoreNameTableViewCell:(CartStoreNameTableViewCell *)cell
+                        didTapEdit:(UIButton *)edit
+{
 }
 @end

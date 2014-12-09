@@ -10,6 +10,7 @@
 #import "Cart.h"
 #import "CartItemList.h"
 #import "CartItemTableViewCell.h"
+#import "CartStoreNameTableViewCell.h"
 #import "CartItemOverviewTableViewCell.h"
 #import "CartEmptyViewController.h"
 #import "CartService.h"
@@ -17,7 +18,8 @@
 
 @interface CartViewController : UIViewController
 <UITableViewDataSource, UITableViewDelegate, CartServiceDelegate,
-CartItemTableViewCellDelegate, GKToggleButtonDelegate>
+CartItemTableViewCellDelegate, GKToggleButtonDelegate,
+CartStoreNameTableViewCellDelegate>
 
 @property (nonatomic, strong) id<CartService> service;
 @property (nonatomic, weak) Cart *cart;

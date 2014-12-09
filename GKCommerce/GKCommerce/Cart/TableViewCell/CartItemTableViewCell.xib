@@ -103,6 +103,7 @@
                 <outlet property="name" destination="Xa3-us-JF8" id="J5t-pu-hWF"/>
                 <outlet property="photo" destination="7Yj-gU-ktk" id="cZ2-sZ-8IY"/>
                 <outlet property="price" destination="cVL-ey-bQ8" id="qH8-o7-bVr"/>
+                <outlet property="quantityView" destination="8L1-k6-nzb" id="5Rw-bh-lJx"/>
                 <outlet property="select" destination="c54-lK-CNr" id="bNy-tg-eyo"/>
             </connections>
         </tableViewCell>

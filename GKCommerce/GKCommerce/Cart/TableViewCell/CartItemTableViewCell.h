@@ -10,6 +10,8 @@
 #import "CartItem.h"
 #import "UIBindableTableViewCell.h"
 #import "GKToggleButton.h"
+#import "GKQuantityView.h"
+#import "CartViewModel.h"
 
 @class CartItemTableViewCell;
 
@@ -36,9 +38,11 @@
 @property (nonatomic, strong) IBOutlet UIButton *photo;
 @property (nonatomic, strong) IBOutlet UILabel *marketPrice;
 @property (nonatomic, strong) IBOutlet UILabel *price;
+@property (nonatomic, strong) IBOutlet GKQuantityView *quantityView;
 @property (weak, nonatomic) IBOutlet UILabel *amountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 @property (strong, nonatomic) CartItem *item;
+@property (strong, nonatomic) CartItemListViewModel *model;
 
 - (void)bind;
 - (void)unbind;

@@ -62,4 +62,12 @@
     skipUpdateSelect = NO;
 }
 
+- (IBAction)didTapEdit:(id)sender
+{
+    self.model.editable = !self.model.editable;
+    SEL selector = @selector(cartStoreNameTableViewCell:didTapEdit:);
+    if ([self.delegate respondsToSelector:selector])
+        [self.delegate cartStoreNameTableViewCell:self didTapEdit:sender];
+}
+
 @end
