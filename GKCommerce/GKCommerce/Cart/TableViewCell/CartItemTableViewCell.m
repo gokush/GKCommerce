@@ -127,14 +127,14 @@
     }
 }
 
-- (IBAction)increase:(id)sender
+- (IBAction)didTapIncrease:(id)sender;
 {
     if ([self.delegate respondsToSelector:@selector(didCartItemBuy:)]) {
         [self.delegate didCartItemBuy:self.item];
     }
 }
 
-- (IBAction)decrease:(id)sender
+- (IBAction)didTapDecrease:(id)sender;
 {
     if ([self.delegate respondsToSelector:@selector(didCartItemDrop:)]) {
         [self.delegate didCartItemDrop:self.item];
@@ -158,6 +158,11 @@
     
     [RACObserve(self, model.editable) subscribeNext:^(id x) {
         self.quantityView.hidden = ![x boolValue];
+    }];
+    
+    [RACObserve(self, item.quantity) subscribeNext:^(id x) {
+        self.quantity.text = [NSString
+                              stringWithFormat:@"%d", [x integerValue]];
     }];
 }
 @end

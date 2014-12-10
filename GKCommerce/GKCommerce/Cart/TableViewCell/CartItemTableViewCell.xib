@@ -60,12 +60,18 @@
                                         <state key="normal" image="cart_decrement">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTapDecrease:" destination="cXi-Fl-Tgx" eventType="touchUpInside" id="qyi-E8-5rM"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzg-x8-1aL">
                                         <rect key="frame" x="89" y="1" width="34" height="30"/>
                                         <state key="normal" image="cart_increment">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="didTapIncrease:" destination="cXi-Fl-Tgx" eventType="touchUpInside" id="3sH-q3-QEs"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9nc-UA-7UT">
                                         <rect key="frame" x="35" y="1" width="49" height="30"/>
@@ -106,6 +112,7 @@
                 <outlet property="name" destination="Xa3-us-JF8" id="J5t-pu-hWF"/>
                 <outlet property="photo" destination="7Yj-gU-ktk" id="cZ2-sZ-8IY"/>
                 <outlet property="price" destination="cVL-ey-bQ8" id="qH8-o7-bVr"/>
+                <outlet property="quantity" destination="9nc-UA-7UT" id="OgJ-tE-CxR"/>
                 <outlet property="quantityView" destination="8L1-k6-nzb" id="5Rw-bh-lJx"/>
                 <outlet property="select" destination="c54-lK-CNr" id="bNy-tg-eyo"/>
             </connections>

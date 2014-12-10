@@ -30,6 +30,7 @@
     cart.itemsOfStore = [[NSMutableArray alloc] initWithCapacity:0];
     
     CartItemList *list = [[CartItemList alloc] init];
+    list.cart = cart;
     [cart addList:list];
 
     NSArray *itemsJSON = [JSON valueForKeyPath:@"data.goods_list"];

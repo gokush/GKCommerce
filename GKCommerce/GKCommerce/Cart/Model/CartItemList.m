@@ -47,6 +47,14 @@
             [self didChangeValueForKey:@"selected"];
         }
     }];
+    
+    @weakify(self);
+    [RACObserve(item, quantity) subscribeNext:^(id x) {
+        @strongify(self);
+        
+        self.price = [[NSDecimalNumber alloc]
+                      initWithFloat:[self wantTotalPrice]];
+    }];
     item.list = self;
 }
 
@@ -123,7 +131,7 @@
 {
     float total = 0;
     for (CartItem *item in self.selected)
-        total += item.price.floatValue;
+        total += item.price.floatValue * item.quantity;
     return total;
 }
 @end

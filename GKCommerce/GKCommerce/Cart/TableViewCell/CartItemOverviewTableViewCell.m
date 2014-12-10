@@ -27,11 +27,11 @@
     if (!self.list)
         return;
     
-    NSString *price = [NSString stringWithFormat:@"%.2f",
-                       self.list.price.floatValue];
+    NSString *price, *description;
+    price = [NSString stringWithFormat:@"%.2f",[self.list wantTotalPrice]];
     
-    NSString *description = [NSString stringWithFormat:@"共%u件商品 实付:",
-                             self.list.items.count];
+    description = [NSString stringWithFormat:@"共%u件商品 实付:",
+                   self.list.items.count];
     self.price.text = price;
     self.overview.text = description;
 }
@@ -44,12 +44,14 @@
 
 - (void)bind
 {
-    [self.list addObserver:self forKeyPath:@"price"
-                   options:NSKeyValueObservingOptionInitial context:nil];
+    @weakify(self);
+    [RACObserve(self, list.price) subscribeNext:^(id x) {
+        @strongify(self);
+        [self render];
+    }];
 }
 
 - (void)unbind
 {
-    [self.list removeObserver:self forKeyPath:@"price"];
 }
 @end

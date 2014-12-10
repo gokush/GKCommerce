@@ -55,7 +55,7 @@ typedef enum {
          if (!app.currentUser.cart.empty)
              [self.tableView reloadData];
      }];
-    [RACObserve([[[App shared] currentUser] cart], price)
+    [RACObserve(app, currentUser.cart.price)
      subscribeNext:^(id x) {
          @strongify(self);
          if (!app.currentUser.cart.empty)

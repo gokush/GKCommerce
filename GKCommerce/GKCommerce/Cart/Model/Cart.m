@@ -61,6 +61,11 @@
             [self didChangeValueForKey:@"selected"];
         }
     }];
+    
+    [RACObserve(list, price) subscribeNext:^(id x) {
+        self.price = [[NSDecimalNumber alloc]
+                      initWithFloat:[self wantTotalPrice]];
+    }];
 }
 
 - (void)removeList:(CartItemList *)list

@@ -46,7 +46,7 @@
 
 - (void)bind;
 - (void)unbind;
-- (IBAction)increase:(id)sender;
-- (IBAction)decrease:(id)sender;
+- (IBAction)didTapIncrease:(id)sender;
+- (IBAction)didTapDecrease:(id)sender;
 - (IBAction)didTapPhoto:(id)sender;
 @end
