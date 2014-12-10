@@ -65,6 +65,8 @@
 - (IBAction)didTapEdit:(id)sender
 {
     self.model.editable = !self.model.editable;
+    NSString *editTitle = self.model.editable ? @"完成" : @"编辑";
+    [self.editButton setTitle:editTitle forState:UIControlStateNormal];
     SEL selector = @selector(cartStoreNameTableViewCell:didTapEdit:);
     if ([self.delegate respondsToSelector:selector])
         [self.delegate cartStoreNameTableViewCell:self didTapEdit:sender];

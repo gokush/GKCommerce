@@ -39,6 +39,7 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="editButton" destination="PF3-KD-FUP" id="O7H-M0-Chm"/>
                 <outlet property="select" destination="nXM-5V-Ouf" id="lNh-Pt-DST"/>
             </connections>
             <point key="canvasLocation" x="337" y="272.5"/>

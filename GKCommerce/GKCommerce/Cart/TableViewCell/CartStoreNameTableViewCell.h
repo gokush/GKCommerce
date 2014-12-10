@@ -21,8 +21,9 @@
 @interface CartStoreNameTableViewCell : UITableViewCell
 <UIBindableTableViewCell, GKToggleButtonDelegate>
 
-@property (strong, nonatomic) CartItemList *list;
 @property (strong, nonatomic) IBOutlet GKToggleButton *select;
+@property (strong, nonatomic) IBOutlet UIButton *editButton;
+@property (strong, nonatomic) CartItemList *list;
 @property (strong, nonatomic) CartItemListViewModel *model;
 @property (strong, nonatomic) id<CartStoreNameTableViewCellDelegate> delegate;
 - (IBAction)didTapEdit:(id)sender;
