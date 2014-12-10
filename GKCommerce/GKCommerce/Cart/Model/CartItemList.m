@@ -36,19 +36,22 @@
               context:nil];
     [self.items addObject:item];
     
+    @weakify(self);
     [RACObserve(item, selected) subscribeNext:^(id x) {
+        @strongify(self);
         BOOL selected = [x boolValue];
         if (selected)
             [self.selected addObject:item];
         else
             [self.selected removeObject:item];
+        self.price = [[NSDecimalNumber alloc]
+                      initWithFloat:[self wantTotalPrice]];
         if (!isBatchOperation) {
             [self willChangeValueForKey:@"selected"];
             [self didChangeValueForKey:@"selected"];
         }
     }];
     
-    @weakify(self);
     [RACObserve(item, quantity) subscribeNext:^(id x) {
         @strongify(self);
         
