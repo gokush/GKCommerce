@@ -53,6 +53,11 @@
         [self.delegate toggleButton:self didSwitch:self.on];
 }
 
+- (void)tapButton
+{
+    [self didTapSelf:nil];
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
                         change:(NSDictionary *)change context:(void *)context
 {

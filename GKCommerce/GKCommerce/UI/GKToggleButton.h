@@ -21,4 +21,5 @@ IB_DESIGNABLE
 @property (strong, nonatomic) IBInspectable UIImage *onImage;
 @property (strong, nonatomic) IBInspectable UIImage *offImage;
 @property (strong, nonatomic) IBOutlet id<GKToggleButtonDelegate> delegate;
+- (void)tapButton;
 @end

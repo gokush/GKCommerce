@@ -16,7 +16,7 @@
 {
     self = [super init];
     if (self) {
-        self.selected = YES;
+        self.selected = NO;
     }
     return self;
 }

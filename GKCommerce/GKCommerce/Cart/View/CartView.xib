@@ -57,6 +57,9 @@
                                     <real key="value" value="3"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="didTapCheckout:" destination="-1" eventType="touchUpInside" id="S2V-mh-p8z"/>
+                            </connections>
                         </button>
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ftm-Fr-T54" customClass="GKToggleButton">
                             <rect key="frame" x="10" y="15" width="20" height="20"/>

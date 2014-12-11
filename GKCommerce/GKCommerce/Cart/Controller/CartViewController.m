@@ -12,6 +12,7 @@
 #import "Dependency.h"
 #import "CartStoreNameTableViewCell.h"
 #import "CartViewModel.h"
+#import "CheckoutViewController.h"
 
 typedef enum {
     CartStoreNameCell,
@@ -141,8 +142,11 @@ typedef enum {
 #pragma mark - Events
 - (IBAction)didTapCheckout:(id)sender
 {
-    Cart *cart = [[Cart alloc] initWithUser:self.user];
-    [cart calculatePrice];
+    CheckoutViewController *checkout;
+    checkout = [[CheckoutViewController alloc]
+                initWithUser:self.user cart:self.cart];
+    checkout.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:checkout animated:YES];
 }
 
 - (void)didNavigationItemLeftButtonTap:(id)sender
