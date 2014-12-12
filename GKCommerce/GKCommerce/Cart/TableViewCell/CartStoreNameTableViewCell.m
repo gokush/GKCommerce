@@ -38,6 +38,11 @@
 - (void)bind
 {
     @weakify(self)
+    [RACObserve(self, model) subscribeNext:^(id x) {
+        if (nil == x)
+            self.editButton.hidden = YES;
+    }];
+    
     [RACObserve(self, list.selected) subscribeNext:^(NSMutableArray *selected) {
         @strongify(self)
         if (skipUpdateSelect)
@@ -64,8 +69,8 @@
 
 - (IBAction)didTapEdit:(id)sender
 {
-    self.model.editable = !self.model.editable;
-    NSString *editTitle = self.model.editable ? @"完成" : @"编辑";
+    self.model.editing = !self.model.editing;
+    NSString *editTitle = self.model.editing ? @"完成" : @"编辑";
     [self.editButton setTitle:editTitle forState:UIControlStateNormal];
     SEL selector = @selector(cartStoreNameTableViewCell:didTapEdit:);
     if ([self.delegate respondsToSelector:selector])

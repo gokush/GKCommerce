@@ -156,7 +156,7 @@
                                   marginLeftAndRight:12.0f
                                   onDirection:SeparatorDirectionBottom]];
     
-    [RACObserve(self, model.editable) subscribeNext:^(id x) {
+    [RACObserve(self, model.editing) subscribeNext:^(id x) {
         self.quantityView.hidden = ![x boolValue];
     }];
     

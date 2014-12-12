@@ -10,6 +10,9 @@
 
 @interface CartItemListViewModel : NSObject
 
-@property (assign, nonatomic) BOOL editable;
+/**
+ * YES就是显示购物车商品的数量调整面板
+*/
+@property (assign, nonatomic) BOOL editing;
 
 @end

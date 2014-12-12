@@ -110,7 +110,11 @@
 
 - (BOOL)empty
 {
-    if (nil == self.itemsOfStore || self.itemsOfStore.count == 0)
+    NSInteger count = 0;
+    for (CartItemList *list in self.itemsOfStore)
+        count += list.items.count;
+    
+    if (count == 0)
         return YES;
     else
         return NO;
