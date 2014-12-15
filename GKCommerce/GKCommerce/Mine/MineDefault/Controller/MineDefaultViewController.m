@@ -197,11 +197,21 @@ heightForHeaderInSection:(NSInteger)section
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    UIViewController *controller;
     switch (indexPath.section) {
         case HeaderPhotoSection:
             [tableView deselectRowAtIndexPath:indexPath animated:NO];
             break;
-            
+        case SecondSection: {
+            switch (indexPath.row) {
+                case ConsigneeCell:
+                    controller = [[ConsigneeListController alloc] init];
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
         default:
             break;
     }

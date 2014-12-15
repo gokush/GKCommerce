@@ -10,19 +10,19 @@
 #import "Consignee.h"
 #import "AreaJSONAssembler.h"
 
-@class ConsigneeBackend;
+@class PDConsigneeBackend;
 
-@protocol ConsigneeBackendDelegate <NSObject>
+@protocol PDConsigneeBackendDelegate <NSObject>
 
 @optional
-- (void)consigneeBackend:(ConsigneeBackend *)aConsigneeBackend
+- (void)consigneeBackend:(PDConsigneeBackend *)aConsigneeBackend
          didReceiveAreas:(NSArray *)areas;
 @end
 
 
-@interface ConsigneeBackend : NSObject
+@interface PDConsigneeBackend : NSObject
 
-@property (strong, nonatomic) id<ConsigneeBackendDelegate> delegate;
+@property (strong, nonatomic) id<PDConsigneeBackendDelegate> delegate;
 @property (strong, nonatomic) AreaJSONAssembler *areaJSONAssembler;
 - (void)requestAreas;
 @end

@@ -17,6 +17,8 @@
 #import "ProductBackend.h"
 #import "FeatureService.h"
 #import "FeatureBackend.h"
+#import "ConsigneeBackend.h"
+#import "ConsigneeService.h"
 
 @protocol GKFactory <NSObject>
 
@@ -28,4 +30,6 @@
 - (id<UserService>)userService;
 - (id<FeatureService>)featureService;
 - (id<FeatureBackend>)featureBackend;
+- (id<ConsigneeBackend>)consigneeBackend;
+- (id<ConsigneeService>)consigneeService;
 @end

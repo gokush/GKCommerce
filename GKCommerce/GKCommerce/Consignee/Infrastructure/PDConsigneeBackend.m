@@ -6,10 +6,10 @@
 //  Copyright (c) 2014年 GKCommerce. All rights reserved.
 //
 
-#import "ConsigneeBackend.h"
+#import "PDConsigneeBackend.h"
 #import <AFNetworking/AFNetworking.h>
 
-@implementation ConsigneeBackend
+@implementation PDConsigneeBackend
 {
     AFHTTPRequestOperationManager *manager;
 }

@@ -57,4 +57,14 @@
 {
     return [[GKFeatureBackend alloc] init];
 }
+
+- (id<ConsigneeBackend>)consigneeBackend
+{
+    
+}
+
+- (id<ConsigneeService>)consigneeService
+{
+    
+}
 @end

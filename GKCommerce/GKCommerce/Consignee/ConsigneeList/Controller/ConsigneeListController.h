@@ -12,8 +12,10 @@
 @interface ConsigneeListController : UIViewController
 <UITableViewDelegate, UITableViewDataSource>
 
+@property (strong, nonatomic) User *user;
 @property (strong, nonatomic) NSArray *consignees;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 - (id)initWithConsignees:(NSArray *)consignees;
+- (id)initWithUser:(User *)user;
 + (instancetype)consigneeListControllerWithMock;
 @end

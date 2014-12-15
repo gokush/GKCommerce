@@ -15,9 +15,27 @@
 
 @implementation ConsigneeListController
 
+- (id)init
+{
+    self = [self initWithNibName:@"ConsigneeListView" bundle:nil];
+    if (self) {
+        
+    }
+    return self;
+}
+
+- (id)initWithUser:(User *)user
+{
+    self = [self init];
+    if (self) {
+        self.user = user;
+    }
+    return self;
+}
+
 - (id)initWithConsignees:(NSArray *)consignees
 {
-    self = [super initWithNibName:@"ConsigneeListView" bundle:nil];
+    self = [self init];
     self.consignees = consignees;
     return self;
 }
