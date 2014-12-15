@@ -1,9 +1,9 @@
 //
 //  FeatureTableViewCellColumn.h
-//  WKCommerce
+//  GKCommerce
 //
 //  Created by 小悟空 on 14/10/29.
-//  Copyright (c) 2014年 WKCommerce. All rights reserved.
+//  Copyright (c) 2014年 GKCommerce. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -25,11 +25,14 @@
 #import "UITableView+Extension.h"
 
 #import "App.h"
-#import "Dependency.h"
 #import "Product.h"
+#import "Cart.h"
+#import "Payment.h"
+#import "PaymentBalance.h"
 #import "ProductCategory.h"
 #import "ProductService.h"
-#import "Cart.h"
+#import "Order.h"
+#import "Dependency.h"
 #import "CartViewController.h"
 
 static const int ddLogLevel = DDLogLevelVerbose;

@@ -15,7 +15,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eKH-bb-y3P">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="117"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="商品标题" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="153" translatesAutoresizingMaskIntoConstraints="NO" id="mpD-JI-Xz0">
                                 <rect key="frame" x="81" y="12" width="163" height="21"/>
