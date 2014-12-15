@@ -98,7 +98,6 @@ typedef enum {
              forCellReuseIdentifier:identifier];
 
     self.tableView.tableFooterView = [[UIView alloc] init];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = UIColorFromRGB(0xf3f3f3);
 
     UIBarButtonItem *right;

@@ -20,23 +20,6 @@
 
 - (void)awakeFromNib {
     skipUpdateSelect = NO;
-    SeparatorOption *option;
-    option = [SeparatorOption optionWithColor:UIColorFromRGB(0xdfdfdf)
-                                  onDirection:SeparatorDirectionTop];
-    [self setSeparatorWithOption:option];
-    
-    option.direction = SeparatorDirectionBottom;
-    [self setSeparatorWithOption:option];
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
-- (void)bind
-{
     @weakify(self)
     [RACObserve(self, model) subscribeNext:^(id x) {
         if (nil == x)
@@ -52,6 +35,16 @@
         if (self.select.on != didSelectAllItems)
             self.select.on = didSelectAllItems;
     }];
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    // Configure the view for the selected state
+}
+
+- (void)bind
+{
 }
 
 - (void)unbind

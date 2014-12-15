@@ -151,11 +151,6 @@
     
     self.quantity.borderStyle = UITextBorderStyleNone;
     
-    [self setSeparatorWithOption:[[SeparatorOption alloc]
-                                  initWithColor:UIColorFromRGB(0xdfdfdf)
-                                  marginLeftAndRight:12.0f
-                                  onDirection:SeparatorDirectionBottom]];
-    
     [RACObserve(self, model.editing) subscribeNext:^(id x) {
         self.quantityView.hidden = ![x boolValue];
     }];

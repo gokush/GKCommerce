@@ -12,14 +12,11 @@
 
 - (void)awakeFromNib
 {
-    SeparatorOption *option;
-    option = [SeparatorOption optionWithColor:UIColorFromRGB(0xdfdfdf)
-                                  onDirection:SeparatorDirectionBottom];
-    [self setSeparatorWithOption:option];
-    
-//    [[[[[[[self setBorderColor:UIColorFromRGB(0xdfdfdf)] setBottomBorder]
-//         setLeftMargin:12.0f] setRightMargin:12.0f] setTopBorder]
-//      setLeftMargin:12.0f] setRightMargin:12.0f];
+    @weakify(self);
+    [RACObserve(self, list.price) subscribeNext:^(id x) {
+        @strongify(self);
+        [self render];
+    }];
 }
 
 - (void)render
@@ -44,11 +41,7 @@
 
 - (void)bind
 {
-    @weakify(self);
-    [RACObserve(self, list.price) subscribeNext:^(id x) {
-        @strongify(self);
-        [self render];
-    }];
+
 }
 
 - (void)unbind
