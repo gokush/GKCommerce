@@ -15,6 +15,8 @@
 #import "ECProductService.h"
 #import "GKFeatureBackend.h"
 #import "GKFeatureService.h"
+#import "ECConsigneeBackend.h"
+#import "ECConsigneeService.h"
 
 @implementation GKECFactory
 
@@ -60,11 +62,11 @@
 
 - (id<ConsigneeBackend>)consigneeBackend
 {
-    
+    return [[ECConsigneeBackend alloc] init];
 }
 
 - (id<ConsigneeService>)consigneeService
 {
-    
+    return [[ECConsigneeService alloc] init];
 }
 @end
