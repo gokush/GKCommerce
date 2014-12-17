@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Consignee.h"
+#import "Address.h"
 #import "ECBackendAssembler.h"
 
 @interface ECConsigneeBackendAssembler : ECBackendAssembler
 
-- (Consignee *)consignee:(NSDictionary *)consigneeJSON;
+- (Address *)consignee:(NSDictionary *)consigneeJSON;
 @end

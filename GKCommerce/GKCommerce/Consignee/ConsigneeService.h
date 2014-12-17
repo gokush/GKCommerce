@@ -12,5 +12,6 @@
 @protocol ConsigneeService <NSObject>
 
 @property (strong, nonatomic) id<ConsigneeServiceDelegate> delegate;
-- (void)consignees;
+- (void)consigneesWithUser:(User *)user;
+- (void)consigneeWithID:(NSInteger)consigneeID user:(User *)anUser;
 @end

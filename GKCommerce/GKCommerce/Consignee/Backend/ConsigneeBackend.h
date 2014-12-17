@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "ConsigneeBackendDelegate.h"
+#import "Address.h"
 
 @protocol ConsigneeBackend <NSObject>
 
 @property (strong, nonatomic) id<ConsigneeBackendDelegate> delegate;
 - (void)requestConsigneesWithUser:(User *)user;
+- (void)requestConsigneeWithID:(NSInteger)consigneeID user:(User *)user;
 @end

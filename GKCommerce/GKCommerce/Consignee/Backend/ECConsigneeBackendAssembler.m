@@ -10,8 +10,9 @@
 
 @implementation ECConsigneeBackendAssembler
 
-- (Consignee *)consignee:(NSDictionary *)consigneeJSON
+- (Address *)consignee:(NSDictionary *)consigneeJSON
 {
-    
+    Address *consignee;
+    return consignee;
 }
 @end

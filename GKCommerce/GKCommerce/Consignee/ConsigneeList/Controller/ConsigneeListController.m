@@ -71,7 +71,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ConsigneeListTableViewCell *cell;
-    Consignee *consignee;
+    Address *consignee;
     cell = [tableView
             dequeueReusableCellWithIdentifier:@"ConsigneeListTableViewCell"];
     consignee = [self.consignees objectAtIndex:indexPath.row];
@@ -82,20 +82,20 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 
 + (instancetype)consigneeListControllerWithMock
 {
-    Consignee *consignee = [[Consignee alloc] init];
+    Address *consignee = [[Address alloc] init];
     consignee.name = @"小悟空";
     consignee.cellPhone = @"15202171763";
     consignee.postcode = @"900032";
     consignee.address = @"上海市浦东新区张杨北路 距离市中心约15500米";
     
-    Area *provice = [[Area alloc] init];
+    Region *provice = [[Region alloc] init];
     provice.name = @"上海市";
     
-    Area *city = [[Area alloc] init];
+    Region *city = [[Region alloc] init];
     city.name = @"上海市";
     city.parent = provice;
     
-    Area *district = [[Area alloc] init];
+    Region *district = [[Region alloc] init];
     district.name = @"虹口区";
     district.parent = city;
     

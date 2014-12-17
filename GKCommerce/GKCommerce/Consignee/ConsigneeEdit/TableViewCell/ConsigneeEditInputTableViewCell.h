@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Consignee.h"
+#import "Address.h"
 #import "UIBindableTableViewCell.h"
 
 @interface ConsigneeEditInputTableViewCell : UITableViewCell
 <UIBindableTableViewCell>
 
 @property (strong, nonatomic) IBOutlet UITextField *inputTextField;
-@property (strong, nonatomic) Consignee *consignee;
+@property (strong, nonatomic) Address *consignee;
 @end

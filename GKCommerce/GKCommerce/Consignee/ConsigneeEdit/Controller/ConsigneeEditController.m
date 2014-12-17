@@ -22,33 +22,42 @@
 {
     self = [super initWithNibName:@"ConsigneeEditView" bundle:nil];
     if (self) {
-        self.backend = [[ConsigneeBackend alloc] init];
-        self.backend.delegate = self;
-        [self.backend requestAreas];
-        self.areaPicker = [AreaPickerViewController
+        self.service = [[Dependency shared] consigneeService];
+        self.service.delegate = self;
+
+        self.areaPicker = [RegionPickerViewController
                            pickerWithViewController:self
                            areas:self.areas];
     }
     return self;
 }
 
-- (id)initWithConsignee:(Consignee *)consignee
+- (id)initWithConsignee:(Address *)consignee user:(User *)anUser
 {
     self = [self init];
+    
     if (self) {
+        self.user = anUser;
+        @weakify(self);
+        [RACObserve(self, consignee) subscribeNext:^(Address *consignee) {
+            @strongify(self);
+            if (consignee.consigneeID > 0)
+                [self.service consigneeWithID:consignee.consigneeID
+                                         user:self.user];
+        }];
         if (!consignee)
-            self.consignee = [[Consignee alloc] init];
+            self.consignee = [[Address alloc] init];
         else
             self.consignee = consignee;
     }
     return self;
 }
 
-- (void)consigneeBackend:(ConsigneeBackend *)aConsigneeBackend
+- (void)consigneeBackend:(id<ConsigneeBackend> *)aConsigneeBackend
          didReceiveAreas:(NSArray *)areas
 {
     self.areas = areas;
-    self.areaPicker.areas = areas;
+    self.areaPicker.country = areas;
     [self.areaPicker reloadData];
 }
 
@@ -163,21 +172,21 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     }
 }
 
-- (void)areaPickerViewController:(AreaPickerViewController *)picker
-                   didSelectArea:(Area *)anArea
+- (void)areaPickerViewController:(RegionPickerViewController *)picker
+                   didSelectArea:(Region *)anArea
 {
     switch (anArea.type) {
-        case AreaTypeDistrict: {
+        case RegionTypeDistrict: {
             [self areaPickerViewController:picker didSelectArea:anArea.parent];
             self.consignee.district = anArea;
             break;
         }
-        case AreaTypeCity: {
+        case RegionTypeCity: {
             [self areaPickerViewController:picker didSelectArea:anArea.parent];
             self.consignee.city = anArea;
             break;
         }
-        case AreaTypeProvince: {
+        case RegionTypeProvince: {
             self.consignee.province = anArea;
             break;
         }

@@ -7,17 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Area.h"
+#import "Region.h"
 
-@interface Consignee : NSObject
+@interface Address : NSObject
 
-@property (assign, nonatomic) NSInteger *consigneeID;
+@property (assign, nonatomic) NSInteger consigneeID;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *cellPhone;
 @property (strong, nonatomic) NSString *postcode;
 @property (strong, nonatomic) NSString *address;
-@property (strong, nonatomic) Area *province;
-@property (strong, nonatomic) Area *city;
-@property (strong, nonatomic) Area *district;
+@property (strong, nonatomic) Region *province;
+@property (strong, nonatomic) Region *city;
+@property (strong, nonatomic) Region *district;
 @property (assign, nonatomic) BOOL defaultConsignee;
 @end

@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Consignee.h"
+#import "Address.h"
 #import "ConsigneeListTableViewCellSelected.h"
 
 @interface ConsigneeListTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) Consignee *consignee;
+@property (strong, nonatomic) Address *consignee;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *cellPhoneLabel;
 @property (strong, nonatomic) IBOutlet UILabel *addressLabel;

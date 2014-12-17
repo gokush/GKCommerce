@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ConsigneeService.h"
 
 @interface ECConsigneeService : NSObject
+<ConsigneeService, ConsigneeBackendDelegate>
 
+@property (strong, nonatomic) id<ConsigneeServiceDelegate> delegate;
+@property (strong, nonatomic) id<ConsigneeBackend> backend;
+- (void)consigneesWithUser:(User *)user;
+- (void)consigneeWithID:(NSInteger)consigneeID user:(User *)anUser;
 @end

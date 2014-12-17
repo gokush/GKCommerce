@@ -20,5 +20,7 @@
 - (id<UserService>)userService;
 - (id<FeatureService>)featureService;
 - (id<FeatureBackend>)featureBackend;
+- (id<ConsigneeBackend>)consigneeBackend;
+- (id<ConsigneeService>)consigneeService;
 + (instancetype)shared;
 @end

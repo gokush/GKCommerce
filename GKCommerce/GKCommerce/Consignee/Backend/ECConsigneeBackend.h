@@ -15,4 +15,5 @@
 @property (strong, nonatomic) id<ConsigneeBackendDelegate> delegate;
 @property (strong, nonatomic) ECConsigneeBackendAssembler *assembler;
 - (void)requestConsigneesWithUser:(User *)user;
+- (void)requestConsigneeWithID:(NSInteger)consigneeID user:(User *)user;
 @end

@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 GKCommerce. All rights reserved.
 //
 
-#import "Consignee.h"
+#import "Address.h"
 
-@implementation Consignee
+@implementation Address
 
 @end

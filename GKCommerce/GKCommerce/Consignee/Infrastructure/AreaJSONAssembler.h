@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Area.h"
+#import "Region.h"
 
 @interface AreaJSONAssembler : NSObject
 
-- (NSArray *)fromJSON:(NSArray *)areaJSON parent:(Area *)aParent;
+- (NSArray *)fromJSON:(NSArray *)areaJSON parent:(Region *)aParent;
 @end

@@ -10,7 +10,7 @@
 
 @implementation ConsigneeListTableViewCell
 
-- (void)setConsignee:(Consignee *)consignee
+- (void)setConsignee:(Address *)consignee
 {
     if (_consignee != consignee) {
         _consignee = consignee;

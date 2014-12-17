@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 GKCommerce. All rights reserved.
 //
 
-#import "Area.h"
+#import "Region.h"
 
-@implementation Area
+@implementation Region
 
 - (NSString *)description
 {

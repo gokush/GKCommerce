@@ -9,9 +9,15 @@
 
 #import <Foundation/Foundation.h>
 
-@class ConsigneeBackend;
+@class Address;
+@protocol ConsigneeBackend;
 @protocol ConsigneeBackendDelegate <NSObject>
 
-- (void)consigneeBackend:(ConsigneeBackend *)consigneeBackend
+- (void)consigneeBackend:(id<ConsigneeBackend>)consigneeBackend
+                    user:(User *)anUser
     didReceiveConsignees:(NSArray *)consignees error:(NSError *)anError;
+
+- (void)consigneeBackend:(id<ConsigneeBackend>)consigneeBackend
+                    user:(User *)anUser
+     didReceiveConsignee:(Address *)consignee error:(NSError *)anError;
 @end

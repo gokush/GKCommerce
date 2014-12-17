@@ -10,21 +10,21 @@
 
 @implementation AreaJSONAssembler
 
-- (NSArray *)fromJSON:(NSArray *)areaJSON parent:(Area *)aParent
+- (NSArray *)fromJSON:(NSArray *)areaJSON parent:(Region *)aParent
 {
     NSMutableArray *areas = [[NSMutableArray alloc] init];
     for (NSDictionary *item in areaJSON) {
-        Area *area = [[Area alloc] init];
+        Region *area = [[Region alloc] init];
         area.areaID = [[item objectForKey:@"id"] integerValue];
         area.name = [item objectForKey:@"name"];
         area.parent = aParent;
         NSString *type = [item objectForKey:@"type"];
         if ([@"province" isEqualToString:type])
-            area.type = AreaTypeProvince;
+            area.type = RegionTypeProvince;
         else if ([@"city" isEqualToString:type])
-            area.type = AreaTypeCity;
+            area.type = RegionTypeCity;
         else if ([@"district" isEqualToString:type])
-            area.type = AreaTypeDistrict;
+            area.type = RegionTypeDistrict;
         
         NSArray *children = [item objectForKey:@"children"];
         if (![children isEqual:[NSNull null]]) {

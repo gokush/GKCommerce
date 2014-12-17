@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Consignee.h"
+#import "Address.h"
 #import "AreaJSONAssembler.h"
 
 @class PDConsigneeBackend;

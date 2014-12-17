@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Consignee.h"
+#import "Address.h"
 
 @interface ConsigneeController : UIViewController
 <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) Consignee *consignee;
+@property (strong, nonatomic) Address *consignee;
+@property (strong, nonatomic) User *user;
 
-- (id)initWithConsignee:(Consignee *)consignee;
+- (id)initWithConsignee:(Address *)consignee user:(User *)anUser;
 + (instancetype)consigneeControllerWithMock;
 @end

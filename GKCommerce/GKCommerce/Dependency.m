@@ -46,9 +46,20 @@
 {
     return [[self factory] featureService];
 }
+
 - (id<FeatureBackend>)featureBackend
 {
     return [[self factory] featureBackend];
+}
+
+- (id<ConsigneeBackend>)consigneeBackend
+{
+    return [[self factory] consigneeBackend];
+}
+
+- (id<ConsigneeService>)consigneeService
+{
+    return [[self factory] consigneeService];
 }
 
 + (instancetype)shared

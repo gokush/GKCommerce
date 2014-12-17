@@ -26,10 +26,13 @@
     return self;
 }
 
-- (id)initWithConsignee:(Consignee *)consignee
+- (id)initWithConsignee:(Address *)consignee user:(User *)anUser
 {
     self = [self init];
-    self.consignee = consignee;
+    if (self) {
+        self.consignee = consignee;
+        self.user = anUser;
+    }
     return self;
 }
 
@@ -156,20 +159,20 @@ heightForHeaderInSection:(NSInteger)section
 + (instancetype)consigneeControllerWithMock
 {
     ConsigneeController *controller;
-    Consignee *consignee = [[Consignee alloc] init];
+    Address *consignee = [[Address alloc] init];
     consignee.name = @"小悟空";
     consignee.cellPhone = @"15202171763";
     consignee.postcode = @"900032";
     consignee.address = @"大连西路";
     
-    Area *provice = [[Area alloc] init];
+    Region *provice = [[Region alloc] init];
     provice.name = @"上海市";
     
-    Area *city = [[Area alloc] init];
+    Region *city = [[Region alloc] init];
     city.name = @"上海市";
     city.parent = provice;
     
-    Area *district = [[Area alloc] init];
+    Region *district = [[Region alloc] init];
     district.name = @"虹口区";
     district.parent = city;
 

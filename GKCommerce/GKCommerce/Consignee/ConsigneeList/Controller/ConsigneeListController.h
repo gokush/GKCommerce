@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Consignee.h"
+#import "Address.h"
 
 @interface ConsigneeListController : UIViewController
 <UITableViewDelegate, UITableViewDataSource>

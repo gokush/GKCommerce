@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@class ConsigneeService;
+@protocol ConsigneeService;
 @protocol ConsigneeServiceDelegate <NSObject>
 
-- (void)consigneeService:(ConsigneeService *)consigneeService
+@optional
+- (void)consigneeService:(id<ConsigneeService>)consigneeService
+                    user:(User *)anUser
               consignees:(NSArray *)aConsignees error:(NSError *)anError;
+
+- (void)consigneeService:(id<ConsigneeService>)consigneeService
+                    user:(User *)anUser consignee:(Address *)aConsignee error:(NSError *)anError;
 @end

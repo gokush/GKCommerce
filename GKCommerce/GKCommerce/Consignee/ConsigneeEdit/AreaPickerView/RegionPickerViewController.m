@@ -6,17 +6,18 @@
 //  Copyright (c) 2014年 GKCommerce. All rights reserved.
 //
 
-#import "AreaPickerViewController.h"
+#import "RegionPickerViewController.h"
 
-@implementation AreaPickerViewController
+@implementation RegionPickerViewController
 
 - (id)init
 {
     self = [super init];
     if (self) {
-        self.backend = [[ConsigneeBackend alloc] init];
-        self.backend.delegate = self;
-        [self.backend requestAreas];
+        self.service = [[Dependency shared] consigneeService];
+        self.service.delegate = self;
+        
+//        [self.service requestRegion:Region];
         self.view = [[UIPickerView alloc] init];
         self.view.dataSource = self;
         self.view.delegate   = self;
@@ -24,14 +25,14 @@
     return self;
 }
 
-- (void)setAreas:(NSArray *)areas
+- (void)setCountry:(NSArray *)areas
 {
-    if (_areas != areas) {
-        _areas = areas;
+    if (_country != areas) {
+        _country = areas;
         if ([areas firstObject])
-            self.areas2 = [[areas firstObject] children];
-        if (self.areas2)
-            self.areas3 = [[self.areas3 firstObject] children];
+            self.province = [[areas firstObject] children];
+        if (self.province)
+            self.district = [[self.district firstObject] children];
     }
 }
 
@@ -40,12 +41,12 @@
 - (NSInteger)pickerView:(UIPickerView *)pickerView
 numberOfRowsInComponent:(NSInteger)component
 {
-    if (0 == component && self.areas && self.areas.count > 0)
-        return self.areas.count;
-    else if (1 == component && self.areas2)
-        return self.areas2.count;
-    else if (2 == component && self.areas3)
-        return self.areas3.count;
+    if (0 == component && self.country && self.country.count > 0)
+        return self.country.count;
+    else if (1 == component && self.province)
+        return self.province.count;
+    else if (2 == component && self.district)
+        return self.district.count;
     return 0;
 }
 
@@ -59,16 +60,16 @@ numberOfRowsInComponent:(NSInteger)component
 {
     NSArray *current;
     if (0 == component)
-        current = self.areas;
+        current = self.country;
     else if (1 == component)
-        current = self.areas2;
+        current = self.province;
     else if (2 == component)
-        current = self.areas3;
+        current = self.district;
 
     if (nil == current)
         return @"";
     
-    Area *area = (Area *)[current objectAtIndex:row];
+    Region *area = (Region *)[current objectAtIndex:row];
     return area.name;
 }
 
@@ -79,17 +80,17 @@ numberOfRowsInComponent:(NSInteger)component
 {
     switch (component) {
         case 0: {
-            if (self.areas)
-                self.areas2 = [[self.areas objectAtIndex:row] children];
-            if (self.areas2 && [[self.areas2 objectAtIndex:row] children])
-                self.areas3 = [[self.areas2 objectAtIndex:row] children];
+            if (self.country)
+                self.province = [[self.country objectAtIndex:row] children];
+            if (self.province && [[self.province objectAtIndex:row] children])
+                self.district = [[self.province objectAtIndex:row] children];
             [pickerView reloadComponent:1];
             [pickerView reloadComponent:2];
             break;
         }
         case 1: {
-            if (self.areas2)
-                self.areas3 = [[self.areas2 objectAtIndex:row] children];
+            if (self.province)
+                self.district = [[self.province objectAtIndex:row] children];
             [pickerView reloadComponent:2];
             break;
         }
@@ -97,16 +98,16 @@ numberOfRowsInComponent:(NSInteger)component
             break;
     }
     
-    if (nil == self.areas3 || 0 == self.areas3.count)
+    if (nil == self.district || 0 == self.district.count)
         return;
     
     NSInteger selectedIndex;
-    Area *selected;
+    Region *selected;
     if (2 == component) {
         selectedIndex = row;
     } else
         selectedIndex = 0;
-    selected = [self.areas3 objectAtIndex:selectedIndex];
+    selected = [self.district objectAtIndex:selectedIndex];
     
     SEL selector = @selector(areaPickerViewController:didSelectArea:);
     if ([self.delegate respondsToSelector:selector])
@@ -136,13 +137,14 @@ numberOfRowsInComponent:(NSInteger)component
 + (instancetype)pickerWithViewController:(UIViewController *)viewController
                                    areas:(NSArray *)anAreas
 {
-    AreaPickerViewController *picker = [[AreaPickerViewController alloc] init];
-    picker.areas = anAreas;
+    RegionPickerViewController *picker = [[RegionPickerViewController alloc] init];
+    picker.country = anAreas;
     picker.container = viewController;
+    
     if ([viewController
-         conformsToProtocol:@protocol(AreaPickerViewControllerDelegate)])
+         conformsToProtocol:@protocol(RegionPickerViewControllerDelegate)])
         
-        picker.delegate = (id<AreaPickerViewControllerDelegate>)viewController;
+        picker.delegate = (id<RegionPickerViewControllerDelegate>)viewController;
     
     UIView *view = picker.view;
     CGRect frame = view.frame;

@@ -7,18 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ConsigneeBackend.h"
-#import "AreaPickerViewController.h"
+#import "ConsigneeService.h"
+#import "RegionPickerViewController.h"
 
 @interface ConsigneeEditController : UIViewController
-<UITableViewDataSource, UITableViewDelegate, ConsigneeBackendDelegate,
-AreaPickerViewControllerDelegate, UITextFieldDelegate>
+<UITableViewDataSource, UITableViewDelegate, ConsigneeServiceDelegate,
+RegionPickerViewControllerDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) ConsigneeBackend *backend;
+@property (strong, nonatomic) id<ConsigneeService> service;
 @property (strong, nonatomic) NSArray *areas;
-@property (strong, nonatomic) AreaPickerViewController *areaPicker;
-@property (strong, nonatomic) Consignee *consignee;
+@property (strong, nonatomic) RegionPickerViewController *areaPicker;
+@property (strong, nonatomic) Address *consignee;
+@property (strong, nonatomic) User *user;
 
-- (id)initWithConsignee:(Consignee *)consignee;
+- (id)initWithConsignee:(Address *)consignee user:(User *)anUser;
 @end

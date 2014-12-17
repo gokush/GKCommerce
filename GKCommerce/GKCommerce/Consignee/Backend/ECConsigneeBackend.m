@@ -40,4 +40,34 @@
     
     
 }
+
+- (void)requestConsigneeWithID:(NSInteger)consigneeID user:(User *)user
+{
+    NSString *userID, *textConsigneeID;
+    NSDictionary *parameters;
+    
+    textConsigneeID = [NSString stringWithFormat:@"%d", consigneeID];
+    userID = [NSString stringWithFormat:@"%d", user.userID];
+    parameters = @{ @"session[uid]": userID,
+                    @"session[sid]": user.sessionID,
+                    @"address_id"  : textConsigneeID };
+    [self.manager
+     POST:[NSString stringWithFormat:@"%@/address/info",
+           self.config.backendURL]
+     parameters:parameters
+     success:^(AFHTTPRequestOperation *operation, id responseObject) {
+         [self requestConsigneeWithID:consigneeID user:user
+                   didReceiveResponse:responseObject error:nil];
+     }
+     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         [self requestConsigneeWithID:consigneeID user:user
+                  didReceiveResponse:nil error:error];
+     }];
+}
+
+- (void)requestConsigneeWithID:(NSInteger)consigneeID user:(User *)user
+            didReceiveResponse:(id)responseObject error:(NSError *)anError
+{
+    
+}
 @end

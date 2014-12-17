@@ -14,4 +14,6 @@
 MineHeaderPhotoTableViewCellDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+- (void)pushConsigneeList;
 @end

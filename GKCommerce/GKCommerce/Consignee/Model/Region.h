@@ -9,16 +9,16 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-    AreaTypeProvince,
-    AreaTypeCity,
-    AreaTypeDistrict
-} AreaType;
+    RegionTypeProvince,
+    RegionTypeCity,
+    RegionTypeDistrict
+} RegionType;
 
-@interface Area : NSObject
+@interface Region : NSObject
 
 @property (assign, nonatomic) NSInteger areaID;
 @property (strong, nonatomic) NSString *name;
-@property (weak,   nonatomic) Area *parent;
+@property (weak,   nonatomic) Region *parent;
 @property (strong, nonatomic) NSArray *children;
-@property (assign, nonatomic) AreaType type;
+@property (assign, nonatomic) RegionType type;
 @end
