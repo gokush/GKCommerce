@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InvoiceViewController">
+            <connections>
+                <outlet property="tableView" destination="XwJ-uB-Sjp" id="r1i-3R-awv"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Fzl-4e-hWC"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XwJ-uB-Sjp">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="498"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="BvX-cj-SEc"/>
+                        <outlet property="delegate" destination="-1" id="0Oz-PZ-IrC"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vek-HT-G7N">
+                    <rect key="frame" x="110" y="524" width="101" height="22"/>
+                    <state key="normal" title="确定"/>
+                    <connections>
+                        <action selector="didTapConfirm:" destination="-1" eventType="touchUpOutside" id="lor-UY-ysM"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Vek-HT-G7N" firstAttribute="top" secondItem="XwJ-uB-Sjp" secondAttribute="bottom" constant="26" id="6pr-rH-C2o"/>
+                <constraint firstItem="XwJ-uB-Sjp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="g91-Mr-5Uj"/>
+            </constraints>
+            <point key="canvasLocation" x="202" y="258"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

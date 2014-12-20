@@ -10,9 +10,9 @@
 #import "MineDefaultTableViewCell.h"
 #import "MineHeaderPhotoTableViewCell.h"
 #import "UserAuthenticationViewController.h"
-#import "ConsigneeEditController.h"
-#import "ConsigneeController.h"
-#import "ConsigneeListController.h"
+#import "AddressEditController.h"
+#import "AddressController.h"
+#import "AddressListController.h"
 #import "ProductDetailViewController.h"
 #import "ProductListViewController.h"
 
@@ -29,7 +29,7 @@ typedef enum {
 typedef enum {
     FavorCell,
     OrderCell,
-    ConsigneeCell,
+    AddressCell,
     AccountCell
 } SecondSectionCell;
 
@@ -163,7 +163,7 @@ heightForHeaderInSection:(NSInteger)section
     
     static NSArray *icons;
     static NSArray *titles;
-    icons = @[@"mine_icon_favor", @"mine_icon_order", @"mine_icon_consignee",
+    icons = @[@"mine_icon_favor", @"mine_icon_order", @"mine_icon_address",
               @"mine_icon_account"];
     titles = @[@"我的关注", @"我的订单", @"地址管理", @"我的账户"];
 
@@ -203,7 +203,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
             break;
         case SecondSection: {
             switch (indexPath.row) {
-                case ConsigneeCell:
+                case AddressCell:
                     [self pushConsigneeList];
                     break;
                     
@@ -216,10 +216,10 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     }
 }
 
-- (void)pushConsigneeList
+- (void)pushAddressList
 {
     UIViewController *viewController;
-    viewController = [[ConsigneeListController alloc] init];
+    viewController = [[AddressListController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

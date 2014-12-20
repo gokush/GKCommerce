@@ -13,6 +13,7 @@
 #import "ECCartBackend.h"
 #import "Dependency.h"
 #import "GKECFactory.h"
+#import "TestUI.h"
 
 @interface AppDelegate ()
 @end
@@ -27,7 +28,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     GKConfig *config = [GKConfig shared];
-    config.backendURL = @"http://127.0.0.1:8000/ECMobile/index.php?url=";
+    config.backendURL = @"http://192.168.4.111:8080/ECMobile/index.php?url=";
     
     ECUserService *service = [ECUserService shared];
     service.delegate = self;
@@ -38,6 +39,9 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     [[NSBundle mainBundle] loadNibNamed:@"AppView" owner:self options:nil];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
+    
+//    [[[TestUI alloc] init] enterCheckout:self.tabBarController];
+    
     return YES;
 }
 

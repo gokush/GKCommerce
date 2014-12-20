@@ -60,12 +60,12 @@
     return [[GKFeatureBackend alloc] init];
 }
 
-- (id<ConsigneeBackend>)consigneeBackend
+- (id<AddressBackend>)addressBackend
 {
     return [[ECConsigneeBackend alloc] init];
 }
 
-- (id<ConsigneeService>)consigneeService
+- (id<AddressService>)addressService
 {
     return [[ECConsigneeService alloc] init];
 }

@@ -52,14 +52,14 @@
     return [[self factory] featureBackend];
 }
 
-- (id<ConsigneeBackend>)consigneeBackend
+- (id<AddressBackend>)addressBackend
 {
-    return [[self factory] consigneeBackend];
+    return [[self factory] addressBackend];
 }
 
-- (id<ConsigneeService>)consigneeService
+- (id<AddressService>)addressService
 {
-    return [[self factory] consigneeService];
+    return [[self factory] addressService];
 }
 
 + (instancetype)shared

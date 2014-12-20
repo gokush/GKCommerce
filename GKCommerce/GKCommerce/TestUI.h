@@ -11,5 +11,5 @@
 @interface TestUI : NSObject <UINavigationControllerDelegate>
 
 - (void)gotoCheckout:(UITabBarController *)tabBarController;
-- (void)gotoAddConsignee:(UITabBarController *)tabBarController;
+- (void)gotoAddAddress:(UITabBarController *)tabBarController;
 @end
