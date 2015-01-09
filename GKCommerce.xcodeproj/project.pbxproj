@@ -87,6 +87,8 @@
 		E59180FD1A20CD770021F855 /* InvoiceContent.m in Sources */ = {isa = PBXBuildFile; fileRef = E59180F91A20CD770021F855 /* InvoiceContent.m */; };
 		E59181041A20CD860021F855 /* Payment.m in Sources */ = {isa = PBXBuildFile; fileRef = E59181011A20CD860021F855 /* Payment.m */; };
 		E59181051A20CD860021F855 /* PaymentBalance.m in Sources */ = {isa = PBXBuildFile; fileRef = E59181031A20CD860021F855 /* PaymentBalance.m */; };
+		E5983DED1A5FB2310037428C /* GKProductBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = E5983DEC1A5FB2310037428C /* GKProductBackend.m */; };
+		E5983DF01A5FBAF40037428C /* GKProductBackendAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5983DEF1A5FBAF40037428C /* GKProductBackendAssembler.m */; };
 		E59890BF1A2B096C00105F99 /* ThreeStageSegment.xib in Resources */ = {isa = PBXBuildFile; fileRef = E59890BC1A2B096C00105F99 /* ThreeStageSegment.xib */; };
 		E59890C01A2B096C00105F99 /* ThreeStageSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = E59890BE1A2B096C00105F99 /* ThreeStageSegmentView.m */; };
 		E59890C41A2B0A8800105F99 /* ProductListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E59890C31A2B0A8800105F99 /* ProductListViewController.m */; };
@@ -462,6 +464,10 @@
 		E59181011A20CD860021F855 /* Payment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Payment.m; sourceTree = "<group>"; };
 		E59181021A20CD860021F855 /* PaymentBalance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentBalance.h; sourceTree = "<group>"; };
 		E59181031A20CD860021F855 /* PaymentBalance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentBalance.m; sourceTree = "<group>"; };
+		E5983DEB1A5FB2310037428C /* GKProductBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKProductBackend.h; path = Backend/GKProductBackend.h; sourceTree = "<group>"; };
+		E5983DEC1A5FB2310037428C /* GKProductBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKProductBackend.m; path = Backend/GKProductBackend.m; sourceTree = "<group>"; };
+		E5983DEE1A5FBAF40037428C /* GKProductBackendAssembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKProductBackendAssembler.h; path = Backend/GKProductBackendAssembler.h; sourceTree = "<group>"; };
+		E5983DEF1A5FBAF40037428C /* GKProductBackendAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKProductBackendAssembler.m; path = Backend/GKProductBackendAssembler.m; sourceTree = "<group>"; };
 		E59890BC1A2B096C00105F99 /* ThreeStageSegment.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ThreeStageSegment.xib; path = ProductList/View/ThreeStageSegment.xib; sourceTree = "<group>"; };
 		E59890BD1A2B096C00105F99 /* ThreeStageSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThreeStageSegmentView.h; path = ProductList/View/ThreeStageSegmentView.h; sourceTree = "<group>"; };
 		E59890BE1A2B096C00105F99 /* ThreeStageSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThreeStageSegmentView.m; path = ProductList/View/ThreeStageSegmentView.m; sourceTree = "<group>"; };
@@ -1798,6 +1804,10 @@
 				E5D9D5BB1A1E588400875264 /* ECProductBackend.m */,
 				E5D9D5BD1A1E589900875264 /* ECProductBackendAssembler.h */,
 				E5D9D5BE1A1E589900875264 /* ECProductBackendAssembler.m */,
+				E5983DEB1A5FB2310037428C /* GKProductBackend.h */,
+				E5983DEC1A5FB2310037428C /* GKProductBackend.m */,
+				E5983DEE1A5FBAF40037428C /* GKProductBackendAssembler.h */,
+				E5983DEF1A5FBAF40037428C /* GKProductBackendAssembler.m */,
 			);
 			name = Backend;
 			sourceTree = "<group>";
@@ -2344,6 +2354,7 @@
 				E53EC12A1A2D97C8005457F5 /* DataSigner.m in Sources */,
 				E5E2D3A11A18AE9000338CF0 /* MineDefaultTableViewCell.m in Sources */,
 				E5CD61121A2C72D30036160C /* FeatureCarouselTableViewCell.m in Sources */,
+				E5983DF01A5FBAF40037428C /* GKProductBackendAssembler.m in Sources */,
 				E59180FB1A20CD770021F855 /* CartItem.m in Sources */,
 				E5ED2DD31A457BBB00CA6661 /* RegionPickerViewController.m in Sources */,
 				E5D9D5B51A1E585200875264 /* ProductRepository.m in Sources */,
@@ -2355,6 +2366,7 @@
 				E59180E51A20BA270021F855 /* CartViewController.m in Sources */,
 				E5D9D5AE1A1E57FB00875264 /* GKCarouselViewCell.m in Sources */,
 				E5D3818E1A2D3D2000A7CB2E /* CheckoutShippingTableViewCell.m in Sources */,
+				E5983DED1A5FB2310037428C /* GKProductBackend.m in Sources */,
 				E5D9D5841A1E50FE00875264 /* ProductDetailMoreTab.m in Sources */,
 				E5F196B81A1CC04D00B97AE3 /* ViewController.m in Sources */,
 				E5D381D61A2D63F600A7CB2E /* Store.m in Sources */,

@@ -15,6 +15,8 @@
 #import "GKECFactory.h"
 #import "TestUI.h"
 
+#import "GKProductBackend.h"
+
 @interface AppDelegate ()
 @end
 
@@ -28,7 +30,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     GKConfig *config = [GKConfig shared];
-    config.backendURL = @"http://192.168.4.111:8080/ECMobile/index.php?url=";
+    config.backendURL = @"http://127.0.0.1:8000/api";
     
     ECUserService *service = [ECUserService shared];
     service.delegate = self;
@@ -41,6 +43,12 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     [self.window makeKeyAndVisible];
     
 //    [[[TestUI alloc] init] enterCheckout:self.tabBarController];
+    
+    GKProductBackend *backend = [[GKProductBackend alloc] init];
+    [[backend productWithID:1 user:nil] subscribeNext:^(Product *product) {
+        NSLog(@"did receive product");
+        NSLog(@"%d", (int)product.productID);
+    }];
     
     return YES;
 }

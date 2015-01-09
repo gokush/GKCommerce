@@ -204,7 +204,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
         case SecondSection: {
             switch (indexPath.row) {
                 case AddressCell:
-                    [self pushConsigneeList];
+                    [self pushAddressList];
                     break;
                     
                 default:

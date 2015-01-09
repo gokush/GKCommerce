@@ -19,4 +19,6 @@
 - (void)requestProductDescription:(Product *)product;
 - (void)requestProductsWithSearchModel:(SearchBackendModel *)searchModel;
 - (void)requestProductCategories;
+
+- (RACSignal *)productWithID:(NSInteger)productID user:(User *)anUser;
 @end
