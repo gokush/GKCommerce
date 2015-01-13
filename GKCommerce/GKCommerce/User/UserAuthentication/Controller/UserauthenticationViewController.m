@@ -191,7 +191,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     }
 }
 
-- (void)userService:(ECUserService *)anUserService didAuthencate:(User *)user
+- (void)userService:(id<UserService>)anUserService didAuthencate:(User *)user
               error:(NSError *)anError
 {
     if (nil == anError) {

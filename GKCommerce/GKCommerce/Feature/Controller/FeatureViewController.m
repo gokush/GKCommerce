@@ -156,6 +156,12 @@ heightForHeaderInSection:(NSInteger)section
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // DEMO
+    ProductDetailViewController *viewController;
+    viewController = [[ProductDetailViewController alloc]
+                      initWithProductID:1 user:nil];
+    [self.navigationController pushViewController:viewController animated:YES];
+    
     switch (indexPath.section) {
         case FeatureThreeColumnSection: {
             break;

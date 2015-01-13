@@ -24,7 +24,7 @@ CartServiceDelegate>
 @property (nonatomic, assign) NSInteger productID;
 @property (nonatomic, strong) Product *product;
 @property (nonatomic, strong) User *user;
-@property (nonatomic, retain) id<ProductService> service;
+@property (nonatomic, retain) id<GKProductService> service;
 @property (strong, nonatomic) id<CartService> cartService;
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;

@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 GKCommerce. All rights reserved.
 //
 
-#import "GKProductBackend.h"
+#import "GKProductBackendImpl.h"
 #import <AFNetworking/AFNetworking.h>
 
-@implementation GKProductBackend
+@implementation GKProductBackendImpl
 
 - (id)init
 {
@@ -20,7 +20,7 @@
     return self;
 }
 
-- (RACSignal *)productWithID:(NSInteger)productID user:(User *)anUser
+- (RACSignal *)requestProductWithID:(NSInteger)productID user:(User *)anUser
 {
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     [parameters setObject:[NSString stringWithFormat:@"%d", (int)anUser.userID]

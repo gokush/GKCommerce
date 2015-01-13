@@ -36,7 +36,6 @@
         self.productID = productID;
         self.user = user;
         self.service = [[Dependency shared] productService];
-        self.service.delegate = self;
         self.cartService = [[Dependency shared] cartService];
         self.cartService.delegate = self;
         [self setup];
@@ -76,7 +75,19 @@
               context:nil];
 
     self.automaticallyAdjustsScrollViewInsets = NO;
-    [self.service productWithID:self.productID user:self.user];
+    
+    [[self.service productWithID:self.productID
+                            user:self.user] subscribeNext:^(Product *product) {
+        self.product = product;
+        [self.tableView reloadData];
+    } error:^(NSError *error) {
+        MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view];
+        hud.labelText = [error localizedDescription];
+        hud.mode = MBProgressHUDModeCustomView;
+        [self.view addSubview:hud];
+        [hud show:YES];
+        [hud hide:YES afterDelay:2];
+    }];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -167,7 +178,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
             moreViewController = [[ProductDetailMoreViewController alloc]
                                   initWithProduct:self.product user:self.user];
             
-            [self.navigationController pushViewController:moreViewController animated:YES];
+            [self.navigationController pushViewController:moreViewController
+                                                 animated:YES];
             break;
         }
         default:

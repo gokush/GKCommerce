@@ -32,12 +32,12 @@
     return [[self factory] userService];
 }
 
-- (id<ProductBackend>)productBackend
+- (id<GKProductBackend>)productBackend
 {
     return [[self factory] productBackend];
 }
 
-- (id<ProductService>)productService
+- (id<GKProductService>)productService
 {
     return [[self factory] productService];
 }

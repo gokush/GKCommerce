@@ -1,12 +1,12 @@
 //
-//  GKECFactory.m
+//  GKFactoryImpl.m
 //  GKCommerce
 //
-//  Created by 小悟空 on 11/26/14.
-//  Copyright (c) 2014 GKCommerce. All rights reserved.
+//  Created by 小悟空 on 1/13/15.
+//  Copyright (c) 2015 GKCommerce. All rights reserved.
 //
 
-#import "GKECFactory.h"
+#import "GKFactoryImpl.h"
 #import "ECCartBackend.h"
 #import "ECCartService.h"
 #import "ECUserBackend.h"
@@ -15,9 +15,10 @@
 #import "ECProductService.h"
 #import "GKFeatureBackend.h"
 #import "GKFeatureService.h"
+#import "GKProductBackendImpl.h"
+#import "GKProductServiceImpl.h"
 
-@implementation GKECFactory
-
+@implementation GKFactoryImpl
 - (id<CartBackend>)cartBackend
 {
     return [[ECCartBackend alloc] init];
@@ -38,14 +39,14 @@
     return [[ECUserService alloc] init];
 }
 
-- (id<ProductBackend>)productBackend
+- (id<GKProductBackend>)productBackend
 {
-    return [[ECProductBackend alloc] init];
+    return [[GKProductBackendImpl alloc] init];
 }
 
-- (id<ProductService>)productService
+- (id<GKProductService>)productService
 {
-    return [[ECProductService alloc] init];
+    return [[GKProductServiceImpl alloc] init];
 }
 
 - (id<FeatureService>)featureService

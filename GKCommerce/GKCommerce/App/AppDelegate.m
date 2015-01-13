@@ -15,7 +15,8 @@
 #import "GKECFactory.h"
 #import "TestUI.h"
 
-#import "GKProductBackend.h"
+#import "GKFactoryImpl.h"
+#import "GKProductBackendImpl.h"
 
 @interface AppDelegate ()
 @end
@@ -26,7 +27,7 @@
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[Dependency shared] setFactory:[[GKECFactory alloc] init]];
+    [[Dependency shared] setFactory:[[GKFactoryImpl alloc] init]];
     
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     GKConfig *config = [GKConfig shared];
@@ -43,12 +44,6 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     [self.window makeKeyAndVisible];
     
 //    [[[TestUI alloc] init] enterCheckout:self.tabBarController];
-    
-    GKProductBackend *backend = [[GKProductBackend alloc] init];
-    [[backend productWithID:1 user:nil] subscribeNext:^(Product *product) {
-        NSLog(@"did receive product");
-        NSLog(@"%d", (int)product.productID);
-    }];
     
     return YES;
 }
