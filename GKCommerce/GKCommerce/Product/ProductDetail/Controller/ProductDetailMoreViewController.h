@@ -10,8 +10,7 @@
 #import "User.h"
 #import "Product.h"
 #import "ProductDetailMoreTab.h"
-#import "Backend.h"
-#import "ProductService.h"
+#import "GKProductService.h"
 
 @interface ProductDetailMoreViewController : UIViewController
 <ProductDetailMoreTabDelegate, ProductServiceDelegate,
@@ -19,7 +18,7 @@ UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) Product *product;
 @property (nonatomic, strong) User *user;
-@property (nonatomic, strong) id<ProductService> service;
+@property (nonatomic, strong) id<GKProductService> service;
 @property (nonatomic, strong) IBOutlet ProductDetailMoreTab *tab;
 @property (nonatomic, strong) IBOutlet UIView *container;
 @property (nonatomic, strong) IBOutlet UIView *bottomBar;

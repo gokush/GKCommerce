@@ -34,7 +34,6 @@
         self.product = product;
         self.user = user;
         self.service = [[Dependency shared] productService];
-        self.service.delegate = self;
     }
     return self;
 }
@@ -83,7 +82,7 @@
     tab2.delegate = self;
     tab2.dataSource = self;
     
-    [self.service productDescription:self.product];
+    [tab1 loadHTMLString:self.product.productDescription baseURL:nil];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView
@@ -124,12 +123,5 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
     NSString *propertyName = [NSString stringWithFormat:@"tab%d", index + 1];
     UIView *target = (UIView *) [self valueForKey:propertyName];
     [self.container addSubview:target];
-}
-
-- (void)productService:(id<ProductService>)aProductService
-    product:(Product *)aProduct description:(NSString *)aDescription
-                 error:(NSError *)anError
-{
-    [tab1 loadHTMLString:aDescription baseURL:nil];
 }
 @end
