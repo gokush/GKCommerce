@@ -20,6 +20,7 @@
 @property (assign, nonatomic) float y;
 @property (assign, nonatomic) BOOL isGray;
 @property (assign, nonatomic) BOOL isCrop;
+@property (assign, nonatomic) BOOL isCropAndFill;
 @property (strong, nonatomic) NSString *extension;
 - (id)initWithURL:(NSURL *)url;
 - (id)initWithString:(NSString *)url;
@@ -37,6 +38,8 @@
 - (GKResizer *)crop:(float)width height:(float)aHeight;
 - (GKResizer *)x:(float)x;
 - (GKResizer *)y:(float)y;
+- (GKResizer *)cropAndFill;
+- (NSURL *)url;
 + (instancetype)resizerWithURL:(NSURL *)url;
 + (instancetype)resizerWithString:(NSString *)url;
 @end

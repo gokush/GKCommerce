@@ -79,4 +79,9 @@
 {
     return [[GKResizer resizerWithString:self] y:y];
 }
+
+- (GKResizer *)GKRCropAndFill
+{
+    return [[GKResizer resizerWithString:self] cropAndFill];
+}
 @end

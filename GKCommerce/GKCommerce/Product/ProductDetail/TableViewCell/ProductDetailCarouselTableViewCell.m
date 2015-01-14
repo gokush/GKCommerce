@@ -7,34 +7,26 @@
 //
 
 #import "ProductDetailCarouselTableViewCell.h"
+#import "NSString+GKResizable.h"
 
 @implementation ProductDetailCarouselTableViewCell
 
 - (void)awakeFromNib {
     self.carousel.delegate = self;
-}
-
-- (void)renderCarousel
-{
-    [self.carousel reloadData];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
-                        change:(NSDictionary *)change context:(void *)context
-{
-    if ([@"product" isEqualToString:keyPath])
-        [self renderCarousel];
+    
+    [[RACObserve(self, product) filter:^BOOL(id value) {
+        return nil != value;
+     }] subscribeNext:^(id x) {
+        [self.carousel reloadData];
+     }];
 }
 
 - (void)bind
 {
-    [self addObserver:self forKeyPath:@"product"
-              options:NSKeyValueObservingOptionInitial context:nil];
 }
 
 - (void)unbind
 {
-    [self removeObserver:self forKeyPath:@"product"];
 }
 
 #pragma mark - GKCarouselViewDelegate
@@ -46,9 +38,10 @@
     carouselRectangle = CGRectMake(0.0f, 0.0f, 320.0f, 320.0f);
     GKCarouselViewCell *cell = [[GKCarouselViewCell alloc]
                                 initWithFrame:carouselRectangle];
-    ProductImageURL *picture;
+    NSString *picture;
     picture = [self.product.pictures objectAtIndex:index];
-    cell.imageURL = [[NSURL alloc] initWithString:picture.origin];
+    cell.imageURL = [[[[picture GKRCropAndFill] width:320.0f] height:320.0f]
+                     url];
     return cell;
 }
 

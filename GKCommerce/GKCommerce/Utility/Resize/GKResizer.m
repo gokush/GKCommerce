@@ -112,6 +112,12 @@
     return self;
 }
 
+- (GKResizer *)cropAndFill
+{
+    self.isCropAndFill = YES;
+    return self;
+}
+
 - (NSString *)description
 {
     NSURL *url = self.original;
@@ -124,29 +130,39 @@
     [resizablePath appendString:[[url path] stringByDeletingPathExtension]];
     
     if (self.isCrop && self.width > 0)
-        [resizablePath appendFormat:@",c_%.2f", self.width];
+        [resizablePath appendFormat:@",c_%d", (int)self.width];
     if (self.isCrop && self.height > 0)
-        [resizablePath appendFormat:@",g_%.2f", self.height];
-    if (!self.isCrop && self.width > 0)
-        [resizablePath appendFormat:@",w_%.2f", self.width];
-    if (!self.isCrop && self.height > 0)
-        [resizablePath appendFormat:@",h_%.2f", self.height];
+        [resizablePath appendFormat:@",g_%d", (int)self.height];
     if (self.x > 0)
-        [resizablePath appendFormat:@",x_%.2f", self.x];
+        [resizablePath appendFormat:@",x_%d", (int)self.x];
     if (self.y > 0)
-        [resizablePath appendFormat:@",y_%.2f", self.y];
+        [resizablePath appendFormat:@",y_%d", (int)self.y];
     if (self.isGray)
         [resizablePath appendString:@",f_gray"];
     if (self.quality > 0)
-        [resizablePath appendFormat:@",q_%.2f", self.quality];
+        [resizablePath appendFormat:@",q_%d", (int)self.quality];
     if (self.angle > 0)
-        [resizablePath appendFormat:@",r_%.2f", self.angle];
+        [resizablePath appendFormat:@",r_%d", (int)self.angle];
+    
+    // TODO: 后端有一个BUG EvaThumber，参数顺序只能是c_fill,h_100,w_100
+    // 如果是w_100,h_100,c_fill不能工作
+    if (self.isCropAndFill)
+        [resizablePath appendFormat:@",c_fill"];
+    if (!self.isCrop && self.height > 0)
+        [resizablePath appendFormat:@",h_%d", (int)self.height];
+    if (!self.isCrop && self.width > 0)
+        [resizablePath appendFormat:@",w_%d", (int)self.width];
     
     NSString *ext = self.extension;
     if (ext == nil || [ext isEqualToString:@""])
         ext = [url pathExtension];
     [resizablePath appendFormat:@".%@", ext];
     return resizablePath;
+}
+
+- (NSURL *)url
+{
+    return [NSURL URLWithString:[self description]];
 }
 
 + (instancetype)resizerWithURL:(NSURL *)url

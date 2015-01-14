@@ -20,9 +20,10 @@
 - (GKResizer *)GKRJpg;
 - (GKResizer *)GKRXbm;
 - (GKResizer *)GKRGif;
-- (GKResizer *)GKRPercent:(float)percent;
+- (GKResizer *)GKRScale:(float)percent;
 - (GKResizer *)GKRCrop:(float)widthAndHeight;
 - (GKResizer *)GKRCrop:(float)width height:(float)aHeight;
 - (GKResizer *)GKRSetX:(float)x;
 - (GKResizer *)GKRSetY:(float)y;
+- (GKResizer *)GKRCropAndFill;
 @end
