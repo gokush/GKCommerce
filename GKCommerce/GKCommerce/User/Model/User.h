@@ -19,4 +19,5 @@
 @property (strong, nonatomic) Cart *cart;
 
 - (BOOL)authorized;
+- (void)merge:(User *)user;
 @end

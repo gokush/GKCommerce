@@ -41,4 +41,11 @@
     }
     return YES;
 }
+
+- (void)merge:(User *)user
+{
+    self.username = user.username;
+    self.userID = user.userID;
+    self.email = user.email;
+}
 @end

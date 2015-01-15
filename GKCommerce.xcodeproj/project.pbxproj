@@ -226,6 +226,8 @@
 		E5F196B81A1CC04D00B97AE3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F196B71A1CC04D00B97AE3 /* ViewController.m */; };
 		E5F196BE1A1CC31D00B97AE3 /* UITableView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F196BD1A1CC31D00B97AE3 /* UITableView+Extension.m */; };
 		E5F2006C1A3469B000D810D7 /* GKQuantityView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F2006B1A3469B000D810D7 /* GKQuantityView.m */; };
+		E5F3C47E1A67869C00B986FA /* GKUserBackendImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F3C47D1A67869C00B986FA /* GKUserBackendImpl.m */; };
+		E5F3C4811A679BB100B986FA /* GKUserAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F3C4801A679BB100B986FA /* GKUserAssembler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -727,6 +729,12 @@
 		E5F196BD1A1CC31D00B97AE3 /* UITableView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITableView+Extension.m"; path = "GKCommerce/Utility/UITableView+Extension.m"; sourceTree = "<group>"; };
 		E5F2006A1A3469B000D810D7 /* GKQuantityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKQuantityView.h; sourceTree = "<group>"; };
 		E5F2006B1A3469B000D810D7 /* GKQuantityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKQuantityView.m; sourceTree = "<group>"; };
+		E5F3C47A1A6785C000B986FA /* GKUserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKUserService.h; path = GKCommerce/User/GKUserService.h; sourceTree = "<group>"; };
+		E5F3C47B1A67860D00B986FA /* GKUserBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKUserBackend.h; path = GKCommerce/User/Backend/GKUserBackend.h; sourceTree = "<group>"; };
+		E5F3C47C1A67869C00B986FA /* GKUserBackendImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKUserBackendImpl.h; path = GKCommerce/User/Backend/GKUserBackendImpl.h; sourceTree = "<group>"; };
+		E5F3C47D1A67869C00B986FA /* GKUserBackendImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKUserBackendImpl.m; path = GKCommerce/User/Backend/GKUserBackendImpl.m; sourceTree = "<group>"; };
+		E5F3C47F1A679BB100B986FA /* GKUserAssembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKUserAssembler.h; path = GKCommerce/User/Backend/GKUserAssembler.h; sourceTree = "<group>"; };
+		E5F3C4801A679BB100B986FA /* GKUserAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKUserAssembler.m; path = GKCommerce/User/Backend/GKUserAssembler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1167,6 +1175,7 @@
 				E5D9D5521A1E3B5A00875264 /* UserServiceDelegate.h */,
 				E5D9D54B1A1E3A6100875264 /* UserRepository.h */,
 				E5D9D54C1A1E3A6100875264 /* UserRepository.m */,
+				E5F3C47A1A6785C000B986FA /* GKUserService.h */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -1663,11 +1672,16 @@
 			children = (
 				E5D9D5391A1E27B300875264 /* Model */,
 				E5D9D5361A1E26EA00875264 /* UserBackend.h */,
+				E5F3C47B1A67860D00B986FA /* GKUserBackend.h */,
+				E5F3C47C1A67869C00B986FA /* GKUserBackendImpl.h */,
+				E5F3C47D1A67869C00B986FA /* GKUserBackendImpl.m */,
 				E5D9D53D1A1E287700875264 /* ECUserBackend.h */,
 				E5D9D53E1A1E287700875264 /* ECUserBackend.m */,
 				E5D9D5401A1E28E400875264 /* ECUserBackendAssembler.h */,
 				E5D9D5411A1E28E400875264 /* ECUserBackendAssembler.m */,
 				E5D9D5471A1E2B2A00875264 /* UserBackendDelegate.h */,
+				E5F3C47F1A679BB100B986FA /* GKUserAssembler.h */,
+				E5F3C4801A679BB100B986FA /* GKUserAssembler.m */,
 			);
 			name = Backend;
 			sourceTree = "<group>";
@@ -2361,6 +2375,7 @@
 				E5D9D5811A1E50FE00875264 /* ProductDetailTitleTableViewCell.m in Sources */,
 				E53EC1331A2DD3CE005457F5 /* CartItemList.m in Sources */,
 				E5748F471A20EC7A00306ADC /* ECCartBackend.m in Sources */,
+				E5F3C47E1A67869C00B986FA /* GKUserBackendImpl.m in Sources */,
 				E5D381491A2CA75900A7CB2E /* GKFeatureBackendAssembler.m in Sources */,
 				E5E2D3A01A18AE9000338CF0 /* MineDefaultViewController.m in Sources */,
 				E5ED2DCE1A457BBB00CA6661 /* AddressController.m in Sources */,
@@ -2394,6 +2409,7 @@
 				E5CD60E41A2C567E0036160C /* ProductCategoryTableViewCell.m in Sources */,
 				E5C3AFA41A3EDEA30096CD85 /* ECCheckoutAssembler.m in Sources */,
 				E53EC12A1A2D97C8005457F5 /* DataSigner.m in Sources */,
+				E5F3C4811A679BB100B986FA /* GKUserAssembler.m in Sources */,
 				E5E2D3A11A18AE9000338CF0 /* MineDefaultTableViewCell.m in Sources */,
 				E5CD61121A2C72D30036160C /* FeatureCarouselTableViewCell.m in Sources */,
 				E5983DF01A5FBAF40037428C /* GKProductBackendAssembler.m in Sources */,
