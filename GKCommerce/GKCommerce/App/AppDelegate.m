@@ -32,6 +32,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     GKConfig *config = [GKConfig shared];
     config.backendURL = @"http://127.0.0.1:8000/api";
+    config.OAuthAccessTokenURL = @"http://127.0.0.1:8000/oauth/access_token";
     
     ECUserService *service = [ECUserService shared];
     service.delegate = self;

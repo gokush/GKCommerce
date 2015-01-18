@@ -13,5 +13,8 @@ target "GKCommerce" do
 end
 
 target "GKCommerceTests" do
-    pod 'AFNetworking'
+    pod 'AFNetworking', "~> 2.5.0"
+    pod 'ReactiveCocoa'
+    pod 'Specta'
+    pod 'Expecta'
 end

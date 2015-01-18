@@ -9,7 +9,7 @@
 #import "Backend.h"
 #import "GKUserAssembler.h"
 
-@interface GKUserBackendImpl : Backend
+@interface GKUserBackendImpl : Backend <GKUserBackend>
 
 @property (strong, nonatomic) GKUserAssembler *assembler;
 - (RACSignal *)requestAuthenticate:(UserAuthenticationModel *)user;

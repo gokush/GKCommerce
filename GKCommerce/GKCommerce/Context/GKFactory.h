@@ -20,7 +20,9 @@
 #import "AddressBackend.h"
 #import "AddressService.h"
 #import "GKProductService.h"
-#import "GKProductBackendImpl.h"
+#import "GKProductBackend.h"
+#import "GKUserBackend.h"
+#import "GKUserService.h"
 
 @protocol GKFactory <NSObject>
 
@@ -28,8 +30,8 @@
 - (id<CartService>)cartService;
 - (id<GKProductBackend>)productBackend;
 - (id<GKProductService>)productService;
-- (id<UserBackend>)userBackend;
-- (id<UserService>)userService;
+- (id<GKUserBackend>)userBackend;
+- (id<GKUserService>)userService;
 - (id<FeatureService>)featureService;
 - (id<FeatureBackend>)featureBackend;
 - (id<AddressBackend>)addressBackend;

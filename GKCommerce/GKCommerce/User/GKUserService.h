@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @protocol GKUserService <NSObject>
 
+- (User *)restore;
+- (RACSignal *)authenticate:(UserAuthenticationModel *)model;
 @end

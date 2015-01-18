@@ -33,9 +33,8 @@
     [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         @strongify(self)
         [self.manager
-         GET:[NSString stringWithFormat:@"%@/oauth/access_token",
-              self.config.backendURL]
-         parameters:nil
+         POST:self.config.OAuthAccessTokenURL
+         parameters:parameters
          success:^(AFHTTPRequestOperation *operation,
                    id responseObject) {
              [subscriber sendNext:
@@ -53,5 +52,29 @@
 
 - (RACSignal *)requestUser:(User *)user
 {
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    parameters[@"access_token"] = user.sessionID;
+    
+    @weakify(self)
+    return
+    [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        @strongify(self)
+        [self.manager
+         GET:[NSString stringWithFormat:@"%@/api/user/",
+              self.config.backendURL]
+         parameters:nil
+         success:^(AFHTTPRequestOperation *operation,
+                   id responseObject) {
+             [subscriber sendNext:
+              [self.assembler user:responseObject]];
+         } failure:^(AFHTTPRequestOperation *operation,
+                     NSError *error) {
+             [subscriber sendError:error];
+         }];
+        
+        return [RACDisposable disposableWithBlock:^{
+            
+        }];
+    }];
 }
 @end

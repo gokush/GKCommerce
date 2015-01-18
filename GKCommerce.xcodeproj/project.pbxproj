@@ -72,6 +72,7 @@
 		E5748F471A20EC7A00306ADC /* ECCartBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = E5748F461A20EC7A00306ADC /* ECCartBackend.m */; };
 		E5748F4C1A20ED0200306ADC /* ECCartBackendAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5748F4B1A20ED0200306ADC /* ECCartBackendAssembler.m */; };
 		E5748F511A21F65A00306ADC /* Cart.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5748F501A21F65A00306ADC /* Cart.xcassets */; };
+		E57C64DC1A6BA54F00249A86 /* GKUserBackendImplTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E57C64DB1A6BA54F00249A86 /* GKUserBackendImplTest.m */; };
 		E57D3FED1A2378F300AC0FF9 /* CartItemOverviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E57D3FE81A2378F300AC0FF9 /* CartItemOverviewTableViewCell.m */; };
 		E57D3FEE1A2378F300AC0FF9 /* CartItemOverviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E57D3FE91A2378F300AC0FF9 /* CartItemOverviewTableViewCell.xib */; };
 		E57D3FEF1A2378F300AC0FF9 /* CartItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E57D3FEB1A2378F300AC0FF9 /* CartItemTableViewCell.m */; };
@@ -228,6 +229,7 @@
 		E5F2006C1A3469B000D810D7 /* GKQuantityView.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F2006B1A3469B000D810D7 /* GKQuantityView.m */; };
 		E5F3C47E1A67869C00B986FA /* GKUserBackendImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F3C47D1A67869C00B986FA /* GKUserBackendImpl.m */; };
 		E5F3C4811A679BB100B986FA /* GKUserAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F3C4801A679BB100B986FA /* GKUserAssembler.m */; };
+		E5F3C4841A68AE9D00B986FA /* GKUserServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = E5F3C4831A68AE9D00B986FA /* GKUserServiceImpl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -445,6 +447,7 @@
 		E5748F4B1A20ED0200306ADC /* ECCartBackendAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECCartBackendAssembler.m; path = Backend/ECCartBackendAssembler.m; sourceTree = "<group>"; };
 		E5748F4D1A20ED6F00306ADC /* CartBackendDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CartBackendDelegate.h; path = Backend/CartBackendDelegate.h; sourceTree = "<group>"; };
 		E5748F501A21F65A00306ADC /* Cart.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Cart.xcassets; path = GKCommerce/AssetCatalog/Cart.xcassets; sourceTree = "<group>"; };
+		E57C64DB1A6BA54F00249A86 /* GKUserBackendImplTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKUserBackendImplTest.m; sourceTree = "<group>"; };
 		E57D3FE71A2378F300AC0FF9 /* CartItemOverviewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartItemOverviewTableViewCell.h; sourceTree = "<group>"; };
 		E57D3FE81A2378F300AC0FF9 /* CartItemOverviewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartItemOverviewTableViewCell.m; sourceTree = "<group>"; };
 		E57D3FE91A2378F300AC0FF9 /* CartItemOverviewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartItemOverviewTableViewCell.xib; sourceTree = "<group>"; };
@@ -735,6 +738,8 @@
 		E5F3C47D1A67869C00B986FA /* GKUserBackendImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKUserBackendImpl.m; path = GKCommerce/User/Backend/GKUserBackendImpl.m; sourceTree = "<group>"; };
 		E5F3C47F1A679BB100B986FA /* GKUserAssembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKUserAssembler.h; path = GKCommerce/User/Backend/GKUserAssembler.h; sourceTree = "<group>"; };
 		E5F3C4801A679BB100B986FA /* GKUserAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKUserAssembler.m; path = GKCommerce/User/Backend/GKUserAssembler.m; sourceTree = "<group>"; };
+		E5F3C4821A68AE9D00B986FA /* GKUserServiceImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKUserServiceImpl.h; path = GKCommerce/User/GKUserServiceImpl.h; sourceTree = "<group>"; };
+		E5F3C4831A68AE9D00B986FA /* GKUserServiceImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKUserServiceImpl.m; path = GKCommerce/User/GKUserServiceImpl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -832,6 +837,7 @@
 		9035D02D1A0CB3E100C6E53C /* GKCommerceTests */ = {
 			isa = PBXGroup;
 			children = (
+				E57C64D91A6BA54F00249A86 /* User */,
 				9035D0301A0CB3E100C6E53C /* GKCommerceTests.m */,
 				9035D02E1A0CB3E100C6E53C /* Supporting Files */,
 			);
@@ -1176,6 +1182,8 @@
 				E5D9D54B1A1E3A6100875264 /* UserRepository.h */,
 				E5D9D54C1A1E3A6100875264 /* UserRepository.m */,
 				E5F3C47A1A6785C000B986FA /* GKUserService.h */,
+				E5F3C4821A68AE9D00B986FA /* GKUserServiceImpl.h */,
+				E5F3C4831A68AE9D00B986FA /* GKUserServiceImpl.m */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -1237,6 +1245,22 @@
 				E5748F4B1A20ED0200306ADC /* ECCartBackendAssembler.m */,
 			);
 			name = Backend;
+			sourceTree = "<group>";
+		};
+		E57C64D91A6BA54F00249A86 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				E57C64DA1A6BA54F00249A86 /* Backend */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		E57C64DA1A6BA54F00249A86 /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				E57C64DB1A6BA54F00249A86 /* GKUserBackendImplTest.m */,
+			);
+			path = Backend;
 			sourceTree = "<group>";
 		};
 		E57D3FE61A2378F300AC0FF9 /* TableViewCell */ = {
@@ -2366,6 +2390,7 @@
 				E59890C41A2B0A8800105F99 /* ProductListViewController.m in Sources */,
 				E5ED2DDC1A457BBB00CA6661 /* PDAddressBackend.m in Sources */,
 				E5CD61111A2C72D30036160C /* FeatureViewController.m in Sources */,
+				E5F3C4841A68AE9D00B986FA /* GKUserServiceImpl.m in Sources */,
 				E59180FC1A20CD770021F855 /* Invoice.m in Sources */,
 				E52957AD1A64FF310006F626 /* GKResizer.m in Sources */,
 				E5CD61241A2C72D30036160C /* FeatureThreeColumnModel.m in Sources */,
@@ -2479,6 +2504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9035D0311A0CB3E100C6E53C /* GKCommerceTests.m in Sources */,
+				E57C64DC1A6BA54F00249A86 /* GKUserBackendImplTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2701,12 +2727,14 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				GCC_PREFIX_HEADER = "GKCommerce/GKCommerce-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = GKCommerceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				New_Setting = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GKCommerce.app/GKCommerce";
 			};
@@ -2721,8 +2749,10 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				GCC_PREFIX_HEADER = "GKCommerce/GKCommerce-Prefix.pch";
 				INFOPLIST_FILE = GKCommerceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				New_Setting = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GKCommerce.app/GKCommerce";
 			};

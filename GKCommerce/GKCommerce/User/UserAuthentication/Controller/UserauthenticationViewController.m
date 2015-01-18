@@ -35,7 +35,6 @@ typedef enum {
     self = [self initWithNibName:@"UserAuthenticationView" bundle:nil];
     if (self) {
         self.service = [[Dependency shared] userService];
-        self.service.delegate = self;
         self.user = [[UserAuthenticationModel alloc] init];
     }
     return self;
@@ -160,7 +159,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
         case ConfirmUserAuthenticationSection: {
             NSError *error = [self.user valid];
             if (nil == error) {
-                [self.service authenticate:self.user];
+                [[self.service authenticate:self.user]
+                 subscribeNext:[self didAuthencateUserSuccess]
+                 error:[self didAuthencateUserFailure]];
                 break;
             }
             
@@ -191,14 +192,19 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     }
 }
 
-- (void)userService:(id<UserService>)anUserService didAuthencate:(User *)user
-              error:(NSError *)anError
+- (void(^)(User *))didAuthencateUserSuccess
 {
-    if (nil == anError) {
+    return ^(User *user) {
         [self.view showHUD:@"成功登录" afterDelay:2];
         [self.navigationController popViewControllerAnimated:YES];
-    } else
-        [self.view showHUD:anError.localizedDescription afterDelay:2];
+    };
+}
+
+- (void(^)(NSError *))didAuthencateUserFailure
+{
+    return ^(NSError *error) {
+        [self.view showHUD:error.localizedDescription afterDelay:2];
+    };
 }
 
 /*

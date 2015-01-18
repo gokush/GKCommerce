@@ -24,6 +24,6 @@
 @interface GKConfig : NSObject
 
 @property (strong, nonatomic) NSString *backendURL;
-
+@property (strong, nonatomic) NSString *OAuthAccessTokenURL;
 + (instancetype)shared;
 @end

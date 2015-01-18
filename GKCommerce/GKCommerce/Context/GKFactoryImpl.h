@@ -15,8 +15,8 @@
 - (id<CartService>)cartService;
 - (id<GKProductBackend>)productBackend;
 - (id<GKProductService>)productService;
-- (id<UserBackend>)userBackend;
-- (id<UserService>)userService;
+- (id<GKUserBackend>)userBackend;
+- (id<GKUserService>)userService;
 - (id<FeatureService>)featureService;
 - (id<FeatureBackend>)featureBackend;
 - (id<AddressBackend>)addressBackend;
