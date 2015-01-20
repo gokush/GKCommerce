@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 #import "UserAuthenticationModel.h"
+#import "GKUserAccessToken.h"
 
 @protocol GKUserBackend <NSObject>
 
 - (RACSignal *)requestAuthenticate:(UserAuthenticationModel *)user;
-- (RACSignal *)requestUser:(User *)user;
+- (RACSignal *)requestUser:(GKUserAccessToken *)accessToken;
 @end

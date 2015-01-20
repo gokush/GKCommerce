@@ -13,5 +13,5 @@
 
 @property (strong, nonatomic) GKUserAssembler *assembler;
 - (RACSignal *)requestAuthenticate:(UserAuthenticationModel *)user;
-- (RACSignal *)requestUser:(User *)user;
+- (RACSignal *)requestUser:(GKUserAccessToken *)accessToken;
 @end

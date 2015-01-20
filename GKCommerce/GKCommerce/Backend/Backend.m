@@ -16,6 +16,7 @@
     if (self) {
         self.config = [GKConfig shared];
         self.manager = [AFHTTPRequestOperationManager manager];
+      [self.manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"accept"];
     }
     return self;
 }

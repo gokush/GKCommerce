@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Cart.h"
+#import "GKUserAccessToken.h"
 
 @class Cart;
 @interface User : NSObject <NSCoding>
@@ -17,6 +18,7 @@
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *email;
 @property (strong, nonatomic) Cart *cart;
+@property (strong, nonatomic) GKUserAccessToken *accessToken;
 
 - (BOOL)authorized;
 - (void)merge:(User *)user;

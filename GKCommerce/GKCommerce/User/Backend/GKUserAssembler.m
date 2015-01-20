@@ -18,4 +18,20 @@
     user.userID = [[anUser objectForKey:@"id"] integerValue];
     return user;
 }
+
+- (GKUserAccessToken *)accessTokenWithAuthenticate:(NSDictionary *)authenticate
+{
+  NSString *tokenType;
+  GKUserAccessToken *accessToken;
+  tokenType = [[authenticate objectForKey:@"token_type"] lowercaseString];
+  accessToken = [[GKUserAccessToken alloc] init];
+  if ([@"bearer" isEqualToString:tokenType])
+    accessToken.type = GKBearer;
+  else if ([@"bearer" isEqualToString:tokenType])
+    accessToken.type = GKMAC;
+  accessToken.accessToken = [authenticate objectForKey:@"access_token"];
+  accessToken.expires = [[authenticate objectForKey:@"expires_in"]
+                         integerValue];
+  return accessToken;
+}
 @end

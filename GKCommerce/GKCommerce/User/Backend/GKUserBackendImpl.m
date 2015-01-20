@@ -27,7 +27,8 @@
     parameters[@"password"]         = user.password;
     parameters[@"client_id"]        = @"swagger";
     parameters[@"client_secret"]    = @"swagger";
-    
+  
+  // TODO: 格式化
     @weakify(self)
     return
     [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
@@ -37,10 +38,12 @@
          parameters:parameters
          success:^(AFHTTPRequestOperation *operation,
                    id responseObject) {
+           DDLogVerbose(@"did request authenticate success.");
              [subscriber sendNext:
-              [self.assembler user:responseObject]];
+              [self.assembler accessTokenWithAuthenticate:responseObject]];
          } failure:^(AFHTTPRequestOperation *operation,
                      NSError *error) {
+           DDLogError(@"%@", error.localizedDescription);
              [subscriber sendError:error];
          }];
         
@@ -50,31 +53,26 @@
     }];
 }
 
-- (RACSignal *)requestUser:(User *)user
+- (RACSignal *)requestUser:(GKUserAccessToken *)accessToken
 {
-    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-    parameters[@"access_token"] = user.sessionID;
-    
-    @weakify(self)
-    return
-    [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        @strongify(self)
-        [self.manager
-         GET:[NSString stringWithFormat:@"%@/api/user/",
-              self.config.backendURL]
-         parameters:nil
-         success:^(AFHTTPRequestOperation *operation,
-                   id responseObject) {
-             [subscriber sendNext:
-              [self.assembler user:responseObject]];
-         } failure:^(AFHTTPRequestOperation *operation,
-                     NSError *error) {
-             [subscriber sendError:error];
-         }];
+  NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+  parameters[@"access_token"] = accessToken.accessToken;
+  @weakify(self)
+  return
+  [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+    @strongify(self)
+    [self.manager
+     GET:[NSString stringWithFormat:@"%@/user/1", self.config.backendURL]
+     parameters:parameters
+     success:^(AFHTTPRequestOperation *operation, id responseObject) {
+       [subscriber sendNext:[self.assembler user:responseObject]];
+     }
+     failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+       DDLogError(operation.responseString);
+       [subscriber sendError:error];
+     }];
         
-        return [RACDisposable disposableWithBlock:^{
-            
-        }];
-    }];
+    return [RACDisposable disposableWithBlock:^{ }];
+  }];
 }
 @end
