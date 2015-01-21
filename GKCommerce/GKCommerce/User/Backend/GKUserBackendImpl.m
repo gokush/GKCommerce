@@ -45,6 +45,7 @@
                      NSError *error) {
            DDLogError(@"%@", error.localizedDescription);
              [subscriber sendError:error];
+           [subscriber sendCompleted];
          }];
         
         return [RACDisposable disposableWithBlock:^{

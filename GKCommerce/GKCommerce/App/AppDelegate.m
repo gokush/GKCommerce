@@ -34,10 +34,8 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     config.backendURL = @"http://127.0.0.1:8000/api";
     config.OAuthAccessTokenURL = @"http://127.0.0.1:8000/oauth/access_token";
     
-    ECUserService *service = [ECUserService shared];
-    service.delegate = self;
-    [service restore];
-    
+  [[[Dependency shared] userService] restore];
+  
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     [[NSBundle mainBundle] loadNibNamed:@"AppView" owner:self options:nil];

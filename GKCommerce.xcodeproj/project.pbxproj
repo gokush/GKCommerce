@@ -101,6 +101,7 @@
 		E59890CA1A2B0AA500105F99 /* ProductListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E59890C71A2B0AA500105F99 /* ProductListCollectionViewCell.xib */; };
 		E59890CB1A2B0AA500105F99 /* ProductListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E59890C81A2B0AA500105F99 /* ProductListView.xib */; };
 		E59890CE1A2B0C7A00105F99 /* GKView.m in Sources */ = {isa = PBXBuildFile; fileRef = E59890CD1A2B0C7A00105F99 /* GKView.m */; };
+		E5B98C651A6E287000DDF0FD /* GKUserAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B98C641A6E287000DDF0FD /* GKUserAccessToken.m */; };
 		E5C3AFA11A3EDCD30096CD85 /* ECCheckoutBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C3AFA01A3EDCD30096CD85 /* ECCheckoutBackend.m */; };
 		E5C3AFA41A3EDEA30096CD85 /* ECCheckoutAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C3AFA31A3EDEA30096CD85 /* ECCheckoutAssembler.m */; };
 		E5C8061B1A1A081E00880B20 /* MineDefaultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C8061A1A1A081E00880B20 /* MineDefaultTableViewCell.xib */; };
@@ -499,6 +500,8 @@
 		E59890CC1A2B0C7A00105F99 /* GKView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKView.h; path = GKCommerce/UI/GKView.h; sourceTree = "<group>"; };
 		E59890CD1A2B0C7A00105F99 /* GKView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKView.m; path = GKCommerce/UI/GKView.m; sourceTree = "<group>"; };
 		E5A862221A27522C00FD5412 /* UserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserService.h; path = GKCommerce/User/UserService.h; sourceTree = "<group>"; };
+		E5B98C631A6E287000DDF0FD /* GKUserAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKUserAccessToken.h; path = GKCommerce/User/Model/GKUserAccessToken.h; sourceTree = "<group>"; };
+		E5B98C641A6E287000DDF0FD /* GKUserAccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKUserAccessToken.m; path = GKCommerce/User/Model/GKUserAccessToken.m; sourceTree = "<group>"; };
 		E5C3AF9D1A3EDBDD0096CD85 /* CheckoutBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckoutBackend.h; path = Backend/CheckoutBackend.h; sourceTree = "<group>"; };
 		E5C3AF9E1A3EDC5D0096CD85 /* CheckoutBackendDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckoutBackendDelegate.h; path = Backend/CheckoutBackendDelegate.h; sourceTree = "<group>"; };
 		E5C3AF9F1A3EDCD30096CD85 /* ECCheckoutBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECCheckoutBackend.h; path = Backend/ECCheckoutBackend.h; sourceTree = "<group>"; };
@@ -1724,6 +1727,8 @@
 			children = (
 				E5D9D5441A1E2A8300875264 /* User.h */,
 				E5D9D5451A1E2A8300875264 /* User.m */,
+				E5B98C631A6E287000DDF0FD /* GKUserAccessToken.h */,
+				E5B98C641A6E287000DDF0FD /* GKUserAccessToken.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -2387,6 +2392,7 @@
 				E53EC0951A2D96B9005457F5 /* OrderDetailProductTableViewCell.m in Sources */,
 				E5CD60E31A2C567E0036160C /* ProductCategoryViewController.m in Sources */,
 				E549C1941A1B8FBA0014656D /* UserAuthenticationTableViewCell.m in Sources */,
+				E5B98C651A6E287000DDF0FD /* GKUserAccessToken.m in Sources */,
 				E59890C41A2B0A8800105F99 /* ProductListViewController.m in Sources */,
 				E5ED2DDC1A457BBB00CA6661 /* PDAddressBackend.m in Sources */,
 				E5CD61111A2C72D30036160C /* FeatureViewController.m in Sources */,
@@ -2733,6 +2739,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = GKCommerceTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2751,6 +2758,7 @@
 				);
 				GCC_PREFIX_HEADER = "GKCommerce/GKCommerce-Prefix.pch";
 				INFOPLIST_FILE = GKCommerceTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				New_Setting = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";

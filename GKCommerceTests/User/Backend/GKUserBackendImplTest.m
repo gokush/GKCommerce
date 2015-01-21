@@ -6,35 +6,36 @@
 //  Copyright (c) 2015 GKCommerce. All rights reserved.
 //
 
+#import <XCTest/XCTest.h>
 #import <Specta/Specta.h>
 #define EXP_SHORTHAND
 #import <Expecta/Expecta.h>
 #import "Dependency.h"
-#import <XCTest/XCTest.h>
 
 #import "GKUserAccessToken.h"
 
 SpecBegin(GKUserBackendImpl)
 
 describe(@"GKUserBackendImpl", ^{
-  it(@"should do user info", ^{
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+  it(@"should do user info", ^AsyncBlock{
     id<GKUserBackend> backend = [[Dependency shared] userBackend];
-    ((Backend *)backend).manager.completionQueue =
-      dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+
     UserAuthenticationModel *authentication;
     authentication = [[UserAuthenticationModel alloc]
                       initWithUsername:@"swagger" password:@"swagger"];
     
-    [[backend requestAuthenticate:authentication] subscribeNext:^(GKUserAccessToken *accessToken) {
+    [[backend requestAuthenticate:authentication]
+     subscribeNext:^(GKUserAccessToken *accessToken) {
       [[backend requestUser:accessToken] subscribeNext:^(User *user) {
         expect(@"swagger").to.equal(@"swagger");
-        dispatch_semaphore_signal(semaphore);
+        done();
       } error:^(NSError *error) {
-        dispatch_semaphore_signal(semaphore);
+        expect(0).to.equal(1);
+        done();
       }];
     } error:^(NSError *error) {
-      dispatch_semaphore_signal(semaphore);
+      expect(0).to.equal(1);
+      done();
     }];
   });
 });

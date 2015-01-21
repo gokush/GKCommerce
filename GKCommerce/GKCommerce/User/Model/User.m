@@ -35,8 +35,8 @@
 
 - (BOOL)authorized
 {
-    if (0 >= self.userID || nil == self.sessionID ||
-        [@"" isEqualToString:self.sessionID]) {
+    if (0 >= self.userID || nil == self.accessToken.accessToken ||
+        [@"" isEqualToString:self.accessToken.accessToken]) {
         return NO;
     }
     return YES;

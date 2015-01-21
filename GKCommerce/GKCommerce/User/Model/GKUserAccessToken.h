@@ -13,7 +13,7 @@ typedef enum {
   GKMAC
 } GKAccessTokenType;
 
-@interface GKUserAccessToken : NSObject
+@interface GKUserAccessToken : NSObject <NSCoding>
 
 @property (strong, nonatomic) NSString *accessToken;
 @property (assign, nonatomic) NSInteger expires;

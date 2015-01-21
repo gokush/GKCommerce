@@ -22,15 +22,14 @@
 
 - (User *)restore
 {
-    User *user = [self.repository restore];
-    if (user) {
-        [[App shared] setCurrentUser:user];
-        
-        DDLogVerbose(@"从磁盘用户恢复 %@ %d %@", user.username, user.userID,
-                     user.sessionID);
-    }
-    
-    return user;
+  User *user = [self.repository restore];
+  if (user) {
+    [[App shared] setCurrentUser:user];
+    DDLogVerbose(@"从磁盘用户恢复 %@ %d %@", user.username, user.userID,
+                 user.accessToken.accessToken);
+  }
+  
+  return user;
 }
 
 - (RACSignal *)authenticate:(UserAuthenticationModel *)model
@@ -46,22 +45,29 @@
     }];
 }
 
-- (void(^)(User *))didAuthenticateUserSuccess:(id<RACSubscriber>)subscriber
+- (void(^)(GKUserAccessToken *))
+didAuthenticateUserSuccess:(id<RACSubscriber>)subscriber
 {
-    return ^(User *user) {
+    return ^(GKUserAccessToken *accessToken) {
+      [[self.backend requestUser:accessToken] subscribeNext:^(User *user) {
         [self.repository storage:user];
         [[App shared] setCurrentUser:user];
         DDLogVerbose(@"登录成功 %@", user.username);
         [subscriber sendNext:user];
         [subscriber sendCompleted];
+      } error:^(NSError *error) {
+        [subscriber sendError:error];
+        [subscriber sendCompleted];
+      }];
     };
 }
 
 - (void(^)(NSError *))didAuthenticateUserFailure:(id<RACSubscriber>)subscriber
 {
     return ^(NSError *error) {
-        DDLogVerbose(@"登录失败");
-        [subscriber sendError:error];
+      DDLogVerbose(@"登录失败");
+      [subscriber sendError:error];
+      [subscriber sendCompleted];
     };
 }
 
