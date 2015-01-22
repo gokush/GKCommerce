@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Apple",
+    "description": "",
+    "cover": "product_category_mock_iphone@2x.png",
+    "children": [
+      {
+        "id": 2,
+        "name": "iPhone",
+        "description": "",
+        "cover": "product_category_mock_iphone@2x.png"
+      },
+      {
+        "id": 3,
+        "name": "Mackbook",
+        "description": "",
+        "cover": "product_category_mock_macbook@2x.png"
+      }
+    ]
+  }
+]

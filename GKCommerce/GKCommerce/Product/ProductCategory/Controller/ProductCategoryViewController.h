@@ -15,7 +15,7 @@
 UISearchBarDelegate, ProductCategoryChildTableViewCellDelegate,
 ProductServiceDelegate>
 
-@property (strong, nonatomic) id<ProductService> service;
+@property (strong, nonatomic) id<GKProductService> service;
 @property (strong, nonatomic) UIBarButtonItem *titleView;
 @property (strong, nonatomic) IBOutlet SKSTableView *tableView;
 @property (nonatomic, strong) User *user;

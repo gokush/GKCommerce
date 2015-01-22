@@ -25,9 +25,15 @@
     [super viewDidLoad];
     self.user = [[App shared] currentUser];
     
-    self.service = [[Dependency shared] productService];
-    self.service.delegate = self;
-    [self.service productCategories];
+  self.service = [[Dependency shared] productService];
+  @weakify(self);
+  [[self.service productCategories] subscribeNext:^(NSArray *categories) {
+    @strongify(self);
+    self.categories = categories;
+    [self.tableView reloadData];
+  } error:^(NSError *error) {
+    
+  }];
     
     self.navigationItem.title = @"选购";
     [self setupSearchButton];
@@ -240,14 +246,4 @@ heightForSubRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.navigationController pushViewController:viewController
                                          animated:YES];
 }
-
-#pragma mark - ProductServiceDelegate
-
-- (void)productService:(id<ProductService>)aProductService
-            categories:(NSArray *)aCategories error:(NSError *)anError
-{
-    self.categories = aCategories;
-    [self.tableView reloadData];
-}
-
 @end

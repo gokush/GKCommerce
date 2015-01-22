@@ -1,16 +1,15 @@
 //
-//  GKProductServiceImpl.h
+//  GKProductServiceMock.h
 //  GKCommerce
 //
-//  Created by 小悟空 on 1/13/15.
+//  Created by 小悟空 on 1/22/15.
 //  Copyright (c) 2015 GKCommerce. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "GKProductService.h"
-#import "GKProductBackendImpl.h"
+#import "GKServiceMock.h"
 
-@interface GKProductServiceImpl : NSObject <GKProductService>
+@interface GKProductServiceMock : GKServiceMock <GKProductService>
 
 - (RACSignal *)productWithID:(NSInteger)productID user:(User *)anUser;
 - (RACSignal *)productCategories;

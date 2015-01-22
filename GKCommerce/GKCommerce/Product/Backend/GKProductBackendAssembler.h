@@ -11,4 +11,5 @@
 @interface GKProductBackendAssembler : NSObject
 
 - (Product *)product:(NSDictionary *)JSON;
+- (NSArray *)productCategories:(NSArray *)JSON;
 @end

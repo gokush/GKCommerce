@@ -18,6 +18,9 @@ didSelectedAtRow:(NSInteger)row column:(NSInteger)column;
 
 @interface ProductCategoryChildTableViewCell : UITableViewCell
 
+/**
+ `ProductCategory`的数组
+ */
 @property (strong, nonatomic) NSArray *categories;
 @property (assign, nonatomic) NSInteger row;
 @property (strong, nonatomic)

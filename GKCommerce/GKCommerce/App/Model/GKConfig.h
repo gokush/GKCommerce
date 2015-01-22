@@ -23,6 +23,7 @@
 
 @interface GKConfig : NSObject
 
+@property (assign, nonatomic) BOOL demostrate;
 @property (strong, nonatomic) NSString *backendURL;
 @property (strong, nonatomic) NSString *OAuthAccessTokenURL;
 + (instancetype)shared;

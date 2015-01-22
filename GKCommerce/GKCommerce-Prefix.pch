@@ -21,6 +21,7 @@
 #import "GKButton.h"
 #import "GKToggleButton.h"
 #import "UIView+Extension.h"
+#import "NSString+NSBundle.h"
 #import "GKLabel.h"
 #import "UITableView+Extension.h"
 

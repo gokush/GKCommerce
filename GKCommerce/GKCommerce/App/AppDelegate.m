@@ -15,7 +15,7 @@
 #import "GKECFactory.h"
 #import "TestUI.h"
 
-#import "GKFactoryImpl.h"
+#import "GKFactoryMock.h"
 #import "GKProductBackendImpl.h"
 
 @interface AppDelegate ()
@@ -27,7 +27,7 @@
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [[Dependency shared] setFactory:[[GKFactoryImpl alloc] init]];
+    [[Dependency shared] setFactory:[[GKFactoryMock alloc] init]];
     
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     GKConfig *config = [GKConfig shared];

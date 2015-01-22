@@ -28,4 +28,13 @@
 {
     return [self.backend requestProductWithID:productID user:anUser];
 }
+
+- (RACSignal *)productCategories
+{
+  return
+  [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+    return [RACDisposable disposableWithBlock:^{
+    }];
+  }];
+}
 @end

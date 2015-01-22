@@ -102,6 +102,14 @@
 		E59890CB1A2B0AA500105F99 /* ProductListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E59890C81A2B0AA500105F99 /* ProductListView.xib */; };
 		E59890CE1A2B0C7A00105F99 /* GKView.m in Sources */ = {isa = PBXBuildFile; fileRef = E59890CD1A2B0C7A00105F99 /* GKView.m */; };
 		E5B98C651A6E287000DDF0FD /* GKUserAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B98C641A6E287000DDF0FD /* GKUserAccessToken.m */; };
+		E5B98C681A70C6EB00DDF0FD /* ProductCategories.json in Resources */ = {isa = PBXBuildFile; fileRef = E5B98C671A70C6EB00DDF0FD /* ProductCategories.json */; };
+		E5B98C6A1A70CA4600DDF0FD /* ProductCategoryCatalog.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B98C691A70CA4600DDF0FD /* ProductCategoryCatalog.xcassets */; };
+		E5B98C6E1A70CBF200DDF0FD /* NSString+NSBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B98C6D1A70CBF200DDF0FD /* NSString+NSBundle.m */; };
+		E5B98C711A70CE7300DDF0FD /* NSString+NSBundleTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B98C701A70CE7300DDF0FD /* NSString+NSBundleTest.m */; };
+		E5B98C741A70D54400DDF0FD /* GKProductServiceMock.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B98C731A70D54400DDF0FD /* GKProductServiceMock.m */; };
+		E5B98C771A70D5EF00DDF0FD /* GKServiceMock.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B98C761A70D5EF00DDF0FD /* GKServiceMock.m */; };
+		E5B98C7B1A70DA7700DDF0FD /* GKProductBackendAssemblerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B98C7A1A70DA7700DDF0FD /* GKProductBackendAssemblerTest.m */; };
+		E5B98C7E1A70E36800DDF0FD /* GKFactoryMock.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B98C7D1A70E36800DDF0FD /* GKFactoryMock.m */; };
 		E5C3AFA11A3EDCD30096CD85 /* ECCheckoutBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C3AFA01A3EDCD30096CD85 /* ECCheckoutBackend.m */; };
 		E5C3AFA41A3EDEA30096CD85 /* ECCheckoutAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C3AFA31A3EDEA30096CD85 /* ECCheckoutAssembler.m */; };
 		E5C8061B1A1A081E00880B20 /* MineDefaultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C8061A1A1A081E00880B20 /* MineDefaultTableViewCell.xib */; };
@@ -502,6 +510,18 @@
 		E5A862221A27522C00FD5412 /* UserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserService.h; path = GKCommerce/User/UserService.h; sourceTree = "<group>"; };
 		E5B98C631A6E287000DDF0FD /* GKUserAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKUserAccessToken.h; path = GKCommerce/User/Model/GKUserAccessToken.h; sourceTree = "<group>"; };
 		E5B98C641A6E287000DDF0FD /* GKUserAccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKUserAccessToken.m; path = GKCommerce/User/Model/GKUserAccessToken.m; sourceTree = "<group>"; };
+		E5B98C671A70C6EB00DDF0FD /* ProductCategories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ProductCategories.json; path = Mock/ProductCategories.json; sourceTree = "<group>"; };
+		E5B98C691A70CA4600DDF0FD /* ProductCategoryCatalog.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ProductCategoryCatalog.xcassets; path = Mock/ProductCategoryCatalog.xcassets; sourceTree = "<group>"; };
+		E5B98C6C1A70CBF200DDF0FD /* NSString+NSBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+NSBundle.h"; path = "GKCommerce/Utility/NSString+NSBundle.h"; sourceTree = "<group>"; };
+		E5B98C6D1A70CBF200DDF0FD /* NSString+NSBundle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+NSBundle.m"; path = "GKCommerce/Utility/NSString+NSBundle.m"; sourceTree = "<group>"; };
+		E5B98C701A70CE7300DDF0FD /* NSString+NSBundleTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+NSBundleTest.m"; path = "Utility/NSString+NSBundleTest.m"; sourceTree = "<group>"; };
+		E5B98C721A70D54400DDF0FD /* GKProductServiceMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKProductServiceMock.h; sourceTree = "<group>"; };
+		E5B98C731A70D54400DDF0FD /* GKProductServiceMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKProductServiceMock.m; sourceTree = "<group>"; };
+		E5B98C751A70D5EF00DDF0FD /* GKServiceMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKServiceMock.h; sourceTree = "<group>"; };
+		E5B98C761A70D5EF00DDF0FD /* GKServiceMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKServiceMock.m; sourceTree = "<group>"; };
+		E5B98C7A1A70DA7700DDF0FD /* GKProductBackendAssemblerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKProductBackendAssemblerTest.m; path = Product/Backend/GKProductBackendAssemblerTest.m; sourceTree = "<group>"; };
+		E5B98C7C1A70E36800DDF0FD /* GKFactoryMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKFactoryMock.h; path = GKCommerce/Context/GKFactoryMock.h; sourceTree = "<group>"; };
+		E5B98C7D1A70E36800DDF0FD /* GKFactoryMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKFactoryMock.m; path = GKCommerce/Context/GKFactoryMock.m; sourceTree = "<group>"; };
 		E5C3AF9D1A3EDBDD0096CD85 /* CheckoutBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckoutBackend.h; path = Backend/CheckoutBackend.h; sourceTree = "<group>"; };
 		E5C3AF9E1A3EDC5D0096CD85 /* CheckoutBackendDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckoutBackendDelegate.h; path = Backend/CheckoutBackendDelegate.h; sourceTree = "<group>"; };
 		E5C3AF9F1A3EDCD30096CD85 /* ECCheckoutBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECCheckoutBackend.h; path = Backend/ECCheckoutBackend.h; sourceTree = "<group>"; };
@@ -840,6 +860,8 @@
 		9035D02D1A0CB3E100C6E53C /* GKCommerceTests */ = {
 			isa = PBXGroup;
 			children = (
+				E5B98C781A70DA2900DDF0FD /* Product */,
+				E5B98C6F1A70CE3F00DDF0FD /* Utility */,
 				E57C64D91A6BA54F00249A86 /* User */,
 				9035D0301A0CB3E100C6E53C /* GKCommerceTests.m */,
 				9035D02E1A0CB3E100C6E53C /* Supporting Files */,
@@ -864,6 +886,8 @@
 				9035D03E1A0CBF5900C6E53C /* AppDelegate.h */,
 				9035D03F1A0CBF5900C6E53C /* AppDelegate.m */,
 				9035D0401A0CBF5900C6E53C /* AppView.xib */,
+				E5B98C751A70D5EF00DDF0FD /* GKServiceMock.h */,
+				E5B98C761A70D5EF00DDF0FD /* GKServiceMock.m */,
 			);
 			name = App;
 			path = GKCommerce/App;
@@ -910,6 +934,8 @@
 				E52957B51A65052B0006F626 /* GKFactory.h */,
 				E52957BC1A650AEB0006F626 /* GKFactoryImpl.h */,
 				E52957BD1A650AEB0006F626 /* GKFactoryImpl.m */,
+				E5B98C7C1A70E36800DDF0FD /* GKFactoryMock.h */,
+				E5B98C7D1A70E36800DDF0FD /* GKFactoryMock.m */,
 			);
 			name = Context;
 			sourceTree = "<group>";
@@ -1407,6 +1433,39 @@
 			path = ProductList/Controller;
 			sourceTree = "<group>";
 		};
+		E5B98C661A70C6B000DDF0FD /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				E5B98C671A70C6EB00DDF0FD /* ProductCategories.json */,
+				E5B98C691A70CA4600DDF0FD /* ProductCategoryCatalog.xcassets */,
+			);
+			name = Mock;
+			sourceTree = "<group>";
+		};
+		E5B98C6F1A70CE3F00DDF0FD /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				E5B98C701A70CE7300DDF0FD /* NSString+NSBundleTest.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		E5B98C781A70DA2900DDF0FD /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				E5B98C791A70DA2F00DDF0FD /* Backend */,
+			);
+			name = Product;
+			sourceTree = "<group>";
+		};
+		E5B98C791A70DA2F00DDF0FD /* Backend */ = {
+			isa = PBXGroup;
+			children = (
+				E5B98C7A1A70DA7700DDF0FD /* GKProductBackendAssemblerTest.m */,
+			);
+			name = Backend;
+			sourceTree = "<group>";
+		};
 		E5C3AF9C1A3EDBB60096CD85 /* Backend */ = {
 			isa = PBXGroup;
 			children = (
@@ -1443,6 +1502,7 @@
 		E5CD60D51A2C567E0036160C /* ProductCategory */ = {
 			isa = PBXGroup;
 			children = (
+				E5B98C661A70C6B000DDF0FD /* Mock */,
 				E5CD60D61A2C567E0036160C /* Controller */,
 				E5CD60D91A2C567E0036160C /* TableViewCell */,
 				E5CD60E11A2C567E0036160C /* View */,
@@ -1761,6 +1821,8 @@
 				E5D9D5B41A1E585200875264 /* ProductRepository.m */,
 				E52957B81A6507440006F626 /* GKProductServiceImpl.h */,
 				E52957B91A6507440006F626 /* GKProductServiceImpl.m */,
+				E5B98C721A70D54400DDF0FD /* GKProductServiceMock.h */,
+				E5B98C731A70D54400DDF0FD /* GKProductServiceMock.m */,
 			);
 			name = Product;
 			path = GKCommerce/Product;
@@ -2116,6 +2178,8 @@
 				E5F196B51A1CBCE900B97AE3 /* Utility.h */,
 				E5F196BA1A1CC0DA00B97AE3 /* UITableView+Extension.h */,
 				E5F196BD1A1CC31D00B97AE3 /* UITableView+Extension.m */,
+				E5B98C6C1A70CBF200DDF0FD /* NSString+NSBundle.h */,
+				E5B98C6D1A70CBF200DDF0FD /* NSString+NSBundle.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -2211,6 +2275,7 @@
 				E5ED2DD51A457BBB00CA6661 /* AddressEditInputTableViewCell.xib in Resources */,
 				E5D9D58A1A1E50FE00875264 /* ProductMoreTableViewCell.xib in Resources */,
 				E5CD611C1A2C72D30036160C /* feature_iPhone@2x.png in Resources */,
+				E5B98C681A70C6EB00DDF0FD /* ProductCategories.json in Resources */,
 				E53EC07A1A2D9655005457F5 /* PaymentFailureView.xib in Resources */,
 				E5D381941A2D3D2000A7CB2E /* CheckoutView.xib in Resources */,
 				E5D3818D1A2D3D2000A7CB2E /* CheckoutProductTableViewCell.xib in Resources */,
@@ -2235,6 +2300,7 @@
 				E53EC07E1A2D9655005457F5 /* PaymentSuccessView.xib in Resources */,
 				E5C806261A1A469700880B20 /* Mine.xcassets in Resources */,
 				E5D9D57F1A1E50FE00875264 /* ProductDetailInfomationTableViewCell.xib in Resources */,
+				E5B98C6A1A70CA4600DDF0FD /* ProductCategoryCatalog.xcassets in Resources */,
 				E5ED2DD91A457BBB00CA6661 /* AddressListTableViewCell.xib in Resources */,
 				E549C1971A1B8FDA0014656D /* UserAuthenticationView.xib in Resources */,
 				E5D3818B1A2D3D2000A7CB2E /* CheckoutPaymentTableViewCell.xib in Resources */,
@@ -2412,6 +2478,7 @@
 				E5ED2DCE1A457BBB00CA6661 /* AddressController.m in Sources */,
 				E59890C91A2B0AA500105F99 /* ProductListCollectionViewCell.m in Sources */,
 				E52957BA1A6507440006F626 /* GKProductServiceImpl.m in Sources */,
+				E5B98C771A70D5EF00DDF0FD /* GKServiceMock.m in Sources */,
 				E59181051A20CD860021F855 /* PaymentBalance.m in Sources */,
 				E557909D1A2F2070009A41A1 /* CartStoreNameTableViewCell.m in Sources */,
 				E5D9D54D1A1E3A6100875264 /* UserRepository.m in Sources */,
@@ -2424,6 +2491,7 @@
 				E5ED2DDA1A457BBB00CA6661 /* AddressListTableViewCellSelected.m in Sources */,
 				E5D9D5B11A1E582600875264 /* ECProductService.m in Sources */,
 				E53EC1221A2D97C8005457F5 /* NSString+SBJSON.m in Sources */,
+				E5B98C7E1A70E36800DDF0FD /* GKFactoryMock.m in Sources */,
 				E5D9D5421A1E28E400875264 /* ECUserBackendAssembler.m in Sources */,
 				E5D9D5991A1E560F00875264 /* Product.m in Sources */,
 				E5D9D5781A1E50FE00875264 /* ProductDetailMoreViewController.m in Sources */,
@@ -2463,6 +2531,7 @@
 				E5D381D61A2D63F600A7CB2E /* Store.m in Sources */,
 				E5D9D59B1A1E560F00875264 /* ProductSpecification.m in Sources */,
 				9035D0141A0CB3E100C6E53C /* main.m in Sources */,
+				E5B98C741A70D54400DDF0FD /* GKProductServiceMock.m in Sources */,
 				E53EC1201A2D97C8005457F5 /* AlixPayResult.m in Sources */,
 				E53EC1251A2D97C8005457F5 /* SBJsonParser.m in Sources */,
 				E5D381921A2D3D2000A7CB2E /* CheckoutCheckBox.m in Sources */,
@@ -2477,6 +2546,7 @@
 				E5D9D5851A1E50FE00875264 /* ProductDetailMoreTabButton.m in Sources */,
 				E59890C01A2B096C00105F99 /* ThreeStageSegmentView.m in Sources */,
 				E5D9D5891A1E50FE00875264 /* ProductMoreTableViewCell.m in Sources */,
+				E5B98C6E1A70CBF200DDF0FD /* NSString+NSBundle.m in Sources */,
 				E5CD61141A2C72D30036160C /* FeatureOneColumnTableViewCell.m in Sources */,
 				E53EC0991A2D96B9005457F5 /* OrderDetailTableViewCell.m in Sources */,
 				E57D3FEF1A2378F300AC0FF9 /* CartItemTableViewCell.m in Sources */,
@@ -2509,6 +2579,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5B98C7B1A70DA7700DDF0FD /* GKProductBackendAssemblerTest.m in Sources */,
+				E5B98C711A70CE7300DDF0FD /* NSString+NSBundleTest.m in Sources */,
 				9035D0311A0CB3E100C6E53C /* GKCommerceTests.m in Sources */,
 				E57C64DC1A6BA54F00249A86 /* GKUserBackendImplTest.m in Sources */,
 			);

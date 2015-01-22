@@ -10,6 +10,15 @@
 
 @implementation GKConfig
 
+- (id)init
+{
+  self = [super init];
+  if (self) {
+    self.demostrate = YES;
+  }
+  return self;
+}
+
 + (instancetype)shared
 {
     static GKConfig *_shared = nil;

@@ -11,7 +11,7 @@
 @protocol GKProductService <NSObject>
 @optional
 - (RACSignal *)productWithID:(NSInteger)productID user:(User *)anUser;
+- (RACSignal *)productCategories;
 //- (void)productDescription:(Product *)product;
 //- (void)productsWithSearchModel:(SearchBackendModel *)searchModel;
-//- (void)productCategories;
 @end

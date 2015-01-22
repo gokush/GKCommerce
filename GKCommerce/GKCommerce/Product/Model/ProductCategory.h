@@ -13,6 +13,9 @@
 @property (assign, nonatomic) NSInteger categoryID;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *categoryDescription;
+/**
+ * children第一项是`ProductCategory`的实例
+ */
 @property (strong, nonatomic) NSMutableArray *children;
 @property (strong, nonatomic) NSURL *cover;
 
