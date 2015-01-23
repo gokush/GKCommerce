@@ -1403,6 +1403,7 @@
 		E59890BA1A2B094B00105F99 /* ProductList */ = {
 			isa = PBXGroup;
 			children = (
+				E5B98C7F1A70FC2500DDF0FD /* Mock */,
 				E59890C11A2B0A8800105F99 /* Controller */,
 				E59890BB1A2B096200105F99 /* View */,
 			);
@@ -1464,6 +1465,13 @@
 				E5B98C7A1A70DA7700DDF0FD /* GKProductBackendAssemblerTest.m */,
 			);
 			name = Backend;
+			sourceTree = "<group>";
+		};
+		E5B98C7F1A70FC2500DDF0FD /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Mock;
 			sourceTree = "<group>";
 		};
 		E5C3AF9C1A3EDBB60096CD85 /* Backend */ = {

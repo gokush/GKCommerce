@@ -11,12 +11,14 @@
 
 @implementation ProductListCollectionViewCell
 
-- (void)setProduct:(Product *)product
+- (void)awakeFromNib
 {
-    if (_product != product) {
-        _product = product;
-        [self renderProduct];
-    }
+  [super awakeFromNib];
+  @weakify(self);
+  [RACObserve(self, product) subscribeNext:^(Product *product) {
+    @strongify(self);
+    [self renderProduct];
+  }];
 }
 
 - (void)renderProduct

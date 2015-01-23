@@ -14,8 +14,10 @@
 - (void)awakeFromNib
 {
   [super awakeFromNib];
+  @weakify(self);
   [RACObserve(self, productCategory)
    subscribeNext:^(ProductCategory *category) {
+     @strongify(self);
      self.nameLabel.text = self.productCategory.name;
      self.descriptionLabel.text = self.productCategory.categoryDescription;
      [self.coverImage sd_setImageWithURL:self.productCategory.cover];
