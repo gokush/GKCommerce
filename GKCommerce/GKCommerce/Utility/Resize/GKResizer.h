@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+  GKNorthWest, GKNorth, GKNorthEast, GKWest, GKCenter, GKEast, GKSouthWest,
+  GKSouth, GKSouthEast
+} GKGravity;
+
 @interface GKResizer : NSObject
 @property (strong, nonatomic) NSURL *original;
 @property (assign, nonatomic) float width;
