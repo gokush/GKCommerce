@@ -45,8 +45,8 @@
     [aCoder encodeObject:encodedProductID forKey:@"productID"];
 
     [aCoder encodeObject:self.name forKey:@"name"];
-    [aCoder encodeObject:self.marketPrice forKey:@"marketPrice"];
-    [aCoder encodeObject:self.price forKey:@"price"];
+    [aCoder encodeObject:self.regularPrice forKey:@"marketPrice"];
+    [aCoder encodeObject:self.listingPrice forKey:@"price"];
     [aCoder encodeObject:self.image forKey:@"image"];
     [aCoder encodeObject:self.pictures forKey:@"pictures"];
     [aCoder encodeObject:self.productDescription forKey:@"productDescription"];

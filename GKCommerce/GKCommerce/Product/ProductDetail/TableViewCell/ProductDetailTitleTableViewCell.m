@@ -18,9 +18,9 @@
 {
     self.title.text = self.product.name;
     self.price.text = [[NSString alloc] initWithFormat:@"￥%.2f",
-                       self.product.price.floatValue];
+                       self.product.listingPrice.floatValue];
     self.marketPrice.text = [[NSString alloc] initWithFormat:@"%.2f",
-                             self.product.marketPrice.floatValue];
+                             self.product.regularPrice.floatValue];
     self.favor.selected = YES;
 }
 

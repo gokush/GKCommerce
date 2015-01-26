@@ -87,8 +87,8 @@
     
     product.productID = [[productJSON objectForKey:@"goods_id"] intValue];
     product.name = [productJSON objectForKey:@"goods_name"];
-    product.price = [NSDecimalNumber decimalNumberWithString:price];
-    product.marketPrice = [NSDecimalNumber decimalNumberWithString:marketPrice];
+    product.listingPrice = [NSDecimalNumber decimalNumberWithString:price];
+    product.regularPrice = [NSDecimalNumber decimalNumberWithString:marketPrice];
     
     product.stocks = -1;
     

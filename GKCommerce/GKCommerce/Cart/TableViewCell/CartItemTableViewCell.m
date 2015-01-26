@@ -52,11 +52,11 @@
 {
     self.name.text = self.item.product.name;
     self.price.text = [NSString stringWithFormat:@"￥%@",
-                       self.item.product.price];
+                       self.item.product.listingPrice];
     self.quantity.text = [NSString stringWithFormat:@"%d",
                           self.item.quantity];
     self.marketPrice.text = [NSString stringWithFormat:@"￥%@",
-                             self.item.product.marketPrice];
+                             self.item.product.regularPrice];
     [self.marketPrice setStrikethrough];
     self.select.on = self.item.selected;
     self.amountLabel.text = [NSString stringWithFormat:@"共%d件商品",

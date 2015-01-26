@@ -21,9 +21,9 @@
     
     product.productID = [[JSON objectForKey:@"id"] intValue];
     product.name = [JSON objectForKey:@"goods_name"];
-    product.marketPrice = [NSDecimalNumber decimalNumberWithString:
+    product.regularPrice = [NSDecimalNumber decimalNumberWithString:
                            marketPrice];
-    product.price = [NSDecimalNumber decimalNumberWithString:price];
+    product.listingPrice = [NSDecimalNumber decimalNumberWithString:price];
     product.stocks = [[JSON objectForKey:@"goods_number"] intValue];
     product.image = [self productImageURL:[JSON objectForKey:@"img"]];
     product.pictures = [self productImageURLs:
@@ -95,8 +95,8 @@
     
     product.productID = [[productJSON objectForKey:@"goods_id"] intValue];
     product.name = [productJSON objectForKey:@"name"];
-    product.price = [NSDecimalNumber decimalNumberWithString:price];
-    product.marketPrice = [NSDecimalNumber decimalNumberWithString:marketPrice];
+    product.listingPrice = [NSDecimalNumber decimalNumberWithString:price];
+    product.regularPrice = [NSDecimalNumber decimalNumberWithString:marketPrice];
     
     ProductImageURL *productImage;
     productImage = [self productImageURL:[productJSON objectForKey:@"img"]];

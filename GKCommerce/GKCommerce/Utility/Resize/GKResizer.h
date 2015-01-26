@@ -13,6 +13,8 @@ typedef enum {
   GKSouth, GKSouthEast
 } GKGravity;
 
+// TODO: 新增设置Gravity
+
 @interface GKResizer : NSObject
 @property (strong, nonatomic) NSURL *original;
 @property (assign, nonatomic) float width;
@@ -44,6 +46,7 @@ typedef enum {
 - (GKResizer *)x:(float)x;
 - (GKResizer *)y:(float)y;
 - (GKResizer *)cropAndFill;
+- (UIImage *)image;
 - (NSURL *)url;
 + (instancetype)resizerWithURL:(NSURL *)url;
 + (instancetype)resizerWithString:(NSString *)url;

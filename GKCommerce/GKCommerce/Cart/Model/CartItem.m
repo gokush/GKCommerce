@@ -40,7 +40,7 @@
     if (_product != product) {
         _product = product;
         
-        self.price = product.price;
+        self.price = product.listingPrice;
     }
 }
 
@@ -59,7 +59,7 @@
 
 - (void)updatePrice
 {
-    float totalPrice = self.quantity * [self.product.price floatValue];
+    float totalPrice = self.quantity * [self.product.listingPrice floatValue];
     self.totalPrice = [[NSDecimalNumber alloc]initWithFloat:totalPrice];
 }
 

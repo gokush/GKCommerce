@@ -15,6 +15,8 @@
 		9035D0311A0CB3E100C6E53C /* GKCommerceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9035D0301A0CB3E100C6E53C /* GKCommerceTests.m */; };
 		9035D0411A0CBF5900C6E53C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9035D03F1A0CBF5900C6E53C /* AppDelegate.m */; };
 		9035D0421A0CBF5900C6E53C /* AppView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9035D0401A0CBF5900C6E53C /* AppView.xib */; };
+		E515B1381A76435800ED7458 /* ProductList.json in Resources */ = {isa = PBXBuildFile; fileRef = E515B1371A76435800ED7458 /* ProductList.json */; };
+		E515B13A1A76437900ED7458 /* ProductListCatalog.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E515B1391A76437900ED7458 /* ProductListCatalog.xcassets */; };
 		E52957AD1A64FF310006F626 /* GKResizer.m in Sources */ = {isa = PBXBuildFile; fileRef = E52957AA1A64FF310006F626 /* GKResizer.m */; };
 		E52957AE1A64FF310006F626 /* NSString+GKResizable.m in Sources */ = {isa = PBXBuildFile; fileRef = E52957AC1A64FF310006F626 /* NSString+GKResizable.m */; };
 		E52957B61A65052B0006F626 /* Dependency.m in Sources */ = {isa = PBXBuildFile; fileRef = E52957B21A65052B0006F626 /* Dependency.m */; };
@@ -269,6 +271,8 @@
 		C1C8545461A39C251C511C1B /* libPods-GKCommerce.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GKCommerce.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D30F04DAA95470FEC1F317A5 /* Pods-GKCommerce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GKCommerce.release.xcconfig"; path = "Pods/Target Support Files/Pods-GKCommerce/Pods-GKCommerce.release.xcconfig"; sourceTree = "<group>"; };
 		E3E132E5579A8A196FC0461A /* libPods-GKCommerceTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GKCommerceTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E515B1371A76435800ED7458 /* ProductList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = ProductList.json; path = ProductList/Mock/ProductList.json; sourceTree = "<group>"; };
+		E515B1391A76437900ED7458 /* ProductListCatalog.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = ProductListCatalog.xcassets; path = ProductList/Mock/ProductListCatalog.xcassets; sourceTree = "<group>"; };
 		E52957A91A64FF310006F626 /* GKResizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKResizer.h; sourceTree = "<group>"; };
 		E52957AA1A64FF310006F626 /* GKResizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKResizer.m; sourceTree = "<group>"; };
 		E52957AB1A64FF310006F626 /* NSString+GKResizable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GKResizable.h"; sourceTree = "<group>"; };
@@ -1470,6 +1474,8 @@
 		E5B98C7F1A70FC2500DDF0FD /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				E515B1371A76435800ED7458 /* ProductList.json */,
+				E515B1391A76437900ED7458 /* ProductListCatalog.xcassets */,
 			);
 			name = Mock;
 			sourceTree = "<group>";
@@ -2324,8 +2330,10 @@
 				E57D3FF01A2378F300AC0FF9 /* CartItemTableViewCell.xib in Resources */,
 				E57D3FEE1A2378F300AC0FF9 /* CartItemOverviewTableViewCell.xib in Resources */,
 				E59180EF1A20BA270021F855 /* CartView.xib in Resources */,
+				E515B13A1A76437900ED7458 /* ProductListCatalog.xcassets in Resources */,
 				E53EC11B1A2D97C8005457F5 /* AlipaySDK.bundle in Resources */,
 				9035D0251A0CB3E100C6E53C /* LaunchScreen.xib in Resources */,
+				E515B1381A76435800ED7458 /* ProductList.json in Resources */,
 				E5D381871A2D3D2000A7CB2E /* CheckoutInvoiceTableViewCell.xib in Resources */,
 				E5CD61131A2C72D30036160C /* FeatureCarouselTableViewCell.xib in Resources */,
 				E5ED2DD01A457BBB00CA6661 /* AddressTableViewCell.xib in Resources */,

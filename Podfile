@@ -10,6 +10,7 @@ target "GKCommerce" do
     pod 'SVPullToRefresh'
     pod 'SKSTableView', :git=> 'http://github.com/gokush/SKSTableView.git'
     pod 'ReactiveCocoa'
+    pod 'ImageMagick'
 end
 
 target "GKCommerceTests" do

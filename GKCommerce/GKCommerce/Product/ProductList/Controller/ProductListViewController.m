@@ -40,10 +40,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -60,11 +56,12 @@
               forCellWithReuseIdentifier:identifier];
 
     self.service = [[Dependency shared] productService];
-    self.service.delegate = self;
 
     [self.collectionView addPullToRefreshWithActionHandler:^{
         self.search.page = 1;
-        [self.service productsWithSearchModel:self.search];
+      
+      [[self.service productsWithSearchModel:self.search]
+       subscribeNext:[self didLoadProductsWithSearchModel]];
 
         CGPoint point = self.collectionView.contentOffset;
         point.y = 0;
@@ -77,7 +74,32 @@
     }];
     self.collectionView.showsInfiniteScrolling = NO;
     
-    [self.service productsWithSearchModel:self.search];
+    [[self.service productsWithSearchModel:self.search]
+     subscribeNext:[self didLoadProductsWithSearchModel]];
+}
+
+- (void(^)(RACTuple *))didLoadProductsWithSearchModel
+{
+  @weakify(self)
+  return ^(RACTuple *parameters) {
+    @strongify(self)
+    
+    RACTupleUnpack(SearchBackendModel *searchModel,
+                   NSArray *products) = parameters;
+    BOOL more;
+    more = searchModel.page > 1;
+    
+    if (more) {
+      [self.collectionView.infiniteScrollingView stopAnimating];
+      [self.products addObjectsFromArray:products];
+    } else {
+      [self.collectionView.pullToRefreshView stopAnimating];
+      self.products = [NSMutableArray arrayWithArray:products];
+    }
+    
+    [self.collectionView reloadData];
+    self.collectionView.showsInfiniteScrolling = [searchModel hasMore];
+  };
 }
 
 #pragma mark- ThreeStageSegmentViewDelegate
@@ -96,7 +118,8 @@
             self.search.sort = @"id_desc";
             break;
     }
-    [self.service productsWithSearchModel:self.search];
+  [[self.service productsWithSearchModel:self.search]
+   subscribeNext:[self didLoadProductsWithSearchModel]];
 }
 
 #pragma mark- UICollectionView
@@ -152,28 +175,5 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath
        insetForSectionAtIndex:(NSInteger)section
 {
     return UIEdgeInsetsMake(5, 7, 5, 7);
-}
-
-#pragma mark- ProductServiceDelegate
-- (void)productService:(id<ProductService>)aProductService
-              products:(NSArray *)aProducts
-           searchModel:(SearchBackendModel *)aSearchModel
-                 error:(NSError *)anError
-{
-    
-    
-    BOOL more;
-    more = aSearchModel.page > 1;
-    
-    if (more) {
-        [self.collectionView.infiniteScrollingView stopAnimating];
-        [self.products addObjectsFromArray:aProducts];
-    } else {
-        [self.collectionView.pullToRefreshView stopAnimating];
-        self.products = [NSMutableArray arrayWithArray:aProducts];
-    }
-    
-    [self.collectionView reloadData];
-    self.collectionView.showsInfiniteScrolling = [aSearchModel hasMore];
 }
 @end

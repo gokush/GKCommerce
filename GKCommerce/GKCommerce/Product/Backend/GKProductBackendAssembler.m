@@ -17,7 +17,7 @@
     product.productID = [[JSON objectForKey:@"id"] integerValue];
     product.name = [JSON objectForKey:@"name"];
     product.productDescription = [JSON objectForKey:@"description"];
-    product.price = [NSDecimalNumber decimalNumberWithString:
+    product.listingPrice = [NSDecimalNumber decimalNumberWithString:
         [JSON objectForKey:@"regularPrice"]];
     
     NSArray *picturesJSON;
@@ -29,6 +29,40 @@
     }
     product.pictures = pictures;
     return product;
+}
+
+- (NSArray *)listProducts:(NSArray *)JSON
+{
+  NSMutableArray *products = [[NSMutableArray alloc]
+                              initWithCapacity:JSON.count];
+  for (NSDictionary *productJSON in JSON) {
+    [products addObject:[self listProduct:productJSON]];
+  }
+  return products;
+}
+
+- (Product *)listProduct:(NSDictionary *)JSON
+{
+  Product *product = [[Product alloc] init];
+  product.name = [JSON objectForKey:@"name"];
+  product.listingPrice = [[NSDecimalNumber alloc]
+                          initWithFloat:[[JSON objectForKey:@"listingPrice"]
+                                         floatValue]];
+  product.regularPrice = [[NSDecimalNumber alloc]
+                          initWithFloat:[[JSON objectForKey:@"regularPrice"]
+                                         floatValue]];
+  product.productDescription = [JSON objectForKey:@"description"];
+  
+  NSArray *picturesJSON;
+  NSMutableArray *pictures;
+  picturesJSON = [JSON objectForKey:@"pictures"];
+  pictures = [[NSMutableArray alloc] initWithCapacity:picturesJSON.count];
+  for (NSString *pictureJSON in picturesJSON) {
+    [pictures addObject:pictureJSON];
+  }
+  product.pictures = pictures;
+  
+  return product;
 }
 
 - (NSArray *)productCategories:(NSArray *)JSON

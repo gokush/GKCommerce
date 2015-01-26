@@ -13,5 +13,5 @@
 - (RACSignal *)productWithID:(NSInteger)productID user:(User *)anUser;
 - (RACSignal *)productCategories;
 //- (void)productDescription:(Product *)product;
-//- (void)productsWithSearchModel:(SearchBackendModel *)searchModel;
+- (RACSignal *)productsWithSearchModel:(SearchBackendModel *)searchModel;
 @end

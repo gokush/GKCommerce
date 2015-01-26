@@ -7,6 +7,8 @@
 //
 
 #import "GKResizer.h"
+#import <wand/magick_wand.h>
+#import "NSString+NSBundle.h"
 
 @implementation GKResizer
 
@@ -14,14 +16,18 @@
 {
     self = [super init];
     if (self) {
-        self.original = url;
+      self.original = url;
     }
     return self;
 }
 
 - (id)initWithString:(NSString *)url
 {
-    self = [self initWithURL:[NSURL URLWithString:url]];
+  if ([url isBundlePath])
+    url = [NSString stringWithFormat:@"file://%@", [url pathForBundle]];
+  self = [self initWithURL:[NSURL URLWithString:url]];
+  if (self) {
+  }
     return self;
 }
 
@@ -158,6 +164,30 @@
         ext = [url pathExtension];
     [resizablePath appendFormat:@".%@", ext];
     return resizablePath;
+}
+
+- (UIImage *)image
+{
+  MagickWand *mw = NewMagickWand();
+  MagickReadImage(mw, [[self.original absoluteString]
+                       cStringUsingEncoding:NSUTF8StringEncoding]);
+  float width, height;
+  width = MagickGetImageWidth(mw);
+  height = MagickGetImageHeight(mw);
+  
+  if (self.width > 0 || self.height > 0) {
+    MagickScaleImage(mw, self.width, self.height);
+    
+    if (self.isCrop) {
+      MagickCropImage(mw, self.width, self.height, 0, 0);
+    }
+  }
+  
+  size_t length;
+  unsigned char *blob = MagickGetImageBlob(mw, &length);
+  NSData *bytes = [[NSData alloc] initWithBytes:blob length:length];
+
+  return [[UIImage alloc] initWithData:bytes];
 }
 
 - (NSURL *)url

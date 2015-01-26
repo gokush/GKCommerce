@@ -37,4 +37,12 @@
     }];
   }];
 }
+
+- (RACSignal *)productsWithSearchModel:(SearchBackendModel *)searchModel {
+  return
+  [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+    return [RACDisposable disposableWithBlock:^{
+    }];
+  }];
+}
 @end

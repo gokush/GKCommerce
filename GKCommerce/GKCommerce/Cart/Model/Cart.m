@@ -102,7 +102,7 @@
 {
     float price = 0.0f;
     for (CartItem *cartItem in self.selected) {
-        price += cartItem.product.price.floatValue * cartItem.quantity;
+        price += cartItem.product.listingPrice.floatValue * cartItem.quantity;
     }
     if (self.price.floatValue != price)
         self.price = [[NSDecimalNumber alloc] initWithFloat:price];

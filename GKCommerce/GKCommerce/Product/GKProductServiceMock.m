@@ -34,6 +34,19 @@
     NSArray *productCategories = (NSArray *)
       [self loadJSON:@"ProductCategories"];
     [subscriber sendNext:[assembler productCategories:productCategories]];
+    [subscriber sendCompleted];
+    return [RACDisposable disposableWithBlock:^{
+    }];
+  }];
+}
+
+- (RACSignal *)productsWithSearchModel:(SearchBackendModel *)searchModel {
+  return
+  [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+    NSArray *products = (NSArray *)[self loadJSON:@"ProductList"];
+    [subscriber sendNext:RACTuplePack(searchModel,
+                                      [assembler listProducts:products])];
+    [subscriber sendCompleted];
     return [RACDisposable disposableWithBlock:^{
     }];
   }];

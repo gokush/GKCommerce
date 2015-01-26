@@ -11,6 +11,7 @@
 #import "MineDefaultViewController.h"
 #import "AddressEditController.h"
 #import "App.h"
+#import "ProductListViewController.h"
 
 @implementation TestUI
 
@@ -58,6 +59,24 @@
         }];
     }];
     
+}
+
+- (void)gotoProductList:(UITabBarController *)tabBarController
+{
+  tabBarController.selectedIndex = 1;
+  UINavigationController *navigation;
+  navigation = (UINavigationController *)
+  tabBarController.selectedViewController;
+  
+  [self delay:1 perform:^{
+    ProductListViewController *viewController;
+    ProductCategory *category = [[ProductCategory alloc] init];
+    category.name = @"iPhone";
+    
+    viewController = [[ProductListViewController alloc]
+                      initWithProductCategory:category user:nil];
+    [navigation pushViewController:viewController animated:YES];
+  }];
 }
 
 - (void)delay:(int64_t)second perform:(void(^)())block

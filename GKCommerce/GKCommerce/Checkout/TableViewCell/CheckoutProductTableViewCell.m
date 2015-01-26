@@ -42,7 +42,7 @@
     
     photoURL = [[NSURL alloc] initWithString:self.item.product.image.small];
     qty = [NSString stringWithFormat:@"x%d", self.item.quantity];
-    price = [NSString stringWithFormat:@"￥%@", self.item.product.price];
+    price = [NSString stringWithFormat:@"￥%@", self.item.product.listingPrice];
     
     [self.productPhotoButton sd_setBackgroundImageWithURL:photoURL
                                                  forState:UIControlStateNormal];

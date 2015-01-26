@@ -13,8 +13,8 @@
 
 @property (nonatomic, assign) NSInteger productID;
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSDecimalNumber *marketPrice;
-@property (nonatomic, strong) NSDecimalNumber *price;
+@property (nonatomic, strong) NSDecimalNumber *regularPrice;
+@property (nonatomic, strong) NSDecimalNumber *listingPrice;
 @property (nonatomic, assign) int stocks;
 @property (nonatomic, strong) ProductImageURL *image;
 @property (nonatomic, strong) NSArray *pictures;
