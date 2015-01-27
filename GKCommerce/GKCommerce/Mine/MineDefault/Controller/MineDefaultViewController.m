@@ -94,7 +94,7 @@ heightForHeaderInSection:(NSInteger)section
             break;
     }
     
-    return 20.0f;
+    return 10.0f;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

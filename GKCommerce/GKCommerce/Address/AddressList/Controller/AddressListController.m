@@ -8,6 +8,7 @@
 
 #import "AddressListController.h"
 #import "AddressListTableViewCell.h"
+#import "AddressEditController.h"
 
 @interface AddressListController ()
 
@@ -43,10 +44,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  
+  UIBarButtonItem *rightButton;
+  rightButton = [[UIBarButtonItem alloc]
+                 initWithTitle:@"新增" style:UIBarButtonItemStylePlain
+                 target:self action:@selector(didTapAddAddress:)];
+  self.navigationItem.rightBarButtonItem = rightButton;
     
     for (NSString *identifier in @[@"AddressListTableViewCell"])
         [self.tableView registerNib:[UINib nibWithNibName:identifier bundle:nil]
              forCellReuseIdentifier:identifier];
+}
+
+- (void)didTapAddAddress:(id)sender
+{
+  AddressEditController *controller;
+  controller = [[AddressEditController alloc] initWithAddress:nil
+                                                         user:self.user];
+  [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
