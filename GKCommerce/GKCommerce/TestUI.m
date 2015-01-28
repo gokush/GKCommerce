@@ -10,6 +10,7 @@
 #import "CartViewController.h"
 #import "MineDefaultViewController.h"
 #import "AddressEditController.h"
+#import "AddressListController.h"
 #import "App.h"
 #import "ProductListViewController.h"
 
@@ -59,6 +60,22 @@
         }];
     }];
     
+}
+
+- (void)gotoAddressList:(UITabBarController *)tabBarController
+{
+  tabBarController.selectedIndex = 3;
+  MineDefaultViewController *viewController;
+  UINavigationController *navigation;
+  navigation = (UINavigationController *)
+  tabBarController.selectedViewController;
+  viewController = navigation.viewControllers.firstObject;
+  
+  [self delay:1 perform:^{
+    AddressListController *listController;
+    listController = [AddressListController addressListControllerWithMock];
+    [navigation pushViewController:listController animated:YES];
+  }];
 }
 
 - (void)gotoProductList:(UITabBarController *)tabBarController

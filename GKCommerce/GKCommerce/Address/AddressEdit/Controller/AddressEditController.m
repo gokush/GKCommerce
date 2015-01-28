@@ -102,43 +102,51 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    AddressEditInputTableViewCell *cell;
-    cell = [tableView
-            dequeueReusableCellWithIdentifier:@"AddressEditInputTableViewCell"
-            forIndexPath:indexPath];
-    cell.inputTextField.tag = indexPath.row;
-    cell.inputTextField.delegate = self;
-    [cell.inputTextField addTarget:self action:@selector(textFieldDidChange:)
-                  forControlEvents:UIControlEventEditingChanged];
-    switch (indexPath.row) {
-        case AddressNameCell: {
-            cell.inputTextField.placeholder = @"收货人姓名";
-            break;
-        }
-        case AddressCellPhoneCell: {
-            cell.inputTextField.placeholder = @"手机号码";
-            break;
-        }
-        case AddressPostcodeCell: {
-            cell.inputTextField.placeholder = @"邮政编码";
-            break;
-        }
-        case AddressRegionCell: {
-            cell.inputTextField.placeholder = @"省、市、区";
-            cell.inputTextField.enabled = NO;
-            cell.address = self.address;
-            [cell bind];
-            break;
-        }
-        case AddressStreetCell: {
-            cell.inputTextField.placeholder = @"详细地址";
-            break;
-        }
-        default:
-            break;
+  AddressEditInputTableViewCell *cell;
+  cell = [tableView
+          dequeueReusableCellWithIdentifier:@"AddressEditInputTableViewCell"
+          forIndexPath:indexPath];
+  cell.inputTextField.tag = indexPath.row;
+  cell.inputTextField.delegate = self;
+  [cell.inputTextField addTarget:self action:@selector(textFieldDidChange:)
+                forControlEvents:UIControlEventEditingChanged];
+  switch (indexPath.row) {
+    case AddressNameCell: {
+      cell.inputTextField.placeholder = @"收货人姓名";
+      if (nil != self.address)
+        cell.textLabel.text = self.address.name;
+      break;
     }
-    
-    return cell;
+    case AddressCellPhoneCell: {
+      cell.inputTextField.placeholder = @"手机号码";
+      if (nil != self.address)
+        cell.textLabel.text = self.address.cellPhone;
+      break;
+    }
+    case AddressPostcodeCell: {
+      cell.inputTextField.placeholder = @"邮政编码";
+      if (nil != self.address)
+        cell.textLabel.text = self.address.postcode;
+      break;
+    }
+    case AddressRegionCell: {
+      cell.inputTextField.placeholder = @"省、市、区";
+      cell.inputTextField.enabled = NO;
+      cell.address = self.address;
+      [cell bind];
+      break;
+    }
+    case AddressStreetCell: {
+      cell.inputTextField.placeholder = @"详细地址";
+      if (nil != self.address)
+        cell.textLabel.text = self.address.address;
+      break;
+    }
+    default:
+      break;
+  }
+  
+  return cell;
 }
 
 - (void)tableView:(UITableView *)tableView

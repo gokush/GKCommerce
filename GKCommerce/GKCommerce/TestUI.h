@@ -12,5 +12,6 @@
 
 - (void)gotoCheckout:(UITabBarController *)tabBarController;
 - (void)gotoAddAddress:(UITabBarController *)tabBarController;
+- (void)gotoAddressList:(UITabBarController *)tabBarController;
 - (void)gotoProductList:(UITabBarController *)tabBarController;
 @end

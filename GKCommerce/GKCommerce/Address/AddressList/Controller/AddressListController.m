@@ -95,6 +95,17 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  Address *address;
+  AddressEditController *controller;
+  address = self.addresses[indexPath.row];
+  controller = [[AddressEditController alloc] initWithAddress:address
+                                                         user:self.user];
+  [self.navigationController pushViewController:controller animated:YES];
+}
+
 + (instancetype)addressListControllerWithMock
 {
     Address *address = [[Address alloc] init];
