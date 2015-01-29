@@ -23,12 +23,16 @@ typedef enum {
 @property (assign, nonatomic) float quality;
 @property (assign, nonatomic) float scaleWidth;
 @property (assign, nonatomic) float scaleHeight;
+@property (assign, nonatomic) float scaleWidthPercent;
+@property (assign, nonatomic) float scaleHeightPercent;
 @property (assign, nonatomic) float x;
 @property (assign, nonatomic) float y;
 @property (assign, nonatomic) BOOL isGray;
+@property (assign, nonatomic) BOOL isScale;
 @property (assign, nonatomic) BOOL isCrop;
 @property (assign, nonatomic) BOOL isCropAndFill;
 @property (strong, nonatomic) NSString *extension;
+@property (strong, nonatomic) NSString *key;
 - (id)initWithURL:(NSURL *)url;
 - (id)initWithString:(NSString *)url;
 - (GKResizer *)width:(float)width;
@@ -41,12 +45,16 @@ typedef enum {
 - (GKResizer *)xbm;
 - (GKResizer *)gif;
 - (GKResizer *)scale:(float)percent;
+- (GKResizer *)scaleWithWidth:(float)width height:(float)height;
+- (GKResizer *)scaleWithWidthPercent:(float)widthPercent
+                       heightPercent:(float)heightPercent;
 - (GKResizer *)crop:(float)widthAndHeight;
 - (GKResizer *)crop:(float)width height:(float)aHeight;
 - (GKResizer *)x:(float)x;
 - (GKResizer *)y:(float)y;
 - (GKResizer *)cropAndFill;
 - (UIImage *)image;
+- (RACSignal *)signal;
 - (NSURL *)url;
 + (instancetype)resizerWithURL:(NSURL *)url;
 + (instancetype)resizerWithString:(NSString *)url;

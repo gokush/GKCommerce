@@ -24,7 +24,18 @@
 
 - (RACSignal *)productWithID:(NSInteger)productID user:(User *)anUser
 {
-  return nil;
+  return
+  [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+    Product *product;
+    NSDictionary *productJSON;
+    productJSON = [self loadJSON:[NSString stringWithFormat:@"Product%d",
+                                  (int)productID]];
+    product = [assembler product:productJSON];
+    
+    [subscriber sendNext:product];
+    [subscriber sendCompleted];
+    return [RACDisposable disposableWithBlock:^{}];
+  }];
 }
 
 - (RACSignal *)productCategories

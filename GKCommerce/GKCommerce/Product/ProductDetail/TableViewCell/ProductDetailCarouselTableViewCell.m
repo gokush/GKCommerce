@@ -40,9 +40,13 @@
                                 initWithFrame:carouselRectangle];
     NSString *picture;
     picture = [self.product.pictures objectAtIndex:index];
-    cell.imageURL = [[[[picture GKRCropAndFill] width:320.0f] height:320.0f]
-                     url];
-    return cell;
+  
+  RACSignal *signal;
+  signal = [[[[[picture GKRCropAndFill] width:640.0f] height:640.0f] signal]
+    deliverOn:[RACScheduler mainThreadScheduler]];
+  
+  RAC(cell.imageView, image) = signal;
+  return cell;
 }
 
 - (NSInteger)numberOfCellsInCarouselView:(GKCarouselView *)carouselView

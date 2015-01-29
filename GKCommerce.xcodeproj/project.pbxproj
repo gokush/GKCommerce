@@ -66,6 +66,7 @@
 		E549C1971A1B8FDA0014656D /* UserAuthenticationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E549C1961A1B8FDA0014656D /* UserAuthenticationView.xib */; };
 		E557909D1A2F2070009A41A1 /* CartStoreNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E557909B1A2F2070009A41A1 /* CartStoreNameTableViewCell.m */; };
 		E557909E1A2F2070009A41A1 /* CartStoreNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E557909C1A2F2070009A41A1 /* CartStoreNameTableViewCell.xib */; };
+		E55ED3F71A7A136900DC361D /* Product1.json in Resources */ = {isa = PBXBuildFile; fileRef = E55ED3F61A7A136900DC361D /* Product1.json */; };
 		E5680BAE1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5680BAC1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.m */; };
 		E5680BAF1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5680BAD1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.xib */; };
 		E5748F3C1A20E5F700306ADC /* GKLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5748F3B1A20E5F700306ADC /* GKLabel.m */; };
@@ -441,6 +442,7 @@
 		E557909A1A2F2070009A41A1 /* CartStoreNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartStoreNameTableViewCell.h; sourceTree = "<group>"; };
 		E557909B1A2F2070009A41A1 /* CartStoreNameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartStoreNameTableViewCell.m; sourceTree = "<group>"; };
 		E557909C1A2F2070009A41A1 /* CartStoreNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartStoreNameTableViewCell.xib; sourceTree = "<group>"; };
+		E55ED3F61A7A136900DC361D /* Product1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Product1.json; sourceTree = "<group>"; };
 		E566A0F91A1650FD008CF286 /* UIBindableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBindableTableViewCell.h; sourceTree = "<group>"; };
 		E5680BAB1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckoutStoreNameTableViewCell.h; sourceTree = "<group>"; };
 		E5680BAC1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckoutStoreNameTableViewCell.m; sourceTree = "<group>"; };
@@ -1867,6 +1869,7 @@
 		E5D9D55A1A1E50FE00875264 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				E55ED3F61A7A136900DC361D /* Product1.json */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -2332,6 +2335,7 @@
 				E59180EF1A20BA270021F855 /* CartView.xib in Resources */,
 				E515B13A1A76437900ED7458 /* ProductListCatalog.xcassets in Resources */,
 				E53EC11B1A2D97C8005457F5 /* AlipaySDK.bundle in Resources */,
+				E55ED3F71A7A136900DC361D /* Product1.json in Resources */,
 				9035D0251A0CB3E100C6E53C /* LaunchScreen.xib in Resources */,
 				E515B1381A76435800ED7458 /* ProductList.json in Resources */,
 				E5D381871A2D3D2000A7CB2E /* CheckoutInvoiceTableViewCell.xib in Resources */,

@@ -8,6 +8,8 @@
 
 #import "GKResizer.h"
 #import <wand/magick_wand.h>
+#import <SDWebImage/SDImageCache.h>
+#import <SDWebImage/SDWebImageManager.h>
 #import "NSString+NSBundle.h"
 
 @implementation GKResizer
@@ -29,6 +31,57 @@
   if (self) {
   }
     return self;
+}
+
+- (NSString *)key
+{
+  NSMutableArray *combination = [[NSMutableArray alloc] init];
+  if (0 < self.width)
+    [combination
+     addObject:[NSString stringWithFormat:@"width_%.2f", self.width]];
+  if (0 < self.height)
+    [combination
+     addObject:[NSString stringWithFormat:@"height_%.2f", self.height]];
+  if (0 < self.x)
+    [combination
+     addObject:[NSString stringWithFormat:@"x_%.2f", self.x]];
+  if (0 < self.y)
+    [combination
+     addObject:[NSString stringWithFormat:@"y_%.2f", self.y]];
+  if (0 < self.angle)
+    [combination
+     addObject:[NSString stringWithFormat:@"angle_%.6f", self.angle]];
+  if (0 < self.quality)
+    [combination
+     addObject:[NSString stringWithFormat:@"quality_%.2f", self.quality]];
+  if (0 < self.x)
+    [combination
+     addObject:[NSString stringWithFormat:@"x_%.2f", self.x]];
+  if (self.isGray)
+    [combination addObject:@"gray"];
+  if (self.isCrop)
+    [combination addObject:@"crop"];
+  if (self.isScale)
+    [combination addObject:@"scale"];
+  if (0 < self.scaleWidth)
+    [combination addObject:[NSString
+                            stringWithFormat:@"scale_width_%.2f",
+                            self.scaleWidth]];
+  if (0 < self.scaleHeight)
+    [combination addObject:[NSString
+                            stringWithFormat:@"scale_height_%.2f",
+                            self.scaleHeight]];
+  
+  if (0 < self.scaleWidthPercent)
+    [combination addObject:[NSString
+                            stringWithFormat:@"scale_width_percent_%.2f",
+                            self.scaleWidthPercent]];
+  if (0 < self.scaleHeightPercent)
+    [combination addObject:[NSString
+                            stringWithFormat:@"scale_height_percent_%.2f",
+                            self.scaleHeightPercent]];
+  
+  return [combination componentsJoinedByString:@"_"];
 }
 
 - (GKResizer *)width:(float)width
@@ -87,8 +140,23 @@
 
 - (GKResizer *)scale:(float)percent
 {
-    self.scaleWidth = self.scaleHeight = percent;
+    self.scaleWidthPercent = self.scaleHeightPercent = percent;
     return self;
+}
+
+- (GKResizer *)scaleWithWidth:(float)width height:(float)height
+{
+  self.scaleWidth = width;
+  self.scaleHeight = height;
+  return self;
+}
+
+- (GKResizer *)scaleWithWidthPercent:(float)widthPercent
+                       heightPercent:(float)heightPercent
+{
+  self.scaleWidthPercent = widthPercent;
+  self.scaleHeightPercent = heightPercent;
+  return self;
 }
 
 - (GKResizer *)crop:(float)widthAndHeight
@@ -175,8 +243,11 @@
   width = MagickGetImageWidth(mw);
   height = MagickGetImageHeight(mw);
   
+  BOOL bigThanOriginal = NO;
+  bigThanOriginal = self.width > width || self.height > height;
   if (self.width > 0 || self.height > 0) {
-    MagickScaleImage(mw, self.width, self.height);
+    if (bigThanOriginal)
+      MagickScaleImage(mw, self.width, self.height);
     
     if (self.isCrop) {
       MagickCropImage(mw, self.width, self.height, 0, 0);
@@ -188,6 +259,57 @@
   NSData *bytes = [[NSData alloc] initWithBytes:blob length:length];
 
   return [[UIImage alloc] initWithData:bytes];
+}
+
+- (RACSignal *)signal
+{
+  @weakify(self);
+  return
+  // TODO: 完成这个原型
+  // 处理图片保存到SDWebCache
+  // 图片Resize的模式有三种：本地文件、远程文件下载到本地Resizer、远程支持Resize
+  [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+    [[RACScheduler schedulerWithPriority:RACSchedulerPriorityHigh] schedule:^{
+      @strongify(self);
+      UIImage *local;
+      NSString *key;
+      key = [self key];
+      local = [[SDImageCache sharedImageCache]
+               imageFromDiskCacheForKey:key];
+      DDLogVerbose(@"从SDWebCache加载文件 %@", key);
+      local = nil;
+      if (nil == local) {
+        NSString *scheme = self.original.scheme;
+        // From local
+        if ([@"file" isEqualToString:scheme]) {
+          local = [self image];
+          [[SDImageCache sharedImageCache] storeImage:local
+                                               forKey:[self key] toDisk:YES];
+          [subscriber sendNext:local];
+          [subscriber sendCompleted];
+          DDLogVerbose(@"加载原始图片处理并保存到SDWebCache");
+        } else {
+          // From remote
+          [[SDWebImageManager sharedManager]
+           downloadImageWithURL:self.original options:0
+           progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+            
+           }
+           completed:^(UIImage *image, NSError *error,
+                       SDImageCacheType cacheType, BOOL finished,
+                       NSURL *imageURL) {
+             [[SDImageCache sharedImageCache]
+              storeImage:image forKey:key toDisk:YES];
+             [subscriber sendNext:image];
+             [subscriber sendCompleted];
+            DDLogVerbose(@"加载原始图片处理并保存到SDWebCache");
+          }];
+        }
+        
+      }
+    }];
+    return [RACDisposable disposableWithBlock:^{}];
+  }];
 }
 
 - (NSURL *)url
