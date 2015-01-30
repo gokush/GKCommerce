@@ -48,6 +48,7 @@
 - (Product *)listProduct:(NSDictionary *)JSON
 {
   Product *product = [[Product alloc] init];
+  product.productID = [[JSON objectForKey:@"id"] integerValue];
   product.name = [JSON objectForKey:@"name"];
   product.listingPrice = [[NSDecimalNumber alloc]
                           initWithFloat:[[JSON objectForKey:@"listingPrice"]

@@ -23,6 +23,8 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *headerPhotoImageView;
 @property (strong, nonatomic) IBOutlet UIView *buttonContainer;
+@property (strong, nonatomic) IBOutlet UIView *avatarContainer;
+@property (strong, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (strong, nonatomic) id<MineHeaderPhotoTableViewCellDelegate> delegate;
 - (IBAction)didTapSignup:(id)sender;
 - (IBAction)didTapAuthenticate:(id)sender;

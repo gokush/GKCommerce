@@ -15,7 +15,7 @@ typedef enum {
 
 // TODO: 新增设置Gravity
 
-@interface GKResizer : NSObject
+@interface GKResizer : NSObject <NSCoding>
 @property (strong, nonatomic) NSURL *original;
 @property (assign, nonatomic) float width;
 @property (assign, nonatomic) float height;

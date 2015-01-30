@@ -14,6 +14,15 @@
 
 @implementation GKResizer
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+  self = [super init];
+  if (self) {
+    self.original = [aDecoder decodeObjectForKey:@"original"];
+  }
+  return self;
+}
+
 - (id)initWithURL:(NSURL *)url
 {
     self = [super init];
@@ -315,6 +324,11 @@
 - (NSURL *)url
 {
     return [NSURL URLWithString:[self description]];
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+  [aCoder encodeObject:self.original forKey:@"original"];
 }
 
 + (instancetype)resizerWithURL:(NSURL *)url

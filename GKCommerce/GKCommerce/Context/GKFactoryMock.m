@@ -9,8 +9,8 @@
 #import "GKFactoryMock.h"
 #import "ECCartBackend.h"
 #import "ECCartService.h"
-#import "GKUserBackendImpl.h"
-#import "GKUserServiceImpl.h"
+#import "GKUserBackendMock.h"
+#import "GKUserServiceMock.h"
 #import "ECProductBackend.h"
 #import "ECProductService.h"
 #import "GKFeatureBackend.h"
@@ -32,12 +32,12 @@
 
 - (id<GKUserBackend>)userBackend
 {
-  return [[GKUserBackendImpl alloc] init];
+  return [[GKUserBackendMock alloc] init];
 }
 
 - (id<GKUserService>)userService
 {
-  return [[GKUserServiceImpl alloc] init];
+  return [[GKUserServiceMock alloc] init];
 }
 
 - (id<GKProductBackend>)productBackend

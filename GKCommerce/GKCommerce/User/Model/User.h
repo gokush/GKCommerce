@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Cart.h"
 #import "GKUserAccessToken.h"
+#import "GKResizer.h"
 
 @class Cart;
 @interface User : NSObject <NSCoding>
@@ -17,6 +18,7 @@
 @property (strong, nonatomic) NSString *sessionID;
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *email;
+@property (strong, nonatomic) GKResizer *avatar;
 @property (strong, nonatomic) Cart *cart;
 @property (strong, nonatomic) GKUserAccessToken *accessToken;
 

@@ -14,11 +14,13 @@
 {
     self = [self init];
     if (self) {
-        self.userID = [[aDecoder decodeObjectForKey:@"userID"] integerValue];
-        self.sessionID = [aDecoder decodeObjectForKey:@"sessionID"];
-        self.username = [aDecoder decodeObjectForKey:@"username"];
-        self.email = [aDecoder decodeObjectForKey:@"email"];
-        self.cart = [[Cart alloc] initWithUser:self];
+      self.userID = [[aDecoder decodeObjectForKey:@"userID"] integerValue];
+      self.sessionID = [aDecoder decodeObjectForKey:@"sessionID"];
+      self.username = [aDecoder decodeObjectForKey:@"username"];
+      self.email = [aDecoder decodeObjectForKey:@"email"];
+      self.accessToken = [aDecoder decodeObjectForKey:@"accessToken"];
+      self.avatar = [aDecoder decodeObjectForKey:@"avatar"];
+      self.cart = [[Cart alloc] initWithUser:self];
     }
     
     return self;
@@ -26,11 +28,13 @@
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:[NSNumber numberWithInteger:self.userID]
-                  forKey:@"userID"];
-    [aCoder encodeObject:self.sessionID forKey:@"sessionID"];
-    [aCoder encodeObject:self.username forKey:@"username"];
-    [aCoder encodeObject:self.email forKey:@"email"];
+  [aCoder encodeObject:[NSNumber numberWithInteger:self.userID]
+                forKey:@"userID"];
+  [aCoder encodeObject:self.sessionID forKey:@"sessionID"];
+  [aCoder encodeObject:self.username forKey:@"username"];
+  [aCoder encodeObject:self.email forKey:@"email"];
+  [aCoder encodeObject:self.avatar forKey:@"avatar"];
+  [aCoder encodeObject:self.accessToken forKey:@"accessToken"];
 }
 
 - (BOOL)authorized
