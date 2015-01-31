@@ -37,7 +37,6 @@
         self.user = user;
         self.service = [[Dependency shared] productService];
         self.cartService = [[Dependency shared] cartService];
-        self.cartService.delegate = self;
         [self setup];
     }
     return self;
@@ -239,7 +238,9 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     CartItem *item = [[CartItem alloc] initWithList:list];
     item.product = self.product;
     item.quantity = 1;
-    [self.cartService addItem:item];
+    [[self.cartService addItem:item] subscribeNext:^(CartItem *item) {
+      [self.view showHUD:@"成功加入购物车" afterDelay:1.0f];
+    }];
 }
 
 - (IBAction)didTapBuy:(id)sender

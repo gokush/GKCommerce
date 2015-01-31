@@ -25,7 +25,7 @@ CartServiceDelegate>
 @property (nonatomic, strong) Product *product;
 @property (nonatomic, strong) User *user;
 @property (nonatomic, retain) id<GKProductService> service;
-@property (strong, nonatomic) id<CartService> cartService;
+@property (strong, nonatomic) id<GKCartService> cartService;
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) IBOutlet UIButton *buy;

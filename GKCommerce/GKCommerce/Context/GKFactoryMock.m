@@ -7,8 +7,8 @@
 //
 
 #import "GKFactoryMock.h"
-#import "ECCartBackend.h"
-#import "ECCartService.h"
+#import "GKCartBackendImpl.h"
+#import "GKCartServiceMock.h"
 #import "GKUserBackendMock.h"
 #import "GKUserServiceMock.h"
 #import "ECProductBackend.h"
@@ -20,14 +20,14 @@
 
 @implementation GKFactoryMock
 
-- (id<CartBackend>)cartBackend
+- (id<GKCartBackend>)cartBackend
 {
-  return [[ECCartBackend alloc] init];
+  return [[GKCartBackendImpl alloc] init];
 }
 
-- (id<CartService>)cartService
+- (id<GKCartService>)cartService
 {
-  return [[ECCartService alloc] init];
+  return [[GKCartServiceMock alloc] init];
 }
 
 - (id<GKUserBackend>)userBackend

@@ -11,8 +11,8 @@
 
 @interface GKFactoryImpl : NSObject <GKFactory>
 
-- (id<CartBackend>)cartBackend;
-- (id<CartService>)cartService;
+- (id<GKCartBackend>)cartBackend;
+- (id<GKCartService>)cartService;
 - (id<GKProductBackend>)productBackend;
 - (id<GKProductService>)productService;
 - (id<GKUserBackend>)userBackend;

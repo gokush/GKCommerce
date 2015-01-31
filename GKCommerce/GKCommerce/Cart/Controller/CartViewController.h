@@ -21,7 +21,7 @@
 CartItemTableViewCellDelegate, GKToggleButtonDelegate,
 CartStoreNameTableViewCellDelegate>
 
-@property (nonatomic, strong) id<CartService> service;
+@property (nonatomic, strong) id<GKCartService> service;
 @property (nonatomic, weak) Cart *cart;
 @property (nonatomic, weak) User *user;
 @property (nonatomic, strong) IBOutlet UITableView *tableView;

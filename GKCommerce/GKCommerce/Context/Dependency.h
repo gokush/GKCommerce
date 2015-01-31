@@ -12,8 +12,8 @@
 @interface Dependency : NSObject <GKFactory>
 
 @property (strong, nonatomic) id<GKFactory> factory;
-- (id<CartBackend>)cartBackend;
-- (id<CartService>)cartService;
+- (id<GKCartBackend>)cartBackend;
+- (id<GKCartService>)cartService;
 - (id<GKProductBackend>)productBackend;
 - (id<GKProductService>)productService;
 - (id<GKUserBackend>)userBackend;

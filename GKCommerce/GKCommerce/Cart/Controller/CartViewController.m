@@ -35,7 +35,6 @@ typedef enum {
 {
     skipUpdateSelect = NO;
     self.service = [[Dependency shared] cartService];
-    self.service.delegate = self;
     
     App *app = [App shared];
     @weakify(self)

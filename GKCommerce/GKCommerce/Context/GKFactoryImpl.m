@@ -7,8 +7,8 @@
 //
 
 #import "GKFactoryImpl.h"
-#import "ECCartBackend.h"
-#import "ECCartService.h"
+#import "GKCartBackendImpl.h"
+#import "GKCartServiceImpl.h"
 #import "GKUserBackendImpl.h"
 #import "GKUserServiceImpl.h"
 #import "ECProductBackend.h"
@@ -19,14 +19,14 @@
 #import "GKProductServiceImpl.h"
 
 @implementation GKFactoryImpl
-- (id<CartBackend>)cartBackend
+- (id<GKCartBackend>)cartBackend
 {
-    return [[ECCartBackend alloc] init];
+    return [[GKCartBackendImpl alloc] init];
 }
 
-- (id<CartService>)cartService
+- (id<GKCartService>)cartService
 {
-    return [[ECCartService alloc] init];
+    return [[GKCartServiceImpl alloc] init];
 }
 
 - (id<GKUserBackend>)userBackend
