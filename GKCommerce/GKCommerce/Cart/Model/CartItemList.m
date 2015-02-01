@@ -59,6 +59,10 @@
                       initWithFloat:[self wantTotalPrice]];
     }];
     item.list = self;
+  
+  Cart *cart = item.list.cart;
+  [cart willChangeValueForKey:@"itemsOfStore"];
+  [cart didChangeValueForKey:@"itemsOfStore"];
 }
 
 - (void)addItems:(NSArray *)items

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Store.h"
 #import "ProductImageURL.h"
 
 @interface Product : NSObject <NSCoding>
@@ -22,4 +23,5 @@
 @property (nonatomic, assign) BOOL favored;
 @property (nonatomic, strong) NSArray *specifications;
 @property (nonatomic, assign) BOOL onSale;
+@property (nonatomic, strong) Store *store;
 @end

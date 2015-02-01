@@ -228,19 +228,23 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (IBAction)didTapAddProductToCart:(id)sender
 {
-    if (![[[App shared] currentUser] authorized]) {
-        [self.view showHUD:@"请先登录" afterDelay:3];
-        return;
-    }
-    
-    CartItemList *list = [[CartItemList alloc] init];
-    list.cart = self.user.cart;
-    CartItem *item = [[CartItem alloc] initWithList:list];
-    item.product = self.product;
-    item.quantity = 1;
-    [[self.cartService addItem:item] subscribeNext:^(CartItem *item) {
-      [self.view showHUD:@"成功加入购物车" afterDelay:1.0f];
-    }];
+  if (![[[App shared] currentUser] authorized]) {
+    [self.view showHUD:@"请先登录" afterDelay:3];
+    return;
+  }
+  
+  CartItemList *list = [[CartItemList alloc] init];
+  list.cart = self.user.cart;
+  CartItem *item = [[CartItem alloc] initWithList:list];
+  item.product = self.product;
+  item.quantity = 1;
+  
+  Cart *cart = [[[App shared] currentUser] cart];
+  
+  [[self.cartService addItemWithProduct:self.product cart:cart]
+   subscribeNext:^(CartItem *item) {
+     [self.view showHUD:@"成功加入购物车" afterDelay:1.0f];
+   }];
 }
 
 - (IBAction)didTapBuy:(id)sender

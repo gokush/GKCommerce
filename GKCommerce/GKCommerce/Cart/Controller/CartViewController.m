@@ -40,7 +40,7 @@ typedef enum {
     @weakify(self)
     [[RACObserve(app.currentUser, cart)
      filter:^BOOL(Cart* cart) {
-         return !cart.empty;
+         return nil != cart;
      }]
      subscribeNext:^(Cart *cart) {
          @strongify(self);

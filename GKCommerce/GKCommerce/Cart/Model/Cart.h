@@ -30,6 +30,7 @@
 - (void)calculatePrice;
 - (void)addList:(CartItemList *)list;
 - (void)removeList:(CartItemList *)list;
+- (CartItemList *)cartItemListWithStore:(Store *)store;
 - (BOOL)isAllSelected;
 - (void)selectAllItems:(BOOL)select;
 - (BOOL)empty;

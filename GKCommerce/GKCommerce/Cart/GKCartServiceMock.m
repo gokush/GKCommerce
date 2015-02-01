@@ -29,6 +29,23 @@
   }];
 }
 
+- (RACSignal *)addItemWithProduct:(Product *)product cart:(Cart *)aCart
+{
+  return
+  [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+    CartItemList *list = [aCart cartItemListWithStore:product.store];
+    list.cart = aCart;
+    CartItem *item = [[CartItem alloc] initWithList:list];
+    item.product = product;
+    item.quantity = 1;
+    [list addItem:item];
+    
+    [subscriber sendNext:item];
+    [subscriber sendCompleted];
+    return [RACDisposable disposableWithBlock:^{}];
+  }];
+}
+
 - (RACSignal *)updateItem:(CartItem *)item oldQuantity:(NSInteger)anOldQuantity
 {
   return

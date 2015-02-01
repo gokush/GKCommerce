@@ -12,6 +12,7 @@
 
 - (RACSignal *)fetchCartWithUser:(User *)user;
 - (RACSignal *)addItem:(CartItem *)item;
+- (RACSignal *)addItemWithProduct:(Product *)product cart:(Cart *)aCart;
 - (RACSignal *)updateItem:(CartItem *)item oldQuantity:(NSInteger)anOldQuantity;
 - (RACSignal *)removeItem:(CartItem *)item;
 - (RACSignal *)removeItems:(NSArray *)items;

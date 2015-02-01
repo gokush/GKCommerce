@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "User.h"
-#import "Product.h"
 #import "ShippingMethod.h"
 
+@class Product;
 @interface Store : NSObject
 
+@property (assign, nonatomic) NSInteger storeID;
 @property (strong, nonatomic) NSMutableArray *products;
 @property (strong, nonatomic) NSMutableArray *shippingMethods;
 @property (strong, nonatomic) NSMutableArray *payments;

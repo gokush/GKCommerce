@@ -73,6 +73,20 @@
     [self.itemsOfStore removeObject:list];
 }
 
+- (CartItemList *)cartItemListWithStore:(Store *)store
+{
+  CartItemList *found;
+  for (CartItemList *list in self.itemsOfStore) {
+    if (store.storeID == list.store.storeID)
+      found = list;
+  }
+  if (nil == found) {
+    found = [[CartItemList alloc] init];
+    [self addList:found];
+  }
+  return found;
+}
+
 - (CartItem *)itemWithProductID:(NSInteger)productID
 {
     __block CartItem *found = nil;
