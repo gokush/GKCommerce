@@ -26,6 +26,17 @@
   }];
 }
 
+- (RACSignal *)addItemWithProduct:(Product *)product cart:(Cart *)aCart
+{
+  CartItemList *list = [aCart cartItemListWithStore:product.store];
+  list.cart = aCart;
+  CartItem *item = [[CartItem alloc] initWithList:list];
+  item.product = product;
+  item.quantity = 1;
+  
+  return [self addItem:item];
+}
+
 - (RACSignal *)updateItem:(CartItem *)item oldQuantity:(NSInteger)anOldQuantity
 {
   return

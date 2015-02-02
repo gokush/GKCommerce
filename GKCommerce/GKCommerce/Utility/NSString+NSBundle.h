@@ -13,4 +13,5 @@
 - (BOOL)isBundlePath;
 - (NSURL *)urlForBundle;
 - (NSString *)pathForBundle;
+- (NSString *)md5;
 @end

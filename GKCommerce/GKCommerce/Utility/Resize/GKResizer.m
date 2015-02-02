@@ -45,6 +45,7 @@
 - (NSString *)key
 {
   NSMutableArray *combination = [[NSMutableArray alloc] init];
+  [combination addObject:[[self.original description] md5]];
   if (0 < self.width)
     [combination
      addObject:[NSString stringWithFormat:@"width_%.2f", self.width]];
@@ -248,6 +249,57 @@
   MagickWand *mw = NewMagickWand();
   MagickReadImage(mw, [[self.original absoluteString]
                        cStringUsingEncoding:NSUTF8StringEncoding]);
+
+  [self processImage:mw];
+  
+  size_t length;
+  unsigned char *blob = MagickGetImageBlob(mw, &length);
+  NSData *bytes = [[NSData alloc] initWithBytes:blob length:length];
+
+  return [[UIImage alloc] initWithData:bytes];
+}
+
+- (UIImage *)imageWithPath:(NSString *)path
+{
+  MagickWand *mw = NewMagickWand();
+  MagickReadImage(mw, [path cStringUsingEncoding:NSUTF8StringEncoding]);
+  
+  [self processImage:mw];
+  
+  size_t length;
+  unsigned char *blob = MagickGetImageBlob(mw, &length);
+  NSData *bytes = [[NSData alloc] initWithBytes:blob length:length];
+  
+  return [[UIImage alloc] initWithData:bytes];
+}
+
+- (UIImage *)imageWithImageRef:(CGImageRef)anImageRef
+{
+//  CFDataRef dataRef;
+//  dataRef = 
+//   CGDataProviderCopyData(CGImageGetDataProvider(anImageRef));
+//  size_t length = CFDataGetLength(dataRef);
+  
+  CGDataProviderRef provider = CGImageGetDataProvider(anImageRef);
+  NSData* data = (id)CFBridgingRelease(CGDataProviderCopyData(provider));
+  
+//  NSData *d1 = [NSData dataWithBytes:CFDataGetBytePtr((dataRef)) length:length];
+//  UIImage *i1 = [[UIImage alloc] initWithData:d1];
+  
+  size_t length;
+  MagickWand *mw = NewMagickWand();
+  MagickReadImageBlob(mw, [data bytes], [data length]);
+  [self processImage:mw];
+  unsigned char *blob = MagickGetImageBlob(mw, &length);
+  NSData *bytes = [[NSData alloc] initWithBytes:blob length:length];
+  
+//  CFRelease(dataRef);
+  
+  return [[UIImage alloc] initWithData:bytes];
+}
+
+- (void)processImage:(MagickWand *)mw
+{
   float width, height;
   width = MagickGetImageWidth(mw);
   height = MagickGetImageHeight(mw);
@@ -263,15 +315,11 @@
     }
   }
   
-  size_t length;
-  unsigned char *blob = MagickGetImageBlob(mw, &length);
-  NSData *bytes = [[NSData alloc] initWithBytes:blob length:length];
-
-  return [[UIImage alloc] initWithData:bytes];
 }
 
 - (RACSignal *)signal
 {
+  DDLogVerbose(@"Create signal with %@", self.original);
   @weakify(self);
   return
   // TODO: 完成这个原型
@@ -280,42 +328,46 @@
   [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
     [[RACScheduler schedulerWithPriority:RACSchedulerPriorityHigh] schedule:^{
       @strongify(self);
-      UIImage *local;
-      NSString *key;
-      key = [self key];
-      local = [[SDImageCache sharedImageCache]
-               imageFromDiskCacheForKey:key];
-      DDLogVerbose(@"从SDWebCache加载文件 %@", key);
+      SDImageCache *cache = [SDImageCache sharedImageCache];
+      __block UIImage *local;
+      BOOL exists, isOnRemote;
+      NSString *cacheKey, *scheme;
+      cacheKey = [self key];
+      scheme = self.original.scheme;
+      local = [cache imageFromDiskCacheForKey:cacheKey];
       local = nil;
-      if (nil == local) {
-        NSString *scheme = self.original.scheme;
-        // From local
-        if ([@"file" isEqualToString:scheme]) {
-          local = [self image];
-          [[SDImageCache sharedImageCache] storeImage:local
-                                               forKey:[self key] toDisk:YES];
-          [subscriber sendNext:local];
-          [subscriber sendCompleted];
-          DDLogVerbose(@"加载原始图片处理并保存到SDWebCache");
-        } else {
-          // From remote
-          [[SDWebImageManager sharedManager]
-           downloadImageWithURL:self.original options:0
-           progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-            
-           }
-           completed:^(UIImage *image, NSError *error,
-                       SDImageCacheType cacheType, BOOL finished,
-                       NSURL *imageURL) {
-             [[SDImageCache sharedImageCache]
-              storeImage:image forKey:key toDisk:YES];
-             [subscriber sendNext:image];
-             [subscriber sendCompleted];
-            DDLogVerbose(@"加载原始图片处理并保存到SDWebCache");
-          }];
-        }
-        
+      exists = nil != local;
+      isOnRemote = ![@"file" isEqualToString:scheme];
+      
+      DDLogVerbose(@"从SDWebCache加载文件 %@", cacheKey);
+      if (!isOnRemote && !exists) {
+        local = [self image];
+        [cache storeImage:local forKey:cacheKey toDisk:YES];
+
+        DDLogVerbose(@"加载原始图片处理并保存到SDWebCache");
+      } else if (isOnRemote && !exists) {
+        // From remote
+        [[SDWebImageManager sharedManager]
+         downloadImageWithURL:self.original options:0 progress:nil
+         completed:^(UIImage *image, NSError *error,
+                     SDImageCacheType cacheType, BOOL finished,
+                     NSURL *imageURL) {
+           
+//           UIImage *processed;// = [self imageWithImageRef:image.CGImage];
+//           [cache storeImage:image forKey:[self.original description]];
+//           processed = [self imageWithPath:[cache
+//                                            defaultCachePathForKey:cacheKey]];
+//           [cache storeImage:processed forKey:cacheKey];
+           
+           [subscriber sendNext:image];
+           [subscriber sendCompleted];
+           DDLogVerbose(@"从远程$R加载原始图片处理并保存到SDWebCache");
+           DDLogVerbose(@"%@", self.original);
+         }];
       }
+      
+      [subscriber sendNext:local];
+      [subscriber sendCompleted];
     }];
     return [RACDisposable disposableWithBlock:^{}];
   }];

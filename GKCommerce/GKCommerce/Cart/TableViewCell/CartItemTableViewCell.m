@@ -8,6 +8,7 @@
 
 #import "CartItemTableViewCell.h"
 #import "GKLabel.h"
+#import "NSString+GKResizable.h"
 #import <UIImage+Resize.h>
 #import <SDWebImage/SDImageCache.h>
 #import <SDWebImage/UIImageView+WebCache.h>
@@ -16,36 +17,28 @@
 
 - (void)bind
 {
-    [self.item addObserver:self forKeyPath:@"quantity" options:0 context:nil];
-    [self.item addObserver:self forKeyPath:@"selected" options:0 context:nil];
-    [self.item addObserver:self forKeyPath:@"totalPrice" options:0 context:nil];
-    [self addObserver:self forKeyPath:@"item"
-              options:NSKeyValueObservingOptionInitial context:nil];
 }
 
 - (void)unbind
 {
-    [self.item removeObserver:self forKeyPath:@"quantity"];
-    [self.item removeObserver:self forKeyPath:@"selected"];
-    [self.item removeObserver:self forKeyPath:@"totalPrice"];
-    [self removeObserver:self forKeyPath:@"item"];
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
-                        change:(NSDictionary *)change context:(void *)context
+- (void)updateQuantity
 {
-    if ([@"quantity" isEqualToString:keyPath]) {
-        self.quantity.text = [NSString stringWithFormat:@"%d",
-                              self.item.quantity];
-    }
-    if ([@"selected" isEqual:keyPath]) {
-        if (self.select.on != self.item.selected)
-            self.select.on = self.item.selected;
-    } else if ([@"totalPrice" isEqualToString:keyPath])
-        self.totalLabel.text = [NSString stringWithFormat:@"%.2f",
-                                self.item.totalPrice.floatValue];
-    else if ([@"item" isEqualToString:keyPath])
-        [self render];
+  self.quantity.text = [NSString stringWithFormat:@"%d", self.item.quantity];
+}
+
+- (void)updateSelected
+{
+  if (self.select.on != self.item.selected)
+    self.select.on = self.item.selected;
+}
+
+- (void)updateTotalLabel
+{
+  self.totalLabel.text = [NSString stringWithFormat:@"%.2f",
+                          self.item.totalPrice.floatValue];
+
 }
 
 - (void)render
@@ -53,8 +46,9 @@
     self.name.text = self.item.product.name;
     self.price.text = [NSString stringWithFormat:@"￥%@",
                        self.item.product.listingPrice];
-    self.quantity.text = [NSString stringWithFormat:@"%d",
-                          self.item.quantity];
+  
+  [self updateQuantity];
+  
     self.marketPrice.text = [NSString stringWithFormat:@"￥%@",
                              self.item.product.regularPrice];
     [self.marketPrice setStrikethrough];
@@ -64,50 +58,15 @@
 
     self.totalLabel.text = [NSString stringWithFormat:@"￥%@",
                             self.item.totalPrice];
-    
-    
-    NSString *key = [NSString stringWithFormat:@"cart_product_50x50_%d",
-                     self.item.product.productID];
-    SDImageCache *cache = [[SDImageCache alloc]
-                           initWithNamespace:@"MyNameSpace"];
-    [cache queryDiskCacheForKey:key done:^(UIImage *image,
-                                           SDImageCacheType cacheType) {
-        [self cache:cache photo:image forKey:key];
-    }];
-}
-
-- (void)cache:(SDImageCache *)cache photo:(UIImage *)aPhoto
-       forKey:(NSString *)key
-{
-    if (aPhoto) {
-        [self.photo setImage:aPhoto forState:UIControlStateNormal];
-        return;
-    }
-    NSURL *photoURL;
-    photoURL = [NSURL URLWithString:self.item.product.image.thumbnail];
-    
-    [[SDWebImageDownloader sharedDownloader]
-     
-     downloadImageWithURL:photoURL options:0
-     progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-     }
-     completed:^(UIImage *image, NSData *data, NSError *error,
-                 BOOL finished) {
-
-         [self cache:cache photo:aPhoto forKey:key didDownloadImage:image
-               error:error];
-     }];
-}
-
-- (void)cache:(SDImageCache *)cache photo:(UIImage *)aPhoto
-       forKey:(NSString *)key didDownloadImage:(UIImage *)image
-        error:(NSError *)anError
-{
-    if (image) {
-        image = [image resizedImageToSize:CGSizeMake(50.0f, 50.0f)];
-        [self.photo setImage:image forState:UIControlStateNormal];
-        [cache storeImage:image forKey:key toDisk:YES];
-    }
+  
+  @weakify(self);
+  [[[[[[self.item.product.pictures firstObject]
+   GKRSetWidth:50.0f] height:50.0f] signal]
+    deliverOn:[RACScheduler mainThreadScheduler]]
+   subscribeNext:^(UIImage *image) {
+    @strongify(self);
+    [self.photo setImage:image forState:UIControlStateNormal];
+  }];
 }
 
 - (IBAction)didTapPhoto:(id)sender
@@ -151,13 +110,27 @@
     
     self.quantity.borderStyle = UITextBorderStyleNone;
     
-    [RACObserve(self, model.editing) subscribeNext:^(id x) {
-        self.quantityView.hidden = ![x boolValue];
-    }];
-    
-    [RACObserve(self, item.quantity) subscribeNext:^(id x) {
-        self.quantity.text = [NSString
-                              stringWithFormat:@"%d", [x integerValue]];
-    }];
+
+  
+  @weakify(self);
+  [RACObserve(self, item) subscribeNext:^(CartItem *item) {
+    @strongify(self);
+    [self render];
+  }];
+  
+  [RACObserve(self.item, quantity) subscribeNext:^(id x) {
+    @strongify(self);
+    [self updateQuantity];
+  }];
+  
+  [RACObserve(self.item, selected) subscribeNext:^(id x) {
+    @strongify(self);
+    [self updateSelected];
+  }];
+  
+  [RACObserve(self.item, totalPrice) subscribeNext:^(id x) {
+    @strongify(self);
+    [self updateTotalLabel];
+  }];
 }
 @end
