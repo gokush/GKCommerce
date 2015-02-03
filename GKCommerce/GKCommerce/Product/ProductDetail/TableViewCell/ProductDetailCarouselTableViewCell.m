@@ -34,17 +34,16 @@
 - (GKCarouselViewCell *)carouselView:(GKCarouselView *)carouselView
                          cellAtIndex:(NSInteger)index
 {
-    CGRect carouselRectangle;
-    carouselRectangle = CGRectMake(0.0f, 0.0f, 320.0f, 320.0f);
-    GKCarouselViewCell *cell = [[GKCarouselViewCell alloc]
-                                initWithFrame:carouselRectangle];
-    NSString *picture;
-    picture = [self.product.pictures objectAtIndex:index];
+  CGRect carouselRectangle;
+  carouselRectangle = CGRectMake(0.0f, 0.0f, 320.0f, 320.0f);
+  GKCarouselViewCell *cell = [[GKCarouselViewCell alloc]
+                              initWithFrame:carouselRectangle];
+  NSString *picture;
+  picture = [self.product.pictures objectAtIndex:index];
   
+  DDLogVerbose(@"Carousel 产品图片地址 %@", picture);
   RACSignal *signal;
-  signal = [[[[[picture GKRCropAndFill] width:640.0f] height:640.0f] signal]
-    deliverOn:[RACScheduler mainThreadScheduler]];
-  
+  signal = [[[[picture GKRCropAndFill] width:640.0f] height:640.0f] signal];
   RAC(cell.imageView, image) = signal;
   return cell;
 }

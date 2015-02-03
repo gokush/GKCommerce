@@ -252,6 +252,9 @@
 
   [self processImage:mw];
   
+  DestroyMagickWand(mw);
+  MagickWandTerminus();
+  
   size_t length;
   unsigned char *blob = MagickGetImageBlob(mw, &length);
   NSData *bytes = [[NSData alloc] initWithBytes:blob length:length];
@@ -265,6 +268,9 @@
   MagickReadImage(mw, [path cStringUsingEncoding:NSUTF8StringEncoding]);
   
   [self processImage:mw];
+  
+  DestroyMagickWand(mw);
+  MagickWandTerminus();
   
   size_t length;
   unsigned char *blob = MagickGetImageBlob(mw, &length);
@@ -323,10 +329,8 @@
   @weakify(self);
   return
   // TODO: 完成这个原型
-  // 处理图片保存到SDWebCache
   // 图片Resize的模式有三种：本地文件、远程文件下载到本地Resizer、远程支持Resize
   [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-    [[RACScheduler schedulerWithPriority:RACSchedulerPriorityHigh] schedule:^{
       @strongify(self);
       SDImageCache *cache = [SDImageCache sharedImageCache];
       __block UIImage *local;
@@ -343,32 +347,29 @@
       if (!isOnRemote && !exists) {
         local = [self image];
         [cache storeImage:local forKey:cacheKey toDisk:YES];
-
+        
+        [subscriber sendNext:local];
+        [subscriber sendCompleted];
         DDLogVerbose(@"加载原始图片处理并保存到SDWebCache");
       } else if (isOnRemote && !exists) {
-        // From remote
         [[SDWebImageManager sharedManager]
          downloadImageWithURL:self.original options:0 progress:nil
          completed:^(UIImage *image, NSError *error,
                      SDImageCacheType cacheType, BOOL finished,
                      NSURL *imageURL) {
            
-//           UIImage *processed;// = [self imageWithImageRef:image.CGImage];
-//           [cache storeImage:image forKey:[self.original description]];
-//           processed = [self imageWithPath:[cache
-//                                            defaultCachePathForKey:cacheKey]];
-//           [cache storeImage:processed forKey:cacheKey];
+           UIImage *processed;// = [self imageWithImageRef:image.CGImage];
+           [cache storeImage:image forKey:[self.original description]];
+           processed = [self imageWithPath:[cache
+                                            defaultCachePathForKey:cacheKey]];
+           [cache storeImage:processed forKey:cacheKey];
            
-           [subscriber sendNext:image];
+           [subscriber sendNext:processed];
            [subscriber sendCompleted];
-           DDLogVerbose(@"从远程$R加载原始图片处理并保存到SDWebCache");
+           DDLogVerbose(@"从远程加载原始图片处理并保存到SDWebCache");
            DDLogVerbose(@"%@", self.original);
          }];
       }
-      
-      [subscriber sendNext:local];
-      [subscriber sendCompleted];
-    }];
     return [RACDisposable disposableWithBlock:^{}];
   }];
 }
