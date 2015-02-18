@@ -41,9 +41,13 @@
         @weakify(self);
         [RACObserve(self, address) subscribeNext:^(Address *address) {
             @strongify(self);
-            if (address.addressID > 0)
+            if (address.addressID > 0) {
                 [self.service addressWithID:address.addressID
                                       user:self.user];
+                self.title = @"修改收货地址";
+            } else {
+                self.title = @"新增收货地址";
+            }
         }];
         if (!address)
             self.address = [[Address alloc] init];
