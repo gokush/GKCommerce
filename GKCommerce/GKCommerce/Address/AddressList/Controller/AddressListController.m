@@ -113,6 +113,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     address.cellPhone = @"15202171763";
     address.postcode = @"900032";
     address.address = @"上海市浦东新区张杨北路 距离市中心约15500米";
+    address.addressID = 1;
     
     Region *provice = [[Region alloc] init];
     provice.name = @"上海市";
