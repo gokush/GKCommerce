@@ -42,8 +42,8 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     
-//    [[[TestUI alloc] init] enterCheckout:self.tabBarController];
-    
+//  [[[TestUI alloc] init] gotoAddressList:self.tabBarController];
+  
     return YES;
 }
 
