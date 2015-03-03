@@ -251,12 +251,13 @@
                        cStringUsingEncoding:NSUTF8StringEncoding]);
 
   [self processImage:mw];
-  
-  DestroyMagickWand(mw);
-  MagickWandTerminus();
-  
+
   size_t length;
   unsigned char *blob = MagickGetImageBlob(mw, &length);
+    
+    DestroyMagickWand(mw);
+    MagickWandTerminus();
+    
   NSData *bytes = [[NSData alloc] initWithBytes:blob length:length];
 
   return [[UIImage alloc] initWithData:bytes];
@@ -269,11 +270,12 @@
   
   [self processImage:mw];
   
-  DestroyMagickWand(mw);
-  MagickWandTerminus();
-  
   size_t length;
   unsigned char *blob = MagickGetImageBlob(mw, &length);
+    
+    DestroyMagickWand(mw);
+    MagickWandTerminus();
+    
   NSData *bytes = [[NSData alloc] initWithBytes:blob length:length];
   
   return [[UIImage alloc] initWithData:bytes];
