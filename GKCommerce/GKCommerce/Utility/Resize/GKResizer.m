@@ -28,6 +28,10 @@
     self = [super init];
     if (self) {
       self.original = url;
+        
+        if ([@"placehold" isEqualToString:self.original.host]) {
+            [self parsePlaceHold];
+        }
     }
     return self;
 }
@@ -41,6 +45,91 @@
   }
     return self;
 }
+
+- (void)parsePlaceHold
+{
+    NSString *path = self.original.path;
+    path = [path substringWithRange:NSMakeRange(1, path.length - 1)];
+    NSArray *components = [path componentsSeparatedByString:@"/"];
+    UIColor *foreground, *background;
+
+    BOOL matched = NO;
+    for (NSString *component in components) {
+        if (!matched) {
+            matched = [self matchComponent:component];
+        }
+        if (6 == component.length) {
+            NSScanner *scanner;
+            NSString *hex;
+            unsigned color;
+            hex = [NSString stringWithFormat:@"0x%@", component];
+            scanner = [NSScanner scannerWithString:hex];
+            [scanner scanHexInt:&color];
+            
+            if (nil == foreground)
+                foreground = [self colorWithHex:color];
+            else
+                background = [self colorWithHex:color];
+        }
+    }
+    
+    if (nil == self.text || [@"" isEqualToString:self.text])
+        self.text = [NSString stringWithFormat:@"%d x %d", (int)self.width,
+                     (int)self.height];
+}
+
+- (BOOL)matchComponent:(NSString *)component
+{
+    NSError *error;
+    NSRegularExpression *express;
+    NSArray *matches;
+    NSTextCheckingResult *match;
+    express = [NSRegularExpression
+               regularExpressionWithPattern:@"(\\d+)x?(\\d+)?&?(.*)"
+               options:0 error:&error];
+    
+    matches = [express matchesInString:component options:0
+                                 range:NSMakeRange(0, component.length)];
+    if (0 == matches.count)
+        return NO;
+    
+    match = matches.firstObject;
+
+    NSString *width, *height, *text;
+    width = [self match:match atIndex:1 string:component];
+    height = [self match:match atIndex:2 string:component];
+    text = [self match:match atIndex:3 string:component];
+    
+    if (width != nil)
+        self.width = [width floatValue];
+    if (height != nil)
+        self.height = [height floatValue];
+    if (0 == self.height)
+        self.height = self.width;
+    if (text != nil)
+        self.text = text;
+    
+    return YES;
+}
+
+- (NSString *)match:(NSTextCheckingResult *)match atIndex:(NSInteger)index
+             string:(NSString *)aString
+{
+    NSRange range = [match rangeAtIndex:index];
+    if (aString.length < range.location + range.length)
+        return nil;
+    
+    return [aString substringWithRange:range];
+}
+
+- (UIColor *)colorWithHex:(unsigned)hex
+{
+    float r = hex & 0xFF0000 >> 16;
+    float g = hex & 0xFF00 >> 8;
+    float b = hex & 0xFF;
+    return [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0];
+}
+
 
 - (NSString *)key
 {
@@ -374,6 +463,30 @@
       }
     return [RACDisposable disposableWithBlock:^{}];
   }];
+}
+
+- (GKResizer *)placeHold
+{
+//    if (nil == self.text)
+    return self;
+}
+
+- (GKResizer *)text:(NSString *)aText
+{
+    self.text = aText;
+    return self;
+}
+
+- (GKResizer *)foreground:(UIColor *)aForeground
+{
+    self.foreground = aForeground;
+    return self;
+}
+
+- (GKResizer *)background:(UIColor *)aBackground
+{
+    self.background = aBackground;
+    return self;
 }
 
 - (NSURL *)url

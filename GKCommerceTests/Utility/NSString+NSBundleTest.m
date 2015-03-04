@@ -12,12 +12,12 @@
 #import <Expecta/Expecta.h>
 #import "Dependency.h"
 
-SpecBegin(NSStringNSBundleTest)
-
-describe(@"NSString+NSBundleTest", ^{
-  it(@"should do user info", ^AsyncBlock{
-    NSString *bundle_path = @"product_category_mock_iphone.png";
-    NSString *url = [bundle_path pathForBundle];
-  });
-});
-SpecEnd
+//SpecBegin(NSStringNSBundleTest)
+//
+//describe(@"NSString+NSBundleTest", ^{
+//  it(@"should do user info", ^AsyncBlock{
+//    NSString *bundle_path = @"product_category_mock_iphone.png";
+//    NSString *url = [bundle_path pathForBundle];
+//  });
+//});
+//SpecEnd

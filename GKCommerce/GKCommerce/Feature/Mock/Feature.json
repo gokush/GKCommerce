@@ -5,10 +5,10 @@
             "type": "FeatureCarouselTableViewCell",
             "carousels": [
                 {
-                    "picture": ""
+                    "picture": "http://placehold/320x120"
                 },
                 {
-                    "picture": ""
+                    "picture": "http://placehold/320x120"
                 }
             ]
         },

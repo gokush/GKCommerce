@@ -33,6 +33,16 @@ typedef enum {
 @property (assign, nonatomic) BOOL isCropAndFill;
 @property (strong, nonatomic) NSString *extension;
 @property (strong, nonatomic) NSString *key;
+
+/// 文字内容
+@property (strong, nonatomic) NSString *text;
+
+/// 前景色
+@property (strong, nonatomic) UIColor *foreground;
+
+/// 背景色
+@property (strong, nonatomic) UIColor *background;
+
 - (id)initWithURL:(NSURL *)url;
 - (id)initWithString:(NSString *)url;
 - (GKResizer *)width:(float)width;
@@ -53,6 +63,10 @@ typedef enum {
 - (GKResizer *)x:(float)x;
 - (GKResizer *)y:(float)y;
 - (GKResizer *)cropAndFill;
+- (GKResizer *)placeHold;
+- (GKResizer *)text:(NSString *)aText;
+- (GKResizer *)foreground:(UIColor *)aForeground;
+- (GKResizer *)background:(UIColor *)aBackground;
 - (UIImage *)image;
 - (RACSignal *)signal;
 - (NSURL *)url;
