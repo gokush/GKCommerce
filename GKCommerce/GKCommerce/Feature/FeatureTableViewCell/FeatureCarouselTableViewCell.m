@@ -8,6 +8,7 @@
 
 #import "FeatureCarouselTableViewCell.h"
 #import "FeatureCarouselModel.h"
+#import "GKResizer.h"
 
 @implementation FeatureCarouselTableViewCell
 
@@ -52,7 +53,9 @@
     GKCarouselViewCell *cell;
     cell = [[GKCarouselViewCell alloc]
             initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 140.0f)];
-    cell.imageURL = model.picture;
+    RAC(cell.imageView, image) =
+        [[GKResizer resizerWithString:model.picture.absoluteString] signal];
+//    cell.imageURL = model.picture;
     return cell;
 }
 @end

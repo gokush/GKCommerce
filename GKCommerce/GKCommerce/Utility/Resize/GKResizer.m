@@ -31,6 +31,7 @@
         
         if ([@"placehold" isEqualToString:self.original.host]) {
             [self parsePlaceHold];
+            self.isPlaceHold = YES;
         }
     }
     return self;
@@ -335,64 +336,52 @@
 
 - (UIImage *)image
 {
-  MagickWand *mw = NewMagickWand();
-  MagickReadImage(mw, [[self.original absoluteString]
-                       cStringUsingEncoding:NSUTF8StringEncoding]);
-
-  [self processImage:mw];
-
-  size_t length;
-  unsigned char *blob = MagickGetImageBlob(mw, &length);
+    if (self.isPlaceHold)
+        return [self placeHold];
+    
+    MagickWand *mw = NewMagickWand();
+    MagickReadImage(mw, [[self.original absoluteString]
+                         cStringUsingEncoding:NSUTF8StringEncoding]);
+    
+    [self processImage:mw];
+    
+    size_t length;
+    unsigned char *blob = MagickGetImageBlob(mw, &length);
     
     DestroyMagickWand(mw);
     MagickWandTerminus();
     
-  NSData *bytes = [[NSData alloc] initWithBytes:blob length:length];
-
-  return [[UIImage alloc] initWithData:bytes];
+    NSData *bytes = [[NSData alloc] initWithBytes:blob length:length];
+    return [[UIImage alloc] initWithData:bytes];
 }
 
 - (UIImage *)imageWithPath:(NSString *)path
 {
-  MagickWand *mw = NewMagickWand();
-  MagickReadImage(mw, [path cStringUsingEncoding:NSUTF8StringEncoding]);
+    MagickWand *mw = NewMagickWand();
+    MagickReadImage(mw, [path cStringUsingEncoding:NSUTF8StringEncoding]);
   
-  [self processImage:mw];
+    [self processImage:mw];
   
-  size_t length;
-  unsigned char *blob = MagickGetImageBlob(mw, &length);
-    
+    size_t length;
+    unsigned char *blob = MagickGetImageBlob(mw, &length);
     DestroyMagickWand(mw);
     MagickWandTerminus();
-    
-  NSData *bytes = [[NSData alloc] initWithBytes:blob length:length];
-  
-  return [[UIImage alloc] initWithData:bytes];
+    NSData *bytes = [[NSData alloc] initWithBytes:blob length:length];
+    return [[UIImage alloc] initWithData:bytes];
 }
 
 - (UIImage *)imageWithImageRef:(CGImageRef)anImageRef
 {
-//  CFDataRef dataRef;
-//  dataRef = 
-//   CGDataProviderCopyData(CGImageGetDataProvider(anImageRef));
-//  size_t length = CFDataGetLength(dataRef);
-  
-  CGDataProviderRef provider = CGImageGetDataProvider(anImageRef);
-  NSData* data = (id)CFBridgingRelease(CGDataProviderCopyData(provider));
-  
-//  NSData *d1 = [NSData dataWithBytes:CFDataGetBytePtr((dataRef)) length:length];
-//  UIImage *i1 = [[UIImage alloc] initWithData:d1];
-  
-  size_t length;
-  MagickWand *mw = NewMagickWand();
-  MagickReadImageBlob(mw, [data bytes], [data length]);
-  [self processImage:mw];
-  unsigned char *blob = MagickGetImageBlob(mw, &length);
-  NSData *bytes = [[NSData alloc] initWithBytes:blob length:length];
-  
-//  CFRelease(dataRef);
-  
-  return [[UIImage alloc] initWithData:bytes];
+    CGDataProviderRef provider = CGImageGetDataProvider(anImageRef);
+    NSData* data = (id)CFBridgingRelease(CGDataProviderCopyData(provider));
+    
+    size_t length;
+    MagickWand *mw = NewMagickWand();
+    MagickReadImageBlob(mw, [data bytes], [data length]);
+    [self processImage:mw];
+    unsigned char *blob = MagickGetImageBlob(mw, &length);
+    NSData *bytes = [[NSData alloc] initWithBytes:blob length:length];
+    return [[UIImage alloc] initWithData:bytes];
 }
 
 - (void)processImage:(MagickWand *)mw
@@ -443,32 +432,64 @@
         [subscriber sendCompleted];
         DDLogVerbose(@"加载原始图片处理并保存到SDWebCache");
       } else if (isOnRemote && !exists) {
-        [[SDWebImageManager sharedManager]
-         downloadImageWithURL:self.original options:0 progress:nil
-         completed:^(UIImage *image, NSError *error,
-                     SDImageCacheType cacheType, BOOL finished,
-                     NSURL *imageURL) {
-           
-           UIImage *processed;// = [self imageWithImageRef:image.CGImage];
-           [cache storeImage:image forKey:[self.original description]];
-           processed = [self imageWithPath:[cache
-                                            defaultCachePathForKey:cacheKey]];
-           [cache storeImage:processed forKey:cacheKey];
-           
-           [subscriber sendNext:processed];
-           [subscriber sendCompleted];
-           DDLogVerbose(@"从远程加载原始图片处理并保存到SDWebCache");
-           DDLogVerbose(@"%@", self.original);
-         }];
+          if (!self.isPlaceHold)
+              [self downloadAndProcess:subscriber];
+          else {
+              UIImage *placeHoldImage;
+              placeHoldImage = [self placeHold];
+              [subscriber sendNext:placeHoldImage];
+              [subscriber sendCompleted];
+              
+              [cache storeImage:placeHoldImage forKey:cacheKey toDisk:YES];
+          }
       }
     return [RACDisposable disposableWithBlock:^{}];
   }];
 }
 
-- (GKResizer *)placeHold
+- (void)downloadAndProcess:(id<RACSubscriber>)subscriber
 {
-//    if (nil == self.text)
-    return self;
+    [[SDWebImageManager sharedManager]
+     downloadImageWithURL:self.original options:0 progress:nil
+     completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType,
+                 BOOL finished, NSURL *imageURL) {
+         SDImageCache *cache = [SDImageCache sharedImageCache];
+         UIImage *processed;
+         NSString *originalPath, *cacheOriginPath;
+         originalPath = [self.original description];
+         cacheOriginPath = [cache defaultCachePathForKey:originalPath];
+         [cache storeImage:image forKey:originalPath];
+         processed = [self imageWithPath:cacheOriginPath];
+         [cache storeImage:processed forKey:[self key]];
+         
+         [subscriber sendNext:processed];
+         [subscriber sendCompleted];
+         DDLogVerbose(@"从远程加载原始图片处理并保存到SDWebCache");
+         DDLogVerbose(@"%@", self.original);
+     }];
+}
+
+- (UIImage *)placeHold
+{
+    
+    UIFont *font = [UIFont fontWithName:@"American Typewriter" size:40];
+    CGRect frame, rect;
+    frame = [self.text
+             boundingRectWithSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)
+             options:NSStringDrawingUsesLineFragmentOrigin
+             attributes:@{ NSFontAttributeName:font } context:nil];
+    
+    UIGraphicsBeginImageContext(CGSizeMake(self.width, self.height));
+    rect = CGRectMake((self.width - frame.size.width) / 2,
+                      (self.height - frame.size.height) / 2,
+                      self.width, self.height);
+    
+    [[UIColor grayColor] set];
+    [self.text drawInRect:CGRectIntegral(rect) withFont:font];
+    UIImage *textImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return textImage;
 }
 
 - (GKResizer *)text:(NSString *)aText

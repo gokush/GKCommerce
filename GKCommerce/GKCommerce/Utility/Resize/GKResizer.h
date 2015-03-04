@@ -31,6 +31,7 @@ typedef enum {
 @property (assign, nonatomic) BOOL isScale;
 @property (assign, nonatomic) BOOL isCrop;
 @property (assign, nonatomic) BOOL isCropAndFill;
+@property (assign, nonatomic) BOOL isPlaceHold;
 @property (strong, nonatomic) NSString *extension;
 @property (strong, nonatomic) NSString *key;
 
@@ -63,7 +64,7 @@ typedef enum {
 - (GKResizer *)x:(float)x;
 - (GKResizer *)y:(float)y;
 - (GKResizer *)cropAndFill;
-- (GKResizer *)placeHold;
+- (UIImage *)placeHold;
 - (GKResizer *)text:(NSString *)aText;
 - (GKResizer *)foreground:(UIColor *)aForeground;
 - (GKResizer *)background:(UIColor *)aBackground;
