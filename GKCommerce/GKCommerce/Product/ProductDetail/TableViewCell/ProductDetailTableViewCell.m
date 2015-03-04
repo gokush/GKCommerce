@@ -19,15 +19,4 @@
 
     // Configure the view for the selected state
 }
-
-- (void)bind
-{
-    NSLog(@"ProductDetailTableViewCell bind not implement.");
-}
-
-- (void)unbind
-{
-    NSLog(@"ProductDetailTableViewCell unbind not implement.");
-}
-
 @end

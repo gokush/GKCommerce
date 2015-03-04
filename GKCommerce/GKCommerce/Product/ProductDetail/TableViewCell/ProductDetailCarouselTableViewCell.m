@@ -21,14 +21,6 @@
      }];
 }
 
-- (void)bind
-{
-}
-
-- (void)unbind
-{
-}
-
 #pragma mark - GKCarouselViewDelegate
 
 - (GKCarouselViewCell *)carouselView:(GKCarouselView *)carouselView

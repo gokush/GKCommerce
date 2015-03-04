@@ -11,7 +11,9 @@
 @implementation ProductDetailTitleTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    [RACObserve(self, product) subscribeNext:^(id x) {
+        [self render];
+    }];
 }
 
 - (void)render
@@ -22,23 +24,5 @@
     self.marketPrice.text = [[NSString alloc] initWithFormat:@"%.2f",
                              self.product.regularPrice.floatValue];
     self.favor.selected = YES;
-}
-
-- (void)bind
-{
-    [self addObserver:self forKeyPath:@"product"
-              options:NSKeyValueObservingOptionInitial context:nil];
-}
-
-- (void)unbind
-{
-    [self removeObserver:self forKeyPath:@"product"];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object
-                        change:(NSDictionary *)change context:(void *)context
-{
-    if ([@"product" isEqualToString:keyPath])
-        [self render];
 }
 @end

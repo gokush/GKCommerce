@@ -67,11 +67,6 @@
              forCellReuseIdentifier:identifier];
     self.tableView.separatorInset = UIEdgeInsetsZero;
     self.title = @"产品";
-    
-    [self addObserver:self
-           forKeyPath:@"product"
-              options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld
-              context:nil];
 
     self.automaticallyAdjustsScrollViewInsets = NO;
     
@@ -89,13 +84,6 @@
     }];
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary *)change
-                       context:(void *)context
-{
-}
-
 #pragma mark - UITableViewDataSource
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -107,17 +95,7 @@
     cell = [self.tableView dequeueReusableCellWithIdentifier:identifier];
     cell.product = self.product;
     
-    [cell bind];
-    
     return cell;
-}
-
-- (void)tableView:(UITableView *)tableView
-didEndDisplayingCell:(UITableViewCell *)cell
-forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    ProductDetailTableViewCell *productDetailCell;
-    [productDetailCell unbind];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

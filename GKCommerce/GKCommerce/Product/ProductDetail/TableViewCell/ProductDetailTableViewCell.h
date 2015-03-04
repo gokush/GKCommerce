@@ -12,7 +12,4 @@
 @interface ProductDetailTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) Product *product;
-
-- (void)bind;
-- (void)unbind;
 @end
