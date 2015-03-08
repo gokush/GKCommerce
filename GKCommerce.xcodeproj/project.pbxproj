@@ -120,8 +120,6 @@
 		E5B98C771A70D5EF00DDF0FD /* GKServiceMock.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B98C761A70D5EF00DDF0FD /* GKServiceMock.m */; };
 		E5B98C7B1A70DA7700DDF0FD /* GKProductBackendAssemblerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B98C7A1A70DA7700DDF0FD /* GKProductBackendAssemblerTest.m */; };
 		E5B98C7E1A70E36800DDF0FD /* GKFactoryMock.m in Sources */ = {isa = PBXBuildFile; fileRef = E5B98C7D1A70E36800DDF0FD /* GKFactoryMock.m */; };
-		E5C3AFA11A3EDCD30096CD85 /* ECCheckoutBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C3AFA01A3EDCD30096CD85 /* ECCheckoutBackend.m */; };
-		E5C3AFA41A3EDEA30096CD85 /* ECCheckoutAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C3AFA31A3EDEA30096CD85 /* ECCheckoutAssembler.m */; };
 		E5C8061B1A1A081E00880B20 /* MineDefaultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C8061A1A1A081E00880B20 /* MineDefaultTableViewCell.xib */; };
 		E5C8061F1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5C8061D1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.m */; };
 		E5C806201A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C8061E1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib */; };
@@ -551,10 +549,6 @@
 		E5B98C7D1A70E36800DDF0FD /* GKFactoryMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKFactoryMock.m; path = GKCommerce/Context/GKFactoryMock.m; sourceTree = "<group>"; };
 		E5C3AF9D1A3EDBDD0096CD85 /* CheckoutBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckoutBackend.h; path = Backend/CheckoutBackend.h; sourceTree = "<group>"; };
 		E5C3AF9E1A3EDC5D0096CD85 /* CheckoutBackendDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckoutBackendDelegate.h; path = Backend/CheckoutBackendDelegate.h; sourceTree = "<group>"; };
-		E5C3AF9F1A3EDCD30096CD85 /* ECCheckoutBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECCheckoutBackend.h; path = Backend/ECCheckoutBackend.h; sourceTree = "<group>"; };
-		E5C3AFA01A3EDCD30096CD85 /* ECCheckoutBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECCheckoutBackend.m; path = Backend/ECCheckoutBackend.m; sourceTree = "<group>"; };
-		E5C3AFA21A3EDEA30096CD85 /* ECCheckoutAssembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECCheckoutAssembler.h; path = Backend/ECCheckoutAssembler.h; sourceTree = "<group>"; };
-		E5C3AFA31A3EDEA30096CD85 /* ECCheckoutAssembler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ECCheckoutAssembler.m; path = Backend/ECCheckoutAssembler.m; sourceTree = "<group>"; };
 		E5C8061A1A1A081E00880B20 /* MineDefaultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineDefaultTableViewCell.xib; sourceTree = "<group>"; };
 		E5C8061C1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineHeaderPhotoTableViewCell.h; sourceTree = "<group>"; };
 		E5C8061D1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineHeaderPhotoTableViewCell.m; sourceTree = "<group>"; };
@@ -1528,10 +1522,6 @@
 			children = (
 				E5C3AF9D1A3EDBDD0096CD85 /* CheckoutBackend.h */,
 				E5C3AF9E1A3EDC5D0096CD85 /* CheckoutBackendDelegate.h */,
-				E5C3AF9F1A3EDCD30096CD85 /* ECCheckoutBackend.h */,
-				E5C3AFA01A3EDCD30096CD85 /* ECCheckoutBackend.m */,
-				E5C3AFA21A3EDEA30096CD85 /* ECCheckoutAssembler.h */,
-				E5C3AFA31A3EDEA30096CD85 /* ECCheckoutAssembler.m */,
 			);
 			name = Backend;
 			sourceTree = "<group>";
@@ -2573,7 +2563,6 @@
 				E5D9D59A1A1E560F00875264 /* ProductImageURL.m in Sources */,
 				E53EC1301A2D97C8005457F5 /* RSADataVerifier.m in Sources */,
 				E5CD60E41A2C567E0036160C /* ProductCategoryTableViewCell.m in Sources */,
-				E5C3AFA41A3EDEA30096CD85 /* ECCheckoutAssembler.m in Sources */,
 				E53EC12A1A2D97C8005457F5 /* DataSigner.m in Sources */,
 				E5F3C4811A679BB100B986FA /* GKUserAssembler.m in Sources */,
 				E55ED3FA1A7B734100DC361D /* GKUserServiceMock.m in Sources */,
@@ -2636,7 +2625,6 @@
 				E5D9D5BC1A1E588400875264 /* ECProductBackend.m in Sources */,
 				E5D381881A2D3D2000A7CB2E /* CheckoutMessageTableViewCell.m in Sources */,
 				E53EC1211A2D97C8005457F5 /* NSObject+SBJSON.m in Sources */,
-				E5C3AFA11A3EDCD30096CD85 /* ECCheckoutBackend.m in Sources */,
 				E53EC11F1A2D97C8005457F5 /* AlixPayOrder.m in Sources */,
 				E5D3817E1A2D3D2000A7CB2E /* CheckoutAddressTableViewCell.m in Sources */,
 				E5D381461A2CA72800A7CB2E /* GKFeatureBackend.m in Sources */,

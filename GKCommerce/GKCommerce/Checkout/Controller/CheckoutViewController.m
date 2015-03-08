@@ -88,8 +88,6 @@ typedef enum {
 {
     userAccountLoaded = NO;
     
-    self.backend = [[ECCheckoutBackend alloc] init];
-    self.backend.delegate = self;
 //    [self.service flowCheckoutOrderWithUser:self.user shop:[Shop currentShop]
 //     cart:self.cart];
     
@@ -234,7 +232,6 @@ typedef enum {
     [self.navigationController setNavigationBarHidden:NO];
     [super viewWillAppear:animated];
     
-    [self.backend requestValidateCheckout:self.cart];
 //    [self fillData];
 }
 
@@ -577,19 +574,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)backend:(Backend *)aBackend didRequestCheckout:(Order *)order
 {
 }
-
-- (void)ecCheckoutBackend:(ECCheckoutBackend *)anECCheckoutBackend
-         didReceiveResult:(NSMutableDictionary *)result
-{
-    
-}
-
-#pragma mark - ServiceDelegate
-//- (void)service:(Service *)aService didFinishFlowCheckOrderWithUser:(User *)user
-//           shop:(Shop *)aShop cart:(Cart *)aCart error:(NSError *)anError
-//{
-//    
-//}
 
 - (void)didCartItemBuy:(CartItem *)cartItem
 {

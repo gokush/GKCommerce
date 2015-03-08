@@ -11,11 +11,10 @@
 #import "Cart.h"
 #import "Order.h"
 #import "CheckoutProductTableViewCell.h"
-#import "ECCheckoutBackend.h"
 
 @interface CheckoutViewController : UIViewController
 <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate,
-CheckoutProductTableViewCellDelegate, ECCheckoutBackendDelegate>
+CheckoutProductTableViewCellDelegate>
 
 - (id)initWithUser:(User *)user cart:(Cart *)cart;
 
@@ -24,7 +23,6 @@ CheckoutProductTableViewCellDelegate, ECCheckoutBackendDelegate>
 @property (strong, nonatomic) Order *order;
 @property (assign, nonatomic) PaymentType paymentType;
 @property (strong, nonatomic) NSArray *cartItems;
-@property (strong, nonatomic) ECCheckoutBackend *backend;
 @property (assign, nonatomic) BOOL isChangeable;
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;

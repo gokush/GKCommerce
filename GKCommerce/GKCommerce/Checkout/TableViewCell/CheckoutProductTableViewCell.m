@@ -9,6 +9,8 @@
 #import "CheckoutProductTableViewCell.h"
 #import <SDWebImage/UIButton+WebCache.h>
 #import<CoreText/CoreText.h>
+#import "GKResizer.h"
+#import "NSString+GKResizable.h"
 
 @implementation CheckoutProductTableViewCell
 
@@ -37,15 +39,19 @@
 
 - (void)render
 {
-    NSURL *photoURL;;
     NSString *qty, *price;
+    GKResizer *resizer;
     
-    photoURL = [[NSURL alloc] initWithString:self.item.product.image.small];
     qty = [NSString stringWithFormat:@"x%d", self.item.quantity];
     price = [NSString stringWithFormat:@"￥%@", self.item.product.listingPrice];
     
-    [self.productPhotoButton sd_setBackgroundImageWithURL:photoURL
-                                                 forState:UIControlStateNormal];
+    resizer = [[GKResizer alloc]
+               initWithString:self.item.product.pictures.firstObject];
+    @weakify(self);
+    [[[[resizer width:148.0f] height:148.0f] signal] subscribeNext:^(id x) {
+        @strongify(self);
+        [self.productPhotoButton setImage:x forState:UIControlStateNormal];
+    }];
     self.nameLabel.text = self.item.product.name;
     self.shopPriceLabel.text = price;
 }
