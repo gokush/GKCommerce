@@ -324,17 +324,20 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
     cell = [self.tableView
             dequeueReusableCellWithIdentifier:@"CheckoutInputTableViewCell"];
     
+    Address *address = self.user.address;
+    
     switch (indexPath.row) {
         case CellAddress:
             cell.label.text = @"收货地址";
+            cell.input.text = address.address;
             break;
         case CellAddressName:
             cell.label.text = @"收货人";
-            cell.input.text = self.user.username;
+            cell.input.text = address.name;
             break;
         case CellAddressPhone:
             cell.label.text = @"电话";
-            cell.input.text = @"";
+            cell.input.text = address.cellPhone;
             break;
         default:
             break;

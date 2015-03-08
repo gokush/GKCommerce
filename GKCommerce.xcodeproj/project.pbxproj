@@ -75,6 +75,7 @@
 		E55ED4001A7B799A00DC361D /* MockUserCatalog.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E55ED3FF1A7B799900DC361D /* MockUserCatalog.xcassets */; };
 		E5680BAE1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5680BAC1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.m */; };
 		E5680BAF1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5680BAD1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.xib */; };
+		E57173CB1AABF0C200C5F775 /* Fixtures.m in Sources */ = {isa = PBXBuildFile; fileRef = E57173CA1AABF0C200C5F775 /* Fixtures.m */; };
 		E5748F3C1A20E5F700306ADC /* GKLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5748F3B1A20E5F700306ADC /* GKLabel.m */; };
 		E5748F3F1A20EC0F00306ADC /* ECCartService.m in Sources */ = {isa = PBXBuildFile; fileRef = E5748F3E1A20EC0F00306ADC /* ECCartService.m */; };
 		E5748F431A20EC5D00306ADC /* CartRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = E5748F421A20EC5D00306ADC /* CartRepository.m */; };
@@ -465,6 +466,8 @@
 		E5680BAB1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckoutStoreNameTableViewCell.h; sourceTree = "<group>"; };
 		E5680BAC1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckoutStoreNameTableViewCell.m; sourceTree = "<group>"; };
 		E5680BAD1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckoutStoreNameTableViewCell.xib; sourceTree = "<group>"; };
+		E57173C91AABF0C200C5F775 /* Fixtures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Fixtures.h; path = GKCommerce/Fixtures.h; sourceTree = "<group>"; };
+		E57173CA1AABF0C200C5F775 /* Fixtures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Fixtures.m; path = GKCommerce/Fixtures.m; sourceTree = "<group>"; };
 		E57298AA1A29B7EF00F9F456 /* ProductService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductService.h; sourceTree = "<group>"; };
 		E5748F3A1A20E5F700306ADC /* GKLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKLabel.h; path = GKCommerce/UI/GKLabel.h; sourceTree = "<group>"; };
 		E5748F3B1A20E5F700306ADC /* GKLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKLabel.m; path = GKCommerce/UI/GKLabel.m; sourceTree = "<group>"; };
@@ -865,6 +868,8 @@
 				E5F196B91A1CC06A00B97AE3 /* GKCommerce-Prefix.pch */,
 				E588556A1A39112F0093049B /* TestUI.h */,
 				E588556B1A39112F0093049B /* TestUI.m */,
+				E57173C91AABF0C200C5F775 /* Fixtures.h */,
+				E57173CA1AABF0C200C5F775 /* Fixtures.m */,
 			);
 			path = GKCommerce;
 			sourceTree = "<group>";
@@ -2515,6 +2520,7 @@
 				E5CD60E31A2C567E0036160C /* ProductCategoryViewController.m in Sources */,
 				E549C1941A1B8FBA0014656D /* UserAuthenticationTableViewCell.m in Sources */,
 				E5B98C651A6E287000DDF0FD /* GKUserAccessToken.m in Sources */,
+				E57173CB1AABF0C200C5F775 /* Fixtures.m in Sources */,
 				E59890C41A2B0A8800105F99 /* ProductListViewController.m in Sources */,
 				E5ED2DDC1A457BBB00CA6661 /* PDAddressBackend.m in Sources */,
 				E5CD61111A2C72D30036160C /* FeatureViewController.m in Sources */,

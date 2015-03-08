@@ -17,6 +17,7 @@
 
 #import "GKFactoryMock.h"
 #import "GKProductBackendImpl.h"
+#import "Fixtures.h"
 
 @interface AppDelegate ()
 @end
@@ -42,6 +43,9 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     
+    [[Fixtures fixtures] install];
+    
+    [[[TestUI alloc] init] gotoCheckout:self.tabBarController];
 //  [[[TestUI alloc] init] gotoAddressList:self.tabBarController];
   
     return YES;

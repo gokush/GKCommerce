@@ -10,6 +10,7 @@
 #import "Cart.h"
 #import "GKUserAccessToken.h"
 #import "GKResizer.h"
+#import "Address.h"
 
 @class Cart;
 @interface User : NSObject <NSCoding>
@@ -21,6 +22,8 @@
 @property (strong, nonatomic) GKResizer *avatar;
 @property (strong, nonatomic) Cart *cart;
 @property (strong, nonatomic) GKUserAccessToken *accessToken;
+@property (strong, nonatomic) Address *address;
+@property (strong, nonatomic) NSArray *addresses;
 
 - (BOOL)authorized;
 - (void)merge:(User *)user;
