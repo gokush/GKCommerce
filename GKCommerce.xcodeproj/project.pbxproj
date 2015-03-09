@@ -79,6 +79,7 @@
 		E57173CF1AADA03800C5F775 /* GKCheckoutServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = E57173CE1AADA03800C5F775 /* GKCheckoutServiceImpl.m */; };
 		E57173D21AADA20900C5F775 /* GKCommerceApplicationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = E57173D11AADA20900C5F775 /* GKCommerceApplicationContext.m */; };
 		E57173D51AADAC1300C5F775 /* GKCheckoutBackendDemostration.m in Sources */ = {isa = PBXBuildFile; fileRef = E57173D41AADAC1300C5F775 /* GKCheckoutBackendDemostration.m */; };
+		E57173DC1AADC12300C5F775 /* CheckoutViewControllerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E57173DB1AADC12300C5F775 /* CheckoutViewControllerProvider.m */; };
 		E5748F3C1A20E5F700306ADC /* GKLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5748F3B1A20E5F700306ADC /* GKLabel.m */; };
 		E5748F3F1A20EC0F00306ADC /* ECCartService.m in Sources */ = {isa = PBXBuildFile; fileRef = E5748F3E1A20EC0F00306ADC /* ECCartService.m */; };
 		E5748F431A20EC5D00306ADC /* CartRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = E5748F421A20EC5D00306ADC /* CartRepository.m */; };
@@ -478,6 +479,8 @@
 		E57173D11AADA20900C5F775 /* GKCommerceApplicationContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKCommerceApplicationContext.m; path = GKCommerce/Context/GKCommerceApplicationContext.m; sourceTree = "<group>"; };
 		E57173D31AADAC1300C5F775 /* GKCheckoutBackendDemostration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKCheckoutBackendDemostration.h; path = Backend/GKCheckoutBackendDemostration.h; sourceTree = "<group>"; };
 		E57173D41AADAC1300C5F775 /* GKCheckoutBackendDemostration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKCheckoutBackendDemostration.m; path = Backend/GKCheckoutBackendDemostration.m; sourceTree = "<group>"; };
+		E57173DA1AADC12300C5F775 /* CheckoutViewControllerProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckoutViewControllerProvider.h; path = Provider/CheckoutViewControllerProvider.h; sourceTree = "<group>"; };
+		E57173DB1AADC12300C5F775 /* CheckoutViewControllerProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckoutViewControllerProvider.m; path = Provider/CheckoutViewControllerProvider.m; sourceTree = "<group>"; };
 		E57298AA1A29B7EF00F9F456 /* ProductService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductService.h; sourceTree = "<group>"; };
 		E5748F3A1A20E5F700306ADC /* GKLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKLabel.h; path = GKCommerce/UI/GKLabel.h; sourceTree = "<group>"; };
 		E5748F3B1A20E5F700306ADC /* GKLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKLabel.m; path = GKCommerce/UI/GKLabel.m; sourceTree = "<group>"; };
@@ -1311,6 +1314,15 @@
 			path = GKCommerce/Protocol;
 			sourceTree = "<group>";
 		};
+		E57173D91AADC10800C5F775 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				E57173DA1AADC12300C5F775 /* CheckoutViewControllerProvider.h */,
+				E57173DB1AADC12300C5F775 /* CheckoutViewControllerProvider.m */,
+			);
+			name = Provider;
+			sourceTree = "<group>";
+		};
 		E5748F441A20EC6000306ADC /* Backend */ = {
 			isa = PBXGroup;
 			children = (
@@ -1708,6 +1720,7 @@
 		E5D3814D1A2D3D2000A7CB2E /* Checkout */ = {
 			isa = PBXGroup;
 			children = (
+				E57173D91AADC10800C5F775 /* Provider */,
 				E5C3AF9C1A3EDBB60096CD85 /* Backend */,
 				E5D3814E1A2D3D2000A7CB2E /* Controller */,
 				E5D381551A2D3D2000A7CB2E /* TableViewCell */,
@@ -2596,6 +2609,7 @@
 				E5ED2DD31A457BBB00CA6661 /* RegionPickerViewController.m in Sources */,
 				E5D9D5B51A1E585200875264 /* ProductRepository.m in Sources */,
 				E53EC1231A2D97C8005457F5 /* SBJSON.m in Sources */,
+				E57173DC1AADC12300C5F775 /* CheckoutViewControllerProvider.m in Sources */,
 				E53EC1291A2D97C8005457F5 /* base64.m in Sources */,
 				E5CD61231A2C72D30036160C /* FeatureOneColumnModel.m in Sources */,
 				E53EC12B1A2D97C8005457F5 /* DataVerifier.m in Sources */,

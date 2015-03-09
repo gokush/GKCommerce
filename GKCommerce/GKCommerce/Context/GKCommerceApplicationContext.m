@@ -14,6 +14,7 @@
 #import "GKCheckoutBackendDemostration.h"
 #import "GKCheckoutServiceImpl.h"
 
+#import "CheckoutViewControllerProvider.h"
 #import "CheckoutViewController.h"
 
 @implementation GKCommerceApplicationContext
@@ -26,10 +27,8 @@
     [self bindClass:[GKCheckoutServiceImpl class]
     toProtocol:@protocol(GKCheckoutService)];
     
-    
-    
-    [self bindClass:[CheckoutViewController class]
-            toClass:[CheckoutViewController class]];
+    [self bindProvider:[[CheckoutViewControllerProvider alloc] init]
+               toClass:[CheckoutViewController class]];
 }
 
 + (void)install

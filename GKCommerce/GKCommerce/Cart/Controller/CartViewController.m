@@ -141,10 +141,9 @@ typedef enum {
 - (IBAction)didTapCheckout:(id)sender
 {
     CheckoutViewController *checkout;
-    checkout = [[CheckoutViewController alloc]
-                initWithUser:self.user cart:self.cart];
-//    checkout = [[JSObjection defaultInjector] getObjectWithArgs:[CheckoutViewController class], self.user, self.cart, nil];
-//    checkout = [[JSObjection defaultInjector] ]
+    checkout = [[JSObjection defaultInjector]
+                getObjectWithArgs:[CheckoutViewController class], self.user,
+                    self.cart, nil];
     checkout.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:checkout animated:YES];
 }

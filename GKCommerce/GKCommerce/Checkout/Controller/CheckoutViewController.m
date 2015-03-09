@@ -87,7 +87,6 @@ objection_requires_sel(@selector(service))
 
 - (void)setup
 {
-    [[JSObjection defaultInjector] injectDependencies:self];
     numberOfStoreAdditionCell = 3;
     [self.cart addObserver:self
                 forKeyPath:@"products"
