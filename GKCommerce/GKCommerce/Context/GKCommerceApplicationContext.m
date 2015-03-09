@@ -20,14 +20,16 @@
 
 - (void)configure
 {
-    [self bind:[GKCheckoutBackendDemostration class]
+    [self bindClass:[GKCheckoutBackendDemostration class]
     toProtocol:@protocol(GKCheckoutBackend)];
     
-    [self bind:[GKCheckoutServiceImpl class]
+    [self bindClass:[GKCheckoutServiceImpl class]
     toProtocol:@protocol(GKCheckoutService)];
     
-    Class checkoutController = [CheckoutViewController class];
-    [self bindClass:[CheckoutViewController class] toClass:[CheckoutViewController class]];
+    
+    
+    [self bindClass:[CheckoutViewController class]
+            toClass:[CheckoutViewController class]];
 }
 
 + (void)install
@@ -36,6 +38,9 @@
     GKCommerceApplicationContext *context;
     context = [[GKCommerceApplicationContext alloc] init];
     injector = [JSObjection createInjector:context];
+    
+    id<GKCheckoutService> service;
+    service = [injector getObject:@protocol(GKCheckoutService)];
     
     [JSObjection setDefaultInjector:injector];
 }

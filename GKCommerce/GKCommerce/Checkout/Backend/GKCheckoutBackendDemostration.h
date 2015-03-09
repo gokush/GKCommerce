@@ -10,5 +10,7 @@
 #import "GKCheckoutBackend.h"
 
 @interface GKCheckoutBackendDemostration : NSObject <GKCheckoutBackend>
+
+@property (assign, nonatomic) BOOL foreverSuccess;
 - (RACSignal *)requestCheckout:(Cart *)cart;
 @end

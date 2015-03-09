@@ -560,7 +560,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     cartItem.quantity -= 1;
 }
 
-// TODO: miss requestCheckout
 - (void)checkOrder
 {
     if (self.cart.price.floatValue == 0) {
@@ -584,7 +583,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 //    }
 //}
 
-// TODO: not currentOrder
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
 //    self.user.currentOrder.message = textField.text;
@@ -592,6 +590,14 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (IBAction)checkoutDidTap:(id)sender
 {
+    @weakify(self);
+    [[self.service checkout:self.cart] subscribeNext:^(Order *order) {
+        @strongify(self);
+        PaymentSuccessViewController *controller;
+        controller = [[PaymentSuccessViewController alloc]
+                      initWithOrder:order andUser:self.user];
+        [self.navigationController pushViewController:controller animated:YES];
+    }];
 }
 
 - (void)didTapCheckoutScreen:(id)sender
