@@ -16,6 +16,7 @@
 #import <CocoaLumberjack/CocoaLumberjack.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <ReactiveCocoa/RACEXTScope.h>
+#import <Objection/Objection.h>
 #import "Utility.h"
 #import "GKView.h"
 #import "GKButton.h"

@@ -72,6 +72,7 @@ typedef enum {
 @end
 
 @implementation CheckoutViewController
+objection_requires_sel(@selector(service))
 
 - (id)initWithUser:(User *)user cart:(Cart *)cart
 {
@@ -86,13 +87,7 @@ typedef enum {
 
 - (void)setup
 {
-    userAccountLoaded = NO;
-    
-//    [self.service flowCheckoutOrderWithUser:self.user shop:[Shop currentShop]
-//     cart:self.cart];
-    
-//    if (!self.user.currentOrder)
-//        self.user.currentOrder = [[Order alloc] init];
+    [[JSObjection defaultInjector] injectDependencies:self];
     numberOfStoreAdditionCell = 3;
     [self.cart addObserver:self
                 forKeyPath:@"products"
@@ -121,12 +116,6 @@ typedef enum {
      selector:@selector(keyboardWillHide:)
      name:UIKeyboardWillHideNotification object:nil];
     
-//    self.shop = [Shop currentShop];
-    
-//    [self.shop addObserver:self forKeyPath:@"shippingMethods" options:0
-//                   context:nil];
-//    [[Shop currentShop] addObserver:self forKeyPath:@"payments" options:0
-//                            context:nil];
     [self.cart addObserver:self forKeyPath:@"invoice"
                    options:NSKeyValueObservingOptionInitial context:nil];
     [self.cart addObserver:self forKeyPath:@"totalPrice"
@@ -149,21 +138,6 @@ typedef enum {
         [@"totalPrice" isEqualToString:keyPath]) {
         [self fillData];
     }
-    
-    // TODO: miss Shop
-//    if ([@"shippingMethods" isEqualToString:keyPath]) {
-//        ShippingMethod *defaultShipping;
-//        defaultShipping = [[Shop currentShop].shippingMethods firstObject];
-//        if (!self.cart.shipping)
-//            self.cart.shipping = defaultShipping;
-//    } else if ([@"payments" isEqualToString:keyPath]) {
-//        Payment *defaultPayment;
-//        defaultPayment = [[Shop currentShop].payments firstObject];
-//        if (!self.cart.payment)
-//            self.cart.payment = defaultPayment;
-//    } else if ([@"invoice" isEqualToString:keyPath]) {
-//        
-//    }
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification
@@ -231,8 +205,6 @@ typedef enum {
 {
     [self.navigationController setNavigationBarHidden:NO];
     [super viewWillAppear:animated];
-    
-//    [self fillData];
 }
 
 - (void)fillData

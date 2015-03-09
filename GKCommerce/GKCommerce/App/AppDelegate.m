@@ -18,6 +18,7 @@
 #import "GKFactoryMock.h"
 #import "GKProductBackendImpl.h"
 #import "Fixtures.h"
+#import "GKCommerceApplicationContext.h"
 
 @interface AppDelegate ()
 @end
@@ -28,6 +29,8 @@
 - (BOOL)application:(UIApplication *)application
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [GKCommerceApplicationContext install];
+    
     [[Dependency shared] setFactory:[[GKFactoryMock alloc] init]];
     
     [DDLog addLogger:[DDTTYLogger sharedInstance]];

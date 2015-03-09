@@ -7,10 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "CheckoutBackendDelegate.h"
 
-@protocol CheckoutBackend <NSObject>
-
-@property (strong, nonatomic) id<CheckoutBackendDelegate> delegate;
-- (void)requestCheckout:(Cart *)cart;
+@protocol GKCheckoutBackend <NSObject>
+- (RACSignal *)requestCheckout:(Cart *)cart;
 @end

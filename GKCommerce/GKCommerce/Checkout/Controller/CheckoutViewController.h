@@ -11,6 +11,7 @@
 #import "Cart.h"
 #import "Order.h"
 #import "CheckoutProductTableViewCell.h"
+#import "GKCheckoutService.h"
 
 @interface CheckoutViewController : UIViewController
 <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate,
@@ -24,6 +25,7 @@ CheckoutProductTableViewCellDelegate>
 @property (assign, nonatomic) PaymentType paymentType;
 @property (strong, nonatomic) NSArray *cartItems;
 @property (assign, nonatomic) BOOL isChangeable;
+@property (strong, nonatomic) id<GKCheckoutService> service;
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UILabel *totalPrice;

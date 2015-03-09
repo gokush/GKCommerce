@@ -143,6 +143,8 @@ typedef enum {
     CheckoutViewController *checkout;
     checkout = [[CheckoutViewController alloc]
                 initWithUser:self.user cart:self.cart];
+//    checkout = [[JSObjection defaultInjector] getObjectWithArgs:[CheckoutViewController class], self.user, self.cart, nil];
+//    checkout = [[JSObjection defaultInjector] ]
     checkout.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:checkout animated:YES];
 }

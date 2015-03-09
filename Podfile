@@ -11,6 +11,7 @@ target "GKCommerce" do
     pod 'SKSTableView', :git=> 'http://github.com/gokush/SKSTableView.git'
     pod 'ReactiveCocoa'
     pod 'ImageMagick'
+    pod 'Objection'
 end
 
 target "GKCommerceTests" do
