@@ -80,6 +80,9 @@
 		E57173D21AADA20900C5F775 /* GKCommerceApplicationContext.m in Sources */ = {isa = PBXBuildFile; fileRef = E57173D11AADA20900C5F775 /* GKCommerceApplicationContext.m */; };
 		E57173D51AADAC1300C5F775 /* GKCheckoutBackendDemostration.m in Sources */ = {isa = PBXBuildFile; fileRef = E57173D41AADAC1300C5F775 /* GKCheckoutBackendDemostration.m */; };
 		E57173DC1AADC12300C5F775 /* CheckoutViewControllerProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = E57173DB1AADC12300C5F775 /* CheckoutViewControllerProvider.m */; };
+		E57173E21AB08B7600C5F775 /* GKOrderListController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57173E11AB08B7600C5F775 /* GKOrderListController.m */; };
+		E57173E41AB08CE500C5F775 /* GKOrderListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E57173E31AB08CE500C5F775 /* GKOrderListView.xib */; };
+		E57173E91AB0968300C5F775 /* GKOrderServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = E57173E81AB0968300C5F775 /* GKOrderServiceImpl.m */; };
 		E5748F3C1A20E5F700306ADC /* GKLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5748F3B1A20E5F700306ADC /* GKLabel.m */; };
 		E5748F3F1A20EC0F00306ADC /* ECCartService.m in Sources */ = {isa = PBXBuildFile; fileRef = E5748F3E1A20EC0F00306ADC /* ECCartService.m */; };
 		E5748F431A20EC5D00306ADC /* CartRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = E5748F421A20EC5D00306ADC /* CartRepository.m */; };
@@ -481,6 +484,13 @@
 		E57173D41AADAC1300C5F775 /* GKCheckoutBackendDemostration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKCheckoutBackendDemostration.m; path = Backend/GKCheckoutBackendDemostration.m; sourceTree = "<group>"; };
 		E57173DA1AADC12300C5F775 /* CheckoutViewControllerProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CheckoutViewControllerProvider.h; path = Provider/CheckoutViewControllerProvider.h; sourceTree = "<group>"; };
 		E57173DB1AADC12300C5F775 /* CheckoutViewControllerProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CheckoutViewControllerProvider.m; path = Provider/CheckoutViewControllerProvider.m; sourceTree = "<group>"; };
+		E57173E01AB08B7600C5F775 /* GKOrderListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKOrderListController.h; path = OrderList/Controller/GKOrderListController.h; sourceTree = "<group>"; };
+		E57173E11AB08B7600C5F775 /* GKOrderListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKOrderListController.m; path = OrderList/Controller/GKOrderListController.m; sourceTree = "<group>"; };
+		E57173E31AB08CE500C5F775 /* GKOrderListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GKOrderListView.xib; path = OrderList/View/GKOrderListView.xib; sourceTree = "<group>"; };
+		E57173E51AB08DA200C5F775 /* GKOrderBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKOrderBackend.h; sourceTree = "<group>"; };
+		E57173E61AB08DCD00C5F775 /* GKOrderService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKOrderService.h; sourceTree = "<group>"; };
+		E57173E71AB0968300C5F775 /* GKOrderServiceImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKOrderServiceImpl.h; sourceTree = "<group>"; };
+		E57173E81AB0968300C5F775 /* GKOrderServiceImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKOrderServiceImpl.m; sourceTree = "<group>"; };
 		E57298AA1A29B7EF00F9F456 /* ProductService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductService.h; sourceTree = "<group>"; };
 		E5748F3A1A20E5F700306ADC /* GKLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKLabel.h; path = GKCommerce/UI/GKLabel.h; sourceTree = "<group>"; };
 		E5748F3B1A20E5F700306ADC /* GKLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKLabel.m; path = GKCommerce/UI/GKLabel.m; sourceTree = "<group>"; };
@@ -1323,6 +1333,32 @@
 			name = Provider;
 			sourceTree = "<group>";
 		};
+		E57173DD1AB08B4100C5F775 /* OrderList */ = {
+			isa = PBXGroup;
+			children = (
+				E57173DF1AB08B5200C5F775 /* View */,
+				E57173DE1AB08B4C00C5F775 /* Controller */,
+			);
+			name = OrderList;
+			sourceTree = "<group>";
+		};
+		E57173DE1AB08B4C00C5F775 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E57173E01AB08B7600C5F775 /* GKOrderListController.h */,
+				E57173E11AB08B7600C5F775 /* GKOrderListController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E57173DF1AB08B5200C5F775 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E57173E31AB08CE500C5F775 /* GKOrderListView.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		E5748F441A20EC6000306ADC /* Backend */ = {
 			isa = PBXGroup;
 			children = (
@@ -1796,8 +1832,13 @@
 		E5D381961A2D4A8F00A7CB2E /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				E57173DD1AB08B4100C5F775 /* OrderList */,
 				E53EC07F1A2D96B9005457F5 /* OrderDetail */,
 				E5D381971A2D4A8F00A7CB2E /* Model */,
+				E57173E51AB08DA200C5F775 /* GKOrderBackend.h */,
+				E57173E61AB08DCD00C5F775 /* GKOrderService.h */,
+				E57173E71AB0968300C5F775 /* GKOrderServiceImpl.h */,
+				E57173E81AB0968300C5F775 /* GKOrderServiceImpl.m */,
 			);
 			name = Order;
 			path = GKCommerce/Order;
@@ -2360,6 +2401,7 @@
 				E5CD611C1A2C72D30036160C /* feature_iPhone@2x.png in Resources */,
 				E5B98C681A70C6EB00DDF0FD /* ProductCategories.json in Resources */,
 				E53EC07A1A2D9655005457F5 /* PaymentFailureView.xib in Resources */,
+				E57173E41AB08CE500C5F775 /* GKOrderListView.xib in Resources */,
 				E5D381941A2D3D2000A7CB2E /* CheckoutView.xib in Resources */,
 				E5D3818D1A2D3D2000A7CB2E /* CheckoutProductTableViewCell.xib in Resources */,
 				E59890CA1A2B0AA500105F99 /* ProductListCollectionViewCell.xib in Resources */,
@@ -2576,6 +2618,7 @@
 				E53EC12C1A2D97C8005457F5 /* MD5DataSigner.m in Sources */,
 				E55ED3FD1A7B737100DC361D /* GKUserBackendMock.m in Sources */,
 				E5D9D53C1A1E27D900875264 /* UserAuthenticationModel.m in Sources */,
+				E57173E91AB0968300C5F775 /* GKOrderServiceImpl.m in Sources */,
 				E57D3FF31A237BEC00AC0FF9 /* GKToggleButton.m in Sources */,
 				E5D381D51A2D63F600A7CB2E /* ShippingMethod.m in Sources */,
 				E5D3819A1A2D4A8F00A7CB2E /* Order.m in Sources */,
@@ -2592,6 +2635,7 @@
 				E57173D51AADAC1300C5F775 /* GKCheckoutBackendDemostration.m in Sources */,
 				E5D9D5AD1A1E57FB00875264 /* GKCarouselView.m in Sources */,
 				E5CD61211A2C72D30036160C /* FeatureColumnModel.m in Sources */,
+				E57173E21AB08B7600C5F775 /* GKOrderListController.m in Sources */,
 				E5D9D5801A1E50FE00875264 /* ProductDetailTableViewCell.m in Sources */,
 				E5CD61181A2C72D30036160C /* FeatureThreeColumnTableViewCell.m in Sources */,
 				E5ED2DDF1A457BBB00CA6661 /* Region.m in Sources */,
