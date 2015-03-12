@@ -19,4 +19,5 @@ target "GKCommerceTests" do
     pod 'ReactiveCocoa'
     pod 'Specta'
     pod 'Expecta'
+    pod 'OCMock'
 end

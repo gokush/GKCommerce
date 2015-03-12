@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GKOrderBackend.h"
 
 @protocol GKOrderService <NSObject>
 
+@property (strong, nonatomic) id<GKOrderBackend> backend;
+- (RACSignal *)orders:(User *)user;
 @end

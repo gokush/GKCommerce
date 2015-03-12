@@ -7,7 +7,13 @@
 //
 
 #import "GKOrderServiceImpl.h"
+#import <Objection/Objection.h>
 
 @implementation GKOrderServiceImpl
+objection_requires_sel(@selector(backend))
 
+- (RACSignal *)orders:(User *)user
+{
+    return [self.backend requestOrders:user];
+}
 @end

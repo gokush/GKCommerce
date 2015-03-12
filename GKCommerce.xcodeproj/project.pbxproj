@@ -83,6 +83,7 @@
 		E57173E21AB08B7600C5F775 /* GKOrderListController.m in Sources */ = {isa = PBXBuildFile; fileRef = E57173E11AB08B7600C5F775 /* GKOrderListController.m */; };
 		E57173E41AB08CE500C5F775 /* GKOrderListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E57173E31AB08CE500C5F775 /* GKOrderListView.xib */; };
 		E57173E91AB0968300C5F775 /* GKOrderServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = E57173E81AB0968300C5F775 /* GKOrderServiceImpl.m */; };
+		E57173EC1AB18E0500C5F775 /* GKOrderServiceImplTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E57173EB1AB18E0500C5F775 /* GKOrderServiceImplTests.m */; };
 		E5748F3C1A20E5F700306ADC /* GKLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5748F3B1A20E5F700306ADC /* GKLabel.m */; };
 		E5748F3F1A20EC0F00306ADC /* ECCartService.m in Sources */ = {isa = PBXBuildFile; fileRef = E5748F3E1A20EC0F00306ADC /* ECCartService.m */; };
 		E5748F431A20EC5D00306ADC /* CartRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = E5748F421A20EC5D00306ADC /* CartRepository.m */; };
@@ -491,6 +492,7 @@
 		E57173E61AB08DCD00C5F775 /* GKOrderService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKOrderService.h; sourceTree = "<group>"; };
 		E57173E71AB0968300C5F775 /* GKOrderServiceImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKOrderServiceImpl.h; sourceTree = "<group>"; };
 		E57173E81AB0968300C5F775 /* GKOrderServiceImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKOrderServiceImpl.m; sourceTree = "<group>"; };
+		E57173EB1AB18E0500C5F775 /* GKOrderServiceImplTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKOrderServiceImplTests.m; path = Order/GKOrderServiceImplTests.m; sourceTree = "<group>"; };
 		E57298AA1A29B7EF00F9F456 /* ProductService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductService.h; sourceTree = "<group>"; };
 		E5748F3A1A20E5F700306ADC /* GKLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKLabel.h; path = GKCommerce/UI/GKLabel.h; sourceTree = "<group>"; };
 		E5748F3B1A20E5F700306ADC /* GKLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKLabel.m; path = GKCommerce/UI/GKLabel.m; sourceTree = "<group>"; };
@@ -908,6 +910,7 @@
 		9035D02D1A0CB3E100C6E53C /* GKCommerceTests */ = {
 			isa = PBXGroup;
 			children = (
+				E57173EA1AB18DC300C5F775 /* Order */,
 				E5B98C781A70DA2900DDF0FD /* Product */,
 				E5B98C6F1A70CE3F00DDF0FD /* Utility */,
 				E57C64D91A6BA54F00249A86 /* User */,
@@ -1357,6 +1360,14 @@
 				E57173E31AB08CE500C5F775 /* GKOrderListView.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		E57173EA1AB18DC300C5F775 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				E57173EB1AB18E0500C5F775 /* GKOrderServiceImplTests.m */,
+			);
+			name = Order;
 			sourceTree = "<group>";
 		};
 		E5748F441A20EC6000306ADC /* Backend */ = {
@@ -2720,6 +2731,7 @@
 			files = (
 				E5B98C7B1A70DA7700DDF0FD /* GKProductBackendAssemblerTest.m in Sources */,
 				E59FEDAC1AA59FC900419FED /* GKResizerTests.m in Sources */,
+				E57173EC1AB18E0500C5F775 /* GKOrderServiceImplTests.m in Sources */,
 				E5B98C711A70CE7300DDF0FD /* NSString+NSBundleTest.m in Sources */,
 				9035D0311A0CB3E100C6E53C /* GKCommerceTests.m in Sources */,
 				E57C64DC1A6BA54F00249A86 /* GKUserBackendImplTest.m in Sources */,
