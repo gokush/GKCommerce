@@ -351,6 +351,9 @@
     DestroyMagickWand(mw);
     MagickWandTerminus();
     
+    if (NULL == blob)
+        return nil;
+    
     NSData *bytes = [[NSData alloc] initWithBytes:blob length:length];
     return [[UIImage alloc] initWithData:bytes];
 }
