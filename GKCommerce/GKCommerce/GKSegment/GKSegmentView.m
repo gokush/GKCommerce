@@ -98,10 +98,8 @@
          UIControlContentVerticalAlignmentCenter];
         [segmentButton setContentHorizontalAlignment:
          UIControlContentHorizontalAlignmentCenter];
-//        segmentButton.titleLabel.font = [UIFont systemFontOfSize:16.0f];
         segmentButton.tag = i;
         [self addSubview:segmentButton];
-        NSLog(@"%f", self.frame.size.height);
         [self.segments addObject:segmentButton];
     }
     

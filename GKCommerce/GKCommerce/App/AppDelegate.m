@@ -48,7 +48,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     
     [[Fixtures fixtures] install];
     
-    [[[TestUI alloc] init] gotoProductList:self.tabBarController];
+//    [[[TestUI alloc] init] gotoProductList:self.tabBarController];
 //  [[[TestUI alloc] init] gotoAddressList:self.tabBarController];
   
     return YES;

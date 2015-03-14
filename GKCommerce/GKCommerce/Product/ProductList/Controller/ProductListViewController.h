@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ThreeStageSegmentView.h"
 #import "ProductService.h"
 #import "GKSegmentView.h"
 

@@ -107,7 +107,20 @@
 - (void)segmentView:(GKSegmentView *)segmentView
    didSelectAtIndex:(NSInteger)index
 {
-    
+    switch (index) {
+        case 1:
+            self.search.sort = @"price_asc";
+            break;
+        case 2:
+            self.search.sort = @"price_desc";
+            break;
+        case 0:
+        default:
+            self.search.sort = @"id_desc";
+            break;
+    }
+    [[self.service productsWithSearchModel:self.search]
+     subscribeNext:[self didLoadProductsWithSearchModel]];
 }
 
 - (NSInteger)numberOfSegments
@@ -133,26 +146,6 @@ titleForSegmentAtIndex:(NSInteger)index
             break;
     }
     return title;
-}
-
-#pragma mark- ThreeStageSegmentViewDelegate
-- (void)threeStageSegmentView:(ThreeStageSegmentView *)segment
-             didSelectAtIndex:(NSInteger)index
-{
-    switch (index) {
-        case 1:
-            self.search.sort = @"price_asc";
-            break;
-        case 2:
-            self.search.sort = @"price_desc";
-            break;
-        case 0:
-        default:
-            self.search.sort = @"id_desc";
-            break;
-    }
-  [[self.service productsWithSearchModel:self.search]
-   subscribeNext:[self didLoadProductsWithSearchModel]];
 }
 
 #pragma mark- UICollectionView
