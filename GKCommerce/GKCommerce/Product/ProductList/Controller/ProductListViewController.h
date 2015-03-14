@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "ThreeStageSegmentView.h"
 #import "ProductService.h"
+#import "GKSegmentView.h"
 
 @interface ProductListViewController : UIViewController
-<ThreeStageSegmentViewDelegate, ProductServiceDelegate>
+<ProductServiceDelegate, GKSegmentViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) IBOutlet GKSegmentView *segmentView;
 @property (assign, nonatomic) BOOL isLoadingMore;
 @property (assign, nonatomic) BOOL isReloading;
 @property (strong, nonatomic) ProductCategory *productCategory;

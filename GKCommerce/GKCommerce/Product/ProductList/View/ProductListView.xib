@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductListViewController">
             <connections>
                 <outlet property="collectionView" destination="Ast-cn-bu1" id="Ado-WM-Sxt"/>
+                <outlet property="segmentView" destination="uw6-kV-0Jv" id="TF8-nF-Sqx"/>
                 <outlet property="view" destination="tem-ee-9mn" id="Rzl-rs-rlZ"/>
             </connections>
         </placeholder>
@@ -16,64 +17,15 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uw6-kV-0Jv" customClass="ThreeStageSegmentView">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="41"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xwz-5q-TGl">
-                            <rect key="frame" x="0.0" y="0.0" width="106" height="40"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <state key="normal" title="新品">
-                                <color key="titleColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted">
-                                <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                        </button>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kap-hm-63d">
-                            <color key="backgroundColor" red="0.80169802300000004" green="0.80169802300000004" blue="0.80169802300000004" alpha="1" colorSpace="calibratedRGB"/>
-                        </view>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVl-1m-9oM">
-                            <rect key="frame" x="106" y="0.0" width="106" height="40"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <state key="normal" title="价格最低">
-                                <color key="titleColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted">
-                                <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                        </button>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3CF-EB-fl3">
-                            <color key="backgroundColor" red="0.80169802300000004" green="0.80169802300000004" blue="0.80169802300000004" alpha="1" colorSpace="calibratedRGB"/>
-                        </view>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gnZ-vP-DIh">
-                            <rect key="frame" x="212" y="0.0" width="106" height="40"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <state key="normal" title="价格最高">
-                                <color key="titleColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <state key="highlighted">
-                                <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                        </button>
-                    </subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uw6-kV-0Jv" customClass="GKSegmentView">
+                    <rect key="frame" x="10" y="0.0" width="300" height="41"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="320" id="4jh-Hu-Te0"/>
+                        <constraint firstAttribute="width" constant="300" id="4jh-Hu-Te0"/>
                         <constraint firstAttribute="height" constant="41" id="WP7-Tb-EUp"/>
                     </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="bottomBorderColor">
-                            <color key="value" red="0.79607843140000001" green="0.79607843140000001" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="bottomBorderWidth">
-                            <real key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="delegate" destination="-1" id="Bcr-6T-bFg"/>
+                        <outlet property="delegate" destination="-1" id="DWB-gS-HQj"/>
                     </connections>
                 </view>
                 <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Ast-cn-bu1">
@@ -98,7 +50,7 @@
                 <constraint firstAttribute="bottom" secondItem="Ast-cn-bu1" secondAttribute="bottom" id="Ac1-x5-Ibf"/>
                 <constraint firstAttribute="trailing" secondItem="Ast-cn-bu1" secondAttribute="trailing" id="Fww-bw-eUS"/>
                 <constraint firstItem="uw6-kV-0Jv" firstAttribute="top" secondItem="tem-ee-9mn" secondAttribute="top" id="cFi-zh-zL0"/>
-                <constraint firstItem="uw6-kV-0Jv" firstAttribute="leading" secondItem="tem-ee-9mn" secondAttribute="leading" id="lVE-gt-JzF"/>
+                <constraint firstItem="uw6-kV-0Jv" firstAttribute="leading" secondItem="tem-ee-9mn" secondAttribute="leading" constant="10" id="lVE-gt-JzF"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>

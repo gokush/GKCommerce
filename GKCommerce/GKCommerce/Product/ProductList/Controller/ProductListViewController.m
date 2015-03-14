@@ -76,6 +76,8 @@
     
     [[self.service productsWithSearchModel:self.search]
      subscribeNext:[self didLoadProductsWithSearchModel]];
+    
+    [self.segmentView reloadData];
 }
 
 - (void(^)(RACTuple *))didLoadProductsWithSearchModel
@@ -100,6 +102,37 @@
     [self.collectionView reloadData];
     self.collectionView.showsInfiniteScrolling = [searchModel hasMore];
   };
+}
+
+- (void)segmentView:(GKSegmentView *)segmentView
+   didSelectAtIndex:(NSInteger)index
+{
+    
+}
+
+- (NSInteger)numberOfSegments
+{
+    return 3;
+}
+
+- (NSString *)segmentView:(GKSegmentView *)segmentView
+titleForSegmentAtIndex:(NSInteger)index
+{
+    NSString *title;
+    switch (index) {
+        case 0:
+            title = @"新品";
+            break;
+        case 1:
+            title = @"价格最低";
+            break;
+        case 2:
+            title = @"价格最高";
+            break;
+        default:
+            break;
+    }
+    return title;
 }
 
 #pragma mark- ThreeStageSegmentViewDelegate
