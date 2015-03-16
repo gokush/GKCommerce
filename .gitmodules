@@ -1,0 +1,3 @@
+[submodule "vendor/GKUserKit"]
+	path = vendor/GKUserKit
+	url = https://github.com/gokush/GKUserKit.git
