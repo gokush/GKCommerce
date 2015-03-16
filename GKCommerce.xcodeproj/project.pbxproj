@@ -61,6 +61,7 @@
 		E54492CE1A3680680097727D /* CartItemListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E54492CD1A3680680097727D /* CartItemListViewModel.m */; };
 		E54492D11A3680780097727D /* CartViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E54492D01A3680780097727D /* CartViewModel.m */; };
 		E54732F61AB6FC0600271704 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E54732F81AB6FC0600271704 /* InfoPlist.strings */; };
+		E54732FB1AB703DD00271704 /* Application.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E54732FA1AB703DD00271704 /* Application.xcassets */; };
 		E549C18C1A1B8EED0014656D /* UserAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E549C18B1A1B8EED0014656D /* UserAuthenticationViewController.m */; };
 		E549C1941A1B8FBA0014656D /* UserAuthenticationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E549C1921A1B8FBA0014656D /* UserAuthenticationTableViewCell.m */; };
 		E549C1951A1B8FBA0014656D /* UserAuthenticationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E549C1931A1B8FBA0014656D /* UserAuthenticationTableViewCell.xib */; };
@@ -448,6 +449,7 @@
 		E54492CF1A3680780097727D /* CartViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartViewModel.h; path = Model/CartViewModel.h; sourceTree = "<group>"; };
 		E54492D01A3680780097727D /* CartViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartViewModel.m; path = Model/CartViewModel.m; sourceTree = "<group>"; };
 		E54732F71AB6FC0600271704 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E54732FA1AB703DD00271704 /* Application.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Application.xcassets; path = GKCommerce/AssetCatalog/Application.xcassets; sourceTree = "<group>"; };
 		E549C18A1A1B8EED0014656D /* UserAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserAuthenticationViewController.h; path = GKCommerce/User/UserAuthentication/Controller/UserAuthenticationViewController.h; sourceTree = "<group>"; };
 		E549C18B1A1B8EED0014656D /* UserAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserAuthenticationViewController.m; path = GKCommerce/User/UserAuthentication/Controller/UserAuthenticationViewController.m; sourceTree = "<group>"; };
 		E549C1911A1B8FBA0014656D /* UserAuthenticationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserAuthenticationTableViewCell.h; path = GKCommerce/User/UserAuthentication/TableVIewCell/UserAuthenticationTableViewCell.h; sourceTree = "<group>"; };
@@ -1619,6 +1621,7 @@
 				E5C806251A1A469700880B20 /* Mine.xcassets */,
 				E59180CC1A1FB0F90021F855 /* Product.xcassets */,
 				E5748F501A21F65A00306ADC /* Cart.xcassets */,
+				E54732FA1AB703DD00271704 /* Application.xcassets */,
 			);
 			name = AssetCatalog;
 			sourceTree = "<group>";
@@ -2450,6 +2453,7 @@
 				E5ED2DD91A457BBB00CA6661 /* AddressListTableViewCell.xib in Resources */,
 				E549C1971A1B8FDA0014656D /* UserAuthenticationView.xib in Resources */,
 				E5D3818B1A2D3D2000A7CB2E /* CheckoutPaymentTableViewCell.xib in Resources */,
+				E54732FB1AB703DD00271704 /* Application.xcassets in Resources */,
 				E5CD61151A2C72D30036160C /* FeatureOneColumnTableViewCell.xib in Resources */,
 				E5CD60E51A2C567E0036160C /* ProductCategoryTableViewCell.xib in Resources */,
 				E53EC11E1A2D97C8005457F5 /* Alixpay.bundle in Resources */,
