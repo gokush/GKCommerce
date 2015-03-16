@@ -152,7 +152,8 @@ titleForSegmentAtIndex:(NSInteger)index
 -(NSInteger)collectionView:(UICollectionView *)collectionView
     numberOfItemsInSection:(NSInteger)section
 {
-    return self.products.count;
+    NSInteger numbers = self.products.count;
+    return numbers;
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
