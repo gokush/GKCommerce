@@ -60,6 +60,7 @@
 		E53EC1331A2DD3CE005457F5 /* CartItemList.m in Sources */ = {isa = PBXBuildFile; fileRef = E53EC1321A2DD3CE005457F5 /* CartItemList.m */; };
 		E54492CE1A3680680097727D /* CartItemListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E54492CD1A3680680097727D /* CartItemListViewModel.m */; };
 		E54492D11A3680780097727D /* CartViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E54492D01A3680780097727D /* CartViewModel.m */; };
+		E54732F61AB6FC0600271704 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E54732F81AB6FC0600271704 /* InfoPlist.strings */; };
 		E549C18C1A1B8EED0014656D /* UserAuthenticationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E549C18B1A1B8EED0014656D /* UserAuthenticationViewController.m */; };
 		E549C1941A1B8FBA0014656D /* UserAuthenticationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E549C1921A1B8FBA0014656D /* UserAuthenticationTableViewCell.m */; };
 		E549C1951A1B8FBA0014656D /* UserAuthenticationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E549C1931A1B8FBA0014656D /* UserAuthenticationTableViewCell.xib */; };
@@ -446,6 +447,7 @@
 		E54492CD1A3680680097727D /* CartItemListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartItemListViewModel.m; path = Model/CartItemListViewModel.m; sourceTree = "<group>"; };
 		E54492CF1A3680780097727D /* CartViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CartViewModel.h; path = Model/CartViewModel.h; sourceTree = "<group>"; };
 		E54492D01A3680780097727D /* CartViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CartViewModel.m; path = Model/CartViewModel.m; sourceTree = "<group>"; };
+		E54732F71AB6FC0600271704 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E549C18A1A1B8EED0014656D /* UserAuthenticationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserAuthenticationViewController.h; path = GKCommerce/User/UserAuthentication/Controller/UserAuthenticationViewController.h; sourceTree = "<group>"; };
 		E549C18B1A1B8EED0014656D /* UserAuthenticationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserAuthenticationViewController.m; path = GKCommerce/User/UserAuthentication/Controller/UserAuthenticationViewController.m; sourceTree = "<group>"; };
 		E549C1911A1B8FBA0014656D /* UserAuthenticationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserAuthenticationTableViewCell.h; path = GKCommerce/User/UserAuthentication/TableVIewCell/UserAuthenticationTableViewCell.h; sourceTree = "<group>"; };
@@ -903,6 +905,7 @@
 			children = (
 				9035D0121A0CB3E100C6E53C /* Info.plist */,
 				9035D0131A0CB3E100C6E53C /* main.m */,
+				E54732F81AB6FC0600271704 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -2423,6 +2426,7 @@
 				E5D381941A2D3D2000A7CB2E /* CheckoutView.xib in Resources */,
 				E5D3818D1A2D3D2000A7CB2E /* CheckoutProductTableViewCell.xib in Resources */,
 				E59890CA1A2B0AA500105F99 /* ProductListCollectionViewCell.xib in Resources */,
+				E54732F61AB6FC0600271704 /* InfoPlist.strings in Resources */,
 				E5ED2DD11A457BBB00CA6661 /* AddressView.xib in Resources */,
 				E5D3818F1A2D3D2000A7CB2E /* CheckoutShippingTableViewCell.xib in Resources */,
 				E5D9D5871A1E50FE00875264 /* ProductDetailView.xib in Resources */,
@@ -2761,6 +2765,14 @@
 				9035D0241A0CB3E100C6E53C /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		E54732F81AB6FC0600271704 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E54732F71AB6FC0600271704 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
