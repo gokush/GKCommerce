@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductDetailViewController">
@@ -44,16 +44,25 @@
                             </userDefinedRuntimeAttributes>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dll-iH-2w3" customClass="GKButton">
-                            <rect key="frame" x="192" y="8" width="116" height="40"/>
-                            <color key="backgroundColor" red="1" green="0.58039215686274503" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <rect key="frame" x="212" y="13" width="100" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="hyn-EN-Ptt"/>
+                                <constraint firstAttribute="height" constant="30" id="ja7-j9-4DH"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                             <state key="normal" title="加入购物车">
-                                <color key="titleColor" red="1" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                     <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
@@ -61,9 +70,13 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8m-cl-CWD" customClass="GKButton">
-                            <rect key="frame" x="68" y="8" width="116" height="40"/>
-                            <color key="backgroundColor" red="1" green="0.37647058823529411" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <rect key="frame" x="104" y="13" width="100" height="30"/>
+                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="9lc-PD-0OY"/>
+                                <constraint firstAttribute="height" constant="30" id="pDz-fW-T0P"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                             <state key="normal" title="立即购买">
                                 <color key="titleColor" red="0.98039215690000003" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -77,13 +90,10 @@
                     </subviews>
                     <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="centerY" secondItem="b8m-cl-CWD" secondAttribute="centerY" id="5li-dp-wVG"/>
                         <constraint firstAttribute="width" constant="320" id="6iV-qE-8Fl"/>
-                        <constraint firstItem="b8m-cl-CWD" firstAttribute="leading" secondItem="QBv-xy-cHa" secondAttribute="trailing" constant="12" id="Zno-pw-j4M"/>
-                        <constraint firstItem="dll-iH-2w3" firstAttribute="leading" secondItem="b8m-cl-CWD" secondAttribute="trailing" constant="12" id="awl-Yu-Csz"/>
                         <constraint firstAttribute="height" constant="55" id="bbl-qE-2zF"/>
-                        <constraint firstAttribute="centerY" secondItem="dll-iH-2w3" secondAttribute="centerY" id="dE4-QF-rEY"/>
-                        <constraint firstAttribute="centerY" secondItem="QBv-xy-cHa" secondAttribute="centerY" id="vGR-EJ-B9b"/>
+                        <constraint firstItem="dll-iH-2w3" firstAttribute="leading" secondItem="b8m-cl-CWD" secondAttribute="trailing" constant="8" id="eeP-Y1-pmv"/>
+                        <constraint firstAttribute="trailing" secondItem="dll-iH-2w3" secondAttribute="trailing" constant="8" id="tTj-1Z-dp9"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BHr-tq-CeP">
@@ -103,6 +113,7 @@
                 <constraint firstItem="BHr-tq-CeP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="aAP-Dc-47B"/>
                 <constraint firstItem="aHc-lH-ngO" firstAttribute="top" secondItem="BHr-tq-CeP" secondAttribute="bottom" id="bXA-gc-XrT"/>
                 <constraint firstItem="BHr-tq-CeP" firstAttribute="leading" secondItem="aHc-lH-ngO" secondAttribute="leading" id="h0O-VZ-zjK"/>
+                <constraint firstAttribute="trailing" secondItem="BHr-tq-CeP" secondAttribute="trailing" id="hOK-gN-AFq"/>
                 <constraint firstItem="BHr-tq-CeP" firstAttribute="trailing" secondItem="aHc-lH-ngO" secondAttribute="trailing" id="kmx-Rw-u73"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>

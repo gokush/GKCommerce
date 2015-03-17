@@ -160,6 +160,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     ProductDetailViewController *viewController;
     viewController = [[ProductDetailViewController alloc]
                       initWithProductID:1 user:nil];
+    [viewController setHidesBottomBarWhenPushed:YES];
     [self.navigationController pushViewController:viewController animated:YES];
     
     switch (indexPath.section) {
