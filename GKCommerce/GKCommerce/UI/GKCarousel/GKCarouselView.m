@@ -14,6 +14,8 @@
 @interface GKCarouselView()
 {
     NSMutableArray *cells;
+    NSTimer *timer;
+    NSInteger numberOfCells;
 }
 @end
 
@@ -45,6 +47,7 @@
     self.scrollView.backgroundColor = [UIColor clearColor];
     
     self.backgroundColor = [UIColor clearColor];
+    self.autoSlide = 5.0f;
     
     [self addSubview:self.scrollView];
     [self addSubview:self.pageControl];
@@ -79,7 +82,6 @@
           respondsToSelector:@selector(numberOfCellsInCarouselView:)])
         return;
     
-    NSInteger numberOfCells;
     numberOfCells = [self.delegate numberOfCellsInCarouselView:self];
     
     if (0 == numberOfCells)
@@ -110,6 +112,21 @@
     
     self.pageControl.numberOfPages = numberOfCells;
     self.pageControl.currentPage = 0;
+    
+    timer = [NSTimer
+             scheduledTimerWithTimeInterval:self.autoSlide target:self
+             selector:@selector(carouselIinterval:) userInfo:nil repeats:YES];
+}
+
+- (void)carouselIinterval:(id)sender
+{
+    CGPoint target = self.scrollView.contentOffset;
+    NSInteger currentPage = self.pageControl.currentPage + 1;
+    if (currentPage >= numberOfCells)
+        currentPage = -1;
+    self.pageControl.currentPage += currentPage;
+    target.x = self.pageControl.currentPage * self.frame.size.width;
+    [self.scrollView setContentOffset:target animated:YES];
 }
 
 - (void)didButtonTap:(UITapGestureRecognizer *)recognizer
