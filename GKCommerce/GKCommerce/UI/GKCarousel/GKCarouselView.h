@@ -16,7 +16,7 @@
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, assign) CGFloat marginBottom;
 @property (nonatomic, strong) NSArray *slides;
-@property (nonatomic, strong) id<GKCarouselViewDelegate> delegate;
+@property (nonatomic, strong) IBOutlet id<GKCarouselViewDelegate> delegate;
 
 - (void)setPageControlColor:(UIColor *)color;
 - (void)reloadData;
