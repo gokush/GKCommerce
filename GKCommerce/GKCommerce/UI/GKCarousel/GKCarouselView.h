@@ -17,7 +17,7 @@
 @property (nonatomic, assign) CGFloat marginBottom;
 @property (nonatomic, strong) NSArray *slides;
 @property (nonatomic, strong) IBOutlet id<GKCarouselViewDelegate> delegate;
-@property (nonatomic, assign) float autoSlide;
+@property (nonatomic, assign) IBInspectable float autoSlide;
 
 - (void)setPageControlColor:(UIColor *)color;
 - (void)reloadData;

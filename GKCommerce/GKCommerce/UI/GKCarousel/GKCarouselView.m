@@ -44,9 +44,6 @@
     self.scrollView.showsHorizontalScrollIndicator = NO;
     self.scrollView.showsVerticalScrollIndicator = NO;
     self.scrollView.delegate = self;
-    self.scrollView.backgroundColor = [UIColor clearColor];
-    
-    self.backgroundColor = [UIColor clearColor];
     self.autoSlide = 5.0f;
     
     [self addSubview:self.scrollView];
