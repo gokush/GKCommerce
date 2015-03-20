@@ -42,7 +42,7 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
   
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    [[NSBundle mainBundle] loadNibNamed:@"AppView" owner:self options:nil];
+    [[NSBundle mainBundle] loadNibNamed:@"GKAppView" owner:self options:nil];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     
