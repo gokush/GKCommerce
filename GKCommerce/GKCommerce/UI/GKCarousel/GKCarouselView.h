@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, assign) CGFloat marginBottom;
 @property (nonatomic, strong) NSArray *slides;
 @property (nonatomic, strong) IBOutlet id<GKCarouselViewDelegate> delegate;

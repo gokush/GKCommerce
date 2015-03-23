@@ -9,6 +9,7 @@
 #import "GKCarouselViewCell.h"
 #import <SDWebImage/SDWebImageDownloader.h>
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <Masonry/Masonry.h>
 
 @interface GKCarouselViewCell()
 {
@@ -25,6 +26,15 @@
     if (self) {
         self.imageView = [[UIImageView alloc] initWithFrame:frame];
         [self addSubview:self.imageView];
+        [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.width.equalTo(self.mas_width);
+//            make.height.equalTo(@120);
+//            make.top.equalTo(self.mas_top);
+//            make.bottom.equalTo(self.mas_bottom);
+//            make.leading.equalTo(self.mas_leading);
+            make.edges.equalTo(self);
+        }];
+        
     }
     return self;
 }

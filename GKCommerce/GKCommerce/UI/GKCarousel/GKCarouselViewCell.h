@@ -13,4 +13,5 @@
 @property (nonatomic, strong) NSURL *imageURL;
 @property (nonatomic, assign) NSInteger index;
 @property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) id userInfo;
 @end
