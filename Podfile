@@ -12,12 +12,13 @@ target "GKCommerce" do
     pod 'ReactiveCocoa', '~> 2'
     pod 'ImageMagick'
     pod 'Objection'
+    pod 'Masonry'
 end
 
 target "GKCommerceTests" do
     pod 'AFNetworking', "~> 2.5.0"
     pod 'ReactiveCocoa'
-    pod 'Specta'
+    pod 'Specta', "0.4"
     pod 'Expecta'
     pod 'OCMock'
 end
