@@ -18,7 +18,7 @@ end
 target "GKCommerceTests" do
     pod 'AFNetworking', "~> 2.5.0"
     pod 'ReactiveCocoa'
-    pod 'Specta', "0.4"
+    pod 'Specta', '~> 0.4.0'
     pod 'Expecta'
     pod 'OCMock'
 end
