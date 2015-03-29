@@ -10,4 +10,10 @@
 
 @interface CheckoutAddressTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *addressLabel;
+@property (strong, nonatomic) IBOutlet UILabel *phoneNumberLabel;
+@property (strong, nonatomic) Address *address;
+
++ (CGFloat)heightWithAddress:(Address *)address;
 @end

@@ -10,7 +10,8 @@
 
 @implementation CheckoutAddressTableViewCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (id)initWithStyle:(UITableViewCellStyle)style
+    reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
@@ -21,7 +22,18 @@
 
 - (void)awakeFromNib
 {
-    // Initialization code
+    @weakify(self)
+    [RACObserve(self, address) subscribeNext:^(id x) {
+        if (nil == x)
+            return;
+        @strongify(self)
+        NSString *addressText;
+        addressText = [NSString stringWithFormat:@"收货地址：%@",
+                       self.address.address];
+        self.nameLabel.text = self.address.name;
+        self.addressLabel.text = addressText;
+        self.phoneNumberLabel.text = self.address.cellPhone;
+    }];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
@@ -31,4 +43,13 @@
     // Configure the view for the selected state
 }
 
++ (CGFloat)heightWithAddress:(Address *)address
+{
+    UIFont *font = [UIFont systemFontOfSize:14.0f];
+    NSDictionary *attributes = @{ NSFontAttributeName: font };
+    NSString *label;
+    label = [NSString stringWithFormat:@"收货地址：%@", address.address];
+    CGSize size = [label sizeWithAttributes:attributes];
+    return size.height;
+}
 @end

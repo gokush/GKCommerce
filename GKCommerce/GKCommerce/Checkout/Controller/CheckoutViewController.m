@@ -14,6 +14,7 @@
 #import "CartItemOverviewTableViewCell.h"
 #import "CheckoutPaymentTableViewCell.h"
 #import "CheckoutInvoiceTableViewCell.h"
+#import "CheckoutAddressTableViewCell.h"
 #import "InvoiceViewController.h"
 #import "PaymentSuccessViewController.h"
 #import "AlipayUtility.h"
@@ -31,7 +32,7 @@
     @"CartItemTableViewCell", @"CartItemOverviewTableViewCell", \
     @"CheckoutShippingTableViewCell", @"CheckoutPaymentTableViewCell", \
     @"CheckoutInvoiceTableViewCell", @"CheckoutProductTableViewCell", \
-    @"CartOverviewTableViewCell"]
+    @"CartOverviewTableViewCell", @"CheckoutAddressTableViewCell"]
 
 typedef enum {
     CellAddressName,
@@ -232,7 +233,7 @@ objection_requires_sel(@selector(service))
             break;
         }
         case SectionAddress:
-            rows = 3;
+            rows = 1;
             break;
         case SectionShippingAndPaymentAndInvoice:
             rows = 3;
@@ -254,7 +255,8 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
     CGFloat height = 0;
     switch (indexPath.section) {
         case SectionAddress:
-            height = 44.0f;
+            height = [CheckoutAddressTableViewCell
+                      heightWithAddress:self.user.address] + 50;
             break;
         case SectionCart: {
             CartItemList *list;
@@ -291,31 +293,11 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (UITableViewCell *)addressTableViewCell:(NSIndexPath *)indexPath
 {
-    CheckoutInputTableViewCell *cell;
+    CheckoutAddressTableViewCell *cell;
     cell = [self.tableView
-            dequeueReusableCellWithIdentifier:@"CheckoutInputTableViewCell"];
+            dequeueReusableCellWithIdentifier:@"CheckoutAddressTableViewCell"];
     
-    Address *address = self.user.address;
-    
-    switch (indexPath.row) {
-        case CellAddress:
-            cell.label.text = @"收货地址";
-            cell.input.text = address.address;
-            break;
-        case CellAddressName:
-            cell.label.text = @"收货人";
-            cell.input.text = address.name;
-            break;
-        case CellAddressPhone:
-            cell.label.text = @"电话";
-            cell.input.text = address.cellPhone;
-            break;
-        default:
-            break;
-    }
-    
-    [cell.input setEnabled:NO];
-    
+    cell.address = self.user.address;
     return cell;
 }
 
