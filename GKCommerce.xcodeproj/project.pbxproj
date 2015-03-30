@@ -74,6 +74,8 @@
 		E55ED3FA1A7B734100DC361D /* GKUserServiceMock.m in Sources */ = {isa = PBXBuildFile; fileRef = E55ED3F91A7B734100DC361D /* GKUserServiceMock.m */; };
 		E55ED3FD1A7B737100DC361D /* GKUserBackendMock.m in Sources */ = {isa = PBXBuildFile; fileRef = E55ED3FC1A7B737100DC361D /* GKUserBackendMock.m */; };
 		E55ED4001A7B799A00DC361D /* MockUserCatalog.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E55ED3FF1A7B799900DC361D /* MockUserCatalog.xcassets */; };
+		E56456571AC97A0A00FD1DE9 /* CheckoutChoiceAddressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E56456551AC97A0A00FD1DE9 /* CheckoutChoiceAddressTableViewCell.m */; };
+		E56456581AC97A0A00FD1DE9 /* CheckoutChoiceAddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E56456561AC97A0A00FD1DE9 /* CheckoutChoiceAddressTableViewCell.xib */; };
 		E5680BAE1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E5680BAC1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.m */; };
 		E5680BAF1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5680BAD1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.xib */; };
 		E57153511ABBEC540050920F /* GKAppView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E57153501ABBEC540050920F /* GKAppView.xib */; };
@@ -472,6 +474,9 @@
 		E55ED3FB1A7B737100DC361D /* GKUserBackendMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKUserBackendMock.h; path = GKCommerce/User/Backend/GKUserBackendMock.h; sourceTree = "<group>"; };
 		E55ED3FC1A7B737100DC361D /* GKUserBackendMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKUserBackendMock.m; path = GKCommerce/User/Backend/GKUserBackendMock.m; sourceTree = "<group>"; };
 		E55ED3FF1A7B799900DC361D /* MockUserCatalog.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = MockUserCatalog.xcassets; path = GKCommerce/User/Mock/MockUserCatalog.xcassets; sourceTree = "<group>"; };
+		E56456541AC97A0A00FD1DE9 /* CheckoutChoiceAddressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckoutChoiceAddressTableViewCell.h; sourceTree = "<group>"; };
+		E56456551AC97A0A00FD1DE9 /* CheckoutChoiceAddressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckoutChoiceAddressTableViewCell.m; sourceTree = "<group>"; };
+		E56456561AC97A0A00FD1DE9 /* CheckoutChoiceAddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckoutChoiceAddressTableViewCell.xib; sourceTree = "<group>"; };
 		E566A0F91A1650FD008CF286 /* UIBindableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBindableTableViewCell.h; sourceTree = "<group>"; };
 		E5680BAB1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckoutStoreNameTableViewCell.h; sourceTree = "<group>"; };
 		E5680BAC1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckoutStoreNameTableViewCell.m; sourceTree = "<group>"; };
@@ -1836,6 +1841,9 @@
 				E5680BAB1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.h */,
 				E5680BAC1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.m */,
 				E5680BAD1A3D9CFD00958463 /* CheckoutStoreNameTableViewCell.xib */,
+				E56456541AC97A0A00FD1DE9 /* CheckoutChoiceAddressTableViewCell.h */,
+				E56456551AC97A0A00FD1DE9 /* CheckoutChoiceAddressTableViewCell.m */,
+				E56456561AC97A0A00FD1DE9 /* CheckoutChoiceAddressTableViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -2434,6 +2442,7 @@
 				E5D3818F1A2D3D2000A7CB2E /* CheckoutShippingTableViewCell.xib in Resources */,
 				E5D9D5871A1E50FE00875264 /* ProductDetailView.xib in Resources */,
 				E5D9D5821A1E50FE00875264 /* ProductDetailTitleTableViewCell.xib in Resources */,
+				E56456581AC97A0A00FD1DE9 /* CheckoutChoiceAddressTableViewCell.xib in Resources */,
 				E5D9D5861A1E50FE00875264 /* ProductDetailMoreView.xib in Resources */,
 				E5D381951A2D3D2000A7CB2E /* InvoiceView.xib in Resources */,
 				E5C806201A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib in Resources */,
@@ -2630,6 +2639,7 @@
 				E5ED2DD81A457BBB00CA6661 /* AddressListTableViewCell.m in Sources */,
 				E5D9D5811A1E50FE00875264 /* ProductDetailTitleTableViewCell.m in Sources */,
 				E53EC1331A2DD3CE005457F5 /* CartItemList.m in Sources */,
+				E56456571AC97A0A00FD1DE9 /* CheckoutChoiceAddressTableViewCell.m in Sources */,
 				E5748F471A20EC7A00306ADC /* ECCartBackend.m in Sources */,
 				E5F3C47E1A67869C00B986FA /* GKUserBackendImpl.m in Sources */,
 				E5D381491A2CA75900A7CB2E /* GKFeatureBackendAssembler.m in Sources */,
