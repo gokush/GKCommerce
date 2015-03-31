@@ -137,6 +137,7 @@
 		E5C806201A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5C8061E1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib */; };
 		E5C806241A1A467900880B20 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C806231A1A467900880B20 /* Images.xcassets */; };
 		E5C806261A1A469700880B20 /* Mine.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5C806251A1A469700880B20 /* Mine.xcassets */; };
+		E5CC14C01ACAEDDE00B2738B /* CheckoutChoiceAddressController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CC14BF1ACAEDDE00B2738B /* CheckoutChoiceAddressController.m */; };
 		E5CD60D01A2BFB6E0036160C /* ProductCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CD60CF1A2BFB6E0036160C /* ProductCategory.m */; };
 		E5CD60D41A2BFBC50036160C /* SearchBackendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CD60D31A2BFBC50036160C /* SearchBackendModel.m */; };
 		E5CD60E31A2C567E0036160C /* ProductCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E5CD60D81A2C567E0036160C /* ProductCategoryViewController.m */; };
@@ -590,6 +591,8 @@
 		E5C8061E1A1A3A1700880B20 /* MineHeaderPhotoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineHeaderPhotoTableViewCell.xib; sourceTree = "<group>"; };
 		E5C806231A1A467900880B20 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = GKCommerce/AssetCatalog/Images.xcassets; sourceTree = "<group>"; };
 		E5C806251A1A469700880B20 /* Mine.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Mine.xcassets; path = GKCommerce/AssetCatalog/Mine.xcassets; sourceTree = "<group>"; };
+		E5CC14BE1ACAEDDE00B2738B /* CheckoutChoiceAddressController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckoutChoiceAddressController.h; sourceTree = "<group>"; };
+		E5CC14BF1ACAEDDE00B2738B /* CheckoutChoiceAddressController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckoutChoiceAddressController.m; sourceTree = "<group>"; };
 		E5CD60CE1A2BFB6E0036160C /* ProductCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCategory.h; sourceTree = "<group>"; };
 		E5CD60CF1A2BFB6E0036160C /* ProductCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCategory.m; sourceTree = "<group>"; };
 		E5CD60D21A2BFBC50036160C /* SearchBackendModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchBackendModel.h; path = Backend/Model/SearchBackendModel.h; sourceTree = "<group>"; };
@@ -1807,6 +1810,8 @@
 				E5D381521A2D3D2000A7CB2E /* InvoiceViewController.m */,
 				E5D381531A2D3D2000A7CB2E /* ShippingViewController.h */,
 				E5D381541A2D3D2000A7CB2E /* ShippingViewController.m */,
+				E5CC14BE1ACAEDDE00B2738B /* CheckoutChoiceAddressController.h */,
+				E5CC14BF1ACAEDDE00B2738B /* CheckoutChoiceAddressController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2712,6 +2717,7 @@
 				E53EC1251A2D97C8005457F5 /* SBJsonParser.m in Sources */,
 				E5D381921A2D3D2000A7CB2E /* CheckoutCheckBox.m in Sources */,
 				E5D9D5461A1E2A8300875264 /* User.m in Sources */,
+				E5CC14C01ACAEDDE00B2738B /* CheckoutChoiceAddressController.m in Sources */,
 				E5D381841A2D3D2000A7CB2E /* CheckoutInputTableViewCell.m in Sources */,
 				E54492D11A3680780097727D /* CartViewModel.m in Sources */,
 				E5748F3C1A20E5F700306ADC /* GKLabel.m in Sources */,
