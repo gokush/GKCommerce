@@ -101,6 +101,7 @@
 		E57D3FEF1A2378F300AC0FF9 /* CartItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E57D3FEB1A2378F300AC0FF9 /* CartItemTableViewCell.m */; };
 		E57D3FF01A2378F300AC0FF9 /* CartItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E57D3FEC1A2378F300AC0FF9 /* CartItemTableViewCell.xib */; };
 		E57D3FF31A237BEC00AC0FF9 /* GKToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E57D3FF21A237BEC00AC0FF9 /* GKToggleButton.m */; };
+		E580B8F61ACC276A00A3DAB4 /* CheckoutChoiceAddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E580B8F51ACC276A00A3DAB4 /* CheckoutChoiceAddressView.xib */; };
 		E588556C1A39112F0093049B /* TestUI.m in Sources */ = {isa = PBXBuildFile; fileRef = E588556B1A39112F0093049B /* TestUI.m */; };
 		E59180C01A1F8BB10021F855 /* GKConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = E59180BF1A1F8BB10021F855 /* GKConfig.m */; };
 		E59180C71A1F8F500021F855 /* ECBackendAssembler.m in Sources */ = {isa = PBXBuildFile; fileRef = E59180C61A1F8F500021F855 /* ECBackendAssembler.m */; };
@@ -530,6 +531,7 @@
 		E57D3FF11A237BEC00AC0FF9 /* GKToggleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKToggleButton.h; path = GKCommerce/UI/GKToggleButton.h; sourceTree = "<group>"; };
 		E57D3FF21A237BEC00AC0FF9 /* GKToggleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GKToggleButton.m; path = GKCommerce/UI/GKToggleButton.m; sourceTree = "<group>"; };
 		E57D3FF41A238F7400AC0FF9 /* CartService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartService.h; sourceTree = "<group>"; };
+		E580B8F51ACC276A00A3DAB4 /* CheckoutChoiceAddressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckoutChoiceAddressView.xib; sourceTree = "<group>"; };
 		E588556A1A39112F0093049B /* TestUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestUI.h; path = GKCommerce/TestUI.h; sourceTree = "<group>"; };
 		E588556B1A39112F0093049B /* TestUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestUI.m; path = GKCommerce/TestUI.m; sourceTree = "<group>"; };
 		E59180BE1A1F8BB10021F855 /* GKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GKConfig.h; path = Model/GKConfig.h; sourceTree = "<group>"; };
@@ -1862,6 +1864,7 @@
 				E5D381781A2D3D2000A7CB2E /* CheckoutView.m */,
 				E5D381791A2D3D2000A7CB2E /* CheckoutView.xib */,
 				E5D3817A1A2D3D2000A7CB2E /* InvoiceView.xib */,
+				E580B8F51ACC276A00A3DAB4 /* CheckoutChoiceAddressView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2462,6 +2465,7 @@
 				E53EC07E1A2D9655005457F5 /* PaymentSuccessView.xib in Resources */,
 				E5C806261A1A469700880B20 /* Mine.xcassets in Resources */,
 				E5D9D57F1A1E50FE00875264 /* ProductDetailInfomationTableViewCell.xib in Resources */,
+				E580B8F61ACC276A00A3DAB4 /* CheckoutChoiceAddressView.xib in Resources */,
 				E5B98C6A1A70CA4600DDF0FD /* ProductCategoryCatalog.xcassets in Resources */,
 				E5ED2DD91A457BBB00CA6661 /* AddressListTableViewCell.xib in Resources */,
 				E549C1971A1B8FDA0014656D /* UserAuthenticationView.xib in Resources */,

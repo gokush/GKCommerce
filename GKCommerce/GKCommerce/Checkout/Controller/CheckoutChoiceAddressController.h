@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface CheckoutChoiceAddressController : UIViewController
+<UITableViewDataSource, UITableViewDelegate>
 
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *addresses;
 @end

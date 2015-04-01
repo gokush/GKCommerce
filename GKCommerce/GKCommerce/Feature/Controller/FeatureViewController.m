@@ -12,6 +12,8 @@
 #import "FeatureCarouselTableViewCell.h"
 #import "FeatureOneColumnTableViewCell.h"
 #import "FeatureThreeColumnTableViewCell.h"
+#import "ProductListViewController.h"
+#import "CheckoutChoiceAddressController.h"
 
 @interface FeatureViewController ()
 {
@@ -56,8 +58,6 @@
     [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
-#import "ProductListViewController.h"
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -72,6 +72,10 @@
     self.service = [[Dependency shared] featureService];
     self.service.delegate = self;
     [self.service feature];
+    
+    UIViewController *controller;
+    controller = [[CheckoutChoiceAddressController alloc] init];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 #pragma mark - UITableView's delegates

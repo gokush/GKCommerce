@@ -7,23 +7,90 @@
 //
 
 #import "CheckoutChoiceAddressController.h"
+#import "CheckoutChoiceAddressTableViewCell.h"
+#import "Address.h"
 
 @interface CheckoutChoiceAddressController ()
 
+@property (strong, nonatomic) NSString *cellIdentifier;
 @end
 
 @implementation CheckoutChoiceAddressController
 
+- (id)init
+{
+    self = [self initWithNibName:@"CheckoutChoiceAddressView" bundle:nil];
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    Address *address1 = [[Address alloc] init];
+    address1.name = @"小悟空";
+    address1.cellPhone = @"15002171763";
+    address1.address = @"中国上海市静安区愚园东路28号东海广场People square联合创业办公室";
+    self.addresses = @[address1];
+    
+    self.cellIdentifier = @"CheckoutChoiceAddressTableViewCell";
+    [self.tableView registerNib:[UINib nibWithNibName:self.cellIdentifier
+                                               bundle:nil]
+         forCellReuseIdentifier:self.cellIdentifier];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
+{
+    NSInteger count = self.addresses.count;
+    return count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CheckoutChoiceAddressTableViewCell *cell;
+    cell = [self.tableView
+            dequeueReusableCellWithIdentifier:self.cellIdentifier];
+    Address *address = [self.addresses objectAtIndex:indexPath.row];
+    [self configureAddressCell:cell address:address];
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static CheckoutChoiceAddressTableViewCell *cell;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        cell = [self.tableView
+                dequeueReusableCellWithIdentifier:self.cellIdentifier];
+    });
+    
+    Address *address;
+    address = [self.addresses objectAtIndex:indexPath.row];
+    
+    [self configureAddressCell:cell address:address];
+    
+    [cell setNeedsLayout];
+    [cell layoutIfNeeded];
+    CGSize size = [cell.contentView
+                   systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return size.height + 1.0f;
+}
+
+- (void)configureAddressCell:(CheckoutChoiceAddressTableViewCell *)cell
+                     address:(Address *)anAddress
+{
+    cell.nameLabel.text = anAddress.name;
+    cell.phoneNumberLabel.text = anAddress.cellPhone;
+    cell.addressLabel.text = anAddress.address;
+}
 /*
 #pragma mark - Navigation
 
