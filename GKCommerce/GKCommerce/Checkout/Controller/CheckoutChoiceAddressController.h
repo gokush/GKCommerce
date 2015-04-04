@@ -13,4 +13,5 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *addresses;
+@property (strong, nonatomic) RACSubject *chosen;
 @end

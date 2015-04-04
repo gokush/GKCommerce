@@ -22,6 +22,7 @@ CheckoutProductTableViewCellDelegate>
 @property (strong, nonatomic) User *user;
 @property (strong, nonatomic) Cart *cart;
 @property (strong, nonatomic) Order *order;
+@property (strong, nonatomic) Address *address;
 @property (assign, nonatomic) PaymentType paymentType;
 @property (strong, nonatomic) NSArray *cartItems;
 @property (assign, nonatomic) BOOL isChangeable;

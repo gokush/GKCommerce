@@ -91,6 +91,15 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
     cell.phoneNumberLabel.text = anAddress.cellPhone;
     cell.addressLabel.text = anAddress.address;
 }
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Address *address = self.addresses[indexPath.row];
+    [self.chosen sendNext:address];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 /*
 #pragma mark - Navigation
 

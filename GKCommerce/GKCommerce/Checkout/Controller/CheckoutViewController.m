@@ -25,6 +25,7 @@
 #import "ShippingViewController.h"
 #import "Payment.h"
 #import <QuartzCore/QuartzCore.h>
+#import "CheckoutChoiceAddressController.h"
 
 #define CELL_NAME @[@"CheckoutAddressTableViewCell", \
     @"CheckoutStoreNameTableViewCell", @"CheckoutCartOverviewTableViewCell", \
@@ -35,14 +36,15 @@
     @"CartOverviewTableViewCell", @"CheckoutAddressTableViewCell"]
 
 typedef enum {
-    CellAddressName,
-    CellAddressPhone,
-    CellAddress,
     CellCargoDelivery,
     CellProduct,
     CellCartOverview,
     CellMessage
 } CheckoutCell;
+
+typedef enum {
+    CellAddress
+} CheckoutAddressSection;
 
 typedef enum {
     SectionAddress,
@@ -297,7 +299,11 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
     cell = [self.tableView
             dequeueReusableCellWithIdentifier:@"CheckoutAddressTableViewCell"];
     
-    cell.address = self.user.address;
+    if (self.address == nil)
+        self.address = self.user.address;
+    
+    cell.address = self.address;
+    
     return cell;
 }
 
@@ -461,18 +467,21 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     UIViewController *viewController;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.section) {
+        case SectionAddress:
+            switch (indexPath.row) {
+                case CellAddress:
+                    [self choiceAddresses];
+                    break;
+                    
+                default:
+                    break;
+            }
         case SectionShippingAndPaymentAndInvoice:
             switch (indexPath.row) {
                 case CellShippiing: {
-//                    viewController = [[ShippingViewController alloc]
-//                        initWithShippings:[Shop currentShop].shippingMethods
-//                                    order:self.cart];
                     break;
                 }
                 case CellPayment: {
-//                    viewController = [[PaymentViewController alloc]
-//                                      initWithCart:self.cart ofUser:self.user
-//                                      shop:self.shop];
                     break;
                 }
                 case CellInvoice: {
@@ -493,6 +502,14 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
                                              animated:YES];
 }
 
+- (void)choiceAddresses
+{
+    CheckoutChoiceAddressController *controller;
+    controller = [[CheckoutChoiceAddressController alloc] init];
+    RAC(self, address) = controller.chosen;
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
 #pragma mark - BackendDelegate
 
 - (void)didReceiveCart:(Cart *)cart
@@ -508,22 +525,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (void)didFinishCartUpdate:(CartItem *)cartItem
 {
-    //    [self.api requestCheckout:self.user andCart:self.cart];
-    //    PaymentViewController *viewController;
-    //    viewController = [[PaymentViewController alloc]
-    //                      initWithCart:self.cart ofUser:self.user];
-    //    [self.navigationController pushViewController:viewController animated:YES];
     [self checkOrder];
 }
 
 - (void)didFinishCartCreate:(CartItem *)cartItem
                    quantity:(NSInteger)aQuantity
 {
-    //    [self.api requestCheckout:self.user andCart:self.cart];
-    //    PaymentViewController *viewController;
-    //    viewController = [[PaymentViewController alloc]
-    //                      initWithCart:self.cart ofUser:self.user];
-    //    [self.navigationController pushViewController:viewController animated:YES];
     [self checkOrder];
 }
 
@@ -544,29 +551,12 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)checkOrder
 {
     if (self.cart.price.floatValue == 0) {
-//        [self.api requestCheckout:self.user cart:self.cart];
     } else {
-//        PaymentViewController *viewController;
-//        viewController = [[PaymentViewController alloc]
-//                          initWithCart:self.cart
-//                          ofUser:self.user shop:self.shop];
-//        
-//        [self.navigationController pushViewController:viewController
-//                                             animated:YES];
     }
 }
 
-
-//- (void)checkbox:(CartCheckBox *)aCheckbox didChecked:(BOOL)checked
-//{
-//    for (CartItem *cartItem in self.cart.products) {
-//        cartItem.selected = checked;
-//    }
-//}
-
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-//    self.user.currentOrder.message = textField.text;
 }
 
 - (IBAction)checkoutDidTap:(id)sender

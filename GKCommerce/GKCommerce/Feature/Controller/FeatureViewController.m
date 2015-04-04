@@ -72,10 +72,6 @@
     self.service = [[Dependency shared] featureService];
     self.service.delegate = self;
     [self.service feature];
-    
-    UIViewController *controller;
-    controller = [[CheckoutChoiceAddressController alloc] init];
-    [self.navigationController pushViewController:controller animated:YES];
 }
 
 #pragma mark - UITableView's delegates
