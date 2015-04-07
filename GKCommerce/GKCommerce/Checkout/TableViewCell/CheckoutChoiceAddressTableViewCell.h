@@ -13,4 +13,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *phoneNumberLabel;
 @property (strong, nonatomic) IBOutlet UILabel *addressLabel;
+
+@property (strong, nonatomic) IBOutlet
+NSLayoutConstraint *mobilePhoneNumberTrailling;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *addressTrailling;
 @end
