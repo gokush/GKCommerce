@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "User.h"
+#import "GKUser.h"
 #import "CartItem.h"
 #import "ShippingMethod.h"
 #import "Payment.h"
@@ -16,7 +16,7 @@
 @class User;
 @interface Cart : NSObject
 
-@property (weak, nonatomic) User *user;
+@property (weak, nonatomic) GKUser *user;
 @property (strong, nonatomic) NSDecimalNumber *price;
 @property (strong, nonatomic) NSMutableArray *itemsOfStore;
 @property (strong, nonatomic) NSMutableArray *selected;

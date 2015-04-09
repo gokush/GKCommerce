@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Order.h"
-#import "User.h"
+#import "GKUser.h"
 
 @interface OrderDetailTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) Order *order;
-@property (strong, nonatomic) User *user;
+@property (strong, nonatomic) GKUser *user;
 @property (strong, nonatomic) NSIndexPath *indexPath;
 
 - (void)fillData;

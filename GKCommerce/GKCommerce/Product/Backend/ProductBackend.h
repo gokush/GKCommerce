@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "User.h"
+#import "GKUser.h"
 #import "SearchBackendModel.h"
 #import "Backend.h"
 #import "ProductBackendDelegate.h"

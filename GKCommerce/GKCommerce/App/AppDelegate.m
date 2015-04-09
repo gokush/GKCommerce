@@ -8,14 +8,8 @@
 
 #import "AppDelegate.h"
 #import "Config.h"
-#import "ECUserService.h"
-#import "UserBackend.h"
-#import "ECCartBackend.h"
-#import "Dependency.h"
-#import "GKECFactory.h"
 #import "TestUI.h"
 
-#import "GKFactoryMock.h"
 #import "GKProductBackendImpl.h"
 #import "Fixtures.h"
 #import "GKCommerceApplicationContext.h"
@@ -30,15 +24,12 @@
 didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [GKCommerceApplicationContext install];
-    
-    [[Dependency shared] setFactory:[[GKFactoryMock alloc] init]];
-    
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     GKConfig *config = [GKConfig shared];
     config.backendURL = @"http://127.0.0.1:8000/api";
     config.OAuthAccessTokenURL = @"http://127.0.0.1:8000/oauth/access_token";
     
-  [[[Dependency shared] userService] restore];
+//  [[[Dependency shared] userService] restore];
   
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
@@ -52,16 +43,6 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 //  [[[TestUI alloc] init] gotoAddressList:self.tabBarController];
   
     return YES;
-}
-
-- (void)userService:(ECUserService *)anUserService didAuthencate:(User *)user
-              error:(NSError *)anError
-{
-}
-
-- (void)userService:(ECUserService *)anUserService didRestore:(User *)user
-              error:(NSError *)anError
-{
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

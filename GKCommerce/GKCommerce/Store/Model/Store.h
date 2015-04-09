@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "User.h"
+#import "GKUser.h"
 #import "ShippingMethod.h"
 
 @class Product;

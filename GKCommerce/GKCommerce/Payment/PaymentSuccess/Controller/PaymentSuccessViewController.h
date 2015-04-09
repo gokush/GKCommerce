@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Order.h"
-#import "User.h"
+#import "GKUser.h"
 
 @interface PaymentSuccessViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UILabel *descriptionOrderSN;
 @property (strong, nonatomic) IBOutlet UILabel *descriptionOrderPrice;
 @property (strong, nonatomic) Order *order;
-@property (strong, nonatomic) User *user;
+@property (strong, nonatomic) GKUser *user;
 
 - (id)initWithOrder:(Order *)order andUser:(User *)user;
 - (IBAction)gotoOrderDidTap:(id)sender;

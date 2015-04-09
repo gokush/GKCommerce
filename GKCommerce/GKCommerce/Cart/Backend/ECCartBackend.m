@@ -58,7 +58,7 @@
 {
     NSString *userID, *productID, *quantity;
     NSDictionary *parameters;
-    User *user = item.list.cart.user;
+    GKUser *user = item.list.cart.user;
     userID     = [NSString stringWithFormat:@"%d", user.userID];
     productID  = [NSString stringWithFormat:@"%d", item.product.productID];
     quantity   = [NSString stringWithFormat:@"%d", item.quantity];
@@ -98,7 +98,7 @@
     NSString *userID, *itemID, *quantity;
     NSDictionary *parameters;
     
-    User *user = item.list.cart.user;
+    GKUser *user = item.list.cart.user;
     userID = [NSString stringWithFormat:@"%d", user.userID];
     itemID = [NSString stringWithFormat:@"%d", item.itemID];
     quantity = [NSString stringWithFormat:@"%d", item.quantity];
@@ -138,7 +138,7 @@
 {
     NSString *userID, *itemID;
     NSDictionary *parameters;
-    User *user = item.list.cart.user;
+    GKUser *user = item.list.cart.user;
     userID = [NSString stringWithFormat:@"%d", user.userID];
     itemID = [NSString stringWithFormat:@"%d", item.itemID];
     parameters = @{ @"session[uid]": userID,

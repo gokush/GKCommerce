@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "User.h"
 
 @interface App : NSObject
 
 @property (strong, nonatomic) NSMutableArray *users;
-@property (strong, nonatomic) User *currentUser;
+@property (strong, nonatomic) GKUser *currentUser;
 
 + (instancetype)shared;
 @end

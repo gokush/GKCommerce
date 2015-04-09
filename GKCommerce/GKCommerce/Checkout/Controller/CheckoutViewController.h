@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "User.h"
+#import "GKUser.h"
 #import "Cart.h"
 #import "Order.h"
 #import "CheckoutProductTableViewCell.h"
@@ -19,7 +19,7 @@ CheckoutProductTableViewCellDelegate>
 
 - (id)initWithUser:(User *)user cart:(Cart *)cart;
 
-@property (strong, nonatomic) User *user;
+@property (strong, nonatomic) GKUser *user;
 @property (strong, nonatomic) Cart *cart;
 @property (strong, nonatomic) Order *order;
 @property (strong, nonatomic) Address *address;

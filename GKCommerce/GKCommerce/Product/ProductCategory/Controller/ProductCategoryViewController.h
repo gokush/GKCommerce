@@ -18,7 +18,7 @@ ProductServiceDelegate>
 @property (strong, nonatomic) id<GKProductService> service;
 @property (strong, nonatomic) UIBarButtonItem *titleView;
 @property (strong, nonatomic) IBOutlet SKSTableView *tableView;
-@property (nonatomic, strong) User *user;
+@property (nonatomic, strong) GKUser *user;
 @property (nonatomic, strong) NSArray *categories;
 @property (nonatomic, assign) NSInteger currentRow;
 @property (nonatomic, strong) UISearchBar *searchBar;

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "User.h"
+#import "GKUser.h"
 #import "Order.h"
 
 @interface OrderDetailViewController : UIViewController
@@ -15,7 +15,7 @@
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) Backend *api;
-@property (strong, nonatomic) User *user;
+@property (strong, nonatomic) GKUser *user;
 @property (strong, nonatomic) Order *order;
 @property (assign, nonatomic) NSInteger orderID;
 @property (strong, nonatomic) NSArray *config;

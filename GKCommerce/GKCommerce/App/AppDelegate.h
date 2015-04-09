@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-#import "UserServiceDelegate.h"
 
 @interface AppDelegate : UIResponder
-<UIApplicationDelegate, UserServiceDelegate>
+<UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) IBOutlet UITabBarController *tabBarController;

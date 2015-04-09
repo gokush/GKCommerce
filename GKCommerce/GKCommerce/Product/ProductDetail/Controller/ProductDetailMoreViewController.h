@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "User.h"
+#import "GKUser.h"
 #import "Product.h"
 #import "ProductDetailMoreTab.h"
 #import "GKProductService.h"
@@ -17,7 +17,7 @@
 UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) Product *product;
-@property (nonatomic, strong) User *user;
+@property (nonatomic, strong) GKUser *user;
 @property (nonatomic, strong) id<GKProductService> service;
 @property (nonatomic, strong) IBOutlet ProductDetailMoreTab *tab;
 @property (nonatomic, strong) IBOutlet UIView *container;

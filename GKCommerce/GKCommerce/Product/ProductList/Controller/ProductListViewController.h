@@ -20,7 +20,7 @@
 @property (strong, nonatomic) ProductCategory *productCategory;
 @property (strong, nonatomic) SearchBackendModel *search;
 @property (strong, nonatomic) NSMutableArray *products;
-@property (strong, nonatomic) User *user;
+@property (strong, nonatomic) GKUser *user;
 @property (strong, nonatomic) id<GKProductService> service;
 - (id)initWithProductCategory:(ProductCategory *)category user:(User *)anUser;
 - (id)initWithSearchModel:(SearchBackendModel *)searchModel user:(User *)anUser;

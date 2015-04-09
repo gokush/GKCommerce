@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "User.h"
+#import "GKUser.h"
 #import "Product.h"
 #import "ProductService.h"
 #import "ProductRepository.h"

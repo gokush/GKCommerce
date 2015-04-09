@@ -31,7 +31,7 @@
     dispatch_time_t popTime;
     popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        User *user = [[App shared] currentUser];
+        GKUser *user = [[App shared] currentUser];
 
         if ([viewController isViewLoaded] && ![user.cart empty]) {
             [viewController.selectAll tapButton];

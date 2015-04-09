@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GKRegistrationController">
+            <connections>
+                <outlet property="tableView" destination="avr-kw-u6y" id="tXh-79-nrb"/>
+                <outlet property="view" destination="iN0-l3-epB" id="dsb-Yp-nr5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="avr-kw-u6y">
+                    <rect key="frame" x="8" y="0.0" width="584" height="592"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="EqU-qP-neT"/>
+                        <outlet property="delegate" destination="-1" id="zjw-sa-d7P"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="avr-kw-u6y" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="I8N-84-RhS"/>
+                <constraint firstAttribute="bottom" secondItem="avr-kw-u6y" secondAttribute="bottom" id="hOj-Di-Z9i"/>
+                <constraint firstItem="avr-kw-u6y" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="iiY-CJ-CbG"/>
+                <constraint firstAttribute="trailing" secondItem="avr-kw-u6y" secondAttribute="trailing" id="pFC-Sj-cMG"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

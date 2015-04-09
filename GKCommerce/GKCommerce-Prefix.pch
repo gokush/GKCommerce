@@ -26,8 +26,8 @@
 #import "GKLabel.h"
 #import "UITableView+Extension.h"
 
+#import "GKUser.h"
 #import "App.h"
-#import "User.h"
 #import "Product.h"
 #import "Cart.h"
 #import "Payment.h"
@@ -35,7 +35,6 @@
 #import "ProductCategory.h"
 #import "ProductService.h"
 #import "Order.h"
-#import "Dependency.h"
 #import "CartViewController.h"
 
 static const int ddLogLevel = DDLogLevelVerbose;

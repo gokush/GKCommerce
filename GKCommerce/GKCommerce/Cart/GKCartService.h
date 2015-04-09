@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "User.h"
+#import "GKUser.h"
 
 @protocol GKCartService <NSObject>
 

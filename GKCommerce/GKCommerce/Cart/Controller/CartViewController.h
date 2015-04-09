@@ -13,17 +13,17 @@
 #import "CartStoreNameTableViewCell.h"
 #import "CartItemOverviewTableViewCell.h"
 #import "CartEmptyViewController.h"
-#import "CartService.h"
 #import "GKButton.h"
+#import "GKCartService.h"
 
 @interface CartViewController : UIViewController
-<UITableViewDataSource, UITableViewDelegate, CartServiceDelegate,
+<UITableViewDataSource, UITableViewDelegate,
 CartItemTableViewCellDelegate, GKToggleButtonDelegate,
 CartStoreNameTableViewCellDelegate>
 
 @property (nonatomic, strong) id<GKCartService> service;
 @property (nonatomic, weak) Cart *cart;
-@property (nonatomic, weak) User *user;
+@property (nonatomic, weak) GKUser *user;
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) IBOutlet UILabel *totalPrice;
 @property (nonatomic, strong) IBOutlet GKToggleButton *selectAll;

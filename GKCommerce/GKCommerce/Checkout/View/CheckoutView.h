@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "User.h"
+#import "GKUser.h"
 
 @interface CheckoutView : UIView
 
