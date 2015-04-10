@@ -29,14 +29,12 @@
     return self;
 }
 
-- (id)initWithProductID:(NSInteger)productID user:(User *)user
+- (id)initWithProductID:(NSInteger)productID user:(GKUser *)user
 {
     self = [self initWithNibName:@"ProductDetailView" bundle:nil];
     if (self) {
         self.productID = productID;
         self.user = user;
-        self.service = [[Dependency shared] productService];
-        self.cartService = [[Dependency shared] cartService];
         [self setup];
     }
     return self;
@@ -165,44 +163,21 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 }
 
 #pragma mark - ProductServiceDelegate
-- (void)productService:(id<ProductService>)aProductService
-               product:(Product *)aProduct error:(NSError *)anError
-{
-    self.product = aProduct;
-    
-    if (anError) {
-        MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view];
-        hud.labelText = [anError localizedDescription];
-        hud.mode = MBProgressHUDModeCustomView;
-        [self.view addSubview:hud];
-        [hud show:YES];
-        [hud hide:YES afterDelay:2];
-    } else
-        [self.tableView reloadData];
-}
-
-#pragma mark - CartServiceDelegate
-
-- (void)cartService:(id<CartService>)aCartService cart:(Cart *)aCart
-              error:(NSError *)anError
-{
-    
-}
-
-- (void)cartService:(id<CartService>)aCartService didAddItem:(CartItem *)item
-              error:(NSError *)anError
-{
-    if (anError)
-        return;
-    
-    [aCartService fetchCartWithUser:self.user];
-}
-
-#pragma mark - BackendDelegate
-
-- (void)didSlideTap:(NSString *)imageURL atIndex:(NSInteger)index;
-{
-}
+//- (void)productService:(id<ProductService>)aProductService
+//               product:(Product *)aProduct error:(NSError *)anError
+//{
+//    self.product = aProduct;
+//    
+//    if (anError) {
+//        MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view];
+//        hud.labelText = [anError localizedDescription];
+//        hud.mode = MBProgressHUDModeCustomView;
+//        [self.view addSubview:hud];
+//        [hud show:YES];
+//        [hud hide:YES afterDelay:2];
+//    } else
+//        [self.tableView reloadData];
+//}
 
 - (IBAction)didTapAddProductToCart:(id)sender
 {

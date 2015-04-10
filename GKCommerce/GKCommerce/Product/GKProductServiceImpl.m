@@ -19,12 +19,11 @@
 {
     self = [super init];
     if (self) {
-        self.backend = [[Dependency shared] productBackend];
     }
     return self;
 }
 
-- (RACSignal *)productWithID:(NSInteger)productID user:(User *)anUser
+- (RACSignal *)productWithID:(NSInteger)productID user:(GKUser *)anUser
 {
     return [self.backend requestProductWithID:productID user:anUser];
 }

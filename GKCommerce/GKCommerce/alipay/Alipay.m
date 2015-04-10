@@ -46,7 +46,6 @@
     AlixPayResult* result = [[AlixPayResult alloc] initWithDict:resultDic];
     AlipayResponse *response = [AlipayResponse responseWithResult:result];
     
-    NSLog(@"%@",self.order);
     response.order = self.order;
     
     if ([response valid:AlipayPubKey]) {

@@ -10,8 +10,6 @@
 #import "ProductMoreTableViewCell.h"
 #import "ProductSpecification.h"
 #import <QuartzCore/QuartzCore.h>
-#import "ECProductService.h"
-#import "Dependency.h"
 
 @interface ProductDetailMoreViewController ()
 {
@@ -27,13 +25,12 @@
 {
 }
 
-- (id)initWithProduct:(Product *)product user:(User *)user;
+- (id)initWithProduct:(Product *)product user:(GKUser *)user;
 {
     self = [super initWithNibName:@"ProductDetailMoreView" bundle:nil];
     if (self) {
         self.product = product;
         self.user = user;
-        self.service = [[Dependency shared] productService];
     }
     return self;
 }
@@ -114,13 +111,13 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (void)didSelectTap:(NSString *)tabTitle atIndex:(NSInteger)index
 {
-    int size = self.container.subviews.count;
+    NSInteger size = self.container.subviews.count;
     while (size > 0) {
         size -= 1;
         [[self.container.subviews objectAtIndex:size] removeFromSuperview];
     }
     
-    NSString *propertyName = [NSString stringWithFormat:@"tab%d", index + 1];
+    NSString *propertyName = [NSString stringWithFormat:@"tab%ld", index + 1];
     UIView *target = (UIView *) [self valueForKey:propertyName];
     [self.container addSubview:target];
 }

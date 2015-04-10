@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ProductService.h"
+#import "GKProductService.h"
 #import "GKSegmentView.h"
 
 @interface ProductListViewController : UIViewController
-<ProductServiceDelegate, GKSegmentViewDelegate>
+<GKSegmentViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) IBOutlet GKSegmentView *segmentView;
@@ -22,6 +22,6 @@
 @property (strong, nonatomic) NSMutableArray *products;
 @property (strong, nonatomic) GKUser *user;
 @property (strong, nonatomic) id<GKProductService> service;
-- (id)initWithProductCategory:(ProductCategory *)category user:(User *)anUser;
-- (id)initWithSearchModel:(SearchBackendModel *)searchModel user:(User *)anUser;
+- (id)initWithProductCategory:(ProductCategory *)category user:(GKUser *)anUser;
+- (id)initWithSearchModel:(SearchBackendModel *)searchModel user:(GKUser *)anUser;
 @end

@@ -26,6 +26,7 @@
 #import "GKLabel.h"
 #import "UITableView+Extension.h"
 
+#import "GKConfig.h"
 #import "GKUser.h"
 #import "App.h"
 #import "Product.h"
@@ -33,7 +34,6 @@
 #import "Payment.h"
 #import "PaymentBalance.h"
 #import "ProductCategory.h"
-#import "ProductService.h"
 #import "Order.h"
 #import "CartViewController.h"
 

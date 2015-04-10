@@ -17,17 +17,17 @@
     self.avatarImageView.frame.size.width / 2;
   self.avatarImageView.layer.masksToBounds = YES;
   @weakify(self);
-  [RACObserve([App shared], currentUser) subscribeNext:^(User *user) {
+  [RACObserve([App shared], currentUser) subscribeNext:^(GKUser *user) {
     @strongify(self);
     BOOL authorized = [user authorized];
     self.avatarContainer.hidden = !authorized;
     self.buttonContainer.hidden = authorized;
-    RACSignal *signal;
-    signal = [[[[[[user avatar] width:80.0f]
-                height:80.0f] cropAndFill] signal]
-              deliverOn:[RACScheduler mainThreadScheduler]];
+//    RACSignal *signal;
+//    signal = [[[[[[user avatar] width:80.0f]
+//                height:80.0f] cropAndFill] signal]
+//              deliverOn:[RACScheduler mainThreadScheduler]];
     
-    RAC(self.avatarImageView, image) = signal;
+//    RAC(self.avatarImageView, image) = signal;
   }];
 }
 

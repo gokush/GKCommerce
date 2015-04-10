@@ -10,5 +10,5 @@
 
 @protocol GKOrderBackend <NSObject>
 
-- (RACSignal *)requestOrders:(User *)user;
+- (RACSignal *)requestOrders:(GKUser *)user;
 @end

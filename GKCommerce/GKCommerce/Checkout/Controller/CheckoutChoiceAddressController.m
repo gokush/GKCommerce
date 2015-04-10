@@ -8,7 +8,7 @@
 
 #import "CheckoutChoiceAddressController.h"
 #import "CheckoutChoiceAddressTableViewCell.h"
-#import "Address.h"
+#import "GKAddress.h"
 
 @interface CheckoutChoiceAddressController ()
 
@@ -26,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    Address *address1 = [[Address alloc] init];
+    GKAddress *address1 = [[GKAddress alloc] init];
     address1.name = @"小悟空";
     address1.cellPhone = @"15002171763";
     address1.address = @"中国上海市静安区愚园东路28号东海广场People square联合创业办公室";
@@ -56,7 +56,7 @@
     CheckoutChoiceAddressTableViewCell *cell;
     cell = [self.tableView
             dequeueReusableCellWithIdentifier:self.cellIdentifier];
-    Address *address = [self.addresses objectAtIndex:indexPath.row];
+    GKAddress *address = [self.addresses objectAtIndex:indexPath.row];
     [self configureAddressCell:cell address:address];
     
     return cell;
@@ -72,7 +72,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
                 dequeueReusableCellWithIdentifier:self.cellIdentifier];
     });
     
-    Address *address;
+    GKAddress *address;
     address = [self.addresses objectAtIndex:indexPath.row];
     
     [self configureAddressCell:cell address:address];
@@ -85,7 +85,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 }
 
 - (void)configureAddressCell:(CheckoutChoiceAddressTableViewCell *)cell
-                     address:(Address *)anAddress
+                     address:(GKAddress *)anAddress
 {
     cell.nameLabel.text = anAddress.name;
     cell.phoneNumberLabel.text = anAddress.cellPhone;
@@ -95,7 +95,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Address *address = self.addresses[indexPath.row];
+    GKAddress *address = self.addresses[indexPath.row];
     [self.chosen sendNext:address];
     [self.navigationController popViewControllerAnimated:YES];
 }

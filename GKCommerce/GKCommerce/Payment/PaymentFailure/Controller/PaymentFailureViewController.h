@@ -17,7 +17,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *gotoHome;
 @property (strong, nonatomic) Order *order;
 @property (strong, nonatomic) GKUser *user;
-- (id)initWithOrder:(Order *)order andUser:(User *)user;
+- (id)initWithOrder:(Order *)order andUser:(GKUser *)user;
 - (IBAction)gotoOrderDidTap:(id)sender;
 - (IBAction)gotoHomeDidTap:(id)sender;
 @end

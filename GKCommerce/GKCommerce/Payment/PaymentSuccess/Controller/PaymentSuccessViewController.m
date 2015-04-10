@@ -16,7 +16,7 @@
 
 @implementation PaymentSuccessViewController
 
-- (id)initWithOrder:(Order *)order andUser:(User *)user
+- (id)initWithOrder:(Order *)order andUser:(GKUser *)user
 {
     self = [self initWithNibName:@"PaymentSuccessView" bundle:nil];
     if (self) {

@@ -69,7 +69,6 @@
     }
     
     self.title = @"精选";
-    self.service = [[Dependency shared] featureService];
     self.service.delegate = self;
     [self.service feature];
 }

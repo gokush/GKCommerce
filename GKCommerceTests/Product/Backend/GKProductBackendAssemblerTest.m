@@ -10,7 +10,6 @@
 #import <Specta/Specta.h>
 #define EXP_SHORTHAND
 #import <Expecta/Expecta.h>
-#import "Dependency.h"
 #import "GKProductBackendAssembler.h"
 #import "GKProductServiceMock.h"
 #import "GKServiceMock.h"

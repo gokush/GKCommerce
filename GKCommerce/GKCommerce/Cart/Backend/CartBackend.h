@@ -13,7 +13,7 @@
 
 @required
 @property (strong, nonatomic) id<CartBackendDelegate> delegate;
-- (void)requestCartWithUser:(User *)user;
+- (void)requestCartWithUser:(GKUser *)user;
 - (void)requestAddItem:(CartItem *)item;
 - (void)requestUpdateItem:(CartItem *)item oldQuantity:(NSInteger)anOldQuantity;
 - (void)requestRemoveItem:(CartItem *)item;

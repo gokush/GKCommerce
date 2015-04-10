@@ -11,18 +11,19 @@
 #import "Cart.h"
 #import "Order.h"
 #import "CheckoutProductTableViewCell.h"
+#import "GKAddress.h"
 #import "GKCheckoutService.h"
 
 @interface CheckoutViewController : UIViewController
 <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate,
 CheckoutProductTableViewCellDelegate>
 
-- (id)initWithUser:(User *)user cart:(Cart *)cart;
+- (id)initWithUser:(GKUser *)user cart:(Cart *)cart;
 
 @property (strong, nonatomic) GKUser *user;
 @property (strong, nonatomic) Cart *cart;
 @property (strong, nonatomic) Order *order;
-@property (strong, nonatomic) Address *address;
+@property (strong, nonatomic) GKAddress *address;
 @property (assign, nonatomic) PaymentType paymentType;
 @property (strong, nonatomic) NSArray *cartItems;
 @property (assign, nonatomic) BOOL isChangeable;

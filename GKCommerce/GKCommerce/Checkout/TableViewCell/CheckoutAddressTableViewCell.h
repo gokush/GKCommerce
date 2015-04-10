@@ -13,7 +13,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *addressLabel;
 @property (strong, nonatomic) IBOutlet UILabel *phoneNumberLabel;
-@property (strong, nonatomic) Address *address;
+@property (strong, nonatomic) GKAddress *address;
 
-+ (CGFloat)heightWithAddress:(Address *)address;
++ (CGFloat)heightWithAddress:(GKAddress *)address;
 @end

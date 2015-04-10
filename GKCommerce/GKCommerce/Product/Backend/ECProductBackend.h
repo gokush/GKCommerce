@@ -15,7 +15,7 @@
 @property (strong, nonatomic) ECProductBackendAssembler *assembler;
 @property (strong, nonatomic) id<ProductBackendDelegate> delegate;
 
-- (void)requestProductWithID:(NSInteger)productID user:(User *)anUser;
+- (void)requestProductWithID:(NSInteger)productID user:(GKUser *)anUser;
 - (void)requestProductDescription:(Product *)product;
 - (void)requestProductsWithSearchModel:(SearchBackendModel *)searchModel;
 - (void)requestProductCategories;

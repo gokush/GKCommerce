@@ -14,7 +14,6 @@
 <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) UITableView *tableView;
-@property (strong, nonatomic) Backend *api;
 @property (strong, nonatomic) GKUser *user;
 @property (strong, nonatomic) Order *order;
 @property (assign, nonatomic) NSInteger orderID;
@@ -22,5 +21,5 @@
 @property (strong, nonatomic) NSArray *statusConfig;
 @property (strong, nonatomic) NSDictionary *JSON;
 
-- (id)initWithOrderID:(NSInteger)orderID andUser:(User *)user;
+- (id)initWithOrderID:(NSInteger)orderID andUser:(GKUser *)user;
 @end

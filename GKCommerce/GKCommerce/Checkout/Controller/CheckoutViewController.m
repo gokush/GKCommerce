@@ -77,7 +77,7 @@ typedef enum {
 @implementation CheckoutViewController
 objection_requires_sel(@selector(service))
 
-- (id)initWithUser:(User *)user cart:(Cart *)cart
+- (id)initWithUser:(GKUser *)user cart:(Cart *)cart
 {
     self = [self initWithNibName:@"CheckoutView" bundle:nil];
     if (self) {
@@ -518,7 +518,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     [self.tableView reloadData];
 }
 
-- (void)didReceiveUserAccount:(User *)user
+- (void)didReceiveUserAccount:(GKUser *)user
 {
     userAccountLoaded = YES;
 }
@@ -532,20 +532,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
                    quantity:(NSInteger)aQuantity
 {
     [self checkOrder];
-}
-
-- (void)backend:(Backend *)aBackend didRequestCheckout:(Order *)order
-{
-}
-
-- (void)didCartItemBuy:(CartItem *)cartItem
-{
-    cartItem.quantity += 1;
-}
-
-- (void)didCartItemDrop:(CartItem *)cartItem
-{
-    cartItem.quantity -= 1;
 }
 
 - (void)checkOrder

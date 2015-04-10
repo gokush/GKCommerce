@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SearchBackendModel.h"
 
 @protocol GKProductService <NSObject>
 @optional
-- (RACSignal *)productWithID:(NSInteger)productID user:(User *)anUser;
+- (RACSignal *)productWithID:(NSInteger)productID user:(GKUser *)anUser;
 - (RACSignal *)productCategories;
-//- (void)productDescription:(Product *)product;
 - (RACSignal *)productsWithSearchModel:(SearchBackendModel *)searchModel;
 @end

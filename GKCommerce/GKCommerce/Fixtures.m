@@ -8,9 +8,8 @@
 
 #import "Fixtures.h"
 #import "App.h"
-#import "Address.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
-#import "Dependency.h"
+#import "GKAddress.h"
+
 
 @interface Fixtures()
 
@@ -23,19 +22,18 @@
 {
     self = [super init];
     if (self) {
-        self.productService = [[Dependency shared] productService];
     }
     return self;
 }
 
 - (void)install
 {
-    [RACObserve([App shared], currentUser) subscribeNext:^(User *user) {
+    [RACObserve([App shared], currentUser) subscribeNext:^(GKUser *user) {
         [self userDidLoad:user];
     }];
 }
 
-- (void)userDidLoad:(User *)user
+- (void)userDidLoad:(GKUser *)user
 {
     user.address = [self address];
     
@@ -52,9 +50,9 @@
     }];
 }
 
-- (Address *)address
+- (GKAddress *)address
 {
-    Address *address = [[Address alloc] init];
+    GKAddress *address = [[GKAddress alloc] init];
     address.addressID = 1;
     address.name = @"小悟空";
     address.cellPhone = @"15002171763";

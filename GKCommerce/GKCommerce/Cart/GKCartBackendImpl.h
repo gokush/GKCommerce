@@ -7,10 +7,11 @@
 //
 
 #import "Backend.h"
+#import "GKCartBackend.h"
 
 @interface GKCartBackendImpl : Backend <GKCartBackend>
 
-- (RACSignal *)requestCartWithUser:(User *)user;
+- (RACSignal *)requestCartWithUser:(GKUser *)user;
 - (RACSignal *)requestAddItem:(CartItem *)item;
 - (RACSignal *)requestUpdateItem:(CartItem *)item
                      oldQuantity:(NSInteger)anOldQuantity;

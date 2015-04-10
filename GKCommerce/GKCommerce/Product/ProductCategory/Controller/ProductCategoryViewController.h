@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "SKSTableView.h"
 #import "ProductCategoryChildTableViewCell.h"
+#import "GKProductService.h"
 
 @interface ProductCategoryViewController : UIViewController
 <UITableViewDataSource, UITableViewDelegate, SKSTableViewDelegate,
-UISearchBarDelegate, ProductCategoryChildTableViewCellDelegate,
-ProductServiceDelegate>
+UISearchBarDelegate, ProductCategoryChildTableViewCellDelegate>
 
 @property (strong, nonatomic) id<GKProductService> service;
 @property (strong, nonatomic) UIBarButtonItem *titleView;

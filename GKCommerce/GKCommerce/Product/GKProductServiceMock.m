@@ -22,7 +22,7 @@
   return self;
 }
 
-- (RACSignal *)productWithID:(NSInteger)productID user:(User *)anUser
+- (RACSignal *)productWithID:(NSInteger)productID user:(GKUser *)anUser
 {
   return
   [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {

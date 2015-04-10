@@ -19,7 +19,7 @@
 @property (strong, nonatomic) id<CartBackendDelegate> delegate;
 @property (strong, nonatomic) ECCartBackendAssembler *assembler;
 - (void)requestAddItem:(CartItem *)item;
-- (void)requestCartWithUser:(User *)user;
+- (void)requestCartWithUser:(GKUser *)user;
 - (void)requestUpdateItem:(CartItem *)item oldQuantity:(NSInteger)anOldQuantity;
 - (void)requestRemoveItem:(CartItem *)item;
 @end

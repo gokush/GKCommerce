@@ -9,7 +9,6 @@
 #import "CartViewController.h"
 #import "ProductDetailViewController.h"
 #import "UIBindableTableViewCell.h"
-#import "Dependency.h"
 #import "CartStoreNameTableViewCell.h"
 #import "CartViewModel.h"
 #import "CheckoutViewController.h"
@@ -60,7 +59,7 @@ typedef enum {
          if (!app.currentUser.cart.empty)
              [self renderOverview];
      }];
-    [RACObserve(app, currentUser) subscribeNext:^(User *user) {
+    [RACObserve(app, currentUser) subscribeNext:^(GKUser *user) {
         @strongify(self);
         self.user = user;
         if ([user authorized])
@@ -120,20 +119,6 @@ typedef enum {
 {
     self.totalPrice.text = [NSString stringWithFormat:@"合计:￥%.2f",
             [self.cart wantTotalPrice]];
-}
-
-#pragma mark - CartServiceDelegate
-
-- (void)cartService:(id<CartService>)aCartService cart:(Cart *)aCart
-              error:(NSError *)anError
-{
-}
-
-- (void)cartService:(id<CartService>)aCartService didUpdateItem:(CartItem *)item
-        oldQuantity:(NSInteger)anOldQuantity error:(NSError *)anError
-{
-    if (anError)
-        [self.view showHUD:anError.localizedDescription afterDelay:2];
 }
 
 #pragma mark - Events

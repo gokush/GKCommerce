@@ -18,5 +18,3 @@ typedef enum {
   AddressRegionCell,
   AddressStreetCell
 } GKAddressCell;
-
-#import "GKAddressContainerMock.h"

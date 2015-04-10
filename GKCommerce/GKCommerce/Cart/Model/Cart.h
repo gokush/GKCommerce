@@ -25,7 +25,7 @@
 @property (strong, nonatomic) ShippingMethod *shipping;
 @property (strong, nonatomic) Invoice *invoice;
 
-- (id)initWithUser:(User *)user;
+- (id)initWithUser:(GKUser *)user;
 - (NSArray *)want;
 - (void)calculatePrice;
 - (void)addList:(CartItemList *)list;

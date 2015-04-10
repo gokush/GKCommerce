@@ -7,6 +7,7 @@
 //
 
 #import "Backend.h"
+#import "FeatureBackend.h"
 #import "FeatureService.h"
 
 @interface GKFeatureService : Backend <FeatureService, FeatureBackendDelegate>

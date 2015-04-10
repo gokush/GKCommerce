@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "GKUserAccessToken.h"
+#import "GKAddress.h"
 
 @class GKResizer;
 @class Cart;
@@ -21,6 +22,7 @@
 @property (strong, nonatomic) GKUserAccessToken *accessToken;
 @property (strong, nonatomic) NSDate *lastAuthencateDate;
 @property (strong, nonatomic) Cart *cart;
+@property (strong, nonatomic) GKAddress *address;
 
 - (BOOL)authorized;
 - (void)merge:(GKUser *)user;

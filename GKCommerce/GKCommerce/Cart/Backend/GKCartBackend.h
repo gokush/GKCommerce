@@ -10,7 +10,7 @@
 
 @protocol GKCartBackend <NSObject>
 
-- (RACSignal *)requestCartWithUser:(User *)user;
+- (RACSignal *)requestCartWithUser:(GKUser *)user;
 - (RACSignal *)requestAddItem:(CartItem *)item;
 - (RACSignal *)requestUpdateItem:(CartItem *)item
                      oldQuantity:(NSInteger)anOldQuantity;

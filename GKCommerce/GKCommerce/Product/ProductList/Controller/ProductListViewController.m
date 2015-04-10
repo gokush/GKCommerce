@@ -10,7 +10,6 @@
 #import "ProductDetailViewController.h"
 #import "ProductListCollectionViewCell.h"
 #import "SVPullToRefresh.h"
-#import "Dependency.h"
 
 @interface ProductListViewController ()
 
@@ -18,7 +17,7 @@
 
 @implementation ProductListViewController
 
-- (id)initWithProductCategory:(ProductCategory *)category user:(User *)anUser
+- (id)initWithProductCategory:(ProductCategory *)category user:(GKUser *)anUser
 {
     SearchBackendModel *search = [[SearchBackendModel alloc] init];
     search.productCategoryID = category.categoryID;
@@ -29,7 +28,7 @@
     return self;
 }
 
-- (id)initWithSearchModel:(SearchBackendModel *)searchModel user:(User *)anUser
+- (id)initWithSearchModel:(SearchBackendModel *)searchModel user:(GKUser *)anUser
 {
     self = [self initWithNibName:@"ProductListView" bundle:nil];
     if (self) {
@@ -54,8 +53,6 @@
         [self.collectionView registerNib:[UINib nibWithNibName:identifier
                                                         bundle:nil]
               forCellWithReuseIdentifier:identifier];
-
-    self.service = [[Dependency shared] productService];
 
     [self.collectionView addPullToRefreshWithActionHandler:^{
         self.search.page = 1;

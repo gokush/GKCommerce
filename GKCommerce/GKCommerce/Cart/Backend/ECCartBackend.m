@@ -19,7 +19,7 @@
     return self;
 }
 
-- (void)requestCartWithUser:(User *)user
+- (void)requestCartWithUser:(GKUser *)user
 {
     DDLogVerbose(@"CartBackend 请求购物车数据。");
     NSDictionary *parameters;
@@ -40,7 +40,7 @@
      }];
 }
 
-- (void)requestCartWithUser:(User *)user didResponse:(id)responseObject
+- (void)requestCartWithUser:(GKUser *)user didResponse:(id)responseObject
                       error:(NSError *)anError
 {
     NSError *error;

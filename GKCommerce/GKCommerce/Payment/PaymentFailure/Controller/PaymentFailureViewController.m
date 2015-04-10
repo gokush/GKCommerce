@@ -15,7 +15,7 @@
 
 @implementation PaymentFailureViewController
 
-- (id)initWithOrder:(Order *)order andUser:(User *)user
+- (id)initWithOrder:(Order *)order andUser:(GKUser *)user
 {
     self = [self initWithNibName:@"PaymentFailureView" bundle:nil];
     if (self) {

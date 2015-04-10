@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GKProductService.h"
 #import "GKServiceMock.h"
 
 @interface GKProductServiceMock : GKServiceMock <GKProductService>
 
-- (RACSignal *)productWithID:(NSInteger)productID user:(User *)anUser;
+- (RACSignal *)productWithID:(NSInteger)productID user:(GKUser *)anUser;
 - (RACSignal *)productCategories;
 - (RACSignal *)productsWithSearchModel:(SearchBackendModel *)searchModel;
 @end

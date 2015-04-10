@@ -32,7 +32,7 @@
     return self;
 }
 
-- (id)initWithUser:(User *)user
+- (id)initWithUser:(GKUser *)user
 {
     self = [super init];
     if (self) {

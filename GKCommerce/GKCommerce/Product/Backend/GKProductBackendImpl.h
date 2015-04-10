@@ -14,5 +14,5 @@
 @interface GKProductBackendImpl : Backend <GKProductBackend>
 
 @property (strong, nonatomic) GKProductBackendAssembler *assembler;
-- (RACSignal *)requestProductWithID:(NSInteger)productID user:(User *)anUser;
+- (RACSignal *)requestProductWithID:(NSInteger)productID user:(GKUser *)anUser;
 @end

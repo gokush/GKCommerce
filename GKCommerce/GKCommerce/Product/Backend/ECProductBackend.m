@@ -19,7 +19,7 @@
     return self;
 }
 
-- (void)requestProductWithID:(NSInteger)productID user:(User *)anUser
+- (void)requestProductWithID:(NSInteger)productID user:(GKUser *)anUser
 {
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     [parameters setObject:[NSString stringWithFormat:@"%d", productID]
@@ -43,7 +43,7 @@
      }];
 }
 
-- (void)requestProductWithID:(NSInteger)productID user:(User *)anUser
+- (void)requestProductWithID:(NSInteger)productID user:(GKUser *)anUser
           didReceiveResponse:(id)responseObject error:(NSError *)anError
 {
     NSError *error = anError;

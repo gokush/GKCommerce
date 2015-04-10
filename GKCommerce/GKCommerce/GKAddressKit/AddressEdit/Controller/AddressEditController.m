@@ -21,7 +21,6 @@
 {
     self = [super initWithNibName:@"AddressEditView" bundle:nil];
     if (self) {
-        self.service = [[GKAddressContainerMock alloc] addressService];
     }
     return self;
 }

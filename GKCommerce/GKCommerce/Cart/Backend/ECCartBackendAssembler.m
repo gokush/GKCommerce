@@ -23,7 +23,7 @@
     return self;
 }
 
-- (Cart *)cartWithJSON:(NSDictionary *)JSON user:(User *)anUser
+- (Cart *)cartWithJSON:(NSDictionary *)JSON user:(GKUser *)anUser
 {
     Cart *cart;
     cart = [[Cart alloc] initWithUser:anUser];

@@ -9,10 +9,10 @@
 #import "MineDefaultViewController.h"
 #import "MineDefaultTableViewCell.h"
 #import "MineHeaderPhotoTableViewCell.h"
-#import "UserAuthenticationViewController.h"
+#import "GKUserAuthenticationController.h"
 #import "AddressEditController.h"
 #import "AddressController.h"
-#import "AddressListController.h"
+#import "GKAddressListController.h"
 #import "ProductDetailViewController.h"
 #import "ProductListViewController.h"
 
@@ -219,7 +219,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)pushAddressList
 {
     UIViewController *viewController;
-    viewController = [[AddressListController alloc] init];
+    viewController = [[GKAddressListController alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 
@@ -232,8 +232,8 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)headerPhoto:(MineHeaderPhotoTableViewCell *)headerPhoto
  didTapAuthenticate:(id)authenticateButton
 {
-    UserAuthenticationViewController *controller;
-    controller = [[UserAuthenticationViewController alloc] init];
+    GKUserAuthenticationController *controller;
+    controller = [[GKUserAuthenticationController alloc] init];
     [self.navigationController pushViewController:controller animated:YES];
 }
 

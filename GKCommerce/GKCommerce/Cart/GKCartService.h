@@ -11,7 +11,7 @@
 
 @protocol GKCartService <NSObject>
 
-- (RACSignal *)fetchCartWithUser:(User *)user;
+- (RACSignal *)fetchCartWithUser:(GKUser *)user;
 - (RACSignal *)addItem:(CartItem *)item;
 - (RACSignal *)addItemWithProduct:(Product *)product cart:(Cart *)aCart;
 - (RACSignal *)updateItem:(CartItem *)item oldQuantity:(NSInteger)anOldQuantity;

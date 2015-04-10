@@ -20,7 +20,7 @@
     return self;
 }
 
-- (RACSignal *)requestProductWithID:(NSInteger)productID user:(User *)anUser
+- (RACSignal *)requestProductWithID:(NSInteger)productID user:(GKUser *)anUser
 {
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     [parameters setObject:[NSString stringWithFormat:@"%d", (int)anUser.userID]

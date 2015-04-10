@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Store.h"
+#import "GKProductService.h"
 
 typedef enum {
     ProductDetailCarouselSection,
@@ -16,7 +17,7 @@ typedef enum {
 } ProductDetailSection;
 
 @interface ProductDetailViewController : UIViewController
-<UITableViewDataSource, UITableViewDelegate, ProductServiceDelegate>
+<UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) Cart *cart;
 @property (nonatomic, assign) NSInteger productID;
@@ -29,7 +30,7 @@ typedef enum {
 @property (nonatomic, strong) IBOutlet UIButton *buy;
 @property (nonatomic, strong) IBOutlet UIButton *addToCart;
 
-- (id)initWithProductID:(NSInteger)productID user:(User *)user;
+- (id)initWithProductID:(NSInteger)productID user:(GKUser *)user;
 
 - (IBAction)didTapProductInfomation:(id)sender;
 - (IBAction)didTapNavigationBack:(id)sender;

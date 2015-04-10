@@ -12,5 +12,5 @@
 @protocol GKOrderService <NSObject>
 
 @property (strong, nonatomic) id<GKOrderBackend> backend;
-- (RACSignal *)orders:(User *)user;
+- (RACSignal *)orders:(GKUser *)user;
 @end

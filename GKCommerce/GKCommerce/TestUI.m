@@ -9,8 +9,8 @@
 #import "TestUI.h"
 #import "CartViewController.h"
 #import "MineDefaultViewController.h"
-#import "AddressEditController.h"
-#import "AddressListController.h"
+//#import "GKAddressEditController.h"
+#import "GKAddressListController.h"
 #import "App.h"
 #import "ProductListViewController.h"
 
@@ -54,9 +54,9 @@
         [viewController pushAddressList];
         [self delay:1 perform:^{
             UIViewController *edit;
-            edit = [[AddressEditController alloc]
-                    initWithAddress:nil user:[[App shared] currentUser]];
-            [navigation pushViewController:edit animated:YES];
+//            edit = [[GKAddressEditController alloc]
+//                    initWithAddress:nil user:[[App shared] currentUser]];
+//            [navigation pushViewController:edit animated:YES];
         }];
     }];
     
@@ -72,9 +72,9 @@
   viewController = navigation.viewControllers.firstObject;
   
   [self delay:1 perform:^{
-    AddressListController *listController;
-    listController = [AddressListController addressListControllerWithMock];
-    [navigation pushViewController:listController animated:YES];
+    GKAddressListController *listController;
+//    listController = [GKAddressListController addressListControllerWithMock];
+//    [navigation pushViewController:listController animated:YES];
   }];
 }
 

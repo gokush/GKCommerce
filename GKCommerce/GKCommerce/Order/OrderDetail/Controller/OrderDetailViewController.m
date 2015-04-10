@@ -32,7 +32,7 @@ typedef enum {
 {
 }
 
-- (id)initWithOrderID:(NSInteger)orderID andUser:(User *)user
+- (id)initWithOrderID:(NSInteger)orderID andUser:(GKUser *)user
 {
     self = [self init];
     if (self) {
@@ -41,7 +41,6 @@ typedef enum {
         
         self.orderID = orderID;
         self.user = user;
-//        [self.api requestOrderWithID:orderID user:self.user];
     }
     return self;
 }

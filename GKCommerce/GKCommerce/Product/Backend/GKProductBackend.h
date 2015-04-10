@@ -10,5 +10,5 @@
 
 @protocol GKProductBackend <NSObject>
 
-- (RACSignal *)requestProductWithID:(NSInteger)productID user:(User *)anUser;
+- (RACSignal *)requestProductWithID:(NSInteger)productID user:(GKUser *)anUser;
 @end

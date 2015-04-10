@@ -25,15 +25,14 @@
     [super viewDidLoad];
     self.user = [[App shared] currentUser];
     
-  self.service = [[Dependency shared] productService];
-  @weakify(self);
-  [[self.service productCategories] subscribeNext:^(NSArray *categories) {
-    @strongify(self);
-    self.categories = categories;
-    [self.tableView reloadData];
-  } error:^(NSError *error) {
-    
-  }];
+    @weakify(self);
+    [[self.service productCategories] subscribeNext:^(NSArray *categories) {
+        @strongify(self);
+        self.categories = categories;
+        [self.tableView reloadData];
+    } error:^(NSError *error) {
+        
+    }];
     
     self.navigationItem.title = @"选购";
     [self setupSearchButton];
@@ -223,7 +222,7 @@ heightForSubRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (!cell.delegate)
         cell.delegate = self;
-
+    
     ProductCategory *category = [self.categories objectAtIndex:indexPath.row];
     cell.categories = category.children;
     cell.row = indexPath.row;
@@ -232,7 +231,7 @@ heightForSubRowAtIndexPath:(NSIndexPath *)indexPath{
 
 - (void)productCategoryChildTableViewCell:(ProductCategoryChildTableViewCell *)cell
                          didSelectedAtRow:(NSInteger)row
-      column:(NSInteger)column
+                                   column:(NSInteger)column
 {
     
     ProductCategory *child;

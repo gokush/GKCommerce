@@ -7,8 +7,6 @@
 //
 
 #import "GKRegionPickerViewController.h"
-#import "GKAddressContainer.h"
-#import "GKAddressContainerMock.h"
 
 @implementation GKRegionPickerViewController
 
@@ -20,7 +18,6 @@
         self.view.dataSource = self;
         self.view.delegate   = self;
         self.hasTown         = YES;
-        self.service = [[GKAddressContainerMock alloc] init].addressService;
         [RACObserve(self, province) subscribeNext:^(id x) {
             [self.view reloadComponent:0];
         }];

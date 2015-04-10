@@ -10,8 +10,8 @@
 #import "GKAddressService.h"
 #import "GKRegionBackend.h"
 #import "GKAddressBackend.h"
-#import "GKAddressKitExample-swift.h"
 
+@class PersistenStack;
 @interface GKAddressServiceImpl : NSObject <GKAddressService>
 
 @property (strong, nonatomic) id<GKRegionBackend> regionBackend;

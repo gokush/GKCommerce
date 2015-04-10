@@ -10,7 +10,7 @@
 
 @implementation GKCartBackendImpl
 
-- (RACSignal *)requestCartWithUser:(User *)user
+- (RACSignal *)requestCartWithUser:(GKUser *)user
 {
   return
   [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {

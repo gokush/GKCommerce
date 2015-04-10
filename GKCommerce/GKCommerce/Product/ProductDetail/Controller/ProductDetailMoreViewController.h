@@ -13,8 +13,7 @@
 #import "GKProductService.h"
 
 @interface ProductDetailMoreViewController : UIViewController
-<ProductDetailMoreTabDelegate, ProductServiceDelegate,
-UITableViewDataSource, UITableViewDelegate>
+<ProductDetailMoreTabDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) Product *product;
 @property (nonatomic, strong) GKUser *user;
@@ -23,5 +22,5 @@ UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) IBOutlet UIView *container;
 @property (nonatomic, strong) IBOutlet UIView *bottomBar;
 
-- (id)initWithProduct:(Product *)product user:(User *)anUser;
+- (id)initWithProduct:(Product *)product user:(GKUser *)anUser;
 @end

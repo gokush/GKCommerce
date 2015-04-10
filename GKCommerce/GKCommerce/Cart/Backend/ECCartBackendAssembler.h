@@ -13,5 +13,5 @@
 
 @property (strong, nonatomic) ECProductBackendAssembler *productAssembler;
 
-- (Cart *)cartWithJSON:(NSDictionary *)JSON user:(User *)anUser;
+- (Cart *)cartWithJSON:(NSDictionary *)JSON user:(GKUser *)anUser;
 @end

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "GKResizer.h"
 
 @interface GKResizerTests : XCTestCase
 

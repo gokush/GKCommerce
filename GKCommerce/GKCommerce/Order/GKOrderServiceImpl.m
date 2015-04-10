@@ -12,7 +12,7 @@
 @implementation GKOrderServiceImpl
 objection_requires_sel(@selector(backend))
 
-- (RACSignal *)orders:(User *)user
+- (RACSignal *)orders:(GKUser *)user
 {
     return [self.backend requestOrders:user];
 }

@@ -43,7 +43,7 @@
     // Configure the view for the selected state
 }
 
-+ (CGFloat)heightWithAddress:(Address *)address
++ (CGFloat)heightWithAddress:(GKAddress *)address
 {
     UIFont *font = [UIFont systemFontOfSize:14.0f];
     NSDictionary *attributes = @{ NSFontAttributeName: font };

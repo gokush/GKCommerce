@@ -9,7 +9,6 @@
 #import "GKAddressServiceImpl.h"
 #import "GKAddressCommon.h"
 #import <ReactiveCocoa/RACEXTScope.h>
-#import "GKAddressKitExample-Swift.h"
 
 @implementation GKAddressServiceImpl
 
