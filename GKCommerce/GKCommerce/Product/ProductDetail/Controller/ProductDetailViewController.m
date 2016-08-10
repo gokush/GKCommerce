@@ -11,6 +11,7 @@
 #import "ProductDetailCarouselTableViewCell.h"
 #import "ProductDetailTitleTableViewCell.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "GKProductServiceMock.h"
 
 @interface ProductDetailViewController ()
 {
@@ -52,6 +53,7 @@
         @"ProductDetailInfomationTableViewCell"
     ];
     self.cart = self.user.cart;
+    self.service = [[GKProductServiceMock alloc] init];
 }
 
 - (void)viewDidLoad

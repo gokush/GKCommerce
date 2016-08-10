@@ -10,6 +10,7 @@
 #import "ProductDetailViewController.h"
 #import "ProductListCollectionViewCell.h"
 #import "SVPullToRefresh.h"
+#import "GKProductServiceMock.h"
 
 @interface ProductListViewController ()
 
@@ -35,6 +36,8 @@
         self.search = searchModel;
         self.user = anUser;
         self.products = [[NSMutableArray alloc] init];
+        
+        self.service = [[GKProductServiceMock alloc] init];
     }
     return self;
 }

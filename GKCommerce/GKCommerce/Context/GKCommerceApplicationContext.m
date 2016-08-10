@@ -17,10 +17,26 @@
 #import "CheckoutViewControllerProvider.h"
 #import "CheckoutViewController.h"
 
+#import "GKUserBackend.h"
+#import "GKUserService.h"
+
+#import "GKUserBackendImpl.h"
+#import "GKUserBackendMock.h"
+#import "GKUserServiceImpl.h"
+#import "GKUserAuthenticationController.h"
+#import "GKRegistrationController.h"
+
+
 @implementation GKCommerceApplicationContext
 
 - (void)configure
 {
+    [self bindClass:[GKUserBackendMock class]
+         toProtocol:@protocol(GKUserBackend)];
+    [self bindClass:[GKUserServiceImpl class]
+         toProtocol:@protocol(GKUserService)];
+    
+    
     [self bindClass:[GKCheckoutBackendDemostration class]
     toProtocol:@protocol(GKCheckoutBackend)];
     

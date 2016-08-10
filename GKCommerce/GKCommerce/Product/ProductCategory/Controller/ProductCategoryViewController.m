@@ -9,6 +9,7 @@
 #import "ProductCategoryTableViewCell.h"
 #import "ProductCategoryChildTableViewCell.h"
 #import "ProductListViewController.h"
+#import "GKProductServiceMock.h"
 
 @interface ProductCategoryViewController ()
 
@@ -24,6 +25,8 @@
 {
     [super viewDidLoad];
     self.user = [[App shared] currentUser];
+    
+    self.service =  [[GKProductServiceMock alloc] init];
     
     @weakify(self);
     [[self.service productCategories] subscribeNext:^(NSArray *categories) {

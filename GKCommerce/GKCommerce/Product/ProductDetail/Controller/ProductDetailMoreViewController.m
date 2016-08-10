@@ -10,6 +10,7 @@
 #import "ProductMoreTableViewCell.h"
 #import "ProductSpecification.h"
 #import <QuartzCore/QuartzCore.h>
+#import "GKProductServiceMock.h"
 
 @interface ProductDetailMoreViewController ()
 {
@@ -31,6 +32,8 @@
     if (self) {
         self.product = product;
         self.user = user;
+        
+        self.service = [[GKProductServiceMock alloc] init];
     }
     return self;
 }

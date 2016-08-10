@@ -29,6 +29,8 @@ didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
     config.backendURL = @"http://127.0.0.1:8000/api";
     config.OAuthAccessTokenURL = @"http://127.0.0.1:8000/oauth/access_token";
     
+    
+    
 //  [[[Dependency shared] userService] restore];
   
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

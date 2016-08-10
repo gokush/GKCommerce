@@ -10,14 +10,14 @@ target "GKCommerce" do
     pod 'SVPullToRefresh'
     pod 'SKSTableView', :git=> 'http://github.com/gokush/SKSTableView.git'
     pod 'ReactiveCocoa', '~> 2'
-    pod 'ImageMagick'
+    pod 'ImageMagick', '~> 6.8.8-9'
     pod 'Objection'
     pod 'Masonry'
 end
 
 target "GKCommerceTests" do
     pod 'AFNetworking', "~> 2.5.0"
-    pod 'ReactiveCocoa'
+    pod 'ReactiveCocoa', '~> 2'
     pod 'Specta', '~> 0.4.0'
     pod 'Expecta'
     pod 'OCMock'
