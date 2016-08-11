@@ -22,6 +22,7 @@
 @end
 
 @implementation FeatureViewController
+objection_requires_sel(@selector(service))
 
 - (id)init
 {
@@ -50,6 +51,10 @@
     identifiersOfSection = @[@"FeatureCarouselTableViewCell",
                              @"FeatureThreeColumnTableViewCell",
                              @"FeatureOneColumnTableViewCell"];
+    
+    JSObjectionInjector *injector = [JSObjection defaultInjector];
+    self.service = [injector getObject:@protocol(FeatureService)];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated

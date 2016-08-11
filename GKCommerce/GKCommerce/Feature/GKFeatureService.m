@@ -7,6 +7,7 @@
 //
 
 #import "GKFeatureService.h"
+#import "GKFeatureBackend.h"
 
 @implementation GKFeatureService
 
@@ -14,6 +15,7 @@
 {
     self = [super init];
     if (self) {
+        self.backend = [GKFeatureBackend new];
         self.backend.delegate = self;
     }
     return self;

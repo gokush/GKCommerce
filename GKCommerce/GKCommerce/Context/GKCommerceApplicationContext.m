@@ -26,6 +26,8 @@
 #import "GKUserAuthenticationController.h"
 #import "GKRegistrationController.h"
 
+#import "GKFeatureBackend.h"
+#import "GKFeatureService.h"
 
 @implementation GKCommerceApplicationContext
 
@@ -45,6 +47,9 @@
     
     [self bindProvider:[[CheckoutViewControllerProvider alloc] init]
                toClass:[CheckoutViewController class]];
+    
+    [self bindClass:[GKFeatureBackend class] toProtocol:@protocol(FeatureBackend)];
+    [self bindClass:[GKFeatureService class] toProtocol:@protocol(FeatureService)];
 }
 
 + (void)install
@@ -54,8 +59,11 @@
     context = [[GKCommerceApplicationContext alloc] init];
     injector = [JSObjection createInjector:context];
     
-    id<GKCheckoutService> service;
-    service = [injector getObject:@protocol(GKCheckoutService)];
+//    id<GKCheckoutService> service;
+//    service = [injector getObject:@protocol(GKCheckoutService)];
+    
+    id<FeatureService> service;
+    service = [injector getObject:@protocol(FeatureService)];
     
     [JSObjection setDefaultInjector:injector];
 }
