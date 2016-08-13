@@ -16,7 +16,7 @@
   return self;
 }
 
-- (RACSignal *)fetchAddresses
+- (RACSignal *)fetchAddressesWithToken:(NSString *)token
 {
   return
   [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {

@@ -11,5 +11,5 @@
 
 @interface GKAddressBackendImpl : NSObject <GKAddressBackend>
 
-- (RACSignal *)fetchAddresses;
+- (RACSignal *)fetchAddressesWithToken:(NSString *)token;
 @end

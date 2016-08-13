@@ -13,6 +13,7 @@
 <UITableViewDataSource, UITableViewDelegate,
 MineHeaderPhotoTableViewCellDelegate>
 
+@property (strong, nonatomic) GKUser *user;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 - (void)pushAddressList;

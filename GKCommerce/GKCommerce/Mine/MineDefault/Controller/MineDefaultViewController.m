@@ -219,7 +219,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 - (void)pushAddressList
 {
     UIViewController *viewController;
-    viewController = [[GKAddressListController alloc] init];
+    viewController = [[GKAddressListController alloc] initWithUser:self.user];
     [self.navigationController pushViewController:viewController animated:YES];
 }
 

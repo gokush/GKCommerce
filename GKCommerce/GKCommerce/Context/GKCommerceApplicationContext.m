@@ -29,6 +29,9 @@
 #import "GKFeatureBackend.h"
 #import "GKFeatureService.h"
 
+#import "GKAddressBackendMock.h"
+#import "GKAddressServiceImpl.h"
+
 @implementation GKCommerceApplicationContext
 
 - (void)configure
@@ -50,6 +53,10 @@
     
     [self bindClass:[GKFeatureBackend class] toProtocol:@protocol(FeatureBackend)];
     [self bindClass:[GKFeatureService class] toProtocol:@protocol(FeatureService)];
+    
+    
+    [self bindClass:[GKAddressBackendMock class] toProtocol:@protocol(GKAddressBackend)];
+    [self bindClass:[GKAddressServiceImpl class] toProtocol:@protocol(GKAddressService)];
 }
 
 + (void)install
@@ -62,8 +69,11 @@
 //    id<GKCheckoutService> service;
 //    service = [injector getObject:@protocol(GKCheckoutService)];
     
-    id<FeatureService> service;
-    service = [injector getObject:@protocol(FeatureService)];
+//    id<FeatureService> service;
+//    service = [injector getObject:@protocol(FeatureService)];
+
+    id<GKAddressService> service;
+    service = [injector getObject:@protocol(GKAddressService)];
     
     [JSObjection setDefaultInjector:injector];
 }

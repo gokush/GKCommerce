@@ -12,6 +12,6 @@
 
 @protocol GKAddressBackend <NSObject>
 
-- (RACSignal *)fetchAddresses;
+- (RACSignal *)fetchAddressesWithToken:(NSString *)token;
 - (RACSignal *)create:(GKAddress *)address;
 @end

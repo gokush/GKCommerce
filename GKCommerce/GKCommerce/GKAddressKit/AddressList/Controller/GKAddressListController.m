@@ -15,7 +15,8 @@
 @end
 
 @implementation GKAddressListController
-
+//objection_requires(@"service")
+objection_requires_sel(@selector(service))
 - (id)init
 {
   self = [self initWithNibName:@"AddressListView" bundle:nil];
@@ -29,6 +30,7 @@
   self = [self init];
   if (self) {
     self.user = user;
+      [self setup];
   }
   return self;
 }
@@ -38,6 +40,11 @@
   self = [self init];
   self.addresses = addresses;
   return self;
+}
+
+- (void)setup
+{
+    
 }
 
 - (void)viewDidLoad

@@ -11,6 +11,7 @@
 #import <ReactiveCocoa/RACEXTScope.h>
 
 @implementation GKAddressServiceImpl
+objection_requires(@"backend")
 
 - (id)initWithRegionBackend:(id<GKRegionBackend>)regionBackend
 {
@@ -93,7 +94,8 @@
          subscribeNext:^(NSArray *addresses) {
              [subscriber sendNext:addresses];
              
-             [[self.backend fetchAddresses] subscribeNext:^(id x) {
+             [[self.backend fetchAddressesWithToken:user.accessToken.accessToken]
+              subscribeNext:^(id x) {
                  [subscriber sendNext:x];
                  [subscriber sendCompleted];
              } error:^(NSError *error) {
